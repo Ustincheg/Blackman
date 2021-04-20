@@ -1,0 +1,51 @@
+.preloader {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  @include padding-for-mobile;
+  @include tablet-md {
+    justify-content: center;
+  }
+  &-counter {
+    text-align: end;
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 60px;
+
+    /* Primary */
+
+    color: #176abd;
+    @include tablet-md {
+      font-size: calc(12px + 8vw);
+    }
+  }
+  &-container {
+    max-width: 604px;
+    margin-left: 100px;
+    letter-spacing: 0.2px;
+    @include tablet-md {
+      margin-left: 0;
+      max-width: fit-content;
+    }
+  }
+  &-text {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 65px;
+    line-height: 81px;
+    color: #2a2b31;
+    @include tablet-md {
+      font-size: calc(12px + 8vw);
+      line-height: 60px;
+      line-height: 1.2;
+    }
+  }
+}
