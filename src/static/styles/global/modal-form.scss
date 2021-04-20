@@ -1,0 +1,62 @@
+.modal-form {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include padding-for-mobile;
+  @include tablet-md {
+    justify-content: center;
+  }
+  &-container {
+    max-width: 489px;
+  }
+  &-title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 48px;
+    color: #2a2b31;
+    margin-bottom: 44px;
+  }
+  &-input {
+    border-bottom: 1px solid #e0e7eb;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 55px;
+  }
+  &-checkbox {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 50px;
+      & input {
+          height: 24px;
+          width: 24px;
+          margin-right: 10px;
+      }
+
+  }
+  &-submit {
+    display: inline-block;
+    max-width: 489px;
+    width: 100%;
+    min-height: 60px;
+
+    /* Primary */
+
+    background: #176abd;
+
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    /* White */
+
+    color: #ffffff;
+  }
+}
