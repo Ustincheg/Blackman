@@ -78,6 +78,7 @@ _G.task('server', function () {
 
   _G.watch('../static/styles/**/*.{css,scss}', _G.series('style-min', 'refresh'));
   _G.watch('../static/scripts/**/*.js', _G.series('scripts-min-preload', 'scripts-min', 'refresh'));
+  _G.watch('../../**/*.{html,pug,php}', _G.series('refresh'));
 })
 
 _G.task('dev', _G.series('build', 'server'));
