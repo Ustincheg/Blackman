@@ -24,6 +24,7 @@
     color: #176abd;
     @include tablet-md {
       font-size: calc(12px + 8vw);
+      line-height: 1.2;
     }
   }
   &-container {
