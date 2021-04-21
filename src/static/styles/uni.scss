@@ -1,11 +1,18 @@
 /* SCSS UNIFICATION */
 
-// Global
+// Global.
 @import 'global/fonts.scss';
 @import 'global/vars.scss';
 @import 'global/mixins.scss';
 @import 'global/default.scss';
 @import 'global/qs.scss';
 @import 'global/gen.scss';
+@import 'parts/header.scss';
 @import 'global/preloader.scss';
 @import 'global/modal-form.scss';
+
+// Parts.
+
+// @import 'parts/footer.scss';
+// @import 'parts/home.scss';
+
