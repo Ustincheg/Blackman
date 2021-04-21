@@ -14,3 +14,159 @@ $c_gray-light: #E0E7EB;
 // Fonts.
 $f_main: "Gilroy"; 
 $f_add: "Roboto";
+=======
+$f_main: "Gilroy";
+$f_add: "Roboto";
+
+@mixin row($mr) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -#{$mr}px;
+  margin-right: -#{$mr}px;
+}
+
+@mixin row-flex() {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin col($colsize, $mrg) {
+  width: calc(100% / 12 * #{$colsize} - #{$mrg * 2}px - 0.1px);
+  margin-left: #{$mrg}px;
+  margin-right: #{$mrg}px;
+  word-wrap: break-word;
+}
+
+@mixin coloff($coloffset, $mrg2) {
+  margin-left: calc(100% / 12 * #{$coloffset} + #{$mrg2}px);
+}
+
+%container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1400px;
+}
+
+@mixin ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@mixin flex($type) {
+  display: flex;
+  @if ($type == "lc") {
+    justify-content: flex-start;
+    align-items: center;
+  }
+  @if ($type == "sc") {
+    justify-content: space-between;
+    align-items: center;
+  }
+  @if ($type == "rc") {
+    justify-content: flex-end;
+    align-items: center;
+  }
+  @if ($type == "cc") {
+    justify-content: center;
+    align-items: center;
+  }
+  @if ($type == "ct") {
+    justify-content: center;
+    align-items: flex-start;
+  }
+  @if ($type == "lt") {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  @if ($type == "st") {
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  @if ($type == "rt") {
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+}
+
+@mixin flexcol($type: "t", $wrap: "w") {
+  display: flex;
+  flex-direction: column;
+  @if ($type == "t") {
+    justify-content: flex-start;
+  }
+  @if ($type == "s") {
+    justify-content: space-between;
+  }
+  @if ($wrap == "w") {
+    flex-wrap: wrap;
+  }
+  @if ($type == "n") {
+    flex-wrap: nowrap;
+  }
+}
+
+@mixin laptop-lg {
+  @media screen and (max-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin laptop-md {
+  @media screen and (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin laptop-sm {
+  @media screen and (max-width: 1366px) {
+    @content;
+  }
+}
+
+@mixin tablet-lg {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin tablet-md {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 568px) {
+    @content;
+  }
+}
+
+@mixin mobile-lg {
+  @media screen and (max-width: 375px) {
+    @content;
+  }
+}
+
+@mixin mobile-md {
+  @media screen and (max-width: 360px) {
+    @content;
+  }
+}
+
+@mixin mobile-sm {
+  @media screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin padding-for-mobile {
+    @include laptop-md {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    @include mobile {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }

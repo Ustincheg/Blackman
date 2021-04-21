@@ -7,8 +7,12 @@
 @import 'global/default.scss';
 @import 'global/qs.scss';
 @import 'global/gen.scss';
+@import 'parts/header.scss';
+@import 'global/preloader.scss';
+@import 'global/modal-form.scss';
 
 // Parts.
-@import 'parts/header.scss';
+
 // @import 'parts/footer.scss';
 // @import 'parts/home.scss';
+
