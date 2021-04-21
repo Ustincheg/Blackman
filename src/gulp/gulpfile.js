@@ -1,71 +1,71 @@
 'use strict';
 
-const _BS = require('browser-sync').create();
-const _D = require('del');
-const _G = require('gulp');
-const _GR = require('gulp-rename');
-const _GP = require('gulp-plumber');
-const _GS = require('gulp-sourcemaps');
-const _GSass = require('gulp-sass');
-const _GA = require('gulp-autoprefixer');
-const _GCSSO = require('gulp-csso');
-const _GU = require('gulp-uglify-es').default;
-const _GC = require('gulp-concat');
+const _browserSync = require('browser-sync').create(); // Сервер
+const _delete = require('del'); // Удаление папок и файлов
+const _gulp = require('gulp'); // Gulp
+const _gulpRename = require('gulp-rename'); // Переименование папок и файлов
+const _gulpPlumber = require('gulp-plumber'); // Проверка CSS на валидность
+const _gulpSourcemaps = require('gulp-sourcemaps'); // Ресурсные карты
+const _gulpSass = require('gulp-sass'); // Sass
+const _gulpAutoprefixer = require('gulp-autoprefixer'); // Автопрефиксер
+const _gulpCSSOptimizing = require('gulp-csso'); // Сжатие CSS
+const _gulpUglify = require('gulp-uglify-es').default; // Сжатие JS
+const _gulpConcat = require('gulp-concat'); // Сшивание файлов в один
 
-_G.task('style-min', function () {
-  return _G.src('../static/styles/uni.scss')
-    .pipe(_GP())
-    .pipe(_GS.init())
-    .pipe(_GSass())
-    .pipe(_GA())
-    .pipe(_GCSSO())
-    .pipe(_GR('style.min.css'))
-    .pipe(_GS.write('.'))
-    .pipe(_G.dest('../../public'))
-    .pipe(_BS.stream());
+_gulp.task('style-min', function () {
+  return _gulp.src('../static/styles/uni.scss')
+    .pipe(_gulpPlumber())
+    .pipe(_gulpSourcemaps.init())
+    .pipe(_gulpSass())
+    .pipe(_gulpAutoprefixer())
+    .pipe(_gulpCSSOptimizing())
+    .pipe(_gulpRename('style.min.css'))
+    .pipe(_gulpSourcemaps.write('.'))
+    .pipe(_gulp.dest('../../public'))
+    .pipe(_browserSync.stream());
 });
 
-_G.task('scripts-min-preload', function () {
-  return _G.src(
+_gulp.task('scripts-min-preload', function () {
+  return _gulp.src(
       [
         '../static/scripts/global/**/*.js'
       ]
     )
-    .pipe(_GS.init())
-    .pipe(_GU())
-    .pipe(_GC('scripts-preload.min.js'))
-    .pipe(_GS.write('.'))
-    .pipe(_G.dest('../../public'))
-    .pipe(_BS.stream());
+    .pipe(_gulpSourcemaps.init())
+    .pipe(_gulpUglify())
+    .pipe(_gulpConcat('scripts-preload.min.js'))
+    .pipe(_gulpSourcemaps.write('.'))
+    .pipe(_gulp.dest('../../public'))
+    .pipe(_browserSync.stream());
 });
 
-_G.task('scripts-min', function () {
-  return _G.src(
+_gulp.task('scripts-min', function () {
+  return _gulp.src(
       [
         '../static/scripts/**/*.js'
       ]
     )
-    .pipe(_GS.init())
-    .pipe(_GU())
-    .pipe(_GC('scripts.min.js'))
-    .pipe(_GS.write('.'))
-    .pipe(_G.dest('../../public'))
-    .pipe(_BS.stream());
+    .pipe(_gulpSourcemaps.init())
+    .pipe(_gulpUglify())
+    .pipe(_gulpConcat('scripts.min.js'))
+    .pipe(_gulpSourcemaps.write('.'))
+    .pipe(_gulp.dest('../../public'))
+    .pipe(_browserSync.stream());
 });
 
-_G.task('clean', function () {
-  return _D('../../public', {force: true});
+_gulp.task('clean', function () {
+  return _delete('../../public', {force: true});
 });
 
-_G.task('build', _G.series('clean', 'style-min', 'scripts-min-preload', 'scripts-min'));
+_gulp.task('build', _gulp.series('clean', 'style-min', 'scripts-min-preload', 'scripts-min'));
 
-_G.task('refresh', function (done) {
-  _BS.reload();
+_gulp.task('refresh', function (done) {
+  _browserSync.reload();
   done();
 });
 
-_G.task('server', function () {
-  _BS.init({
+_gulp.task('server', function () {
+  _browserSync.init({
     server: {
       baseDir: '../../', 
       index: 'index.html' 
@@ -76,9 +76,9 @@ _G.task('server', function () {
     ui: false
   })
 
-  _G.watch('../static/styles/**/*.{css,scss}', _G.series('style-min', 'refresh'));
-  _G.watch('../static/scripts/**/*.js', _G.series('scripts-min-preload', 'scripts-min', 'refresh'));
-  _G.watch('../../**/*.{html,pug,php}', _G.series('refresh'));
+  _gulp.watch('../static/styles/**/*.{css,scss}', _gulp.series('style-min', 'refresh'));
+  _gulp.watch('../static/scripts/**/*.js', _gulp.series('scripts-min-preload', 'scripts-min', 'refresh'));
+  _gulp.watch('../../**/*.{html,pug,php}', _gulp.series('refresh'));
 })
 
-_G.task('dev', _G.series('build', 'server'));
+_gulp.task('dev', _gulp.series('build', 'server'));
