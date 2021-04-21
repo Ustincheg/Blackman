@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 
 <head>
-    <title></title>
+    <title>forms</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="public/style.min.css" rel="stylesheet">
@@ -11,27 +11,38 @@
 
 <body>
     <section class="modal-form">
+        <button class="button-close">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="7.2334" y="36.4287" width="42" height="1" transform="rotate(-45 7.2334 36.4287)"
+                    fill="#B6BCC2" />
+                <rect x="8.44043" y="6.73022" width="42" height="1" transform="rotate(45 8.44043 6.73022)"
+                    fill="#B6BCC2" />
+            </svg>
+        </button>
         <div class="modal-form-container">
             <h2 class="modal-form-title">Обратная связь</h2>
             <form action="get">
-                <label for="">
-                    <span>Ваше имя</span>
+                <label class="label-for-input">
+                    <span class="modal-form-placeholder">Ваше имя</span>
                     <input type="text" class="modal-form-input">
                 </label>
-                <label for="">
-                    <span>Ваш E-mail</span>
+                <label class="label-for-input">
+                    <span class="modal-form-placeholder">
+                        Ваш E-mail
+                        <span class="modal-form-placeholder--red">*</span>
+                    </span>
                     <input type="text" class="modal-form-input">
                 </label>
-                <label for="">
-                    <span>Ваш телефон</span>
+                <label class="label-for-input">
+                    <span class="modal-form-placeholder">Ваш телефон</span>
                     <input type="text" class="modal-form-input">
                 </label>
-                <label for="">
-                    <span>Сообщение</span>
+                <label class="label-for-input">
+                    <span class="modal-form-placeholder">Сообщение</span>
                     <input type="text" class="modal-form-input">
                 </label>
                 <label class="modal-form-checkbox"><input type="checkbox"> <span>Нажимая на кнопку, вы даете
-                    согласие на обработку своих <a href="#">персональных данных</a></span></label>
+                        согласие на обработку своих <a href="#">персональных данных</a></span></label>
                 <button type="submit" class="modal-form-submit btn">Отправить</button>
             </form>
         </div>

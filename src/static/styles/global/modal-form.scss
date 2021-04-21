@@ -11,8 +11,14 @@
   @include tablet-md {
     justify-content: center;
   }
+  & .button-close {
+    position: fixed;
+    top: 23px;
+    right: calc(4.5vw + 10px);
+  }
   &-container {
     max-width: 489px;
+    width: 100%;    
   }
   &-title {
     font-style: normal;
@@ -20,25 +26,47 @@
     font-size: 40px;
     line-height: 48px;
     color: #2a2b31;
-    margin-bottom: 44px;
+    margin-bottom: 28px;
+  }
+  & .label-for-input {
+    position: relative;
+  }
+  &-placeholder {
+    position: absolute;
+    bottom: 57px;
+    color: #949fa8;
+    &--red {
+      color: #ee394e;
+    }
   }
   &-input {
     border-bottom: 1px solid #e0e7eb;
     display: inline-block;
     width: 100%;
-    margin-bottom: 55px;
+    margin-bottom: 39px;
+    line-height: 54px;
   }
   &-checkbox {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 50px;
-      & input {
-          height: 24px;
-          width: 24px;
-          margin-right: 10px;
-      }
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    padding-top: 17px;
+    padding-bottom: 2px;
+    & input {
+      height: 24px;
+      width: 24px;
+      margin-right: 10px;
+    }
+    & span {
+      max-width: 450px;
+      font-size: 14px;
+      line-height: 140%;
+      color: #2a2b31;
+    }
+    & a {
+      color: #176abd;
+    }
   }
   &-submit {
     display: inline-block;
