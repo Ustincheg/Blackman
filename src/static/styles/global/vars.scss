@@ -14,9 +14,6 @@ $c_gray-light: #E0E7EB;
 $c_gray-light2: #F1F5F8;
 
 // Fonts.
-$f_main: "Gilroy"; 
-$f_add: "Roboto";
-=======
 $f_main: "Gilroy";
 $f_add: "Roboto";
 
@@ -163,12 +160,12 @@ $f_add: "Roboto";
 }
 
 @mixin padding-for-mobile {
-    @include laptop-md {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-    @include mobile {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
+  @include laptop-md {
+    padding-left: 20px;
+    padding-right: 20px;
   }
+  @include mobile {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
