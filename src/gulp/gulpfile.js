@@ -12,6 +12,7 @@ const _gulpCSSOptimizing = require('gulp-csso'); // Сжатие CSS
 const _gulpUglify = require('gulp-uglify-es').default; // Сжатие JS
 const _gulpConcat = require('gulp-concat'); // Сшивание файлов в один
 
+
 _gulp.task('style-min', function () {
   return _gulp.src('../static/styles/uni.scss')
     .pipe(_gulpPlumber())
@@ -29,7 +30,9 @@ _gulp.task('scripts-min-preload', function () {
   return _gulp.src(
       [
         '../static/scripts/global/**/*.js'
-      ]
+      ], {
+        allowEmpty: true
+      }
     )
     .pipe(_gulpSourcemaps.init())
     .pipe(_gulpUglify())
@@ -42,8 +45,11 @@ _gulp.task('scripts-min-preload', function () {
 _gulp.task('scripts-min', function () {
   return _gulp.src(
       [
-        '../static/scripts/**/*.js'
-      ]
+        '../static/scripts/parts/swiper-6.5.7.js',
+        '../static/scripts/parts/**/*.js'
+      ], {
+        allowEmpty: true
+      }
     )
     .pipe(_gulpSourcemaps.init())
     .pipe(_gulpUglify())

@@ -1,0 +1,30 @@
+.short-products__desc {
+  margin-bottom: 40px;
+}
+
+.short-products-slider.swiper-container {
+  overflow: visible;
+}
+
+.short-products-slider__slide {
+  max-width: 390px;
+  min-width: 390px;
+}
+
+.short-products-slider__img {
+  object-fit: cover;
+  object-position: center;
+  max-width: 100%;
+  min-width: 100%;
+  max-height: 250px;
+  min-height: 250px;
+}
+
+.short-products-slider-txt {
+  padding: 30px;
+  background-color: $c_white;
+}
+
+.short-products-slider-txt__ttl {
+  font: 600 18px $f_main;
+}

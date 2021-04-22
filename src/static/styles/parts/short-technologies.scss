@@ -1,0 +1,28 @@
+.short-technologies__desc {
+  margin-bottom: 40px;
+}
+
+.short-technologies-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(140px, max-content);
+  grid-gap: 20px;
+}
+
+.short-technologies-list__item {
+  border: 1px solid $c_gray-light;
+}
+
+.short-technologies-list__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  font: 600 18px $f_main;
+
+  &:hover,
+  &:focus-visible {
+    color: $c_white;
+    background-color: $c_blue;
+  }
+}

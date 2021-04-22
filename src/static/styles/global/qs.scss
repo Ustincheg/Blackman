@@ -1,0 +1,113 @@
+@mixin qs_hidden() {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.qs_hidden {
+  @include qs_hidden();
+}
+
+@mixin qs_section {
+  padding: 80px;
+  overflow-x: hidden;
+}
+
+.qs_section {
+  @include qs_section();
+}
+
+@mixin qs_section-ttl {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font: 900 30px $f_main;
+
+  & ._link {
+    margin-left: 40px;
+    font: 600 16px $f_main;
+    color: $c_blue;
+  }
+}
+
+.qs_section-ttl {
+  @include qs_section-ttl;
+}
+
+//<h2 class="qs_section">
+//  TEXT
+//  <a class="_link"></a>
+//</h2>
+
+@mixin qs_desc {
+  font: 400 16px $f_main;
+  color: $c_gray;
+}
+
+.qs_desc {
+  @include qs_desc();
+}
+
+@mixin qs_slider {
+  .swiper-container {
+    overflow: visible;
+  }
+
+  ._scrollbar {
+    display: grid;
+    grid-template-columns: 20px 1fr 20px;
+    grid-template-rows: 20px;
+    grid-gap: 20px;
+    margin-top: 30px;
+
+    & .swiper-scrollbar {
+      align-self: center;
+      height: 5px;
+      border-bottom: 1px solid $c_gray;
+    }
+
+    & .swiper-scrollbar-drag {
+      background-color: $c_blue;
+    }
+
+    & .swiper-button-prev,
+    & .swiper-button-next {
+      align-self: center;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    & .swiper-button-prev {
+      transform: rotate(90deg);
+      background-image: url('../assets/icons/slider-arrow.svg');
+    }
+
+    & .swiper-button-next {
+      transform: rotate(-90deg);
+      background-image: url('../assets/icons/slider-arrow.svg');
+    }
+  }
+}
+
+.qs_slider {
+  @include qs_slider();
+}
+
+//<div class="swiper-container qs_slider">
+//  <div class="swiper-wrapper">
+//    <div class="swiper-slide"></div>
+//  </div>
+//  <div class="_scrollbar">
+//    <div class="swiper-button-prev></div>
+//    <div class="swiper-scrollbar"></div>
+//    <div class="swiper-button-next></div>
+//  </div>  
+//</div>
