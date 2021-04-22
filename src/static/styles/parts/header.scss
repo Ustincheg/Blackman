@@ -3,7 +3,8 @@
   grid-template-columns: 100px 313px 1fr max-content max-content 185px;
   grid-template-rows: minmax(90px, 1fr);
   grid-gap: 50px;
-  border-bottom: 2px solid $c_gray-light;
+  background-color: $c_white;
+  border-bottom: 1px solid $c_gray-light;
 }
 
 .header__btn-nav-modal {
@@ -143,23 +144,6 @@
     display: none;
   }
 }
-
-// @media (max-width: 870px) {
-//   .header {
-//     grid-template-columns: 100px 1fr 185px;
-//     grid-gap: 30px;
-//   }
-
-//   .header__link-logo {
-//     justify-self: left;    
-//     max-width: 313px;
-//   }
-
-//   .header-nav,
-//   .header-contacts {
-//     display: none;
-//   }
-// }
 
 @media (max-width: 870px) {
   .header {

@@ -7,8 +7,11 @@
 @import 'global/default.scss';
 @import 'global/qs.scss';
 @import 'global/gen.scss';
+@import 'global/swiper-6.5.7.scss';
 
 // Parts.
+@import 'parts/page.scss';
 @import 'parts/header.scss';
-// @import 'parts/footer.scss';
-// @import 'parts/home.scss';
+@import 'parts/footer.scss';
+@import 'parts/short-technologies.scss';
+@import 'parts/short-products.scss';
