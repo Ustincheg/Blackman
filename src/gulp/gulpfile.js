@@ -1,16 +1,17 @@
 'use strict';
 
-const _browserSync = require('browser-sync').create(); // Server.
-const _delete = require('del'); // Files deleting.
-const _gulp = require('gulp'); // Gulp.
-const _gulpRename = require('gulp-rename'); // Files renaming.
-const _gulpPlumber = require('gulp-plumber'); // Check CSS/SCSS validity.
-const _gulpSourcemaps = require('gulp-sourcemaps'); // Sourcemaps
-const _gulpSass = require('gulp-sass'); // Sass.
-const _gulpAutoprefixer = require('gulp-autoprefixer'); // Autoprefixer
-const _gulpCSSOptimizing = require('gulp-csso'); // CSS optimization.
-const _gulpUglify = require('gulp-uglify-es').default; // Java-Script optimization.
-const _gulpConcat = require('gulp-concat'); // Files concatenating.
+const _browserSync = require('browser-sync').create(); // Сервер
+const _delete = require('del'); // Удаление папок и файлов
+const _gulp = require('gulp'); // Gulp
+const _gulpRename = require('gulp-rename'); // Переименование папок и файлов
+const _gulpPlumber = require('gulp-plumber'); // Проверка CSS на валидность
+const _gulpSourcemaps = require('gulp-sourcemaps'); // Ресурсные карты
+const _gulpSass = require('gulp-sass'); // Sass
+const _gulpAutoprefixer = require('gulp-autoprefixer'); // Автопрефиксер
+const _gulpCSSOptimizing = require('gulp-csso'); // Сжатие CSS
+const _gulpUglify = require('gulp-uglify-es').default; // Сжатие JS
+const _gulpConcat = require('gulp-concat'); // Сшивание файлов в один
+
 
 _gulp.task('style-min', function () {
   return _gulp.src('../static/styles/uni.scss')

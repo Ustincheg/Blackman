@@ -18,7 +18,14 @@
   }
   &-container {
     max-width: 489px;
-    width: 100%;    
+    width: 100%;
+    &.accept {
+      max-width: 700px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
   &-title {
     font-style: normal;
@@ -27,6 +34,13 @@
     line-height: 48px;
     color: #2a2b31;
     margin-bottom: 28px;
+    &.accept {
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 35px;
+      margin-top: 30px;
+      margin-bottom: 17px;
+    }
   }
   & .label-for-input {
     position: relative;
