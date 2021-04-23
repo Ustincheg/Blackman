@@ -1,0 +1,54 @@
+.short-achievement__desc {
+  margin-bottom: 40px;
+}
+
+.short-achievement-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(160px, max-content);
+  grid-gap: 20px;
+}
+
+.short-achievement-list__item {
+  border: 1px solid $c_gray-light;
+}
+
+.short-achievement-list__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 30px 60px;
+  font: 600 18px $f_main;
+
+  &._contrast {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $c_white;
+    background-color: $c_blue;
+
+    &._contrast:hover,
+    &._contrast:focus-visible {
+      color: $c_blue;
+      background-color: transparent;
+    }
+  }
+
+  & img {
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: $c_white;
+
+    & img {
+      filter: grayscale(0);
+    }
+  }
+}
