@@ -16,6 +16,14 @@
 @mixin qs_section {
   padding: 80px;
   overflow-x: hidden;
+
+  & > * {
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .qs_section {

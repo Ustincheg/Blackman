@@ -1,5 +1,6 @@
 body {
   display: grid;
+  grid-template-columns: 1fr 2fr;
   grid-template-rows: max-content 1fr minmax(100px, max-content);
   grid-template-areas:
     'header header'
