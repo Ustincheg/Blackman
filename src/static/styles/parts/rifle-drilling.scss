@@ -1,0 +1,45 @@
+.rifle-drilling-slider {
+  overflow: visible;
+}
+
+.rifle-drilling-slider__slide {
+  max-width: 700px;
+  min-width: 700px;
+  max-height: 400px;
+  min-height: 400px;
+}
+
+.rifle-drilling-slider__img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.rifle-drilling-list-controls {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.rifle-drilling-list-controls__callback,
+.rifle-drilling-list-controls__next {
+  width: 100%;
+}
+
+.rifle-drilling-list-controls__next {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  & svg {
+    max-width: 20px;
+    min-width: 20px;
+    max-height: 20px;
+    min-height: 20px;
+    margin-left: 15px;
+    transform: rotate(-90deg);
+    stroke: $c_blue;
+  }
+}

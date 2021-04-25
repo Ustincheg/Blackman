@@ -1,13 +1,13 @@
 $(document).ready(function () {
-  const _shortProductsSlider = new Swiper('.short-products-slider', {
+  const _aboutAdministrationSlider = new Swiper('.about-administration-slider', {
     direction: 'horizontal',
     loop: false,
     scrollbar: {
-      el: '.short-products-slider__scrollbar'
+      el: '.about-administration-slider__scrollbar'
     },
     navigation: {
-      prevEl: '.short-products-slider__prev',
-      nextEl: '.short-products-slider__next'
+      prevEl: '.about-administration-slider__prev',
+      nextEl: '.about-administration-slider__next'
     },
     spaceBetween: 20,
     slidesPerView: 'auto'
@@ -33,9 +33,9 @@ $(document).ready(function () {
     }
   }
 
-  ScrollbarFix($('.short-products-slider'), $('.short-products-slider__slide'), $('.short-products-slider').find('._scrollbar'));
+  ScrollbarFix($('.about-administration-slider'), $('.about-administration-slider__slide'), $('.about-administration-slider').find('._scrollbar'));
 
   $(window).resize(function() {
-    ScrollbarFix($('.short-products-slider'), $('.short-products-slider__slide'), $('.short-products-slider').find('._scrollbar'));
+    ScrollbarFix($('.about-administration-slider'), $('.about-administration-slider__slide'), $('.about-administration-slider').find('._scrollbar'));
   })
 });

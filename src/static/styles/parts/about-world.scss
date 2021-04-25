@@ -1,0 +1,29 @@
+.about-world-map__iframe {
+  max-width: 100%;
+  min-width: 100%;
+  max-height: 450px;
+  min-height: 450px;
+  margin-bottom: 20px;
+  border: none;
+}
+
+.about-world-map-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.about-world-map-list__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 25%;
+}
+
+.about-world-map-list__data {
+  margin-bottom: 10px;
+  font: 700 40px $f_main;
+  color: $c_blue;
+}

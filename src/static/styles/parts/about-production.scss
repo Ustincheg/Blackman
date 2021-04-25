@@ -1,0 +1,15 @@
+.about-production-slider__slide {
+  max-width: 700px;
+  min-width: 700px;
+  max-height: 400px;
+  min-height: 400px;
+}
+
+.about-production-slider__img {
+  object-fit: cover;
+  object-position: center;
+  max-width: 100%;
+  min-width: 100%;
+  max-height: 100%;
+  min-height: 100%;
+}

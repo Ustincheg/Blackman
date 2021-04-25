@@ -1,13 +1,13 @@
 $(document).ready(function () {
-  const _shortProductsSlider = new Swiper('.short-products-slider', {
+  const _aboutProduction = new Swiper('.about-production-slider', {
     direction: 'horizontal',
     loop: false,
     scrollbar: {
-      el: '.short-products-slider__scrollbar'
+      el: '.about-production-slider__scrollbar'
     },
     navigation: {
-      prevEl: '.short-products-slider__prev',
-      nextEl: '.short-products-slider__next'
+      prevEl: '.about-production-slider__prev',
+      nextEl: '.about-production-slider__next'
     },
     spaceBetween: 20,
     slidesPerView: 'auto'
@@ -33,9 +33,9 @@ $(document).ready(function () {
     }
   }
 
-  ScrollbarFix($('.short-products-slider'), $('.short-products-slider__slide'), $('.short-products-slider').find('._scrollbar'));
+  ScrollbarFix($('.about-production-slider'), $('.about-production-slider__slide'), $('.about-production-slider').find('._scrollbar'));
 
   $(window).resize(function() {
-    ScrollbarFix($('.short-products-slider'), $('.short-products-slider__slide'), $('.short-products-slider').find('._scrollbar'));
+    ScrollbarFix($('.about-production-slider'), $('.about-production-slider__slide'), $('.about-production-slider').find('._scrollbar'));
   })
 });
