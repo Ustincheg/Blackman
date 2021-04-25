@@ -1,13 +1,13 @@
 $(document).ready(function () {
-  const _shortProductsSlider = new Swiper('.short-products-slider', {
+  const _rifleDrillingSlider = new Swiper('.rifle-drilling-slider', {
     direction: 'horizontal',
     loop: false,
     scrollbar: {
-      el: '.short-products-slider__scrollbar'
+      el: '.rifle-drilling-slider__scrollbar'
     },
     navigation: {
-      prevEl: '.short-products-slider__prev',
-      nextEl: '.short-products-slider__next'
+      prevEl: '.rifle-drilling-slider__prev',
+      nextEl: '.rifle-drilling-slider__next'
     },
     spaceBetween: 20,
     slidesPerView: 'auto'
@@ -33,9 +33,9 @@ $(document).ready(function () {
     }
   }
 
-  ScrollbarFix($('.short-products-slider'), $('.short-products-slider__slide'), $('.short-products-slider').find('._scrollbar'));
+  ScrollbarFix($('.rifle-drilling-slider'), $('.rifle-drilling-slider__slide'), $('.rifle-drilling-slider').find('._scrollbar'));
 
   $(window).resize(function() {
-    ScrollbarFix($('.short-products-slider'), $('.short-products-slider__slide'), $('.short-products-slider').find('._scrollbar'));
+    ScrollbarFix($('.rifle-drilling-slider'), $('.rifle-drilling-slider__slide'), $('.rifle-drilling-slider').find('._scrollbar'));
   })
-});
+})

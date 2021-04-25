@@ -1,12 +1,13 @@
 body {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 35% 65%;
   grid-template-rows: max-content 1fr minmax(100px, max-content);
   grid-template-areas:
     'header header'
     'aside main'
     'aside footer';
-  height: 100vh;
+  max-height: 100vh;
+  min-height: 100vh;
 
   &.page-home {
     grid-template-columns: repeat(2, 1fr);
@@ -19,10 +20,12 @@ header {
 
 aside {
   grid-area: aside;
+  overflow: auto;
 }
 
 main {
   grid-area: main;
+  overflow: auto;
 }
 
 footer {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
   <head>
-    <title></title>
+    <title>Главная страница</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="public/style.min.css" rel="stylesheet">
@@ -9,7 +9,7 @@
   </head>
   <body class="page-home">
     <header class="header" role="banner">
-      <button class="header__btn-nav-modal" type="button">
+      <button class="header__btn-nav-modal" type="button" aria-label="Открыть меню навигации">
         <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="1" y="15" width="100%" height="1" fill="#2A2B31"/>
           <rect x="1" y="27" width="100%" height="1" fill="#2A2B31"/>
@@ -24,7 +24,7 @@
             <a class="header-nav-list__link" href="technologies.html">Технологии</a>
           </li>
           <li class="header-nav-list__item">
-            <a class="header-nav-list__link" href="">Продукты</a>
+            <a class="header-nav-list__link" href="products.html">Продукты</a>
           </li>
           <li class="header-nav-list__item">
             <a class="header-nav-list__link" href="">Проекты</a>
@@ -33,7 +33,7 @@
             <a class="header-nav-list__link" href="">Контроль качества</a>
           </li>
           <li class="header-nav-list__item">
-            <a class="header-nav-list__link" href="">О компании</a>
+            <a class="header-nav-list__link" href="about.html">О компании</a>
           </li>
           <li class="header-nav-list__item">
             <a class="header-nav-list__link" href="">Контакты</a>
@@ -63,7 +63,7 @@
       <button class="header-callback" type="button">Обратная связь</button> 
     </header>
     <video class="page-home-bg__video"></video>
-    <q class="page-home-bg__slogan">Передовые технологии для нефтегазовой отрасли</q>
+    <span class="page-home-bg__slogan">Передовые технологии для нефтегазовой отрасли</span>
     <aside class="aside" role="complementary"></aside>
     <main class="main" role="main">
       <h1 class="qs_hidden">Главная страница</h1>
@@ -113,26 +113,26 @@
             <a class="short-products-slider__slide swiper-slide" href="#">
               <img class="short-products-slider__img" src="assets/imgs/short-products/img.jpg" width="0" height="0" loading="lazy" alt="">
               <div class="short-products-slider-txt">
-                <q class="short-products-slider-txt__ttl">Винтовые забойные двигатели и ясы</q>
+                <span class="short-products-slider-txt__ttl">Винтовые забойные двигатели и ясы</span>
               </div>
             </a>
             <a class="short-products-slider__slide swiper-slide" href="#">
               <img class="short-products-slider__img" src="assets/imgs/short-products/img2.jpg" width="0" height="0" loading="lazy" alt="">
               <div class="short-products-slider-txt">
-                <q class="short-products-slider-txt__ttl">Циркулярные переводники PBL</q>
+                <span class="short-products-slider-txt__ttl">Циркулярные переводники PBL</span>
               </div>
             </a>
             <a class="short-products-slider__slide swiper-slide" href="#">
               <img class="short-products-slider__img" src="assets/imgs/short-products/img3.jpg" width="0" height="0" loading="lazy" alt="">
               <div class="short-products-slider-txt">
-                <q class="short-products-slider-txt__ttl">Немагнитные стали</q>
+                <span class="short-products-slider-txt__ttl">Немагнитные стали</span>
               </div>
             </a>
           </div>
           <div class="_scrollbar">
-            <div class="swiper-button-prev"></div>
+            <div class="short-products-slider__prev swiper-button-next"></div>
             <div class="short-products-slider__scrollbar swiper-scrollbar"></div>
-            <div class="swiper-button-next"></div>
+            <div class="short-products-slider__next swiper-button-next"></div>
           </div>
         </div>
       </section>
@@ -153,7 +153,7 @@
                 <circle cx="18" cy="23" r="1.5"/>
                 <circle cx="18" cy="29" r="1.5"/>
               </svg>
-              <q class="short-orientation-list__ttl">Металлообработка</q> 
+              <span class="short-orientation-list__ttl">Металлообработка</span> 
             </a>
           </li>
           <li class="short-orientation-list__item">
@@ -162,7 +162,7 @@
                 <path d="M28.5 39.5H9M9 39.5H2V33H9V39.5Z" />
                 <path d="M11.5 39.5L13.0543 34M18 16.5L20.6848 26M18 16.5L15.3152 26M18 16.5L5.5 20.5M18 16.5L31 12M24.5 39.5L20.6848 26M22.5 34H13.0543M13.0543 34L15.3152 26M20.6848 26H15.3152M5.5 20.5L3.5 14.5L29 6.5M5.5 20.5V33M29 6.5L28 3.5L34 1L36.9535 8.51806C38.3569 12.0904 36.5823 16.1222 33 17.5V17.5M29 6.5L31 12M31 12L33 17.5M33 17.5V40" />
               </svg>
-              <q class="short-orientation-list__ttl">Аренда внутрискважинного оборудования</q> 
+              <span class="short-orientation-list__ttl">Аренда внутрискважинного оборудования</span> 
             </a>
           </li>
           <li class="short-orientation-list__item">
@@ -172,7 +172,7 @@
                 <circle cx="28" cy="11" r="4.5" />
                 <circle cx="28" cy="11" r="1.5" />
               </svg>          
-              <q class="short-orientation-list__ttl">Контроль качества</q> 
+              <span class="short-orientation-list__ttl">Контроль качества</span> 
             </a>
           </li>
         </ul>
@@ -188,33 +188,33 @@
         </p>
         <ul class="short-achievement-list">
           <li class="short-achievement-list__item">
-            <a class="short-achievement-list__link" href="#">
+            <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
               <img class="short-achievement-list__img" src="assets/imgs/short-achievement/logo.png" width="0" height="0" loading="lazy" alt="">
             </a>
           </li>
           <li class="short-achievement-list__item">
-            <a class="short-achievement-list__link" href="#">
+            <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
               <img class="short-achievement-list__img" src="assets/imgs/short-achievement/logo.png" width="0" height="0" loading="lazy" alt="">
             </a>
           </li>
           <li class="short-achievement-list__item">
-            <a class="short-achievement-list__link" href="#">
+            <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
               <img class="short-achievement-list__img" src="assets/imgs/short-achievement/logo.png" width="0" height="0" loading="lazy" alt="">
             </a>
           </li>
           <li class="short-achievement-list__item">
-            <a class="short-achievement-list__link" href="#">
+            <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
               <img class="short-achievement-list__img" src="assets/imgs/short-achievement/logo.png" width="0" height="0" loading="lazy" alt="">
             </a>
           </li>
           <li class="short-achievement-list__item">
-            <a class="short-achievement-list__link" href="#">
+            <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
               <img class="short-achievement-list__img" src="assets/imgs/short-achievement/logo.png" width="0" height="0" loading="lazy" alt="">
             </a>
           </li>
           <li class="short-achievement-list__item">
             <a class="short-achievement-list__link _contrast" href="#">
-              <q class="short-achievement-list__ttl">Смотреть проекты</q>
+              <span class="short-achievement-list__ttl">Смотреть проекты</span>
             </a>
           </li>
         </ul>
@@ -244,7 +244,7 @@
           <rect x="6" y="3" width="13" height="18" rx="6.5" stroke="#176ABD"/>
           <rect x="12" y="7" width="1" height="4" rx="0.5" fill="#176ABD"/>
         </svg>
-        <q class="footer-tip__desc">Крутите вниз</q>
+        <span class="footer-tip__desc">Крутите вниз</span>
       </span>
     </footer>    
     <script src="public/scripts.min.js"></script>
