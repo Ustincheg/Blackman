@@ -17,11 +17,35 @@
   padding: 20px;
   border-right: 1px solid $c_gray-light;
 
+  @include transition;
+
   & svg {
     width: 100%;
     max-width: 44px;
     height: 100%;
     max-height: 44px;
+  }
+  &.isOpen::before {
+    margin-bottom: -2px;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    border-bottom: 1px solid $c_black;
+    max-width: 42px;
+    width: 100%;
+    @include transition;
+  }
+  &::before {
+    margin-bottom: 11px;    
+  }
+  &:hover {
+    &::before {
+      margin-bottom: -1px;      
+    }
+  }
+  &::after {    
   }
 }
 
@@ -86,7 +110,7 @@
   &._current {
     color: $c_gray;
     cursor: default;
-  } 
+  }
 }
 
 .header-contacts {
@@ -157,7 +181,7 @@
   }
 
   .header__link-logo {
-    justify-self: left;   
+    justify-self: left;
     max-width: 200px;
   }
 

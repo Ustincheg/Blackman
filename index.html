@@ -1,252 +1,287 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <title>Главная страница</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="public/style.min.css" rel="stylesheet">
-    <script src="public/scripts-preload.min.js"></script>
-  </head>
-  <body class="page-home">
-    <header class="header" role="banner">
-      <button class="header__btn-nav-modal" type="button" aria-label="Открыть меню навигации">
-        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="1" y="15" width="100%" height="1" fill="#2A2B31"/>
-          <rect x="1" y="27" width="100%" height="1" fill="#2A2B31"/>
-        </svg>
-      </button>
-      <a class="header__link-logo" href="index.html">
-        <img class="header__img-logo" src="assets/imgs/SBDR_Логотип123 2.jpg" width="0" height="0" loading="lazy" alt="logo">
-      </a>
-      <nav class="header-nav" role="navigation">
-        <ul class="header-nav-list">
-          <li class="header-nav-list__item">
-            <a class="header-nav-list__link" href="technologies.html">Технологии</a>
-          </li>
-          <li class="header-nav-list__item">
-            <a class="header-nav-list__link" href="products.html">Продукты</a>
-          </li>
-          <li class="header-nav-list__item">
-            <a class="header-nav-list__link" href="">Проекты</a>
-          </li>
-          <li class="header-nav-list__item">
-            <a class="header-nav-list__link" href="">Контроль качества</a>
-          </li>
-          <li class="header-nav-list__item">
-            <a class="header-nav-list__link" href="about.html">О компании</a>
-          </li>
-          <li class="header-nav-list__item">
-            <a class="header-nav-list__link" href="">Контакты</a>
-          </li>
-        </ul>
-      </nav>
-      <ul class="header-localizations">
-        <li class="header-localizations__item">
-          <a class="header-localizations__link _current">RU</a>
+
+<head>
+  <title>Главная страница</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="public/style.min.css" rel="stylesheet">
+  <script src="public/scripts-preload.min.js"></script>
+</head>
+
+<body class="page-home">
+  <header class="header" role="banner">
+    <button class="header__btn-nav-modal" type="button" aria-label="Открыть меню навигации" onclick="showMenu()">
+      <!-- <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="15" width="100%" height="1" fill="#2A2B31" />
+        <rect x="1" y="27" width="100%" height="1" fill="#2A2B31" />
+      </svg> -->
+    </button>
+    <a class="header__link-logo" href="index.html">
+      <img class="header__img-logo" src="assets/imgs/SBDR_Логотип123 2.jpg" width="0" height="0" loading="lazy"
+        alt="logo">
+    </a>
+    <nav class="header-nav" role="navigation">
+      <ul class="header-nav-list">
+        <li class="header-nav-list__item">
+          <a class="header-nav-list__link" href="technologies.html">Технологии</a>
         </li>
-        <li class="header-localizations__item">
-          <a class="header-localizations__link" href="#">EN</a>
+        <li class="header-nav-list__item">
+          <a class="header-nav-list__link" href="products.html">Продукты</a>
+        </li>
+        <li class="header-nav-list__item">
+          <a class="header-nav-list__link" href="">Проекты</a>
+        </li>
+        <li class="header-nav-list__item">
+          <a class="header-nav-list__link" href="">Контроль качества</a>
+        </li>
+        <li class="header-nav-list__item">
+          <a class="header-nav-list__link" href="about.html">О компании</a>
+        </li>
+        <li class="header-nav-list__item">
+          <a class="header-nav-list__link" href="">Контакты</a>
         </li>
       </ul>
-      <div class="header-contacts">
-        <ul class="header-contacts-tels">
-          <li class="header-contacts-tels__item">
-            <a class="header-contacts-tels__link" href="tel:+73496342602" aria-label="Позвонить нам по телефону">+7(3496) 34-26-02</a>
-          </li>
-        </ul>
-        <ul class="header-contacts-emails">
-          <li class="header-contacts-emails__item">
-            <a class="header-contacts-emails__link" href="mailto:office@sbdr.ru" aria-label="Написать нам на почту">office@sbdr.ru</a>
-          </li>
-        </ul>
-      </div>
-      <button class="header-callback" type="button">Обратная связь</button> 
-    </header>
-    <video class="page-home-bg__video"></video>
-    <span class="page-home-bg__slogan">Передовые технологии для нефтегазовой отрасли</span>
-    <aside class="aside" role="complementary"></aside>
-    <main class="main" role="main">
-      <h1 class="qs_hidden">Главная страница</h1>
-      <section class="short-technologies qs_section">
-        <h2 class="short-technologies__ttl qs_section-ttl">
-          <span>Технологии</span>
-          <a class="_link" href="#">Все технологии</a>
-        </h2>
-        <p class="short-technologies__desc qs_desc">
-          «Шоллер-Блэкманн Даррон Россия» ведет постоянную работу по тестированию 
-          и внедрению новых технологий для удовлетворения запросов наших клиентов
-        </p>
-        <ul class="short-technologies-list">
-          <li class="short-technologies-list__item">
-            <a class="short-technologies-list__link" href="#">Токарная обработка</a>
-          </li>
-          <li class="short-technologies-list__item">
-            <a class="short-technologies-list__link" href="#">Фрезерная обработка</a>
-          </li>
-          <li class="short-technologies-list__item">
-            <a class="short-technologies-list__link" href="#">Глубокое сверление</a>
-          </li>
-          <li class="short-technologies-list__item">
-            <a class="short-technologies-list__link" href="#">Ружейное сверление</a>
-          </li>
-          <li class="short-technologies-list__item">
-            <a class="short-technologies-list__link" href="#">Сварка в узкощелевую разделку</a>
-          </li>
-          <li class="short-technologies-list__item">
-            <a class="short-technologies-list__link" href="#">Ударная обработка поверхности</a>
-          </li>
-        </ul>
-      </section>
-      <section class="short-products _current qs_section">
-        <h2 class="short-products__ttl qs_section-ttl">
-          <span>Продукты</span>
-          <a class="_link" href="#">Все продукты</a>
-        </h2>
-        <p class="short-products__desc qs_desc">
-          Компания занимается производством, ремонто, продажей, 
-          здачей в аренду и обслуживанием оборудования для 
-          компаний занятых в нефтегазовой, аэрокосмической и 
-          других отраслях
-        </p>
-        <div class="short-products-slider qs_slider swiper-container">
-          <div class="short-products-slider__inner swiper-wrapper">
-            <a class="short-products-slider__slide swiper-slide" href="#">
-              <img class="short-products-slider__img" src="assets/imgs/short-products/img.jpg" width="0" height="0" loading="lazy" alt="">
-              <div class="short-products-slider-txt">
-                <span class="short-products-slider-txt__ttl">Винтовые забойные двигатели и ясы</span>
-              </div>
-            </a>
-            <a class="short-products-slider__slide swiper-slide" href="#">
-              <img class="short-products-slider__img" src="assets/imgs/short-products/img2.jpg" width="0" height="0" loading="lazy" alt="">
-              <div class="short-products-slider-txt">
-                <span class="short-products-slider-txt__ttl">Циркулярные переводники PBL</span>
-              </div>
-            </a>
-            <a class="short-products-slider__slide swiper-slide" href="#">
-              <img class="short-products-slider__img" src="assets/imgs/short-products/img3.jpg" width="0" height="0" loading="lazy" alt="">
-              <div class="short-products-slider-txt">
-                <span class="short-products-slider-txt__ttl">Немагнитные стали</span>
-              </div>
-            </a>
-          </div>
-          <div class="_scrollbar">
-            <div class="short-products-slider__prev swiper-button-next"></div>
-            <div class="short-products-slider__scrollbar swiper-scrollbar"></div>
-            <div class="short-products-slider__next swiper-button-next"></div>
-          </div>
+    </nav>
+    <ul class="header-localizations">
+      <li class="header-localizations__item">
+        <a class="header-localizations__link _current">RU</a>
+      </li>
+      <li class="header-localizations__item">
+        <a class="header-localizations__link" href="#">EN</a>
+      </li>
+    </ul>
+    <div class="header-contacts">
+      <ul class="header-contacts-tels">
+        <li class="header-contacts-tels__item">
+          <a class="header-contacts-tels__link" href="tel:+73496342602" aria-label="Позвонить нам по телефону">+7(3496)
+            34-26-02</a>
+        </li>
+      </ul>
+      <ul class="header-contacts-emails">
+        <li class="header-contacts-emails__item">
+          <a class="header-contacts-emails__link" href="mailto:office@sbdr.ru"
+            aria-label="Написать нам на почту">office@sbdr.ru</a>
+        </li>
+      </ul>
+    </div>
+    <button class="header-callback" type="button">Обратная связь</button>
+    <div class="header-js-placeholder"></div>
+  </header>
+  <video class="page-home-bg__video"></video>
+  <span class="page-home-bg__slogan">Передовые технологии для нефтегазовой отрасли</span>
+  <aside class="aside" role="complementary"></aside>
+  <main class="main" role="main">
+    <h1 class="qs_hidden">Главная страница</h1>
+    <section class="short-technologies qs_section">
+      <h2 class="short-technologies__ttl qs_section-ttl">
+        <span>Технологии</span>
+        <a class="_link" href="#">Все технологии</a>
+      </h2>
+      <p class="short-technologies__desc qs_desc">
+        «Шоллер-Блэкманн Даррон Россия» ведет постоянную работу по тестированию
+        и внедрению новых технологий для удовлетворения запросов наших клиентов
+      </p>
+      <ul class="short-technologies-list">
+        <li class="short-technologies-list__item">
+          <a class="short-technologies-list__link" href="#">Токарная обработка</a>
+        </li>
+        <li class="short-technologies-list__item">
+          <a class="short-technologies-list__link" href="#">Фрезерная обработка</a>
+        </li>
+        <li class="short-technologies-list__item">
+          <a class="short-technologies-list__link" href="#">Глубокое сверление</a>
+        </li>
+        <li class="short-technologies-list__item">
+          <a class="short-technologies-list__link" href="#">Ружейное сверление</a>
+        </li>
+        <li class="short-technologies-list__item">
+          <a class="short-technologies-list__link" href="#">Сварка в узкощелевую разделку</a>
+        </li>
+        <li class="short-technologies-list__item">
+          <a class="short-technologies-list__link" href="#">Ударная обработка поверхности</a>
+        </li>
+      </ul>
+    </section>
+    <section class="short-products _current qs_section">
+      <h2 class="short-products__ttl qs_section-ttl">
+        <span>Продукты</span>
+        <a class="_link" href="#">Все продукты</a>
+      </h2>
+      <p class="short-products__desc qs_desc">
+        Компания занимается производством, ремонто, продажей,
+        здачей в аренду и обслуживанием оборудования для
+        компаний занятых в нефтегазовой, аэрокосмической и
+        других отраслях
+      </p>
+      <div class="short-products-slider qs_slider swiper-container">
+        <div class="short-products-slider__inner swiper-wrapper">
+          <a class="short-products-slider__slide swiper-slide" href="#">
+            <img class="short-products-slider__img" src="assets/imgs/short-products/img.jpg" width="0" height="0"
+              loading="lazy" alt="">
+            <div class="short-products-slider-txt">
+              <span class="short-products-slider-txt__ttl">Винтовые забойные двигатели и ясы</span>
+            </div>
+          </a>
+          <a class="short-products-slider__slide swiper-slide" href="#">
+            <img class="short-products-slider__img" src="assets/imgs/short-products/img2.jpg" width="0" height="0"
+              loading="lazy" alt="">
+            <div class="short-products-slider-txt">
+              <span class="short-products-slider-txt__ttl">Циркулярные переводники PBL</span>
+            </div>
+          </a>
+          <a class="short-products-slider__slide swiper-slide" href="#">
+            <img class="short-products-slider__img" src="assets/imgs/short-products/img3.jpg" width="0" height="0"
+              loading="lazy" alt="">
+            <div class="short-products-slider-txt">
+              <span class="short-products-slider-txt__ttl">Немагнитные стали</span>
+            </div>
+          </a>
         </div>
-      </section>
-      <section class="short-orientation qs_section">
-        <h2 class="short-orientation__ttl qs_section-ttl">Направления</h2>
-        <p class="short-orientation__desc qs_desc">
-          «Шоллер-Блэкманн Даррон Россия» ведет 
-          постоянную работу по тестированию и 
-          внедрению новых технологий для удовлетворения 
-          запросов наших клиентов
-        </p>
-        <ul class="short-orientation-list">
-          <li class="short-orientation-list__item">
-            <a class="short-orientation-list__link" href="#">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.68571 33.0147H1M9.68571 33.0147H39M9.68571 33.0147V19.4118M1 33.0147V39H6.97143L9.14286 35.7353H30.8571L33.0286 39H39V33.0147M1 33.0147V11.7941L6.97143 5.80882H21.0857V4.72059H22.7143M39 33.0147V19.4118H34.6571M9.68571 19.4118V9.61765H21.0857V11.25H22.1714M9.68571 19.4118H14.0286M14.0286 19.4118V16.6912H21.0857V19.4118M14.0286 19.4118H21.0857M21.0857 19.4118H27.6M27.6 19.4118V16.6912H34.6571V19.4118M27.6 19.4118H34.6571M22.7143 4.72059V2H25.9714V4.72059M22.7143 4.72059H25.9714M25.9714 4.72059H27.6V11.25H26.5143M22.1714 11.25L23.2571 13.9706H24.3429M22.1714 11.25H26.5143M26.5143 11.25L25.4286 13.9706H24.3429M24.3429 16.1471V13.9706" />
-                <circle cx="29" cy="26" r="3.5"/>
-                <circle cx="18" cy="23" r="1.5"/>
-                <circle cx="18" cy="29" r="1.5"/>
-              </svg>
-              <span class="short-orientation-list__ttl">Металлообработка</span> 
-            </a>
-          </li>
-          <li class="short-orientation-list__item">
-            <a class="short-orientation-list__link" href="#">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M28.5 39.5H9M9 39.5H2V33H9V39.5Z" />
-                <path d="M11.5 39.5L13.0543 34M18 16.5L20.6848 26M18 16.5L15.3152 26M18 16.5L5.5 20.5M18 16.5L31 12M24.5 39.5L20.6848 26M22.5 34H13.0543M13.0543 34L15.3152 26M20.6848 26H15.3152M5.5 20.5L3.5 14.5L29 6.5M5.5 20.5V33M29 6.5L28 3.5L34 1L36.9535 8.51806C38.3569 12.0904 36.5823 16.1222 33 17.5V17.5M29 6.5L31 12M31 12L33 17.5M33 17.5V40" />
-              </svg>
-              <span class="short-orientation-list__ttl">Аренда внутрискважинного оборудования</span> 
-            </a>
-          </li>
-          <li class="short-orientation-list__item">
-            <a class="short-orientation-list__link" href="#">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12.7045 15.9859V5.8169H8V4.21127L11.1364 1H21.0682L31 5.8169H19.5V9.56338M12.7045 15.9859H8.52273V20.8028H12.7045M12.7045 15.9859V20.8028M12.7045 20.8028V39H19.5V34.1831M19.5 15.9859H31L24.2045 20.8028H19.5M19.5 15.9859V14.3803M19.5 15.9859V19.1972M19.5 20.8028V19.1972M19.5 20.8028V24.0141M17.4091 9.56338H19.5M19.5 9.56338V14.3803M17.4091 14.3803H19.5M17.4091 19.1972H19.5M17.4091 24.0141H19.5M19.5 24.0141V29.3662M17.4091 29.3662H19.5M19.5 29.3662V34.1831M17.4091 34.1831H19.5" />
-                <circle cx="28" cy="11" r="4.5" />
-                <circle cx="28" cy="11" r="1.5" />
-              </svg>          
-              <span class="short-orientation-list__ttl">Контроль качества</span> 
-            </a>
-          </li>
-        </ul>
-      </section>
-      <section class="short-achievement qs_section">
-        <h2 class="short-achievement__ttl qs_section-ttl">Достижения</h2>
-        <p class="short-achievement__desc">
-          Компания занимается производством, 
-          ремонто, продажей, здачей в аренду и 
-          обслуживанием оборудования для компаний 
-          занятых в нефтегазовой, аэрокосмической и 
-          других отраслях
-        </p>
-        <ul class="short-achievement-list">
-          <li class="short-achievement-list__item">
-            <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
-              <img class="short-achievement-list__img" src="assets/imgs/short-achievement/logo.png" width="0" height="0" loading="lazy" alt="">
-            </a>
-          </li>
-          <li class="short-achievement-list__item">
-            <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
-              <img class="short-achievement-list__img" src="assets/imgs/short-achievement/logo.png" width="0" height="0" loading="lazy" alt="">
-            </a>
-          </li>
-          <li class="short-achievement-list__item">
-            <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
-              <img class="short-achievement-list__img" src="assets/imgs/short-achievement/logo.png" width="0" height="0" loading="lazy" alt="">
-            </a>
-          </li>
-          <li class="short-achievement-list__item">
-            <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
-              <img class="short-achievement-list__img" src="assets/imgs/short-achievement/logo.png" width="0" height="0" loading="lazy" alt="">
-            </a>
-          </li>
-          <li class="short-achievement-list__item">
-            <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
-              <img class="short-achievement-list__img" src="assets/imgs/short-achievement/logo.png" width="0" height="0" loading="lazy" alt="">
-            </a>
-          </li>
-          <li class="short-achievement-list__item">
-            <a class="short-achievement-list__link _contrast" href="#">
-              <span class="short-achievement-list__ttl">Смотреть проекты</span>
-            </a>
-          </li>
-        </ul>
-      </section>
-    </main>
-    <footer class="footer" role="contentinfo">
-      <ul class="footer-nav-tabs _disabled">
-        <li class="footer-nav-tabs__item _current">
-          <a class="footer-nav-tabs__link" href="#" aria-expanded="false">Технологии</a>
+        <div class="_scrollbar">
+          <div class="short-products-slider__prev swiper-button-next"></div>
+          <div class="short-products-slider__scrollbar swiper-scrollbar"></div>
+          <div class="short-products-slider__next swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+    <section class="short-orientation qs_section">
+      <h2 class="short-orientation__ttl qs_section-ttl">Направления</h2>
+      <p class="short-orientation__desc qs_desc">
+        «Шоллер-Блэкманн Даррон Россия» ведет
+        постоянную работу по тестированию и
+        внедрению новых технологий для удовлетворения
+        запросов наших клиентов
+      </p>
+      <ul class="short-orientation-list">
+        <li class="short-orientation-list__item">
+          <a class="short-orientation-list__link" href="#">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M9.68571 33.0147H1M9.68571 33.0147H39M9.68571 33.0147V19.4118M1 33.0147V39H6.97143L9.14286 35.7353H30.8571L33.0286 39H39V33.0147M1 33.0147V11.7941L6.97143 5.80882H21.0857V4.72059H22.7143M39 33.0147V19.4118H34.6571M9.68571 19.4118V9.61765H21.0857V11.25H22.1714M9.68571 19.4118H14.0286M14.0286 19.4118V16.6912H21.0857V19.4118M14.0286 19.4118H21.0857M21.0857 19.4118H27.6M27.6 19.4118V16.6912H34.6571V19.4118M27.6 19.4118H34.6571M22.7143 4.72059V2H25.9714V4.72059M22.7143 4.72059H25.9714M25.9714 4.72059H27.6V11.25H26.5143M22.1714 11.25L23.2571 13.9706H24.3429M22.1714 11.25H26.5143M26.5143 11.25L25.4286 13.9706H24.3429M24.3429 16.1471V13.9706" />
+              <circle cx="29" cy="26" r="3.5" />
+              <circle cx="18" cy="23" r="1.5" />
+              <circle cx="18" cy="29" r="1.5" />
+            </svg>
+            <span class="short-orientation-list__ttl">Металлообработка</span>
+          </a>
         </li>
-        <li class="footer-nav-tabs__item">
-          <a class="footer-nav-tabs__link" href="#" aria-expanded="false">Продукты</a>
+        <li class="short-orientation-list__item">
+          <a class="short-orientation-list__link" href="#">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M28.5 39.5H9M9 39.5H2V33H9V39.5Z" />
+              <path
+                d="M11.5 39.5L13.0543 34M18 16.5L20.6848 26M18 16.5L15.3152 26M18 16.5L5.5 20.5M18 16.5L31 12M24.5 39.5L20.6848 26M22.5 34H13.0543M13.0543 34L15.3152 26M20.6848 26H15.3152M5.5 20.5L3.5 14.5L29 6.5M5.5 20.5V33M29 6.5L28 3.5L34 1L36.9535 8.51806C38.3569 12.0904 36.5823 16.1222 33 17.5V17.5M29 6.5L31 12M31 12L33 17.5M33 17.5V40" />
+            </svg>
+            <span class="short-orientation-list__ttl">Аренда внутрискважинного оборудования</span>
+          </a>
         </li>
-        <li class="footer-nav-tabs__item">
-          <a class="footer-nav-tabs__link" href="#" aria-expanded="false">Направления</a>
-        </li>
-        <li class="footer-nav-tabs__item">
-          <a class="footer-nav-tabs__link" href="#" aria-expanded="false">Достижения</a>
+        <li class="short-orientation-list__item">
+          <a class="short-orientation-list__link" href="#">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12.7045 15.9859V5.8169H8V4.21127L11.1364 1H21.0682L31 5.8169H19.5V9.56338M12.7045 15.9859H8.52273V20.8028H12.7045M12.7045 15.9859V20.8028M12.7045 20.8028V39H19.5V34.1831M19.5 15.9859H31L24.2045 20.8028H19.5M19.5 15.9859V14.3803M19.5 15.9859V19.1972M19.5 20.8028V19.1972M19.5 20.8028V24.0141M17.4091 9.56338H19.5M19.5 9.56338V14.3803M17.4091 14.3803H19.5M17.4091 19.1972H19.5M17.4091 24.0141H19.5M19.5 24.0141V29.3662M17.4091 29.3662H19.5M19.5 29.3662V34.1831M17.4091 34.1831H19.5" />
+              <circle cx="28" cy="11" r="4.5" />
+              <circle cx="28" cy="11" r="1.5" />
+            </svg>
+            <span class="short-orientation-list__ttl">Контроль качества</span>
+          </a>
         </li>
       </ul>
-      <div class="footer-info">
-        <p class="footer-info__copyright">© Schoeller-Bleckmann Darron Russia 2013-2021</p>
-        <a class="footer-info__policy" href="#">Политика конфиденциальности</a>
-      </div>
-      <span class="footer-tip">
-        <svg class="footer-tip__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="6" y="3" width="13" height="18" rx="6.5" stroke="#176ABD"/>
-          <rect x="12" y="7" width="1" height="4" rx="0.5" fill="#176ABD"/>
-        </svg>
-        <span class="footer-tip__desc">Крутите вниз</span>
-      </span>
-    </footer>    
-    <script src="public/scripts.min.js"></script>
-  </body>
+    </section>
+    <section class="short-achievement qs_section">
+      <h2 class="short-achievement__ttl qs_section-ttl">Достижения</h2>
+      <p class="short-achievement__desc">
+        Компания занимается производством,
+        ремонто, продажей, здачей в аренду и
+        обслуживанием оборудования для компаний
+        занятых в нефтегазовой, аэрокосмической и
+        других отраслях
+      </p>
+      <ul class="short-achievement-list">
+        <li class="short-achievement-list__item">
+          <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
+            <img class="short-achievement-list__img" src="assets/imgs/short-achievement/logo.png" width="0" height="0"
+              loading="lazy" alt="">
+          </a>
+        </li>
+        <li class="short-achievement-list__item">
+          <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
+            <img class="short-achievement-list__img" src="assets/imgs/short-achievement/logo.png" width="0" height="0"
+              loading="lazy" alt="">
+          </a>
+        </li>
+        <li class="short-achievement-list__item">
+          <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
+            <img class="short-achievement-list__img" src="assets/imgs/short-achievement/logo.png" width="0" height="0"
+              loading="lazy" alt="">
+          </a>
+        </li>
+        <li class="short-achievement-list__item">
+          <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
+            <img class="short-achievement-list__img" src="assets/imgs/short-achievement/logo.png" width="0" height="0"
+              loading="lazy" alt="">
+          </a>
+        </li>
+        <li class="short-achievement-list__item">
+          <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
+            <img class="short-achievement-list__img" src="assets/imgs/short-achievement/logo.png" width="0" height="0"
+              loading="lazy" alt="">
+          </a>
+        </li>
+        <li class="short-achievement-list__item">
+          <a class="short-achievement-list__link _contrast" href="#">
+            <span class="short-achievement-list__ttl">Смотреть проекты</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer class="footer" role="contentinfo">
+    <ul class="footer-nav-tabs _disabled">
+      <li class="footer-nav-tabs__item _current">
+        <a class="footer-nav-tabs__link" href="#" aria-expanded="false">Технологии</a>
+      </li>
+      <li class="footer-nav-tabs__item">
+        <a class="footer-nav-tabs__link" href="#" aria-expanded="false">Продукты</a>
+      </li>
+      <li class="footer-nav-tabs__item">
+        <a class="footer-nav-tabs__link" href="#" aria-expanded="false">Направления</a>
+      </li>
+      <li class="footer-nav-tabs__item">
+        <a class="footer-nav-tabs__link" href="#" aria-expanded="false">Достижения</a>
+      </li>
+    </ul>
+    <div class="footer-info">
+      <p class="footer-info__copyright">© Schoeller-Bleckmann Darron Russia 2013-2021</p>
+      <a class="footer-info__policy" href="#">Политика конфиденциальности</a>
+    </div>
+    <span class="footer-tip">
+      <svg class="footer-tip__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="6" y="3" width="13" height="18" rx="6.5" stroke="#176ABD" />
+        <rect x="12" y="7" width="1" height="4" rx="0.5" fill="#176ABD" />
+      </svg>
+      <span class="footer-tip__desc">Крутите вниз</span>
+    </span>
+  </footer>
+  <section class="modal-navigation">
+    <h2 class="visually-hidden">Меню навигации по сайту</h2>
+    <button class="modal-navigation__close button-close" onclick="showMenu()">
+      <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="7.2334" y="36.4287" width="42" height="1" transform="rotate(-45 7.2334 36.4287)" fill="#B6BCC2" />
+        <rect x="8.44043" y="6.73022" width="42" height="1" transform="rotate(45 8.44043 6.73022)" fill="#B6BCC2" />
+      </svg>
+    </button>
+    <nav> 
+      <ul>
+        <li>главная</li>
+        <li>главная</li>
+        <li>главная</li>
+        <li>главная</li>
+      </ul>
+    </nav>
+  </section>
+  <script src="public/scripts.min.js"></script>
+</body>
+
 </html>

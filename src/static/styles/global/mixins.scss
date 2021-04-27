@@ -156,3 +156,6 @@
     padding-right: 10px;
   }
 }
+@mixin transition{
+  transition: .3s ease-in-out;
+}
