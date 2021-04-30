@@ -12,10 +12,6 @@
 <body class="page-home">
   <header class="header" role="banner">
     <button class="header__btn-nav-modal" type="button" aria-label="Открыть меню навигации" onclick="showMenu()">
-      <!-- <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1" y="15" width="100%" height="1" fill="#2A2B31" />
-        <rect x="1" y="27" width="100%" height="1" fill="#2A2B31" />
-      </svg> -->
     </button>
     <a class="header__link-logo" href="index.html">
       <img class="header__img-logo" src="assets/imgs/SBDR_Логотип123 2.jpg" width="0" height="0" loading="lazy"
@@ -61,12 +57,12 @@
       <ul class="header-contacts-emails">
         <li class="header-contacts-emails__item">
           <a class="header-contacts-emails__link" href="mailto:office@sbdr.ru"
-            aria-label="Написать нам на почту">office@sbdr.ru</a>
+            aria-label="Написать нам на почту">office<span>@</span>sbdr.ru
+          </a>
         </li>
       </ul>
     </div>
-    <button class="header-callback" type="button">Обратная связь</button>
-    <div class="header-js-placeholder"></div>
+    <button class="header-callback" type="button" onclick="showModalForm()">Обратная связь</button>
   </header>
   <video class="page-home-bg__video"></video>
   <span class="page-home-bg__slogan">Передовые технологии для нефтегазовой отрасли</span>
@@ -266,13 +262,14 @@
   </footer>
   <section class="modal-navigation">
     <h2 class="visually-hidden">Меню навигации по сайту</h2>
-    <button class="modal-navigation__close button-close" onclick="showMenu()">
+    <div class="modal-navigation__preloader"></div>
+    <button class="modal-navigation__close button-close" onclick="hideMenu()">
       <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="7.2334" y="36.4287" width="42" height="1" transform="rotate(-45 7.2334 36.4287)" fill="#B6BCC2" />
         <rect x="8.44043" y="6.73022" width="42" height="1" transform="rotate(45 8.44043 6.73022)" fill="#B6BCC2" />
       </svg>
     </button>
-    <nav> 
+    <nav>
       <ul>
         <li>главная</li>
         <li>главная</li>
@@ -281,7 +278,42 @@
       </ul>
     </nav>
   </section>
-  <section></section>
+  <section class="modal-form" style="display: none;">
+    <div class="modal-form__preloader"></div>
+    <button class="modal-form__button-close" onclick="hideModalForm()">
+      <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="7.2334" y="36.4287" width="42" height="1" transform="rotate(-45 7.2334 36.4287)" fill="#B6BCC2" />
+        <rect x="8.44043" y="6.73022" width="42" height="1" transform="rotate(45 8.44043 6.73022)" fill="#B6BCC2" />
+      </svg>
+    </button>
+    <div class="modal-form-container">
+      <h2 class="modal-form-title">Обратная связь</h2>
+      <form action="get">
+        <label class="label-for-input">
+          <span class="modal-form-placeholder">Ваше имя</span>
+          <input type="text" class="modal-form-input">
+        </label>
+        <label class="label-for-input">
+          <span class="modal-form-placeholder">
+            Ваш E-mail
+            <span class="modal-form-placeholder--red">*</span>
+          </span>
+          <input type="text" class="modal-form-input">
+        </label>
+        <label class="label-for-input">
+          <span class="modal-form-placeholder">Ваш телефон</span>
+          <input type="text" class="modal-form-input">
+        </label>
+        <label class="label-for-input">
+          <span class="modal-form-placeholder">Сообщение</span>
+          <input type="text" class="modal-form-input">
+        </label>
+        <label class="modal-form-checkbox"><input type="checkbox"> <span>Нажимая на кнопку, вы даете
+            согласие на обработку своих <a href="#">персональных данных</a></span></label>
+        <button type="submit" class="modal-form-submit btn">Отправить</button>
+      </form>
+    </div>
+  </section>
   <script src="public/scripts.min.js"></script>
 </body>
 

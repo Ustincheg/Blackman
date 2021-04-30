@@ -1,12 +1,25 @@
-.modal-navigation{
-    display: none;
-    /* position: absolute; */
-    /* top: 0; */
-    /* bottom: 0; */
-    /* left: 0; */
-    /* right: 0; */
-    background-color: #fff;
-    padding: 30px;
-    grid-area: aside / aside/ footer / main;
-    z-index: 2;
+.modal-navigation {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 30px;
+  // grid-area: aside / aside/ footer / main;
+  z-index: 2;
+  &__preloader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    // opacity: 0.5;
+    z-index: 3;
+  }
+  &__close.button-close rect {
+    fill: $c_black;
+  }
 }
