@@ -9,6 +9,10 @@
 
 .footer-nav-tabs {
   flex-grow: 1;
+  padding: 20px 0;
+  padding-left: 80px;
+  font: 900 30px $f_main;
+  color: $c_white;
   
   &._disabled {
     display: none;
@@ -81,6 +85,11 @@
 @media (max-width: 800px) {
   .footer {
     flex-direction: column-reverse;
+  }
+  
+  .footer-nav-tabs {
+    padding: 20px;
+    text-align: center;
   }
 
   .footer-info,
