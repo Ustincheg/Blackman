@@ -7,11 +7,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
+  z-index: 10;
   @include padding-for-mobile;
   @include tablet-md {
     justify-content: center;
   }
-  & .button-close {
+  &__preloader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    // opacity: 0.5;
+    z-index: 1;
+  }
+  &__button-close {
+    display: none;
     position: fixed;
     top: 23px;
     right: calc(4.5vw + 10px);
