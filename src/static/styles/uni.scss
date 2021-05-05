@@ -12,10 +12,13 @@
 @import 'global/modal-form.scss';
 
 // Parts.
-@import 'parts/page.scss';
 @import 'parts/header.scss';
+@import 'parts/header-menu.scss';
+@import 'parts/header-search.scss';
+@import 'parts/header-callback.scss';
 @import 'parts/footer.scss';
 @import 'parts/aside.scss';
+@import 'parts/page-home.scss';
 @import 'parts/short-technologies.scss';
 @import 'parts/short-products.scss';
 @import 'parts/short-orienation.scss';
@@ -26,4 +29,4 @@
 @import 'parts/about-production.scss';
 @import 'parts/about-administration.scss';
 @import 'parts/products.scss';
-@import 'parts/modal-navigation.scss';
+@import 'parts/quality-control.scss';
