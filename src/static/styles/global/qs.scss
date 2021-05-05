@@ -13,7 +13,7 @@
   @include qs_hidden();
 }
 
-@mixin qs_section {
+@mixin qs_section() {
   padding: 80px;
   overflow-x: hidden;
 
@@ -23,10 +23,6 @@
     &:last-child {
       margin-bottom: 0;
     }
-  }
-
-  & ~ section {
-    padding-top: 0px;
   }
 }
 
@@ -162,10 +158,33 @@
   color: $c_white;
   background-color: $c_red;
   border-color: $c_red;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $c_red2;
+    border-color: $c_red2;
+  }
 }
 
 .qs_btn-grand--red {
   @include qs_btn-grand--red();
+}
+
+@mixin qs_btn-grand--blue {
+  @include qs_btn-grand();
+  color: $c_white;
+  background-color: $c_blue;
+  border-color: $c_blue;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $c_blue2;
+    border-color: $c_blue2;
+  }
+}
+
+.qs_btn-grand--blue {
+  @include qs_btn-grand--blue();
 }
 
 @mixin qs_list {
@@ -233,3 +252,133 @@
 .qs_marked {
   @include qs_marked();
 }
+
+@mixin qs_modal() {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 44px 1fr;
+  grid-gap: 20px;
+  width: 100vw;
+  height: 100vh;
+  padding: 60px 100px;
+  background-color: $c_white;
+  overflow-y: auto;
+
+  & ._btn-close {
+    justify-self: end;
+    stroke: $c_black;
+    opacity: 0.5;
+    max-width: 44px;
+    min-width: 44px;
+    max-height: 44px;
+    min-height: 44px;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 1;
+    }
+  }
+
+  & ._content {
+    justify-self: center;
+    align-self: center;
+  }
+
+  @media (max-width: 1200px) {
+    padding: 20px; 
+  }
+}
+
+.qs_modal {
+  @include qs_modal();
+}
+
+@mixin qs_input() {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font: 400 16px $f_main;
+  color: $c_black;
+
+  & ._placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    font-size: 16px;
+
+    & ._required-mark {
+      color: $c_red;
+      background-color: transparent;
+    }
+  }
+
+  & input[type="text"],
+  & input[type="email"],
+  & input[type="tel"],
+  & textarea {
+    appearance: none;
+    padding: 50px 0 10px;
+    border-bottom: 1px solid $c_gray-light;
+    resize: none;
+  
+    & ~ ._placeholder {
+      transform: translateY(50px);
+      transition: all 200ms ease;
+    }
+
+    &._upper {
+      & ~ ._placeholder {
+        transform: translateY(20px);
+        font-size: 14px;
+        opacity: 0.5;
+        transition: all 200ms ease;
+      }
+    } 
+
+    &:invalid {
+      border-color: $c_red;
+
+      & ~ ._placeholder {
+        color: $c_red;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $c_blue;
+    }
+  }
+
+  & input[type="checkbox"] {
+    appearance: none;
+    max-width: 24px;
+    min-width: 24px;
+    max-height: 24px;
+    min-height: 24px;
+    margin-top: 5px;
+    margin-right: 20px;
+    border-radius: 3px;
+    border: 1px solid $c_gray-light;
+
+    &:checked {
+      background: url('../assets/icons/checkbox.svg') center/75% no-repeat $c_blue;
+    }
+  }
+}
+
+.qs_input {
+  @include qs_input();
+}
+
+//<label class="qs_input">
+//  <input> OR <textarea></textarea>
+//  <span class="_placeholder"></span>
+//</label>
+// NOTE: Don't use subclass "_placeholder" for checkboxes.

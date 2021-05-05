@@ -14,20 +14,44 @@ body {
   }
 }
 
-header {
+.header {
   grid-area: header;
 }
 
-aside {
+.aside {
   grid-area: aside;
   overflow: auto;
 }
 
-main {
+.main {
   grid-area: main;
   overflow: auto;
 }
 
-footer {
+.footer {
   grid-area: footer;
+}
+
+@media (max-width: 1600px) {
+  body {
+    &.page-home {
+      grid-template-columns: 1fr 800px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  body {
+    &.page-home {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        'header'
+        'main'
+        'footer';
+
+      & .aside {
+        display: none;
+      }
+    }
+  }
 }

@@ -17,11 +17,35 @@
   padding: 20px;
   border-right: 1px solid $c_gray-light;
 
+  &._hover svg rect,
+  &:focus-visible svg rect {
+    &:nth-child(1) {
+      transform: translateY(0);
+      transition: transform 200ms ease;
+    }
+
+    &:nth-child(2) {
+      transform: translateY(0);
+      transition: transform 200ms ease;
+    }
+  }
+
   & svg {
+    fill: $c_black;
     width: 100%;
     max-width: 44px;
     height: 100%;
     max-height: 44px;
+
+    & rect:nth-child(1) {
+      transform: translateY(6px);
+      transition: transform 200ms ease;
+    }
+
+    & rect:nth-child(2) {
+      transform: translateY(-6px);
+      transition: transform 200ms ease;
+    }
   }
 }
 
@@ -51,6 +75,7 @@
 }
 
 .header-nav-list__item {
+  position: relative;
   height: 100%;
   margin: 0 20px;
 }
@@ -63,9 +88,37 @@
   height: 100%;
   border-bottom: 2px solid transparent;
 
-  &._current {
-    border-bottom: 2px solid $c_blue;
+  & ~ span {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: block;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background-color: $c_blue;
+    transition: width 150ms ease;
   }
+
+  &:hover,
+  &:focus-visible {
+    color: $c_blue;
+
+    & ~ span {
+      width: 100%;
+      transition: width 150ms ease;
+    }
+  }
+
+  &._current ~ span {
+    width: 100%;
+  }
+}
+
+.header-wrap {
+  display: grid;
+  grid-template-columns: max-content 24px;
+  grid-gap: 15px;
 }
 
 .header-localizations {
@@ -83,10 +136,31 @@
 .header-localizations__link {
   color: $c_black;
 
+  &:hover,
+  &:focus-visible {
+    color: $c_blue;
+  }
+
   &._current {
     color: $c_gray;
     cursor: default;
   } 
+}
+
+.header__search {
+  align-self: center;
+  max-height: 24px;
+
+  &:hover svg,
+  &:focus-visible svg {
+    stroke: $c_blue;
+  }
+
+  & svg {
+    stroke: $c_black;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .header-contacts {
@@ -95,13 +169,23 @@
 
 .header-contacts-tels__link {
   font: 600 16px $f_main;
+
+  &:hover,
+  &:focus-visible {
+    color: $c_blue;
+  }
 }
 
-.header-contacts-email__link {
+.header-contacts-emails__link {
   font: 400 16px $f_main;
+
+  &:hover,
+  &:focus-visible {
+    color: $c_blue;
+  }
 }
 
-.header-callback {
+.header__btn-callback {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -136,8 +220,11 @@
 
 @media (max-width: 1050px) {
   .header {
-    grid-template-columns: 100px 313px 1fr max-content 185px;
     grid-gap: 30px;
+  }
+
+  .header-wrap {
+    grid-template-columns: 24px;
   }
 
   .header-localizations {
@@ -145,9 +232,9 @@
   }
 }
 
-@media (max-width: 870px) {
+@media (max-width: 950px) {
   .header {
-    grid-template-columns: 60px 1fr max-content;
+    grid-template-columns: 60px 1fr 24px max-content;
     grid-template-rows: minmax(50px, 1fr);
     grid-gap: 10px;
   }
@@ -166,7 +253,19 @@
     display: none;
   }
 
-  .header-callback {
+  .header__btn-callback {
     padding: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    grid-template-columns: 40px 1fr 24px min-content;
+    grid-template-rows: minmax(50px, 1fr);
+    grid-gap: 10px;
+  }
+
+  .header__btn-callback {
+    padding: 10px;
   }
 }
