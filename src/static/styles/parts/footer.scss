@@ -29,11 +29,18 @@
 
 .footer-info {
   flex-grow: 1;
-  padding-left: 80px;
+  padding: 20px 80px;
   color: $c_gray;
 
   &._disabled {
     display: none;
+  }
+}
+
+.footer-info__policy {
+  &:hover,
+  &:focus-visible {
+    color: $c_white;
   }
 }
 
@@ -59,4 +66,30 @@
 
 .footer-tip__desc {
   color: $c_white;
+}
+
+@media (max-width: 900px) {
+  .footer-info {
+    padding-left: 40px;
+  }
+
+  .footer-tip {
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 800px) {
+  .footer {
+    flex-direction: column-reverse;
+  }
+
+  .footer-info,
+  .footer-tip {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .footer-tip {
+    padding-bottom: 0px;
+  }
 }
