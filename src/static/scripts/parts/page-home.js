@@ -89,6 +89,8 @@ $(document).ready(function () {
           }
         }
 
+        //if ($(_contentArr[_currentIndex].scrollTop())
+        console.log(_contentArr[_currentIndex].clientHeight);
         if (_evt.originalEvent.deltaY > 0) {
           Open(_currentIndex, 'down');
         } else if (_evt.originalEvent.deltaY < 0) {

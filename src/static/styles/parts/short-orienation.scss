@@ -15,6 +15,11 @@
   height: 100%;
   padding: 30px;
   font: 600 18px $f_main;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: $c_white;
+  transition: all 200ms ease;
 
   & svg {
     stroke: $c_blue;
@@ -24,10 +29,39 @@
   &:hover,
   &:focus-visible {
     color: $c_white;
-    background-color: $c_blue;
+    background-color: rgba(4, 7, 39, 0.35);
+    background-blend-mode: overlay;
+    transition: all 200ms ease;
 
     & svg {
       stroke: $c_white;
     }
+  }
+}
+
+.short-orientation-list__item:nth-child(1) {
+  &:hover,
+  &:focus {
+    background-image: url('../assets/imgs/short-orientation/bg1.jpg');
+  }
+}
+
+.short-orientation-list__item:nth-child(2) {
+  &:hover,
+  &:focus {
+    background-image: url('../assets/imgs/short-orientation/bg2.jpg');
+  }
+}
+
+.short-orientation-list__item:nth-child(3) {
+  &:hover,
+  &:focus {
+    background-image: url('../assets/imgs/short-orientation/bg3.jpg');
+  }
+}
+
+@media (max-width: 800px) {
+  .short-orientation-list {
+    grid-template-columns: 1fr;
   }
 }

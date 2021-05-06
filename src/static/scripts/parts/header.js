@@ -2,6 +2,14 @@
 
 $(document).ready(function () {
   var _ModalMenu = ModalWindows($('.header-menu')[0], $('.header__btn-nav-modal'));
+  var _btnMenu = $('.header__btn-nav-modal');
+  var _menu = $('.header-menu');
+
+  $(_btnMenu).hover(function () {
+    $(_btnMenu).addClass('_hover');
+  }, function () {
+    $(_btnMenu).removeClass('_hover');
+  });
 })
 
 // $(document).ready(function () {
