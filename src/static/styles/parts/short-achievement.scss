@@ -1,11 +1,12 @@
 .short-achievement-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: minmax(160px, max-content);
+  grid-auto-rows: 160px; //minmax(160px, max-content);
   grid-gap: 20px;
 }
 
 .short-achievement-list__item {
+  position: relative;
   border: 1px solid $c_gray-light;
 }
 
@@ -13,38 +14,82 @@
   display: block;
   width: 100%;
   height: 100%;
-  padding: 30px 60px;
-  font: 600 18px $f_main;
+  padding: 30px 80px;
+  background-color: #F1F5F8;
 
   &._contrast {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: $c_white;
-    background-color: $c_blue;
+    padding: 30px;
+    font: 600 18px $f_main;
+    color: $c_blue;
+    background-color: transparent;
+    border: 1px solid $c_blue;
 
     &._contrast:hover,
     &._contrast:focus-visible {
-      color: $c_blue;
-      background-color: transparent;
+      color: $c_white;
+      background-color: $c_blue;
     }
   }
 
-  & img {
-    object-fit: contain;
-    object-position: center;
-    width: 100%;
-    height: 100%;
-    filter: grayscale(100%);
+  &:hover .short-achievement-list__img,
+  &:focus .short-achievement-list__img {
+    opacity: 0;
+    transition: opacity 200ms ease;
+  }
+
+  &:hover .short-achievement-list-txt,
+  &:focus .short-achievement-list-txt {
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 200ms ease;
   }
 
   &:hover,
   &:focus-visible {
-    color: $c_white;
+    background-color: $c_white;
+  }
+}
 
-    & img {
-      filter: grayscale(0);
-    }
+.short-achievement-list__img {
+  opacity: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+  transition: opacity 200ms ease;
+}
+
+.short-achievement-list-txt {
+  position: absolute;
+  z-index: -10;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 30px;
+  color: $c_black;
+  text-align: center;
+}
+
+.short-achievement-list-txt__ttl {
+  font: 600 16px $f_main;
+}
+
+.short-achievement-list-txt__desc {
+  font: 400 15px $f_main;
+}
+
+@media (max-width: 800px) {
+  .short-achievement-list {
+    grid-template-columns: 1fr;
   }
 }

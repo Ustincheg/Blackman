@@ -24,6 +24,14 @@
       margin-bottom: 0;
     }
   }
+
+  @media (max-width: 800px) {
+    padding: 40px;
+  }
+
+  @media (max-width: 500px) {
+    padding: 20px;
+  }
 }
 
 .qs_section {
