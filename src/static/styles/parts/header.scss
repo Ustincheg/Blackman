@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 100px 313px 1fr max-content max-content 185px;
   grid-template-rows: minmax(90px, 1fr);
-  grid-gap: 50px;
+  grid-gap: 30px;
   background-color: $c_white;
   border-bottom: 1px solid $c_gray-light;
 }
@@ -55,8 +55,7 @@
 
 .header__img-logo {
   object-fit: contain;
-  object-position: center;
-  width: 100%;
+  object-position: center;  
   height: auto;
 }
 
@@ -77,7 +76,7 @@
 .header-nav-list__item {
   position: relative;
   height: 100%;
-  margin: 0 20px;
+  margin: 0 10px;
 }
 
 .header-nav-list__link {
