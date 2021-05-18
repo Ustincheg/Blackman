@@ -1,0 +1,44 @@
+.error-message {
+  background-image: url("../assets/imgs/lUODGQA.jpg");
+  background-size: cover;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &--server-error {
+    background-image: url("../assets/imgs/server.jpg");
+  }
+  &__number {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 180px;
+    line-height: 182px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  &__description {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+  }
+  &__main-return {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 45px;
+    font: 600 16px "Gilroy";
+    color: #fff;
+    background-color: #176abd;
+    &:hover {
+        background-color: #2f8cea;
+        border-color: #2f8cea;
+    }
+  }
+}

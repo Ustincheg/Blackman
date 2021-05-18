@@ -3,6 +3,8 @@
 $(document).ready(function () {
   var _sourceLD = 'assets/vids/bg-video_360p.mp4';
   var _sourceHD = 'assets/vids/bg-video_720p.mp4';
+  // var _sourceLD = 'static/assets/vids/bg-video_360p.mp4';
+  // var _sourceHD = 'static/assets/vids/bg-video_720p.mp4';
   var _MIME = 'video/mp4';
 
   function BGVideoAdaptive(_source, _type) {

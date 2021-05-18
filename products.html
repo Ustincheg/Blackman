@@ -1,150 +1,374 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <title>Продукты</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="public/style.min.css" rel="stylesheet">
-    <script src="public/scripts-preload.min.js"></script>
-  </head>
-  <body>
-    <header class="header" role="banner">
-      <button class="header__btn-nav-modal" type="button" aria-label="Открыть меню навигации">
-        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="1" y="15" width="100%" height="1" fill="#2A2B31"/>
-          <rect x="1" y="27" width="100%" height="1" fill="#2A2B31"/>
-        </svg>
-      </button>
-      <a class="header__link-logo" href="index.html">
-        <img class="header__img-logo" src="assets/imgs/SBDR_Логотип123 2.jpg" width="0" height="0" loading="lazy" alt="logo">
-      </a>
-      <nav class="header-nav" role="navigation">
-        <ul class="header-nav-list">
-          <li class="header-nav-list__item">
-            <a class="header-nav-list__link" href="technologies.html">Технологии</a>
-          </li>
-          <li class="header-nav-list__item">
-            <a class="header-nav-list__link _current" href="products.html">Продукты</a>
-          </li>
-          <li class="header-nav-list__item">
-            <a class="header-nav-list__link" href="">Проекты</a>
-          </li>
-          <li class="header-nav-list__item">
-            <a class="header-nav-list__link" href="quality-control.html">Контроль качества</a>
-          </li>
-          <li class="header-nav-list__item">
-            <a class="header-nav-list__link" href="about.html">О компании</a>
-          </li>
-          <li class="header-nav-list__item">
-            <a class="header-nav-list__link" href="">Контакты</a>
-          </li>
-        </ul>
-      </nav>
-      <ul class="header-localizations">
-        <li class="header-localizations__item">
-          <a class="header-localizations__link _current">RU</a>
+
+<head>
+  <title>Продукты</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="public/style.min.css" rel="stylesheet">
+  <script src="public/scripts-preload.min.js"></script>
+</head>
+
+<body>
+  <header class="header" role="banner">
+    <button class="header__btn-nav-modal" type="button" aria-label="Открыть меню навигации">
+      <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="50%" width="100%" height="1" />
+        <rect x="1" y="50%" width="100%" height="1" />
+      </svg>
+    </button>
+    <a class="header__link-logo" href="index.html">
+      <img class="header__img-logo" src="assets/imgs/SBDR_Логотип123 2.jpg" width="0" height="0" loading="lazy"
+        alt="logo">
+    </a>
+    <nav class="header-nav" role="navigation">
+      <ul class="header-nav-list">
+        <li class="header-nav-list__item">
+          <a class="header-nav-list__link" href="technologies.html">Технологии</a>
+          <span></span>
         </li>
+        <li class="header-nav-list__item">
+          <a class="header-nav-list__link" href="products.html">Продукты</a>
+          <span></span>
+        </li>
+        <li class="header-nav-list__item">
+          <a class="header-nav-list__link" href="">Проекты</a>
+          <span></span>
+        </li>
+        <li class="header-nav-list__item">
+          <a class="header-nav-list__link" href="">Контроль качества</a>
+          <span></span>
+        </li>
+        <li class="header-nav-list__item">
+          <a class="header-nav-list__link" href="about.html">О компании</a>
+          <span></span>
+        </li>
+        <li class="header-nav-list__item">
+          <a class="header-nav-list__link" href="">Контакты</a>
+          <span></span>
+        </li>
+      </ul>
+    </nav>
+    <div class="header-wrap">
+      <ul class="header-localizations">
         <li class="header-localizations__item">
           <a class="header-localizations__link" href="#">EN</a>
         </li>
       </ul>
-      <div class="header-contacts">
-        <ul class="header-contacts-tels">
-          <li class="header-contacts-tels__item">
-            <a class="header-contacts-tels__link" href="tel:+73496342602" aria-label="Позвонить нам по телефону">+7(3496) 34-26-02</a>
-          </li>
-        </ul>
-        <ul class="header-contacts-emails">
-          <li class="header-contacts-emails__item">
-            <a class="header-contacts-emails__link" href="mailto:office@sbdr.ru" aria-label="Написать нам на почту">office@sbdr.ru</a>
-          </li>
-        </ul>
-      </div>
-      <button class="header-callback" type="button">Обратная связь</button> 
-    </header>
-    <aside class="aside" role="complementary">
-      <a class="aside__return" href="" aria-label="Вернуться на главную страницу">
-        <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8.74902 0.750275L8.74902 17.2503M8.74902 17.2503L0.749023 9.75027M8.74902 17.2503L16.749 9.75027" />
+      <button class="header__search" type="button">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M10.5 19C14.6421 19 18 15.6421 18 11.5C18 7.35786 14.6421 4 10.5 4C6.35786 4 3 7.35786 3 11.5C3 15.6421 6.35786 19 10.5 19Z"
+            stroke-linejoin="round" />
+          <path d="M16.0752 17.0754L19.872 20.8721" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
-      </a>
-      <h1 class="aside__ttl">Продукты</h1>
-      <nav class="aside-nav" role="navigation" aria-label="Навигация по текущему контенту">  
-        <ul class="aside-nav-list">
-          <li class="aside-nav-list__item">
-            <a class="aside-nav-list__link _current" href="#">История и описание</a>
+      </button>
+    </div>
+    <div class="header-contacts">
+      <ul class="header-contacts-tels">
+        <li class="header-contacts-tels__item">
+          <a class="header-contacts-tels__link" href="tel:+73496342602" aria-label="Позвонить нам по телефону">+7 (3496)
+            34-26-02</a>
+        </li>
+      </ul>
+      <ul class="header-contacts-emails">
+        <li class="header-contacts-emails__item">
+          <a class="header-contacts-emails__link" href="mailto:office@sbdr.ru"
+            aria-label="Написать нам на почту">office@sbdr.ru</a>
+        </li>
+      </ul>
+    </div>
+    <button class="header__btn-callback qs_btn-grand--blue" type="button">Обратная связь</button>
+    <dialog class="header-menu qs_modal" id="header-menu" role="dialog" aria-modal="true">
+      <button class="header-menu__btn-close _btn-close" type="button" aria-label="Закрыть меню навигации">
+        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="7.23389" y="36.4287" width="42" height="1" transform="rotate(-45 7.23389 36.4287)" />
+          <rect x="8.44092" y="6.73022" width="42" height="1" transform="rotate(45 8.44092 6.73022)" />
+        </svg>
+      </button>
+      <div class="header-menu__content _content">
+        <h2 class="qs_hidden">Меню навигации</h2>
+        <ul class="header-menu-list-navs">
+          <li class="header-menu-list-navs__item">
+            <ul class="header-menu-list-navs-sublist qs_list">
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link _ttl" href="#">Материалы</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link _ttl" href="#">Проекты</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link _ttl" href="#">О компании</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link _ttl" href="#">Карьера</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link _ttl" href="#">Контакты</a>
+              </li>
+            </ul>
           </li>
-          <li class="aside-nav-list__item">
-            <a class="aside-nav-list__link" href="#">Компания на мировом рынке</a>
+          <li class="header-menu-list-navs__item">
+            <ul class="header-menu-list-navs-sublist qs_list">
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link _ttl" href="#">Металлообработка</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Токарная обработка</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Фрезерная обработка</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Глубокое сверление</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Ружейное сверление</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Сварка в узкощелевую разделку</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Ударная обработка поверхности</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Хронирование</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Прокатка роликом</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Наружная наплавка</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Внутренняя наплавка</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Дробеструйная обработка</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Шлифование</a>
+              </li>
+            </ul>
           </li>
-          <li class="aside-nav-list__item">
-            <a class="aside-nav-list__link" href="#">Основные виды деятельности</a>
+          <li class="header-menu-list-navs__item">
+            <ul class="header-menu-list-navs-sublist qs_list">
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link _ttl" href="#">Аренда оборудования</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">BICO – Аренда ВЗД (винтовой забойный двигатель)
+                  SpiroStar</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">BICO – Аренда Ясов Hevi-Hitter</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">DSI – Аренда циркуляционных переводников PBL</a>
+              </li>
+            </ul>
           </li>
-          <li class="aside-nav-list__item">
-            <a class="aside-nav-list__link" href="#">Неразрушающий контроль</a>
-          </li>
-          <li class="aside-nav-list__item">
-            <a class="aside-nav-list__link" href="#">О производстве</a>
-          </li>
-          <li class="aside-nav-list__item">
-            <a class="aside-nav-list__link" href="#">Руководство</a>
+          <li class="header-menu-list-navs__item">
+            <ul class="header-menu-list-navs-sublist qs_list">
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link _ttl" href="#">Неразрушающий контроль</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Ультра-звуковая дефектоскопия</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Магнитно-порошковая дефектоскопия</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Капиллярная дефектоскопия</a>
+              </li>
+            </ul>
           </li>
         </ul>
-      </nav>
-    </aside>
-    <main class="main" role="main">
-      <section class="products qs_section">
-        <h2 class="products__ttl qs_section-ttl">Продукты</h2>
-        <p class="products__desc qs_desc">
-          «Шоллер-Блэкманн Даррон Россия» является официальным 
-          дистрибьютором компании «BICO Drilling Tools». (Хьюстон, США) 
-          в России и странах бывшего СССР. Компания BICO входит в состав 
-          международного холдинга Schoeller-Bleckmann Oilfield Equipment AG (‘SBOE AG’).
-          <br><br>
-          Компания предлагает  заказчикам как продажу оборудования BICO, 
-          так и его аренду, сервисное обслуживание и ремонт.
-        </p>
-        <ul class="products-list">
-          <li class="products-list__item">
-            <span class="products-list__ttl">Винотовые забойные двигатели BICO</span>
-          </li>
-          <li class="products-list__item">
-            <span class="products-list__ttl">Гидравлические бурильные ясы Hevi-Hitter</span>
-          </li>
-          <li class="products-list__item">
-            <span class="products-list__ttl">Амортизаторы Shock-EZE</span>
-          </li>
-          <li class="products-list__item">
-            <span class="products-list__ttl">Гидромеханический бурильный Яс 6-1/2’ (165мм) HEVIHITTER</span>
-          </li>
-          <li class="products-list__item">
-            <span class="products-list__ttl">Гидромеханические бурильные ясы Hevi-Hitter</span>
-          </li>
-          <li class="products-list__item">
-            <span class="products-list__ttl">Амортизаторы Shock-EZE</span>
-          </li>
-        </ul>
-        <ul class="products-list-controls" role="menu">
-          <li class="products-list-controls__item" role="menuitem">
-            <button class="products-list-controls__callback qs_btn-grand--red" type="button">Получить консультацию</button>
-          </li>
-          <li class="products-list-controls__item" role="menuitem">
-            <button class="products-list-controls__next qs_btn-grand" type="button">
-              <span>Следующая технология</span>
-              <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8.74902 0.750275L8.74902 17.2503M8.74902 17.2503L0.749023 9.75027M8.74902 17.2503L16.749 9.75027" />
-              </svg>
-            </button>
-          </li>
-        </ul>
-      </section>
-    </main>
-    <footer class="footer" role="contentinfo">
-      <div class="footer-info">
-        <p class="footer-info__copyright">© Schoeller-Bleckmann Darron Russia 2013-2021</p>
-        <a class="footer-info__policy" href="#">Политика конфиденциальности</a>
+        <footer class="header-menu-footer">
+          <div class="header-menu-footer-column">
+            <h3 class="header-menu-footer-column__ttl">Адрес:</h3>
+            <address class="header-menu-footer-column__value">629800, РФ, ЯНАО, г.Ноябрьск, Промзона, Панель 11
+            </address>
+          </div>
+          <div class="header-menu-footer-column">
+            <h3 class="header-menu-footer-column__ttl">Телефон:</h3>
+            <ul class="header-menu-footer-column-list">
+              <li class="header-menu-footer-column-list__item">
+                <a class="header-menu-footer-column-list__link" href="tel:+73496342602"
+                  aria-label="Позвонить нам по телефону">+7 (3496) 34-26-02</a>
+              </li>
+            </ul>
+          </div>
+          <div class="header-menu-footer-column">
+            <h3 class="header-menu-footer-column__ttl">Факс:</h3>
+            <ul class="header-menu-footer-column-list">
+              <li class="header-menu-footer-column-list__item">
+                <a class="header-menu-footer-column-list__link" href="fax:+73496342603"
+                  aria-label="Отправить сообщение нам по факсу">+7 (3496) 34-26-03</a>
+              </li>
+            </ul>
+          </div>
+          <div class="header-menu-footer-column">
+            <h3 class="header-menu-footer-column__ttl">Почта:</h3>
+            <ul class="header-menu-footer-column-list">
+              <li class="header-menu-footer-column-list__item">
+                <a class="header-menu-footer-column-list__link" href="mailto:office@sbdr.ru"
+                  aria-label="Написать нам на почту">office@sbdr.ru</a>
+              </li>
+            </ul>
+          </div>
+        </footer>
       </div>
-    </footer>    
-    <script src="public/scripts.min.js"></script>
-  </body>
+    </dialog>
+    <dialog class="header-callback qs_modal" id="header-callback" role="dialog" aria-modal="true">
+      <button class="header-callback__btn-close _btn-close" type="button" aria-label="Закрыть меню навигации">
+        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="7.23389" y="36.4287" width="42" height="1" transform="rotate(-45 7.23389 36.4287)" />
+          <rect x="8.44092" y="6.73022" width="42" height="1" transform="rotate(45 8.44092 6.73022)" />
+        </svg>
+      </button>
+      <div class="header-callback__content _content">
+        <h2 class="header-callback__ttl qs_section-ttl">Обратная связь</h2>
+        <form class="header-callback-form">
+          <label class="header-callback-form__label qs_input">
+            <input class="header-callback-form__input" type="text">
+            <span class="header-callback-form__placeholder _placeholder">Ваше имя</span>
+          </label>
+          <label class="header-callback-form__label qs_input">
+            <input class="header-callback-form__input" type="email">
+            <span class="header-callback-form__placeholder _placeholder">Ваше E-mail <mark
+                class="_required-mark">*</mark></span>
+          </label>
+          <label class="header-callback-form__label qs_input">
+            <input class="header-callback-form__input" type="tel">
+            <span class="header-callback-form__placeholder _placeholder">Ваш телефон</span>
+          </label>
+          <label class="header-callback-form__label qs_input">
+            <textarea class="header-callback-form__textarea" rows="1"></textarea>
+            <span class="header-callback-form__placeholder _placeholder">Сообщение</span>
+          </label>
+          <button class="header-callback-form__submit qs_btn-grand--blue" type="submit">Отправить</button>
+          <div class="header-callback-form-policy">
+            <label class="header-callback-form-policy qs_input">
+              <input class="header-callback-form-policy__input _input" type="checkbox">
+              <span class="header-callback-form-policy__txt">
+                Вы даете согласие на обработку персональных данных и соглашаетесь c
+                <a class="header-callback-form-policy__link" href="#">политикой конфиденциальности</a>
+              </span>
+          </div>
+        </form>
+      </div>
+    </dialog>
+    <dialog class="header-search qs_modal" id="header-search" role="dialog" aria-modal="true">
+      <button class="header-search__btn-close _btn-close" type="button" aria-label="Закрыть меню навигации">
+        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="7.23389" y="36.4287" width="42" height="1" transform="rotate(-45 7.23389 36.4287)" />
+          <rect x="8.44092" y="6.73022" width="42" height="1" transform="rotate(45 8.44092 6.73022)" />
+        </svg>
+      </button>
+      <div class="header-search__content _content">
+        <form class="header-search-form">
+          <label class="header-search-form__label qs_input">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M10.5 19C14.6421 19 18 15.6421 18 11.5C18 7.35786 14.6421 4 10.5 4C6.35786 4 3 7.35786 3 11.5C3 15.6421 6.35786 19 10.5 19Z"
+                stroke-linejoin="round" />
+              <path d="M16.0752 17.0754L19.872 20.8721" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <input class="header-search-form__input" type="text">
+          </label>
+          <button class="header-search-form__submit qs_btn-grand--blue" type="submit">Искать</button>
+        </form>
+      </div>
+    </dialog>
+  </header>
+  <aside class="aside" role="complementary">
+    <a class="aside__return" href="" aria-label="Вернуться на главную страницу">
+      <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8.74902 0.750275L8.74902 17.2503M8.74902 17.2503L0.749023 9.75027M8.74902 17.2503L16.749 9.75027" />
+      </svg>
+    </a>
+    <h1 class="aside__ttl">Продукты</h1>
+    <nav class="aside-nav" role="navigation" aria-label="Навигация по текущему контенту">
+      <ul class="aside-nav-list">
+        <li class="aside-nav-list__item">
+          <a class="aside-nav-list__link _current" href="#">История и описание</a>
+        </li>
+        <li class="aside-nav-list__item">
+          <a class="aside-nav-list__link" href="#">Компания на мировом рынке</a>
+        </li>
+        <li class="aside-nav-list__item">
+          <a class="aside-nav-list__link" href="#">Основные виды деятельности</a>
+        </li>
+        <li class="aside-nav-list__item">
+          <a class="aside-nav-list__link" href="#">Неразрушающий контроль</a>
+        </li>
+        <li class="aside-nav-list__item">
+          <a class="aside-nav-list__link" href="#">О производстве</a>
+        </li>
+        <li class="aside-nav-list__item">
+          <a class="aside-nav-list__link" href="#">Руководство</a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  <main class="main" role="main">
+    <section class="products qs_section">
+      <h2 class="products__ttl qs_section-ttl">Продукты</h2>
+      <p class="products__desc qs_desc">
+        «Шоллер-Блэкманн Даррон Россия» является официальным
+        дистрибьютором компании «BICO Drilling Tools». (Хьюстон, США)
+        в России и странах бывшего СССР. Компания BICO входит в состав
+        международного холдинга Schoeller-Bleckmann Oilfield Equipment AG (‘SBOE AG’).
+        <br><br>
+        Компания предлагает заказчикам как продажу оборудования BICO,
+        так и его аренду, сервисное обслуживание и ремонт.
+      </p>
+      <ul class="products-list">
+        <li class="products-list__item">
+          <span class="products-list__ttl">Винотовые забойные двигатели BICO</span>
+        </li>
+        <li class="products-list__item">
+          <span class="products-list__ttl">Гидравлические бурильные ясы Hevi-Hitter</span>
+        </li>
+        <li class="products-list__item">
+          <span class="products-list__ttl">Амортизаторы Shock-EZE</span>
+        </li>
+        <li class="products-list__item">
+          <span class="products-list__ttl">Гидромеханический бурильный Яс 6-1/2’ (165мм) HEVIHITTER</span>
+        </li>
+        <li class="products-list__item">
+          <span class="products-list__ttl">Гидромеханические бурильные ясы Hevi-Hitter</span>
+        </li>
+        <li class="products-list__item">
+          <span class="products-list__ttl">Амортизаторы Shock-EZE</span>
+        </li>
+      </ul>
+      <ul class="products-list-controls" role="menu">
+        <li class="products-list-controls__item" role="menuitem">
+          <button class="products-list-controls__callback qs_btn-grand--red" type="button">Получить
+            консультацию</button>
+        </li>
+        <li class="products-list-controls__item" role="menuitem">
+          <button class="products-list-controls__next qs_btn-grand" type="button">
+            <span>Следующая технология</span>
+            <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M8.74902 0.750275L8.74902 17.2503M8.74902 17.2503L0.749023 9.75027M8.74902 17.2503L16.749 9.75027" />
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer class="footer" role="contentinfo">
+    <div class="footer-info">
+      <p class="footer-info__copyright">© Schoeller-Bleckmann Darron Russia 2013-2021</p>
+      <a class="footer-info__policy" href="#">Политика конфиденциальности</a>
+    </div>
+  </footer>
+  <script src="public/scripts.min.js"></script>
+</body>
+
 </html>

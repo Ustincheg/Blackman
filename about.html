@@ -1,301 +1,539 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <title>Технологии</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="public/style.min.css" rel="stylesheet">
-    <script src="public/scripts-preload.min.js"></script>
-  </head>
-  <body>
-    <header class="header" role="banner">
-      <button class="header__btn-nav-modal" type="button" aria-label="Открыть меню навигации">
-        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="1" y="15" width="100%" height="1" fill="#2A2B31"/>
-          <rect x="1" y="27" width="100%" height="1" fill="#2A2B31"/>
-        </svg>
-      </button>
-      <a class="header__link-logo" href="index.html">
-        <img class="header__img-logo" src="assets/imgs/SBDR_Логотип123 2.jpg" width="0" height="0" loading="lazy" alt="logo">
-      </a>
-      <nav class="header-nav" role="navigation">
-        <ul class="header-nav-list">
-          <li class="header-nav-list__item">
-            <a class="header-nav-list__link" href="technologies.html">Технологии</a>
-          </li>
-          <li class="header-nav-list__item">
-            <a class="header-nav-list__link" href="products.html">Продукты</a>
-          </li>
-          <li class="header-nav-list__item">
-            <a class="header-nav-list__link" href="">Проекты</a>
-          </li>
-          <li class="header-nav-list__item">
-            <a class="header-nav-list__link" href="quality-control.html">Контроль качества</a>
-          </li>
-          <li class="header-nav-list__item">
-            <a class="header-nav-list__link _current" href="about.html">О компании</a>
-          </li>
-          <li class="header-nav-list__item">
-            <a class="header-nav-list__link" href="">Контакты</a>
-          </li>
-        </ul>
-      </nav>
-      <ul class="header-localizations">
-        <li class="header-localizations__item">
-          <a class="header-localizations__link _current">RU</a>
+
+<head>
+  <title>Технологии</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="public/style.min.css" rel="stylesheet">
+  <script src="public/scripts-preload.min.js"></script>
+</head>
+
+<body>
+  <header class="header" role="banner">
+    <button class="header__btn-nav-modal" type="button" aria-label="Открыть меню навигации">
+      <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="50%" width="100%" height="1" />
+        <rect x="1" y="50%" width="100%" height="1" />
+      </svg>
+    </button>
+    <a class="header__link-logo" href="index.html">
+      <img class="header__img-logo" src="assets/imgs/SBDR_Логотип123 2.jpg" width="0" height="0" loading="lazy"
+        alt="logo">
+    </a>
+    <nav class="header-nav" >
+      <ul class="header-nav-list">
+        <li class="header-nav-list__item">
+          <a class="header-nav-list__link" href="technologies.html">Технологии</a>
+          <span></span>
         </li>
+        <li class="header-nav-list__item">
+          <a class="header-nav-list__link" href="/products.html">Продукты</a>
+          <span></span>
+        </li>
+        <li class="header-nav-list__item">
+          <a class="header-nav-list__link" href="">Проекты</a>
+          <span></span>
+        </li>
+        <li class="header-nav-list__item">
+          <a class="header-nav-list__link" href="">Контроль качества</a>
+          <span></span>
+        </li>
+        <li class="header-nav-list__item">
+          <a class="header-nav-list__link" href="/about.html">О компании</a>
+          <span></span>
+        </li>
+        <li class="header-nav-list__item">
+          <a class="header-nav-list__link" href="">Контакты</a>
+          <span></span>
+        </li>
+      </ul>
+    </nav>
+    <div class="header-wrap">
+      <ul class="header-localizations">
         <li class="header-localizations__item">
           <a class="header-localizations__link" href="#">EN</a>
         </li>
       </ul>
-      <div class="header-contacts">
-        <ul class="header-contacts-tels">
-          <li class="header-contacts-tels__item">
-            <a class="header-contacts-tels__link" href="tel:+73496342602" aria-label="Позвонить нам по телефону">+7(3496) 34-26-02</a>
-          </li>
-        </ul>
-        <ul class="header-contacts-emails">
-          <li class="header-contacts-emails__item">
-            <a class="header-contacts-emails__link" href="mailto:office@sbdr.ru" aria-label="Написать нам на почту">office@sbdr.ru</a>
-          </li>
-        </ul>
-      </div>
-      <button class="header-callback" type="button">Обратная связь</button> 
-    </header>
-    <aside class="aside" role="complementary">
-      <a class="aside__return" href="" aria-label="Вернуться на главную страницу">
-        <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8.74902 0.750275L8.74902 17.2503M8.74902 17.2503L0.749023 9.75027M8.74902 17.2503L16.749 9.75027" />
+      <button class="header__search" type="button">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M10.5 19C14.6421 19 18 15.6421 18 11.5C18 7.35786 14.6421 4 10.5 4C6.35786 4 3 7.35786 3 11.5C3 15.6421 6.35786 19 10.5 19Z"
+            stroke-linejoin="round" />
+          <path d="M16.0752 17.0754L19.872 20.8721" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
-      </a>
-      <h1 class="aside__ttl">О компании</h1>
-      <nav class="aside-nav" role="navigation" aria-label="Навигация по текущему контенту">  
-        <ul class="aside-nav-list">
-          <li class="aside-nav-list__item">
-            <a class="aside-nav-list__link _current" href="#about-history">История и описание</a>
+      </button>
+    </div>
+    <div class="header-contacts">
+      <ul class="header-contacts-tels">
+        <li class="header-contacts-tels__item">
+          <a class="header-contacts-tels__link" href="tel:+73496342602" aria-label="Позвонить нам по телефону">+7 (3496)
+            34-26-02</a>
+        </li>
+      </ul>
+      <ul class="header-contacts-emails">
+        <li class="header-contacts-emails__item">
+          <a class="header-contacts-emails__link" href="mailto:office@sbdr.ru"
+            aria-label="Написать нам на почту">office@sbdr.ru</a>
+        </li>
+      </ul>
+    </div>
+    <button class="header__btn-callback qs_btn-grand--blue" type="button">Обратная связь</button>
+    <dialog class="header-menu qs_modal" id="header-menu" role="dialog" aria-modal="true">
+      <button class="header-menu__btn-close _btn-close" type="button" aria-label="Закрыть меню навигации">
+        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="7.23389" y="36.4287" width="42" height="1" transform="rotate(-45 7.23389 36.4287)" />
+          <rect x="8.44092" y="6.73022" width="42" height="1" transform="rotate(45 8.44092 6.73022)" />
+        </svg>
+      </button>
+      <div class="header-menu__content _content">
+        <h2 class="qs_hidden">Меню навигации</h2>
+        <ul class="header-menu-list-navs">
+          <li class="header-menu-list-navs__item">
+            <ul class="header-menu-list-navs-sublist qs_list">
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link _ttl" href="#">Материалы</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link _ttl" href="#">Проекты</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link _ttl" href="#">О компании</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link _ttl" href="#">Карьера</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link _ttl" href="#">Контакты</a>
+              </li>
+            </ul>
           </li>
-          <li class="aside-nav-list__item">
-            <a class="aside-nav-list__link" href="#about-world">Компания на мировом рынке</a>
+          <li class="header-menu-list-navs__item">
+            <ul class="header-menu-list-navs-sublist qs_list">
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link _ttl" href="#">Металлообработка</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Токарная обработка</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Фрезерная обработка</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Глубокое сверление</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Ружейное сверление</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Сварка в узкощелевую разделку</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Ударная обработка поверхности</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Хронирование</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Прокатка роликом</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Наружная наплавка</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Внутренняя наплавка</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Дробеструйная обработка</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Шлифование</a>
+              </li>
+            </ul>
           </li>
-          <li class="aside-nav-list__item">
-            <a class="aside-nav-list__link" href="#about-work">Основные виды деятельности</a>
+          <li class="header-menu-list-navs__item">
+            <ul class="header-menu-list-navs-sublist qs_list">
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link _ttl" href="#">Аренда оборудования</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">BICO – Аренда ВЗД (винтовой забойный двигатель)
+                  SpiroStar</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">BICO – Аренда Ясов Hevi-Hitter</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">DSI – Аренда циркуляционных переводников PBL</a>
+              </li>
+            </ul>
           </li>
-          <li class="aside-nav-list__item">
-            <a class="aside-nav-list__link" href="#about-control">Неразрушающий контроль</a>
-          </li>
-          <li class="aside-nav-list__item">
-            <a class="aside-nav-list__link" href="#about-production">О производстве</a>
-          </li>
-          <li class="aside-nav-list__item">
-            <a class="aside-nav-list__link" href="#about-administration">Руководство</a>
+          <li class="header-menu-list-navs__item">
+            <ul class="header-menu-list-navs-sublist qs_list">
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link _ttl" href="#">Неразрушающий контроль</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Ультра-звуковая дефектоскопия</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Магнитно-порошковая дефектоскопия</a>
+              </li>
+              <li class="header-menu-list-navs-sublist__item">
+                <a class="header-menu-list-navs-sublist__link" href="#">Капиллярная дефектоскопия</a>
+              </li>
+            </ul>
           </li>
         </ul>
-      </nav>
-    </aside>
-    <main class="main" role="main">
-      <section class="about-history qs_section" id="about-history">
-        <h2 class="about-history__ttl qs_section-ttl">История и описание</h2>
-        <p class="about-history__desc qs_desc">
-          Филиал частной компании с ограниченной ответственностью 
-          «Шоллер-Блэкманн Даррон Лимитед» (SBDR) зарегистрирован 
-          и работает на территории Российской Федерации с 2005 года 
-          в Ямало-Ненецком Автономном Округе, г. Ноябрьск.
-          <br>
-          «Шоллер-Блэкманн Даррон Лимитед» (SBDR) входит в состав 
-          международного холдинга Schoeller-Bleckmann Oilfield Equipment AG 
-          (‘SBOAG’, главное управление которого находится 
-          в городе Терниц, Австрия).
-        </p>
-        <img class="about-history__img" src="assets/imgs/about-history/img_opt.jpg" width="0" height="0" loading="lazy" alt="">
-        <p class="about-history__desc2 qs_desc">
-          SBDR является официальным представителем компаний холдинга 
-          ‘SBOAG’ на территории России и стран бывшего СССР.
-          <br>
-          Наша компания поставляет оборудование и сервисные 
-          услуги компаниям, работающим в нефтегазовой отрасли.
-          <br><br>
-          Мы внедряем передовые технологии, используем для работы 
-          высокоточное оборудование, обучаем свой персонал и 
-          повышаем его квалификацию.
-          <br><br>
-          «Шоллер-Блэкманн Даррон Лимитед» входит в число 
-          немногих компаний на территории Европы и Азии, 
-          которые занимаются поставкой немагнитных утяжеленных 
-          бурильные труб (НУБТ), изготовленных из материалов 
-          с высокими немагнитными и механическими свойствами, 
-          обладающими высокой сопротивляемостью к различным 
-          видам коррозии. Такие трубы применяются в компоновках 
-          с телеметрическими системами MWD/LWD.
-          <br><br>
-          Девиз компании:
-        </p>
-        <mark class="about-history__mark qs_marked">
-          <blockquote class="about-history__quote">«Качество-это ответственность каждого»</blockquote>
-        </mark>
-      </section>
-      <section class="about-world qs_section" id="about-world">
-        <h2 class="about-world__ttl qs_section-ttl">Компания на мировом рынке</h2>
-        <div class="about-world-map">
-          <iframe class="about-world-map__iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d61561186.09652064!2d31.86174985758751!3d19.653077685881886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1619280783732!5m2!1sru!2sru" allowfullscreen="" loading="lazy"></iframe>
-          <ul class="about-world-map-list">
-            <li class="about-world-map-list__item">
-              <span class="about-world-map-list__data">11</span>
-              <span class="about-world-map-list__desc">Стран по всему миру</span>
-            </li>
-            <li class="about-world-map-list__item">
-              <span class="about-world-map-list__data">19</span>
-              <span class="about-world-map-list__desc">Производственных участников</span>
-            </li>
-            <li class="about-world-map-list__item">
-              <span class="about-world-map-list__data">1295</span>
-              <span class="about-world-map-list__desc">Сотрудников</span>
-            </li>
-            <li class="about-world-map-list__item">
-              <span class="about-world-map-list__data">400+</span>
-              <span class="about-world-map-list__desc">CNC станков</span>
-            </li>
-          </ul>
-        </div>        
-      </section>
-      <section class="about-work qs_section" id="about-work">
-        <h2 class="about-work__ttl qs_section-ttl">Основные виды деятельности</h2>
-        <p class="about-work__desc qs_desc">
-          Наша компания предлагает услуги по изготовлению, 
-          ремонту, инспекции, обслуживанию и аренде оборудования:
-        </p>
-        <ul class="about-work-list qs_list--ordered">
-          <li class="about-work-list__item">
-            <span>
-              Производство, ремонт, продажа, здача в аренду 
-              и обслуживанием оборудования для компаний занятых 
-              в нефтегазовой, аэрокосмической и других отраслях
-            </span>
-          </li>
-          <li class="about-work-list__item"><span>Токарная обработка</span></li>
-          <li class="about-work-list__item"><span>Фрезерная обработка</span></li>
-          <li class="about-work-list__item"><span>Глубокое сверление</span></li>
-          <li class="about-work-list__item"><span>Ружейное сверление</span></li>
-          <li class="about-work-list__item"><span>Сварка в узкощелевую разделку</span></li>
-          <li class="about-work-list__item"><span>Ударная обработка поверхности</span></li>
-          <li class="about-work-list__item"><span>Хронирование</span></li>
-          <li class="about-work-list__item"><span>Прокатка роликом</span></li>
-          <li class="about-work-list__item"><span>Наружная наплавка</span></li>
-          <li class="about-work-list__item"><span>Внутренняя наплавка</span></li>
-          <li class="about-work-list__item"><span>Дробеструйная обработка</span></li>
-          <li class="about-work-list__item"><span>Шлифование</span></li>
-          <li class="about-work-list__item"><span>Неразрушающий контроль</span></li>
-        </ul>
-      </section>
-      <section class="about-control qs_section" id="about-control">
-        <h2 class="about-control__ttl qs_section-ttl">Неразрушающий контроль</h2>
-        <p class="about-control__desc qs_desc">
-          Наша компания предоставляет услуги по неразрушающему 
-          контролю в соответствии со стандартами DS-1, API RP7G-2, 
-          токарной обработке изделий в соответствии с API SPEC 7-1, 
-          изготовлению резьбовых соединений в соответствии с 
-          API 7-2 Приложением 1 и спецификациями Заказчиков.
-          <br><br>
-          Виды неразрушающего контроля:
-        </p>
-        <ul class="about-control-list qs_list--icon">
-          <li class="about-control-list__item">Магнитопорошковая дефектоскопия "MPI"</li>
-          <li class="about-control-list__item">Капилярная дефектоскопия "DPI"</li>
-          <li class="about-control-list__item">Ультразвуковая дефектоскопия UT</li>
-        </ul>
-      </section>
-      <section class="about-production qs_section" id="about-production">
-        <h2 class="about-production qs_section-ttl">О производстве</h2>
-        <p class="about-production qs_desc">
-          В целях расширения рынка сбыта продукции и услуг 
-          наша компания  закупает и внедряет новое оборудование, 
-          разрабатывает технологии для обработки и ремонта 
-          немагнитных переводников и внутрискважинного оборудования, 
-          соответствующие требованиям современного производства. 
-          Такими технологиями являются восстановление внутренней 
-          и внешней поверхности изделий «Internal / External Welding», 
-          дробеструйная обработка «Shot Peening», холодная прокатка 
-          резьбы «Cold Rolling», хонингование внутренней поверхности 
-          «InternalHoning», и другие).
-          <br><br>
-          В собственности филиала находится производственная 
-          база общей площадью 14 000 кв.м.в промышленной зоне города, 
-          с удобными подъездными путями и погрузочно-разгрузочными 
-          площадками. Площадь производственного цеха более 1000 кв.м. 
-          Цех оснащен современными полуавтоматическими токарными 
-          станками и токарными станками с ЧПУ (CNC и DSG), большим 
-          шлифовальным станком, гидравлическим ключом для ремонта 
-          и обслуживания ВЗД, ясов, сварочными постами и другим 
-          необходимым оборудованием и ресурсами.
-          <br><br>
-          В настоящее время компания расширяет производственные 
-          мощности и ведёт строительство второго производственного 
-          цеха на своей территории.
-        </p>
-        <div class="about-production-slider qs_slider swiper-container">
-          <div class="about-production-slider__inner swiper-wrapper">
-            <div class="about-production-slider__slide swiper-slide">
-              <img class="about-production-slider__img" src="assets/imgs/about-production/img_opt.jpg" width="0" height="0" loading="lazy" alt="">
-            </div>
-            <div class="about-production-slider__slide swiper-slide">
-              <img class="about-production-slider__img" src="assets/imgs/about-production/img2_opt.jpg" width="0" height="0" loading="lazy" alt="">
-            </div>
+        <footer class="header-menu-footer">
+          <div class="header-menu-footer-column">
+            <h3 class="header-menu-footer-column__ttl">Адрес:</h3>
+            <address class="header-menu-footer-column__value">629800, РФ, ЯНАО, г.Ноябрьск, Промзона, Панель 11
+            </address>
           </div>
-          <div class="_scrollbar">
-            <div class="about-production-slider__prev swiper-button-prev"></div>
-            <div class="about-production-slider__scrollbar swiper-scrollbar"></div>
-            <div class="about-production-slider__next swiper-button-next"></div> 
+          <div class="header-menu-footer-column">
+            <h3 class="header-menu-footer-column__ttl">Телефон:</h3>
+            <ul class="header-menu-footer-column-list">
+              <li class="header-menu-footer-column-list__item">
+                <a class="header-menu-footer-column-list__link" href="tel:+73496342602"
+                  aria-label="Позвонить нам по телефону">+7 (3496) 34-26-02</a>
+              </li>
+            </ul>
           </div>
-        </div>
-      </section>
-      <section class="about-administration qs_section" id="about-administration">
-        <h2 class="about-administration__ttl qs_section-ttl">Руководство</h2>
-        <div class="about-administration-slider qs_slider swiper-container">
-          <div class="about-administration-slider__inner swiper-wrapper">
-            <div class="about-administration-slider__slide swiper-slide">
-              <img class="about-administration-slider__img" src="assets/imgs/about-administration/img_opt.jpg" width="0" height="0" loading="lazy" alt="">
-              <div class="about-administration-slider-txt">
-                <span class="about-administration-slider-txt__ttl">Манфред Фослайтнер</span>
-                <span class="about-administration-slider-txt__subttl">Управляющий директор</span>
-                <hr>
-                <a class="about-administration-slider-txt__tel" href="tel:+79124220017" aria-label="Позвонить по телефону">+7 (912) 422-00-17</a>
-                <a class="about-administration-slider-txt__email" href="mailto:manfred.foesleitner@sbdr.ru" aria-label="Написать на почту">manfred.foesleitner@sbdr.ru</a>
-              </div>
-            </div>
-            <div class="about-administration-slider__slide swiper-slide">
-              <img class="about-administration-slider__img" src="assets/imgs/about-administration/img2_opt.jpg" width="0" height="0" loading="lazy" alt="">
-              <div class="about-administration-slider-txt">
-                <span class="about-administration-slider-txt__ttl">Валерий Федяев</span>
-                <span class="about-administration-slider-txt__subttl">Заместитель директора</span>
-                <hr>
-                <a class="about-administration-slider-txt__tel" href="tel:+79124204590" aria-label="Позвонить по телефону">+7 (912) 420-45-90</a>
-                <a class="about-administration-slider-txt__email" href="mailto:valery.fedyaev@sbdr.ru" aria-label="Написать на почту">valery.fedyaev@sbdr.ru</a>
-              </div>
-            </div>
-            <div class="about-administration-slider__slide swiper-slide">
-              <img class="about-administration-slider__img" src="assets/imgs/about-administration/img3_opt.jpg" width="0" height="0" loading="lazy" alt="">
-              <div class="about-administration-slider-txt">
-                <span class="about-administration-slider-txt__ttl">Борис Антипович</span>
-                <span class="about-administration-slider-txt__subttl">Начальник цеха по изготовлению и ремонту  бурового оборудования</span>
-                <hr>
-                <a class="about-administration-slider-txt__tel" href="tel:+79120721634" aria-label="Позвонить по телефону">+7(912) 072-16-34</a>
-                <a class="about-administration-slider-txt__email" href="mailto:bantipovich@sbdr.ru" aria-label="Написать на почту">bantipovich@sbdr.ru</a>
-              </div>
-            </div>
+          <div class="header-menu-footer-column">
+            <h3 class="header-menu-footer-column__ttl">Факс:</h3>
+            <ul class="header-menu-footer-column-list">
+              <li class="header-menu-footer-column-list__item">
+                <a class="header-menu-footer-column-list__link" href="fax:+73496342603"
+                  aria-label="Отправить сообщение нам по факсу">+7 (3496) 34-26-03</a>
+              </li>
+            </ul>
           </div>
-          <div class="_scrollbar">
-            <div class="about-administration-slider__prev swiper-button-prev"></div>
-            <div class="about-administration-slider__scrollbar swiper-scrollbar"></div>
-            <div class="about-administration-slider__next swiper-button-next"></div>
+          <div class="header-menu-footer-column">
+            <h3 class="header-menu-footer-column__ttl">Почта:</h3>
+            <ul class="header-menu-footer-column-list">
+              <li class="header-menu-footer-column-list__item">
+                <a class="header-menu-footer-column-list__link" href="mailto:office@sbdr.ru"
+                  aria-label="Написать нам на почту">office@sbdr.ru</a>
+              </li>
+            </ul>
           </div>
-        </div>
-      </section>
-    </main>
-    <footer class="footer" role="contentinfo">
-      <div class="footer-info">
-        <p class="footer-info__copyright">© Schoeller-Bleckmann Darron Russia 2013-2021</p>
-        <a class="footer-info__policy" href="#">Политика конфиденциальности</a>
+        </footer>
       </div>
-    </footer>    
-    <script src="public/scripts.min.js"></script>
-  </body>
+    </dialog>
+    <dialog class="header-callback qs_modal" id="header-callback" role="dialog" aria-modal="true">
+      <button class="header-callback__btn-close _btn-close" type="button" aria-label="Закрыть меню навигации">
+        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="7.23389" y="36.4287" width="42" height="1" transform="rotate(-45 7.23389 36.4287)" />
+          <rect x="8.44092" y="6.73022" width="42" height="1" transform="rotate(45 8.44092 6.73022)" />
+        </svg>
+      </button>
+      <div class="header-callback__content _content">
+        <h2 class="header-callback__ttl qs_section-ttl">Обратная связь</h2>
+        <form class="header-callback-form">
+          <label class="header-callback-form__label qs_input">
+            <input class="header-callback-form__input" type="text">
+            <span class="header-callback-form__placeholder _placeholder">Ваше имя</span>
+          </label>
+          <label class="header-callback-form__label qs_input">
+            <input class="header-callback-form__input" type="email">
+            <span class="header-callback-form__placeholder _placeholder">Ваше E-mail <mark
+                class="_required-mark">*</mark></span>
+          </label>
+          <label class="header-callback-form__label qs_input">
+            <input class="header-callback-form__input" type="tel">
+            <span class="header-callback-form__placeholder _placeholder">Ваш телефон</span>
+          </label>
+          <label class="header-callback-form__label qs_input">
+            <textarea class="header-callback-form__textarea" rows="1"></textarea>
+            <span class="header-callback-form__placeholder _placeholder">Сообщение</span>
+          </label>
+          <button class="header-callback-form__submit qs_btn-grand--blue" type="submit">Отправить</button>
+          <div class="header-callback-form-policy">
+            <label class="header-callback-form-policy qs_input">
+              <input class="header-callback-form-policy__input _input" type="checkbox">
+              <span class="header-callback-form-policy__txt">
+                Вы даете согласие на обработку персональных данных и соглашаетесь c
+                <a class="header-callback-form-policy__link" href="#">политикой конфиденциальности</a>
+              </span>
+            <label>
+          </div>
+        </form>
+      </div>
+    </dialog>
+    <dialog class="header-search qs_modal" id="header-search" role="dialog" aria-modal="true">
+      <button class="header-search__btn-close _btn-close" type="button" aria-label="Закрыть меню навигации">
+        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="7.23389" y="36.4287" width="42" height="1" transform="rotate(-45 7.23389 36.4287)" />
+          <rect x="8.44092" y="6.73022" width="42" height="1" transform="rotate(45 8.44092 6.73022)" />
+        </svg>
+      </button>
+      <div class="header-search__content _content">
+        <form class="header-search-form">
+          <label class="header-search-form__label qs_input">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M10.5 19C14.6421 19 18 15.6421 18 11.5C18 7.35786 14.6421 4 10.5 4C6.35786 4 3 7.35786 3 11.5C3 15.6421 6.35786 19 10.5 19Z"
+                stroke-linejoin="round" />
+              <path d="M16.0752 17.0754L19.872 20.8721" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <input class="header-search-form__input" type="text">
+          </label>
+          <button class="header-search-form__submit qs_btn-grand--blue" type="submit">Искать</button>
+        </form>
+      </div>
+    </dialog>
+  </header>
+  <aside class="aside" role="complementary">
+    <a class="aside__return" href="" aria-label="Вернуться на главную страницу">
+      <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8.74902 0.750275L8.74902 17.2503M8.74902 17.2503L0.749023 9.75027M8.74902 17.2503L16.749 9.75027" />
+      </svg>
+    </a>
+    <h1 class="aside__ttl">О компании</h1>
+    <nav class="aside-nav" id="scroll-to-anchor" role="navigation" aria-label="Навигация по текущему контенту">
+      <ul class="aside-nav-list">
+        <li class="aside-nav-list__item">
+          <a class="aside-nav-list__link _current" href="#about-history">История и описание</a>
+        </li>
+        <li class="aside-nav-list__item">
+          <a class="aside-nav-list__link" href="#about-world">Компания на мировом рынке</a>
+        </li>
+        <li class="aside-nav-list__item">
+          <a class="aside-nav-list__link" href="#about-work">Основные виды деятельности</a>
+        </li>
+        <li class="aside-nav-list__item">
+          <a class="aside-nav-list__link" href="#about-control">Неразрушающий контроль</a>
+        </li>
+        <li class="aside-nav-list__item">
+          <a class="aside-nav-list__link" href="#about-production">О производстве</a>
+        </li>
+        <li class="aside-nav-list__item">
+          <a class="aside-nav-list__link" href="#about-administration">Руководство</a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  <main class="main" role="main">
+    <section class="about-history qs_section" id="about-history">
+      <h2 class="about-history__ttl qs_section-ttl">История и описание</h2>
+      <p class="about-history__desc qs_desc">
+        Филиал частной компании с ограниченной ответственностью
+        «Шоллер-Блэкманн Даррон Лимитед» (SBDR) зарегистрирован
+        и работает на территории Российской Федерации с 2005 года
+        в Ямало-Ненецком Автономном Округе, г. Ноябрьск.
+        <br>
+        «Шоллер-Блэкманн Даррон Лимитед» (SBDR) входит в состав
+        международного холдинга Schoeller-Bleckmann Oilfield Equipment AG
+        (‘SBOAG’, главное управление которого находится
+        в городе Терниц, Австрия).
+      </p>
+      <img class="about-history__img" src="assets/imgs/about-history/img_opt.jpg" width="0" height="0" loading="lazy"
+        alt="">
+      <p class="about-history__desc2 qs_desc">
+        SBDR является официальным представителем компаний холдинга
+        ‘SBOAG’ на территории России и стран бывшего СССР.
+        <br>
+        Наша компания поставляет оборудование и сервисные
+        услуги компаниям, работающим в нефтегазовой отрасли.
+        <br><br>
+        Мы внедряем передовые технологии, используем для работы
+        высокоточное оборудование, обучаем свой персонал и
+        повышаем его квалификацию.
+        <br><br>
+        «Шоллер-Блэкманн Даррон Лимитед» входит в число
+        немногих компаний на территории Европы и Азии,
+        которые занимаются поставкой немагнитных утяжеленных
+        бурильные труб (НУБТ), изготовленных из материалов
+        с высокими немагнитными и механическими свойствами,
+        обладающими высокой сопротивляемостью к различным
+        видам коррозии. Такие трубы применяются в компоновках
+        с телеметрическими системами MWD/LWD.
+        <br><br>
+        Девиз компании:
+      </p>
+      <mark class="about-history__mark qs_marked">
+        <blockquote class="about-history__quote">«Качество-это ответственность каждого»</blockquote>
+      </mark>
+    </section>
+    <section class="about-world qs_section" id="about-world">
+      <h2 class="about-world__ttl qs_section-ttl">Компания на мировом рынке</h2>
+      <div class="about-world-map">
+        <iframe class="about-world-map__iframe"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d61561186.09652064!2d31.86174985758751!3d19.653077685881886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1619280783732!5m2!1sru!2sru"
+          allowfullscreen="" loading="lazy"></iframe>
+        <ul class="about-world-map-list">
+          <li class="about-world-map-list__item">
+            <span class="about-world-map-list__data">11</span>
+            <span class="about-world-map-list__desc">Стран по всему миру</span>
+          </li>
+          <li class="about-world-map-list__item">
+            <span class="about-world-map-list__data">19</span>
+            <span class="about-world-map-list__desc">Производственных участников</span>
+          </li>
+          <li class="about-world-map-list__item">
+            <span class="about-world-map-list__data">1295</span>
+            <span class="about-world-map-list__desc">Сотрудников</span>
+          </li>
+          <li class="about-world-map-list__item">
+            <span class="about-world-map-list__data">400+</span>
+            <span class="about-world-map-list__desc">CNC станков</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="about-work qs_section" id="about-work">
+      <h2 class="about-work__ttl qs_section-ttl">Основные виды деятельности</h2>
+      <p class="about-work__desc qs_desc">
+        Наша компания предлагает услуги по изготовлению,
+        ремонту, инспекции, обслуживанию и аренде оборудования:
+      </p>
+      <ul class="about-work-list qs_list--ordered">
+        <li class="about-work-list__item">
+          <span>
+            Производство, ремонт, продажа, здача в аренду
+            и обслуживанием оборудования для компаний занятых
+            в нефтегазовой, аэрокосмической и других отраслях
+          </span>
+        </li>
+        <li class="about-work-list__item"><span>Токарная обработка</span></li>
+        <li class="about-work-list__item"><span>Фрезерная обработка</span></li>
+        <li class="about-work-list__item"><span>Глубокое сверление</span></li>
+        <li class="about-work-list__item"><span>Ружейное сверление</span></li>
+        <li class="about-work-list__item"><span>Сварка в узкощелевую разделку</span></li>
+        <li class="about-work-list__item"><span>Ударная обработка поверхности</span></li>
+        <li class="about-work-list__item"><span>Хронирование</span></li>
+        <li class="about-work-list__item"><span>Прокатка роликом</span></li>
+        <li class="about-work-list__item"><span>Наружная наплавка</span></li>
+        <li class="about-work-list__item"><span>Внутренняя наплавка</span></li>
+        <li class="about-work-list__item"><span>Дробеструйная обработка</span></li>
+        <li class="about-work-list__item"><span>Шлифование</span></li>
+        <li class="about-work-list__item"><span>Неразрушающий контроль</span></li>
+      </ul>
+    </section>
+    <section class="about-control qs_section" id="about-control">
+      <h2 class="about-control__ttl qs_section-ttl">Неразрушающий контроль</h2>
+      <p class="about-control__desc qs_desc">
+        Наша компания предоставляет услуги по неразрушающему
+        контролю в соответствии со стандартами DS-1, API RP7G-2,
+        токарной обработке изделий в соответствии с API SPEC 7-1,
+        изготовлению резьбовых соединений в соответствии с
+        API 7-2 Приложением 1 и спецификациями Заказчиков.
+        <br><br>
+        Виды неразрушающего контроля:
+      </p>
+      <ul class="about-control-list qs_list--icon">
+        <li class="about-control-list__item">Магнитопорошковая дефектоскопия "MPI"</li>
+        <li class="about-control-list__item">Капилярная дефектоскопия "DPI"</li>
+        <li class="about-control-list__item">Ультразвуковая дефектоскопия UT</li>
+      </ul>
+    </section>
+    <section class="about-production qs_section" id="about-production">
+      <h2 class="about-production qs_section-ttl">О производстве</h2>
+      <p class="about-production qs_desc">
+        В целях расширения рынка сбыта продукции и услуг
+        наша компания закупает и внедряет новое оборудование,
+        разрабатывает технологии для обработки и ремонта
+        немагнитных переводников и внутрискважинного оборудования,
+        соответствующие требованиям современного производства.
+        Такими технологиями являются восстановление внутренней
+        и внешней поверхности изделий «Internal / External Welding»,
+        дробеструйная обработка «Shot Peening», холодная прокатка
+        резьбы «Cold Rolling», хонингование внутренней поверхности
+        «InternalHoning», и другие).
+        <br><br>
+        В собственности филиала находится производственная
+        база общей площадью 14 000 кв.м.в промышленной зоне города,
+        с удобными подъездными путями и погрузочно-разгрузочными
+        площадками. Площадь производственного цеха более 1000 кв.м.
+        Цех оснащен современными полуавтоматическими токарными
+        станками и токарными станками с ЧПУ (CNC и DSG), большим
+        шлифовальным станком, гидравлическим ключом для ремонта
+        и обслуживания ВЗД, ясов, сварочными постами и другим
+        необходимым оборудованием и ресурсами.
+        <br><br>
+        В настоящее время компания расширяет производственные
+        мощности и ведёт строительство второго производственного
+        цеха на своей территории.
+      </p>
+      <div class="about-production-slider qs_slider swiper-container">
+        <div class="about-production-slider__inner swiper-wrapper">
+          <div class="about-production-slider__slide swiper-slide">
+            <img class="about-production-slider__img" src="assets/imgs/about-production/img_opt.jpg" width="0"
+              height="0" loading="lazy" alt="">
+          </div>
+          <div class="about-production-slider__slide swiper-slide">
+            <img class="about-production-slider__img" src="assets/imgs/about-production/img2_opt.jpg" width="0"
+              height="0" loading="lazy" alt="">
+          </div>
+        </div>
+        <div class="_scrollbar">
+          <div class="about-production-slider__prev swiper-button-prev"></div>
+          <div class="about-production-slider__scrollbar swiper-scrollbar"></div>
+          <div class="about-production-slider__next swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+    <section class="about-administration qs_section" id="about-administration">
+      <h2 class="about-administration__ttl qs_section-ttl">Руководство</h2>
+      <div class="about-administration-slider qs_slider swiper-container">
+        <div class="about-administration-slider__inner swiper-wrapper">
+          <div class="about-administration-slider__slide swiper-slide">
+            <img class="about-administration-slider__img" src="assets/imgs/about-administration/img_opt.jpg" width="0"
+              height="0" loading="lazy" alt="">
+            <div class="about-administration-slider-txt">
+              <span class="about-administration-slider-txt__ttl">Манфред Фослайтнер</span>
+              <span class="about-administration-slider-txt__subttl">Управляющий директор</span>
+              <hr>
+              <a class="about-administration-slider-txt__tel" href="tel:+79124220017"
+                aria-label="Позвонить по телефону">+7 (912) 422-00-17</a>
+              <a class="about-administration-slider-txt__email" href="mailto:manfred.foesleitner@sbdr.ru"
+                aria-label="Написать на почту">manfred.foesleitner@sbdr.ru</a>
+            </div>
+          </div>
+          <div class="about-administration-slider__slide swiper-slide">
+            <img class="about-administration-slider__img" src="assets/imgs/about-administration/img2_opt.jpg" width="0"
+              height="0" loading="lazy" alt="">
+            <div class="about-administration-slider-txt">
+              <span class="about-administration-slider-txt__ttl">Валерий Федяев</span>
+              <span class="about-administration-slider-txt__subttl">Заместитель директора</span>
+              <hr>
+              <a class="about-administration-slider-txt__tel" href="tel:+79124204590"
+                aria-label="Позвонить по телефону">+7 (912) 420-45-90</a>
+              <a class="about-administration-slider-txt__email" href="mailto:valery.fedyaev@sbdr.ru"
+                aria-label="Написать на почту">valery.fedyaev@sbdr.ru</a>
+            </div>
+          </div>
+          <div class="about-administration-slider__slide swiper-slide">
+            <img class="about-administration-slider__img" src="assets/imgs/about-administration/img3_opt.jpg" width="0"
+              height="0" loading="lazy" alt="">
+            <div class="about-administration-slider-txt">
+              <span class="about-administration-slider-txt__ttl">Борис Антипович</span>
+              <span class="about-administration-slider-txt__subttl">Начальник цеха по изготовлению и ремонту бурового
+                оборудования</span>
+              <hr>
+              <a class="about-administration-slider-txt__tel" href="tel:+79120721634"
+                aria-label="Позвонить по телефону">+7(912) 072-16-34</a>
+              <a class="about-administration-slider-txt__email" href="mailto:bantipovich@sbdr.ru"
+                aria-label="Написать на почту">bantipovich@sbdr.ru</a>
+            </div>
+          </div>
+        </div>
+        <div class="_scrollbar">
+          <div class="about-administration-slider__prev swiper-button-prev"></div>
+          <div class="about-administration-slider__scrollbar swiper-scrollbar"></div>
+          <div class="about-administration-slider__next swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer" role="contentinfo">
+    <div class="footer-info">
+      <p class="footer-info__copyright">© Schoeller-Bleckmann Darron Russia 2013-2021</p>
+      <a class="footer-info__policy" href="#">Политика конфиденциальности</a>
+    </div>
+  </footer>
+  <script src="public/scripts.min.js"></script>
+</body>
+
 </html>
