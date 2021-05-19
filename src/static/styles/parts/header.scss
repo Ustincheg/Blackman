@@ -2,9 +2,10 @@
   display: grid;
   grid-template-columns: 100px 313px 1fr max-content max-content 185px;
   grid-template-rows: minmax(90px, 1fr);
-  grid-gap: 30px;
+  grid-gap: 20px;
   background-color: $c_white;
   border-bottom: 1px solid $c_gray-light;
+  position: relative;
 }
 
 .header__btn-nav-modal {
@@ -51,11 +52,12 @@
 
 .header__link-logo {
   align-self: center;
+  padding-left: 10px;
 }
 
 .header__img-logo {
   object-fit: contain;
-  object-position: center;  
+  object-position: center;
   height: auto;
 }
 
@@ -63,6 +65,7 @@
   justify-self: center;
   width: max-content;
   height: 100%;
+  padding-right: 10px;
 }
 
 .header-nav-list {
@@ -76,7 +79,7 @@
 .header-nav-list__item {
   position: relative;
   height: 100%;
-  margin: 0 10px;
+  margin: 0 13px;
 }
 
 .header-nav-list__link {
@@ -86,6 +89,7 @@
   align-items: center;
   height: 100%;
   border-bottom: 2px solid transparent;
+  font-size: 15px;
 
   & ~ span {
     position: absolute;
@@ -116,8 +120,10 @@
 
 .header-wrap {
   display: grid;
+  grid-template-columns: -webkit-max-content 24px;
   grid-template-columns: max-content 24px;
-  grid-gap: 15px;
+  grid-gap: 26px;
+  padding-right: 6px;
 }
 
 .header-localizations {
@@ -133,6 +139,7 @@
 }
 
 .header-localizations__link {
+  font-size: 15px;
   color: $c_black;
 
   &:hover,
@@ -143,7 +150,7 @@
   &._current {
     color: $c_gray;
     cursor: default;
-  } 
+  }
 }
 
 .header__search {
@@ -167,7 +174,7 @@
 }
 
 .header-contacts-tels__link {
-  font: 600 16px $f_main;
+  font: 600 15px $f_main;
 
   &:hover,
   &:focus-visible {
@@ -176,7 +183,7 @@
 }
 
 .header-contacts-emails__link {
-  font: 400 16px $f_main;
+  font: 400 14px $f_main;
 
   &:hover,
   &:focus-visible {
@@ -189,12 +196,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
-  padding: 30px;
-  font: 600 16px $f_main;
-  color: $c_white;
-  background-color: $c_blue;
+  height: calc(100% + 1px);
+  padding: 28px;
+  font: 600 15px "Gilroy";
+  color: #fff;
+  background-color: #176abd;
+  position: absolute;
+  right: 0;
+  font-size: 15px;
 }
 
 @media (max-width: 1800px) {
@@ -243,7 +252,7 @@
   }
 
   .header__link-logo {
-    justify-self: left;   
+    justify-self: left;
     max-width: 200px;
   }
 
