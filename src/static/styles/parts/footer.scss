@@ -13,7 +13,7 @@
   padding-left: 80px;
   font: 900 30px $f_main;
   color: $c_white;
-  
+
   &._disabled {
     display: none;
   }
@@ -55,7 +55,8 @@
   align-items: center;
   max-width: max-content;
   min-width: max-content;
-  padding: 20px 100px;
+  padding: 20px 81px;
+  font-size: 14px;
 }
 
 .footer-tip__icon {
@@ -86,7 +87,7 @@
   .footer {
     flex-direction: column-reverse;
   }
-  
+
   .footer-nav-tabs {
     padding: 20px;
     text-align: center;
