@@ -25,7 +25,11 @@
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 1500px) {
+    padding: 60px;
+  }
+
+  @media (max-width: 1200px) {
     padding: 40px;
   }
 
@@ -51,6 +55,14 @@
     margin-left: 40px;
     font: 600 16px $f_main;
     color: $c_blue;
+  }
+
+  @media (max-width: 1300px) {
+    font-size: 30px;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 22px;
   }
 }
 
@@ -373,7 +385,7 @@
     margin-top: 5px;
     margin-right: 20px;
     border-radius: 3px;
-    border: 1px solid $c_gray-light;
+    border: 1px solid #555;
 
     &:checked {
       background: url('../assets/icons/checkbox.svg') center/75% no-repeat $c_blue;

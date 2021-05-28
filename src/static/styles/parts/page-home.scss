@@ -18,10 +18,19 @@
   position: absolute;
   z-index: 10;
   left: 80px;
-  bottom: 100px;
-  width: 40%;
+  bottom: 160px;
+  width: calc(100% - 160px);
+  max-width: 750px;
+  margin-bottom: 40px;
+  opacity: 1;
   font: 900 65px $f_main;
   color: $c_white;
+  transition: opacity 400ms ease;
+
+  &._disabled {
+    opacity: 0;
+    transition: opacity 400ms ease;
+  }
 }
 
 .page-home .main {
@@ -64,8 +73,18 @@
   background-color: transparent;
 }
 
-@media (max-width: 1460px) {
+@media (max-width: 900px) {
   .page-home-bg__slogan {
-    display: none;
+    left: 40px;
+    width: calc(100% - 80px);
+    font: 900 45px $f_main;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-home-bg__slogan {
+    left: 20px;
+    width: calc(100% - 40px);
+    font: 900 30px $f_main;
   }
 }
