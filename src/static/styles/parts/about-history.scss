@@ -29,3 +29,9 @@
   font: 700 25px $f_main;
   text-align: center;
 }
+
+@media (max-width: 1500px) {
+  .about-history__quote {
+    font-size: 18px;
+  }
+}

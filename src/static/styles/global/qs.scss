@@ -25,7 +25,11 @@
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 1500px) {
+    padding: 60px;
+  }
+
+  @media (max-width: 1200px) {
     padding: 40px;
   }
 
@@ -51,6 +55,14 @@
     margin-left: 40px;
     font: 600 16px $f_main;
     color: $c_blue;
+  }
+
+  @media (max-width: 1300px) {
+    font-size: 30px;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 22px;
   }
 }
 

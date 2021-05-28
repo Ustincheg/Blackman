@@ -232,3 +232,40 @@ function ModalWindows(_modal, _btnOpen, _btnClose, _animationTime) {
 
   return _current;
 }
+
+//=== ASIDE NAV SWIPER ===//
+
+$(document).ready(function () {
+  if ($('.aside-nav').length > 0) {
+    var _options = {
+      init: false,
+      direction: 'horizontal',
+      loop: false,
+      spaceBetween: 30,
+      slidesPerView: 'auto',
+    }
+    var _asideNav = new Swiper('.aside-nav', _options);
+    var _currentSize;
+
+    _asideNav.init();
+
+    function SwiperAdaptive() {
+      if (window.innerWidth > 850) {
+        if (_currentSize !== 'large') {
+          _currentSize = 'large';
+          _asideNav.destroy();
+          _asudeNav = null;
+        }
+      } else {
+        if (_currentSize !== 'small') {
+          _currentSize = 'small';
+          _asideNav = new Swiper('.aside-nav', _options);
+          _asideNav.init();
+        }
+      }
+    }
+
+    SwiperAdaptive();
+    $(window).resize(SwiperAdaptive);
+  }
+})
