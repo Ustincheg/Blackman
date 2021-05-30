@@ -1,0 +1,40 @@
+.about-company__img {
+  max-width: 100%;
+  min-width: 100%;
+  height: auto;
+}
+
+.about-company__desc {
+  line-height: 150%;
+  letter-spacing: 0.9px;
+  text-align: justify;
+}
+
+.qs_list.about-company__list {
+  grid-gap: 90px;
+}
+
+.about-company__date {
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 110px;
+  line-height: 133px;
+  text-align: right;
+  color: #176abd;  
+  display: block;
+  margin-top: -108px;
+  margin-right: -27px;
+}
+
+.about-company__quote {
+  padding: 50px;
+  font: 700 25px $f_main;
+  text-align: center;
+}
+
+@media (max-width: 1500px) {
+  .about-company__quote {
+    font-size: 18px;
+  }
+}

@@ -25,7 +25,11 @@
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 1500px) {
+    padding: 60px;
+  }
+
+  @media (max-width: 1200px) {
     padding: 40px;
   }
 
@@ -52,6 +56,14 @@
     font: 600 16px $f_main;
     color: $c_blue;
   }
+
+  @media (max-width: 1300px) {
+    font-size: 30px;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 22px;
+  }
 }
 
 .qs_section-ttl {
@@ -67,6 +79,14 @@
   margin-bottom: 20px;
   font: 700 30px $f_main;
   color: $c_black;
+
+  @media (max-width: 1200px) {
+    font-size: 24px;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 20px;
+  }
 }
 
 .qs_section-subttl {
@@ -75,7 +95,7 @@
 
 @mixin qs_desc {
   font: 400 16px $f_main;
-  color: $c_black;
+  color: $c_gray;
 }
 
 .qs_desc {
@@ -390,3 +410,24 @@
 //  <span class="_placeholder"></span>
 //</label>
 // NOTE: Don't use subclass "_placeholder" for checkboxes.
+
+@mixin qs_btn-dropdown() {
+  width: 100%;
+  background-color: $c_blue-light;
+
+  & ._header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 30px;
+  }
+
+  & ._ttl {
+    font: 600 21px $f_main;
+  }
+}
+
+.qs_btn-dropdown {
+  @include qs_btn-dropdown();
+}

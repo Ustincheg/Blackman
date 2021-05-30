@@ -65,6 +65,14 @@
   }
 }
 
+@media (max-width: 850px) {
+  .header-menu { 
+    & .header-menu__btn-close {
+      justify-self: end;
+    }
+  }
+}
+
 @media (max-height: 800px) {
   .header-menu__content {
     padding-top: 0;

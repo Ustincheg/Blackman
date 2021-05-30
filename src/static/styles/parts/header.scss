@@ -56,7 +56,8 @@
 
 .header__img-logo {
   object-fit: contain;
-  object-position: center;  
+  object-position: center;
+  width: 100%;
   height: auto;
 }
 
@@ -91,7 +92,7 @@
 
   & ~ span {
     position: absolute;
-    bottom: -1px;    
+    bottom: 0;
     left: 50%;
     display: block;
     transform: translateX(-50%);

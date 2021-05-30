@@ -25,6 +25,7 @@
 .rifle-drilling-list-controls__callback,
 .rifle-drilling-list-controls__next {
   width: 100%;
+  padding: 20px 0;
 }
 
 .rifle-drilling-list-controls__next {
@@ -41,5 +42,33 @@
     margin-left: 15px;
     transform: rotate(-90deg);
     stroke: $c_blue;
+  }
+}
+
+@media (max-width: 1400px) {
+  .rifle-drilling-slider__slide {
+    max-width: 500px;
+    min-width: 500px;
+    max-height: 300px;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .rifle-drilling-slider__slide {
+    max-width: 300px;
+    min-width: 300px;
+    max-height: 200px;
+    min-height: 200px;
+  }
+
+  .rifle-drilling-list-controls {
+    grid-gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .rifle-drilling-list-controls {
+    grid-template-columns: 1fr;
   }
 }
