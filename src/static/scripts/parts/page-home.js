@@ -1,37 +1,24 @@
 //=== BACKGROUND VIDEO ===//
 
 $(document).ready(function () {
-  // var _sourceLD = 'assets/vids/bg-video_360p.mp4';
-  // var _sourceHD = 'assets/vids/bg-video_720p.mp4';
+  var _sourceLD = 'assets/vids/bg-video_360p.mp4';
+  var _sourceHD = 'assets/vids/bg-video_720p.mp4';
   // var _sourceLD = 'static/assets/vids/bg-video_360p.mp4';
   // var _sourceHD = 'static/assets/vids/bg-video_720p.mp4';
+
+
   var _sourceHD = $(".page-home-bg__video").attr("data-url-720p");
   var _sourceLD = $(".page-home-bg__video").attr("data-url-360p");
-  console.log(_sourceHD, _sourceLD)
-  // const cardHover = (data) => {
-  //   $(this).css("background-image", `url(${data})`);
-  // };  
-  
-  // $(".short-orientation-list__item").each(function () {
-  //   const data = $(this).attr("data-backgrund-url");
-  //   $(this).css("background-image", `url(${data})`);
-  // cardHover($(this), data);
-  //   console.log(data);
-  // });
-
 
   var _MIME = "video/mp4";
 
   function BGVideoAdaptive(_source, _type) {
-    var _bgVideo = $(".page-home-bg__video")[0];
-
-    $(_bgVideo).append(
-      $("<source>", {
-        src: _source,
-        type: _type,
-      })
-    );
-    console.log
+    var _bgVideo = $('.page-home-bg__video')[0];
+    
+    $(_bgVideo).append($('<source>', {
+      src: _source,
+      type: _type
+    }))
   }
 
   if (isMobile()) {
@@ -39,7 +26,7 @@ $(document).ready(function () {
   } else {
     BGVideoAdaptive(_sourceHD, _MIME);
   }
-});
+})
 
 //=== CONTENT ===//
 
