@@ -410,3 +410,24 @@
 //  <span class="_placeholder"></span>
 //</label>
 // NOTE: Don't use subclass "_placeholder" for checkboxes.
+
+@mixin qs_btn-dropdown() {
+  width: 100%;
+  background-color: $c_blue-light;
+
+  & ._header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 30px;
+  }
+
+  & ._ttl {
+    font: 600 21px $f_main;
+  }
+}
+
+.qs_btn-dropdown {
+  @include qs_btn-dropdown();
+}
