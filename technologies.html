@@ -283,25 +283,18 @@
     </dialog>
   </header>
   <aside class="aside" role="complementary">
-    <a class="aside__return" href="" aria-label="Вернуться на главную страницу">
-      <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M8.74902 0.750275L8.74902 17.2503M8.74902 17.2503L0.749023 9.75027M8.74902 17.2503L16.749 9.75027" />
-      </svg>
-    </a>
-    <h1 class="aside__ttl">Технологии</h1>
-    <nav class="aside-nav" role="navigation" aria-label="Навигация по текущему контенту">
-      <ul class="aside-nav-list">
-        <li class="aside-nav-list__item">
-          <a class="aside-nav-list__link" href="#">Токарная обработка</a>
-        </li>
-        <li class="aside-nav-list__item">
-          <a class="aside-nav-list__link" href="#">Фрезерная обработка</a>
-        </li>
-        <li class="aside-nav-list__item">
-          <a class="aside-nav-list__link" href="#">Глубокое сверление</a>
-        </li>
-        <li class="aside-nav-list__item">
-          <a class="aside-nav-list__link _current" href="#">Ружейное сверление</a>
+    <div class="aside__wrapper">
+      <a class="aside__return" href="" aria-label="Вернуться на главную страницу">
+        <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.74902 0.750275L8.74902 17.2503M8.74902 17.2503L0.749023 9.75027M8.74902 17.2503L16.749 9.75027" />
+        </svg>
+      </a>
+      <h1 class="aside__ttl">Технологии</h1>
+    </div>
+    <nav class="aside-nav swiper-container" id="scroll-to-anchor" role="navigation" aria-label="Навигация по текущему контенту">
+      <ul class="aside-nav-list swiper-wrapper">
+        <li class="aside-nav-list__item swiper-slide">
+          <a class="aside-nav-list__link _current" href="#about-company">Тестовая ссылка</a>
         </li>
       </ul>
     </nav>
