@@ -1,2 +1,3 @@
 src/gulp/node_modules/*
 src/gulp/package-lock.json
+public/*
