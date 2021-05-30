@@ -6,15 +6,6 @@ $(document).ready(function () {
   // var _sourceLD = 'static/assets/vids/bg-video_360p.mp4';
   // var _sourceHD = 'static/assets/vids/bg-video_720p.mp4';
 
-  const cardHover = (data) => {
-    $(this).css("background-image", `url(${data})`);
-  };  
-  
-  $(".short-orientation-list__item").each(function () {
-    const data = $(this).attr("data-backgrund-url");
-    $(this).css("background-image", `url(${data})`);
-    // cardHover($(this), data);
-  });
 
   var _sourceHD = $(".page-home-bg__video").attr("data-url-720p");
   var _sourceLD = $(".page-home-bg__video").attr("data-url-360p");
