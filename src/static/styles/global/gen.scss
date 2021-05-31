@@ -55,3 +55,36 @@ body {
     }
   }
 }
+
+@media (max-width: 850px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'header'
+      'aside'
+      'main'
+      'footer';
+
+    grid-template-rows: repeat(4, max-content);
+
+    &.page-home {
+      grid-template-areas:
+        'header'
+        'main'
+        'footer';
+      grid-template-rows: max-content 1fr max-content;
+
+      & .aside {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  body {
+    &.page-home {
+      grid-template-rows: max-content 1fr minmax(80px, max-content);
+    }
+  }
+}

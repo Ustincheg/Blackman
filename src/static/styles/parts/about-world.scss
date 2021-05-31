@@ -8,10 +8,9 @@
 }
 
 .about-world-map-list {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 30px 40px;
 }
 
 .about-world-map-list__item {
@@ -19,11 +18,27 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  max-width: 25%;
+  max-width: 100%;
 }
 
 .about-world-map-list__data {
   margin-bottom: 10px;
   font: 700 40px $f_main;
   color: $c_blue;
+}
+
+@media (max-width: 400px) {
+  .about-world-map-list {
+    grid-template-columns: 1fr;
+  }
+
+  .about-world-map-list__item {
+    width: 100%;
+  }
+
+  .about-world-map-list__desc,
+  .about-world-map-list__data {
+    width: 100%;
+    text-align: center;
+  }
 }

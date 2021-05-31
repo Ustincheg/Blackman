@@ -1,6 +1,6 @@
 .header {
   display: grid;
-  grid-template-columns: 100px 393px 1fr max-content max-content 170px;
+  grid-template-columns: 100px 289px 1fr max-content max-content 170px;
   grid-template-rows: minmax(90px, 1fr);
   background-color: $c_white;
   border-bottom: 1px solid $c_gray-light;
@@ -56,9 +56,9 @@
 
 .header__img-logo {
   object-fit: contain;
-  object-position: center;
-  width: 100%;
+  object-position: center;  
   height: auto;
+  width: 100%;
 }
 
 .header-nav {
@@ -92,7 +92,7 @@
 
   & ~ span {
     position: absolute;
-    bottom: 0;
+    bottom: -1px;    
     left: 50%;
     display: block;
     transform: translateX(-50%);
