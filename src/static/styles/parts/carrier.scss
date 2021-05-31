@@ -1,10 +1,107 @@
+.carrier-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+
 .carrier-vacancy-form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 40px;
 }
 
-.carrier-vacancy-form__name,
-.carrier-vacancy-form__profession {
+.carrier-vacancy-form__label:nth-child(1),
+.carrier-vacancy-form__label:nth-child(4),
+.carrier-vacancy-form__label:nth-child(5),
+.carrier-vacancy-form-controls {
   grid-column: 1/3;
+}
+
+.carrier-vacancy-form input,
+.carrier-vacancy-form textarea {
+  width: 100%;
+}
+
+.carrier-vacancy-form-controls {
+  display: grid;
+  grid-template-columns: 1fr max-content 180px;
+  grid-gap: 40px;
+}
+
+.carrier-vacancy-form-controls-file {
+  justify-self: end;
+}
+
+.carrier-vacancy-form-controls-policy,
+.carrier-vacancy-form-controls-file,
+.carrier-vacancy-form-controls__submit {
+  align-self: center;
+}
+
+@media (max-width: 1200px) {
+  .carrier-vacancy-form {
+    grid-template-columns: 1fr;
+  }
+
+  .carrier-vacancy-form__label:nth-child(1),
+  .carrier-vacancy-form__label:nth-child(4),
+  .carrier-vacancy-form__label:nth-child(5),
+  .carrier-vacancy-form-controls {
+    grid-column: auto/auto;
+  }
+
+  .carrier-vacancy-form-controls {
+    grid-template-columns: 1fr 200px;
+  }
+
+  .carrier-vacancy-form-controls-policy {
+    align-self: start;
+    grid-row: 1/3;
+  }
+
+  .carrier-vacancy-form-controls__submit {
+    grid-column: 2/3;
+  }
+}
+
+@media (max-width: 600px) {
+  .carrier-vacancy-form-controls {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .carrier-vacancy-form-controls-file {
+    justify-self: start;
+  }
+
+  .carrier-vacancy-form-controls-policy {
+    grid-column: 1/3;
+    grid-row: auto/auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .carrier-vacancy-form-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .carrier-vacancy-form-controls-policy {
+    grid-column: auto/auto;
+  }
+
+  .carrier-vacancy-form-controls__submit {
+    grid-column: auto/auto;
+  }
+
+  .carrier-vacancy-form-controls-policy,
+  .carrier-vacancy-form-controls-file,
+  .carrier-vacancy-form-controls__submit {
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+  }
+
+  .carrier-vacancy-form-controls-file__btn {
+    width: 100%;
+    text-align: center;
+  }
 }
