@@ -273,5 +273,5 @@ $(document).ready(function () {
 //=== CALL MODAL REQUEST ===//
 
 $(document).ready(function () {
-  ModalWindows($('.header-callback')[0], $('.rifle-drilling-list-controls__callback'));
+  ModalWindows($('.header-callback')[0], $('.qs_consultation-and-next ._consultation'));
 })
