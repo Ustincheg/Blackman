@@ -407,6 +407,10 @@
       background: url('../assets/icons/checkbox.svg') center/75% no-repeat $c_blue;
     }
   }
+
+  & input[type="file"] {
+    @include qs_hidden();
+  }
 }
 
 .qs_input {
@@ -486,6 +490,22 @@
       & + * {
         margin-top: 15px;
       }
+    }
+  }
+
+  @media (max-width: 700px) {
+    & ._header {
+      padding: 20px;
+      padding-right: 60px;
+
+      & ._icon {
+        right: 20px;
+      }
+    }
+
+    & ._content {
+      padding: 20px;
+      padding-top: 0;
     }
   }
 }
