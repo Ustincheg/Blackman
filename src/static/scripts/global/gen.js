@@ -269,3 +269,9 @@ $(document).ready(function () {
     $(window).resize(SwiperAdaptive);
   }
 })
+
+//=== CALL MODAL REQUEST ===//
+
+$(document).ready(function () {
+  ModalWindows($('.header-callback')[0], $('.rifle-drilling-list-controls__callback'));
+})
