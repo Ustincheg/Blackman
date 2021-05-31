@@ -1,0 +1,10 @@
+.carrier-vacancy-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 40px;
+}
+
+.carrier-vacancy-form__name,
+.carrier-vacancy-form__profession {
+  grid-column: 1/3;
+}

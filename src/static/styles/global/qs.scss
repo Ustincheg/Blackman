@@ -215,6 +215,14 @@
   @include qs_btn-grand--blue();
 }
 
+@mixin qs_link() {
+  color: $c_blue;
+}
+
+.qs_link {
+  @include qs_link();
+}
+
 @mixin qs_list {
   display: grid;
   grid-template-columns: 1fr;
@@ -407,7 +415,9 @@
 
 //<label class="qs_input">
 //  <input> OR <textarea></textarea>
-//  <span class="_placeholder"></span>
+//  <span class="_placeholder">
+//    <mark class="_required-mark>*</mark>
+//  </span>
 //</label>
 // NOTE: Don't use subclass "_placeholder" for checkboxes.
 
@@ -416,18 +426,82 @@
   background-color: $c_blue-light;
 
   & ._header {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     padding: 30px;
+    padding-right: 80px;
+    text-align: left;
+
+    & ._ttl {
+      display: block;
+      font: 600 21px $f_main;
+    }
+
+    & ._desc {
+      display: block;
+      margin-top: 20px;
+    }
+
+    & ._icon {
+      stroke: $c_blue;
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      width: 30px;
+      height: 30px;
+
+      & path:first-child {
+        transform: rotate(0deg);
+        transform-origin: center;
+        transition: transform 400ms ease;
+      }
+    }
   }
 
-  & ._ttl {
-    font: 600 21px $f_main;
+  &._opened ._icon path:first-child {
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: transform 400ms ease;
+  }
+
+  & ._content {
+    padding: 30px;
+    padding-top: 0;
+    text-align: left;
+
+    & ._subttl {
+      display: block;
+      width: 100%;
+      font-weight: 600;
+      
+      & + * {
+        margin-top: 15px;
+      }
+    }
+
+    & ._desc {
+      & + * {
+        margin-top: 15px;
+      }
+    }
   }
 }
 
 .qs_btn-dropdown {
   @include qs_btn-dropdown();
 }
+
+//<button class="qs_btn-dropdown">
+//  <header class="_header">
+//    <span class="_ttl"></span>
+//    <span class="_desc"></span>
+//    <svg class="_icon"></svg>
+//  </header>
+//  <div class="_content">
+//    <span class="_subttl></span>
+//    <p class="_desc"></p>  
+//  </div>
+//</button>
