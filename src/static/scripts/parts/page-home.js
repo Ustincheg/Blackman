@@ -100,6 +100,11 @@ $(document).ready(function () {
                 $(_footerInfo).addClass('_disabled');
                 $(_showCurrentSection).text($(_contentArr[_currentIndex]).find('.qs_section-ttl span').text());
               })
+              if (_currentIndex === _contentArr.length - 1) {
+                $(_footerTipReturn).fadeOut(100, function () {
+                  $(_footerTipScroll).fadeIn(100);
+                })
+              }
             } else {
               $(_contentArr[_currentIndex]).slideUp(_animationTime, function () {
                 $(_contentArr[_currentIndex]).removeClass('_opened _current');
