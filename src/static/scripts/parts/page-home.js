@@ -108,7 +108,9 @@ $(document).ready(function () {
       let _isAnyCurrent = $('.main section._current');
 
       if (_isAnyCurrent.length == 0) {
-        Open();
+        if (_evt.deltaY > 0) {
+          Open();
+        }
       } else {
         let _currentIndex;
 
