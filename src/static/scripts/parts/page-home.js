@@ -36,6 +36,26 @@ $(document).ready(function () {
     var _showCurrentSection = $('.footer-nav-tabs');
     var _footerInfo = $('.footer-info')[0];
     var _slogan = $('.page-home-bg__slogan');
+    var _footerTipScroll = $('.footer-tip._scroll');
+    var _footerTipReturn = $('.footer-tip._return');
+    var _animationTime = 800;
+
+    _footerTipReturn.removeClass('qs_hidden');
+    $(_footerTipReturn).click(function () {
+      for (let i = _contentArr.length - 1; i >= 1; i--) {
+        $(_contentArr[i]).slideUp(_animationTime, function () {
+          $(_contentArr[i]).removeClass('_opened _current');
+          $(_contentArr[0]).addClass('_current');
+          $(_showCurrentSection).removeClass('_disabled');
+          $(_footerInfo).addClass('_disabled');
+          $(_showCurrentSection).text($(_contentArr[1]).find('.qs_section-ttl span').text());
+        });
+      }
+      $(_footerTipReturn).fadeOut(100, function () {
+        $(_footerTipScroll).fadeIn(100);
+      })
+    })
+    _footerTipReturn.fadeOut(0);
 
     SloganFix();
     $(_showCurrentSection).text($(_contentArr[0]).find('.qs_section-ttl span').text());
@@ -48,7 +68,6 @@ $(document).ready(function () {
     $(window).resize(SloganFix);
 
     function Open(_currentIndex, _direction) {
-      let _animationTime = 800;
       if (_currentIndex != undefined && _currentIndex != null) {
         if (_direction === 'down') {
           if ($(_contentArr[_currentIndex]).scrollTop() === _contentArr[_currentIndex].scrollHeight - _contentArr[_currentIndex].clientHeight) {
@@ -62,6 +81,9 @@ $(document).ready(function () {
                 } else {
                   $(_showCurrentSection).addClass('_disabled');
                   $(_footerInfo).removeClass('_disabled');
+                  $(_footerTipScroll).fadeOut(100, function () {
+                    $(_footerTipReturn).fadeIn(100);
+                  })
                 }
               });
               $(_contentArr[_currentIndex + 1]).addClass('_opened _current');
@@ -108,7 +130,9 @@ $(document).ready(function () {
       let _isAnyCurrent = $('.main section._current');
 
       if (_isAnyCurrent.length == 0) {
-        Open();
+        if (_evt.deltaY > 0) {
+          Open();
+        }
       } else {
         let _currentIndex;
 
