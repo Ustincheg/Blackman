@@ -73,6 +73,10 @@
   background-color: transparent;
 }
 
+.page-home .footer-tip._return svg {
+  transform: rotate(-90deg);
+}
+
 @media (max-width: 900px) {
   .page-home-bg__slogan {
     left: 40px;
