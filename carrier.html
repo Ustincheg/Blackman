@@ -308,11 +308,14 @@
             <header class="_header">
               <span class="_ttl">Электросварщик</span>
               <span class="_desc">от 40 000 до 50 000 рублей</span>
-              <svg class="_icon"></svg>
+              <svg class="_icon" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 2.62657L15 27.6247" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2.50095 14.8744L27.4991 14.8744" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </header>
             <div class="_content">
               <span class="_subttl">Требования</span>
-              <ul class="qs_list">
+              <ul class="qs_list--icon">
                 <li>Образование высшее профессиональное (автоматическое управление технологических процессов и производств)</li>
                 <li>Уверенный пользователь ПК, Компас 2D, 3D</li>
                 <li>Опыт работы: от 5 лет</li>
@@ -322,14 +325,14 @@
               <br>
               <br>
               <span class="_subttl">Обязанности</span>
-              <ul class="qs_list">
+              <ul class="qs_list--icon">
                 <li>Разработка конструкторской документации щитов, блоков управления</li>
                 <li>Техническое сопровождение изделий при изготовлении на производстве</li>
               </ul>
               <br>
               <br>
               <span class="_subttl">Обязанности</span>
-              <ul class="qs_list">
+              <ul class="qs_list--icon">
                 <li>Полная занятость</li>
                 <li>Оформление по ТК</li>
                 <li>График работы 5/2, с 8.10 до 17.00, в пт. – до 16.00</li>
@@ -338,11 +341,47 @@
               </ul>
               <br>
               <br>
-              <a class="qs_link" href=""></a>
+              <a class="qs_link" href="#">Откликнуться на вакансию</a>
             </div>
           </button>
         </li>
       </ul>
+    </section>
+    <section class="carrier-vacancy qs_section">
+      <h2 class="carrier-vacancy qs_section-ttl">Откликнуться на вакансию</h2>
+      <form class="carrier-vacancy-form">
+        <label class="carrier-vacancy-form__label qs_input">
+          <input class="carrier-vacancy-form__name" type="text">
+          <span class="_placeholder">Ваше имя</span>
+        </label>
+        <label class="carrier-vacancy-form__label qs_input">
+          <input class="carrier-vacancy-form__email" type="text">
+          <span class="_placeholder">Ваше E-mail <mark class="_required-mark">*</mark></span>
+        </label>
+        <label class="carrier-vacancy-form__label qs_input">
+          <input class="carrier-vacancy-form__tel" type="text">
+          <span class="_placeholder">Ваше телефон</span>
+        </label>
+        <label class="carrier-vacancy-form__label qs_input">
+          <input class="carrier-vacancy-form__profession" type="text">
+          <span class="_placeholder">Желаемая должность <mark class="_required-mark">*</mark></span>
+        </label>
+        <label class="carrier-vacancy-form__label qs_input">
+          <textarea class="carrier-vacancy-form__message"></textarea>
+          <span class="_placeholder">Сообщение</span>
+        </label>
+        <div class="carrier-vacancy-form-controls">
+          <label class="carrier-vacancy-form__label qs_input">
+            <input class="carrier-vacancy-form__policy" type="checkbox">
+            <span class="_placeholder">Вы даете согласие на обработку персональных данных и соглашаетесь с <a class="carrier-vacancy-form-controls__policy-link" href="#">политикой конфиденциальности</a></span>
+          </label>
+          <label class="carrier-vacancy-form__label qs_input">
+            <input class="carrier-vacancy-form-controls__link qs_input" type="file">
+            <span class="_placeholder">Прикрепить резюме</span>
+          </label>
+          <button class="carrier-vacancy-form-controls__submit qs_btn-grand--blue" type="submit">Отправить</button>
+        </div>
+      </form>
     </section>
   </main>
   <footer class="footer" role="contentinfo">
