@@ -1,5 +1,9 @@
 .header-callback__content {
   max-width: 500px;
+
+  &._disabled {
+    display: none;
+  }
 }
 
 .header-callback-form__input,
@@ -18,6 +22,35 @@
 
 .header-callback-form-policy__link {
   color: $c_blue;
+}
+
+.header-callback-success,
+.header-callback-fail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &._disabled {
+    display: none;
+  }
+}
+
+.header-callback-success__img,
+.header-callback-fail__img {
+  object-fit: contain;
+  object-position: center;
+  max-width: 80px;
+  min-width: 80px;
+  max-height: 80px;
+  min-height: 80px;
+  margin-bottom: 20px;
+}
+
+.header-callback-success__ttl,
+.header-callback-fail__ttl {
+  margin-bottom: 10px;
+  font: 500 30px $f_main;
 }
 
 @media (max-height: 800px) {
