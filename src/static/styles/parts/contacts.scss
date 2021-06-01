@@ -1,0 +1,137 @@
+.contacts {
+  margin-bottom: 40px;
+}
+
+.contacts__iframe {
+  width: 100%;
+  height: 450px;
+  margin-bottom: 40px;
+}
+
+.contacts-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-gap: 80px;
+  padding: 0 80px;
+}
+
+.contacts-info__ttl {
+  margin-bottom: 10px;
+  font: 600 16px $f_main;
+}
+
+.contacts-info-list {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.contacts-callback-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 40px;
+}
+
+.contacts-callback-form__label:nth-child(1),
+.contacts-callback-form__label:nth-child(4),
+.contacts-callback-form-controls {
+  grid-column: 1/3;
+}
+
+.contacts-callback-form input,
+.contacts-callback-form textarea {
+  width: 100%;
+}
+
+.contacts-callback-form-controls {
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  grid-gap: 40px;
+}
+
+.contacts-callback-form-controls-policy {
+  justify-self: start;
+  max-width: 500px;
+}
+
+.contacts-callback-form-controls-policy,
+.contacts-callback-form-controls__submit {
+  align-self: center;
+}
+
+@media (max-width: 1300px) {
+  .contacts-info {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .contacts-callback-form {
+    grid-template-columns: 1fr;
+  }
+
+  .contacts-callback-form__label:nth-child(1),
+  .contacts-callback-form__label:nth-child(4),
+  .contacts-callback-form-controls {
+    grid-column: auto/auto;
+  }
+
+  .contacts-callback-form-controls {
+    grid-template-columns: 1fr 200px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .contacts-callback-form-controls {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 850px) {
+  .contacts-info {
+    grid-gap: 40px;
+  }
+
+  .contacts-callback-form-controls {
+    grid-template-columns: 1fr 200px;
+  }
+}
+
+@media (max-width: 650px) {
+  .contacts-callback-form-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .contacts__iframe {
+    height: 300px;
+  }
+}
+
+@media (max-width: 500px) {
+  .contacts-info {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+
+  .contacts-info__ttl {
+    text-align: center;
+  }
+
+  .contacts-info__address {
+    text-align: center;
+  }
+
+  .contacts-info-list__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .contacts-callback-form-controls-policy,
+  .contacts-callback-form-controls__submit {
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+  }
+}
