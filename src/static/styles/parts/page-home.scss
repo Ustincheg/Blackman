@@ -92,3 +92,9 @@
     font: 900 30px $f_main;
   }
 }
+
+
+// скрываем каптчу
+.grecaptcha-badge {
+  display: none !important;
+}
