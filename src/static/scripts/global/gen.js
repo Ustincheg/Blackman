@@ -79,7 +79,7 @@ $(document).ready(function () {
 // };
 
 function ModalWindows(_modal, _btnOpen, _btnClose, _animationTime) {
-  // _modalId | HTML element | Modal window.
+  // _modal | HTML element | Modal window.
   // _btnOpen | none / HTML element / array of HTML elements | Modal window open button (button list).
   // _btnClose | none / HTML element / array of HTML elements | Modal window close button (button list).
   // _animationTime | none / int | Animation time.
@@ -136,6 +136,7 @@ function ModalWindows(_modal, _btnOpen, _btnClose, _animationTime) {
     }
   };
 
+  $(_modal).css({'opacity': '1'});
   _current.modal = _modal;
   if (_btnOpen && typeof _btnOpen === 'object') {
     if (!_btnOpen.length) {
