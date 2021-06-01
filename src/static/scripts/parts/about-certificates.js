@@ -1,3 +1,5 @@
+//=== SWIPER ===//
+
 $(document).ready(function () {
   const _aboutCertificates = new Swiper('.about-certificates-slider', {
     direction: 'horizontal',
@@ -38,4 +40,10 @@ $(document).ready(function () {
   $(window).resize(function() {
     ScrollbarFix($('.about-certificates-slider'), $('.about-certificates-slider__slide'), $('.about-certificates-slider').find('._scrollbar'));
   })
+})
+
+//=== LIGHTGALLERY ===//
+
+$(document).ready(function () {
+  lightGallery(document.querySelector('.about-certificates-slider__inner'));
 })

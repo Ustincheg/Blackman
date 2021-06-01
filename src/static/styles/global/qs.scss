@@ -525,3 +525,68 @@
 //    <p class="_desc"></p>  
 //  </div>
 //</button>
+
+@mixin qs_consultation-and-next() {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+
+  & ._consultation,
+  & ._next {
+    width: 100%;
+    padding: 20px 5px;
+  }
+
+  & ._consultation {
+    @include qs_btn-grand--red();
+  }
+
+  & ._next {
+    @include qs_btn-grand();
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    & svg {
+      max-width: 20px;
+      min-width: 20px;
+      max-height: 20px;
+      min-height: 20px;
+      margin-left: 15px;
+      transform: rotate(-90deg);
+      stroke: $c_blue;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+
+  @media (max-width: 850px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+}
+
+.qs_consultation-and-next {
+  @include qs_consultation-and-next();
+}
+
+//<ul class="qs_consultation-and-next" role="menu">
+//  <li role="menuitem">
+//    <button class="_consultation" type="button"></button>
+//  </li>
+//  <li role="menuitem">
+//    <a class="_next">
+//      <span></span>
+//      <svg></svg>
+//    <a>
+//  </li>
+//</ul>
