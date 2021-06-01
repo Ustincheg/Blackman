@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Технологии</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="public/style.min.css" rel="stylesheet">
+    <script src="public/scripts-preload.min.js"></script>
+</head>
+
+<body>
+    <header class="header" role="banner">
+        <button class="header__btn-nav-modal" type="button" aria-label="Открыть меню навигации">
+            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1" y="50%" width="100%" height="1" />
+                <rect x="1" y="50%" width="100%" height="1" />
+            </svg>
+        </button>
+        <a class="header__link-logo" href="index.html">
+            <img class="header__img-logo" src="assets/imgs/logo.svg" width="289" loading="lazy" alt="logo">
+        </a>
+        <nav class="header-nav" role="navigation">
+            <ul class="header-nav-list">
+                <li class="header-nav-list__item">
+                    <a class="header-nav-list__link" href="metalworking.html">Металлообработка</a>
+                    <span></span>
+                </li>
+                <li class="header-nav-list__item">
+                    <a class="header-nav-list__link" href="equipment-rental.html">Аренда оборудования</a>
+                    <span></span>
+                </li>
+                <li class="header-nav-list__item">
+                    <a class="header-nav-list__link" href="non-destructive-testing.html">Неразрушающий контроль</a>
+                    <span></span>
+                </li>
+                <li class="header-nav-list__item">
+                    <a class="header-nav-list__link" href="">Материалы</a>
+                    <span></span>
+                </li>
+                <li class="header-nav-list__item">
+                    <a class="header-nav-list__link" href="about.html">О компании</a>
+                    <span></span>
+                </li>
+                <li class="header-nav-list__item">
+                    <a class="header-nav-list__link" href="">Контакты</a>
+                    <span></span>
+                </li>
+            </ul>
+        </nav>
+        <div class="header-wrap">
+            <ul class="header-localizations">
+                <li class="header-localizations__item">
+                    <a class="header-localizations__link" href="#">EN</a>
+                </li>
+            </ul>
+            <button class="header__search" type="button">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M10.5 19C14.6421 19 18 15.6421 18 11.5C18 7.35786 14.6421 4 10.5 4C6.35786 4 3 7.35786 3 11.5C3 15.6421 6.35786 19 10.5 19Z"
+                        stroke-linejoin="round" />
+                    <path d="M16.0752 17.0754L19.872 20.8721" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+        <div class="header-contacts">
+            <ul class="header-contacts-tels">
+                <li class="header-contacts-tels__item">
+                    <a class="header-contacts-tels__link" href="tel:+73496342602"
+                        aria-label="Позвонить нам по телефону">
+                        <span>+7 (3496) 34-26-02</span>
+                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.7001 10.5096C17.3741 10.5421 17.9863 10.9123 18.3282 11.4941L19.7822 13.9685C20.1146 14.5341 20.1484 15.2267 19.8728 15.822L18.6255 18.5162C18.6255 18.5162 19.1881 20.8561 21.1662 22.8342C23.1443 24.8123 25.4761 25.3668 25.4761 25.3668L28.1696 24.1198C28.7652 23.844 29.4583 23.8781 30.024 24.2109L32.5073 25.6721C33.0885 26.0141 33.4583 26.6259 33.4907 27.2995L33.5309 28.1335C33.6625 30.8641 31.0917 32.8606 28.5764 31.7895C25.3521 30.4165 21.3093 28.3093 18.5002 25.5002C15.6911 22.6911 13.5839 18.6483 12.2109 15.424C11.1398 12.9087 13.1363 10.3379 15.867 10.4695L16.7001 10.5096Z"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+            <ul class="header-contacts-emails">
+                <li class="header-contacts-emails__item">
+                    <a class="header-contacts-emails__link" href="mailto:office@sbdr.ru"
+                        aria-label="Написать нам на почту">office@sbdr.ru</a>
+                </li>
+            </ul>
+        </div>
+        <button class="header__btn-callback qs_btn-grand--blue" type="button">Обратная связь</button>
+        <dialog class="header-menu qs_modal" id="header-menu" role="dialog" aria-modal="true">
+            <button class="header-menu__btn-close _btn-close" type="button" aria-label="Закрыть меню навигации">
+                <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="7.23389" y="36.4287" width="42" height="1" transform="rotate(-45 7.23389 36.4287)" />
+                    <rect x="8.44092" y="6.73022" width="42" height="1" transform="rotate(45 8.44092 6.73022)" />
+                </svg>
+            </button>
+            <div class="header-menu__content _content">
+                <h2 class="qs_hidden">Меню навигации</h2>
+                <ul class="header-menu-list-navs">
+                    <li class="header-menu-list-navs__item">
+                        <ul class="header-menu-list-navs-sublist qs_list">
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link _ttl" href="#">Материалы</a>
+                            </li>
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link _ttl" href="#">Проекты</a>
+                            </li>
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link _ttl" href="#">О компании</a>
+                            </li>
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link _ttl" href="#">Карьера</a>
+                            </li>
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link _ttl" href="#">Контакты</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="header-menu-list-navs__item">
+                        <ul class="header-menu-list-navs-sublist qs_list">
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link _ttl" href="#">Металлообработка</a>
+                            </li>
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link" href="#">Токарная обработка</a>
+                            </li>
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link" href="#">Фрезерная обработка</a>
+                            </li>
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link" href="#">Глубокое сверление</a>
+                            </li>
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link" href="#">Ружейное сверление</a>
+                            </li>
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link" href="#">Сварка в узкощелевую
+                                    разделку</a>
+                            </li>
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link" href="#">Ударная обработка
+                                    поверхности</a>
+                            </li>
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link" href="#">Хронирование</a>
+                            </li>
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link" href="#">Прокатка роликом</a>
+                            </li>
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link" href="#">Наружная наплавка</a>
+                            </li>
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link" href="#">Внутренняя наплавка</a>
+                            </li>
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link" href="#">Дробеструйная обработка</a>
+                            </li>
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link" href="#">Шлифование</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="header-menu-list-navs__item">
+                        <ul class="header-menu-list-navs-sublist qs_list">
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link _ttl" href="#">Аренда оборудования</a>
+                            </li>
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link" href="#">BICO – Аренда ВЗД (винтовой
+                                    забойный двигатель) SpiroStar</a>
+                            </li>
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link" href="#">BICO – Аренда Ясов
+                                    Hevi-Hitter</a>
+                            </li>
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link" href="#">DSI – Аренда циркуляционных
+                                    переводников PBL</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="header-menu-list-navs__item">
+                        <ul class="header-menu-list-navs-sublist qs_list">
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link _ttl" href="#">Неразрушающий контроль</a>
+                            </li>
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link" href="#">Ультра-звуковая
+                                    дефектоскопия</a>
+                            </li>
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link" href="#">Магнитно-порошковая
+                                    дефектоскопия</a>
+                            </li>
+                            <li class="header-menu-list-navs-sublist__item">
+                                <a class="header-menu-list-navs-sublist__link" href="#">Капиллярная дефектоскопия</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <footer class="header-menu-footer">
+                    <div class="header-menu-footer-column">
+                        <h3 class="header-menu-footer-column__ttl">Адрес:</h3>
+                        <address class="header-menu-footer-column__value">629800, РФ, ЯНАО, г.Ноябрьск, Промзона, Панель
+                            11</address>
+                    </div>
+                    <div class="header-menu-footer-column">
+                        <h3 class="header-menu-footer-column__ttl">Телефон:</h3>
+                        <ul class="header-menu-footer-column-list">
+                            <li class="header-menu-footer-column-list__item">
+                                <a class="header-menu-footer-column-list__link" href="tel:+73496342602"
+                                    aria-label="Позвонить нам по телефону">+7 (3496) 34-26-02</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="header-menu-footer-column">
+                        <h3 class="header-menu-footer-column__ttl">Факс:</h3>
+                        <ul class="header-menu-footer-column-list">
+                            <li class="header-menu-footer-column-list__item">
+                                <a class="header-menu-footer-column-list__link" href="fax:+73496342603"
+                                    aria-label="Отправить сообщение нам по факсу">+7 (3496) 34-26-03</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="header-menu-footer-column">
+                        <h3 class="header-menu-footer-column__ttl">Почта:</h3>
+                        <ul class="header-menu-footer-column-list">
+                            <li class="header-menu-footer-column-list__item">
+                                <a class="header-menu-footer-column-list__link" href="mailto:office@sbdr.ru"
+                                    aria-label="Написать нам на почту">office@sbdr.ru</a>
+                            </li>
+                        </ul>
+                    </div>
+                </footer>
+            </div>
+        </dialog>
+        <dialog class="header-callback qs_modal" id="header-callback" role="dialog" aria-modal="true">
+            <button class="header-callback__btn-close _btn-close" type="button" aria-label="Закрыть меню навигации">
+                <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="7.23389" y="36.4287" width="42" height="1" transform="rotate(-45 7.23389 36.4287)" />
+                    <rect x="8.44092" y="6.73022" width="42" height="1" transform="rotate(45 8.44092 6.73022)" />
+                </svg>
+            </button>
+            <div class="header-callback__content _content">
+                <h2 class="header-callback__ttl qs_section-ttl">Обратная связь</h2>
+                <form class="header-callback-form">
+                    <label class="header-callback-form__label qs_input">
+                        <input class="header-callback-form__input" type="text">
+                        <span class="header-callback-form__placeholder _placeholder">Ваше имя</span>
+                    </label>
+                    <label class="header-callback-form__label qs_input">
+                        <input class="header-callback-form__input" type="email">
+                        <span class="header-callback-form__placeholder _placeholder">Ваше E-mail <mark
+                                class="_required-mark">*</mark></span>
+                    </label>
+                    <label class="header-callback-form__label qs_input">
+                        <input class="header-callback-form__input" type="tel">
+                        <span class="header-callback-form__placeholder _placeholder">Ваш телефон</span>
+                    </label>
+                    <label class="header-callback-form__label qs_input">
+                        <textarea class="header-callback-form__textarea" rows="1"></textarea>
+                        <span class="header-callback-form__placeholder _placeholder">Сообщение</span>
+                    </label>
+                    <button class="header-callback-form__submit qs_btn-grand--blue" type="submit">Отправить</button>
+                    <div class="header-callback-form-policy">
+                        <label class="header-callback-form-policy qs_input">
+                            <input class="header-callback-form-policy__input _input" type="checkbox">
+                            <span class="header-callback-form-policy__txt">
+                                Вы даете согласие на обработку персональных данных и соглашаетесь c
+                                <a class="header-callback-form-policy__link" href="#">политикой конфиденциальности</a>
+                            </span>
+                    </div>
+                </form>
+            </div>
+        </dialog>
+        <dialog class="header-search qs_modal" id="header-search" role="dialog" aria-modal="true">
+            <button class="header-search__btn-close _btn-close" type="button" aria-label="Закрыть меню навигации">
+                <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="7.23389" y="36.4287" width="42" height="1" transform="rotate(-45 7.23389 36.4287)" />
+                    <rect x="8.44092" y="6.73022" width="42" height="1" transform="rotate(45 8.44092 6.73022)" />
+                </svg>
+            </button>
+            <div class="header-search__content _content">
+                <form class="header-search-form">
+                    <label class="header-search-form__label qs_input">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.5 19C14.6421 19 18 15.6421 18 11.5C18 7.35786 14.6421 4 10.5 4C6.35786 4 3 7.35786 3 11.5C3 15.6421 6.35786 19 10.5 19Z"
+                                stroke-linejoin="round" />
+                            <path d="M16.0752 17.0754L19.872 20.8721" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <input class="header-search-form__input" type="text">
+                    </label>
+                    <button class="header-search-form__submit qs_btn-grand--blue" type="submit">Искать</button>
+                </form>
+            </div>
+        </dialog>
+    </header>
+    <aside class="aside" role="complementary">
+        <div class="aside__wrapper">
+            <a class="aside__return" href="" aria-label="Вернуться на главную страницу">
+                <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M8.74902 0.750275L8.74902 17.2503M8.74902 17.2503L0.749023 9.75027M8.74902 17.2503L16.749 9.75027" />
+                </svg>
+            </a>
+            <h1 class="aside__ttl">Политика конфиденциальности</h1>
+        </div>
+    </aside>
+    <main class="main" role="main">
+        <section class="about-company qs_section privacy-policy" id="about-company">
+            <h2 class="about-company__ttl qs_section-ttl">Условия политики конфиденциальности</h2>
+            <p class="about-company__desc qs_desc">
+                Мы признаем важность конфиденциальности информации. В этом документе описывается, какую личную
+                информацию мы получаем и собираем, когда Вы пользуетесь нашим сайтом. Мы надеемся, что эти сведения
+                помогут Вам принимать осознанные решения в отношении предоставляемой нам личной информации.
+            </p>
+            <h3 class="about-company_ttlh3 qs-">Общедоступная информация</h3>
+            <p class="about-company__desc qs_desc">
+                Если Вы просто просматриваете сайт без заполнения форм обратной связи, информация о Вас не публикуется
+                на сайте.
+            </p>
+            <h3 class="about-company_ttlh3 qs-">Какую информацию мы собираем и зачем она нам нужна</h3>
+            <p class="about-company__desc qs_desc">
+                При заполнении форм обратной связи (отклик на вакансию, направить запрос) вас попросят ввести почту
+                и/или телефон и заполнить несколько полей. Эта информация позволит нам связаться с вами, чтобы обсудить
+                отклик на вакантную должность или предоставить информацию о товаре из раздела «Каталог». Информация,
+                которую вы указали при заполнении форм обратной связи, никогда и ни при каких обстоятельствах не будет
+                передана третьим лицам.
+            </p>
+            <h3 class="about-company_ttlh3 qs-">Куки (Cookie)</h3>
+            <p class="about-company__desc qs_desc">
+                Когда Вы посещаете сайт, на Ваш компьютер отправляются один или несколько файлов cookie. Это небольшой
+                файл, в котором содержатся наборы символов и который позволяет идентифицировать браузер. Мы используем
+                файлы cookie, чтобы повысить качество своих услуг путем сохранения пользовательских настроек и
+                отслеживания тенденций в действиях пользователей, например, при выполнении поиска. Большинство браузеров
+                изначально настроены так, чтобы принимать файлы cookie, однако Вы можете полностью запретить
+                использование файлов cookie или настроить показ уведомлений об их отправке. Однако без файлов cookie
+                некоторые функции сайта могут работать неправильно.
+            </p>
+            <h3 class="about-company_ttlh3 qs-">Ссылки</h3>
+            <p class="about-company__desc qs_desc">
+                На этом сайте ссылки могут быть в таком формате, который позволяет отслеживать, пользуются ли ими
+                посетители. Эта информация используется для повышения качества работы нашего сайта.
+            </p>
+            <h3 class="about-company_ttlh3 qs-">Изменения в политике конфиденциальности</h3>
+            <p class="about-company__desc qs_desc">
+                Обратите внимание, что политика конфиденциальности может периодически изменяться. Все изменения политики
+                конфиденциальности публикуются на этой странице.
+            </p>
+        </section>
+    </main>
+    <footer class="footer" role="contentinfo">
+        <div class="footer-info">
+            <p class="footer-info__copyright">© Schoeller-Bleckmann Darron Russia 2013-2021</p>
+            <a class="footer-info__policy" href="#">Политика конфиденциальности</a>
+        </div>
+    </footer>
+    <script src="public/scripts.min.js"></script>
+</body>
+
+</html>

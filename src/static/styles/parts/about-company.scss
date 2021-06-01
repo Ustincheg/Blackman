@@ -21,7 +21,7 @@
   font-size: 110px;
   line-height: 133px;
   text-align: right;
-  color: #176abd;  
+  color: #176abd;
   display: block;
   margin-top: -108px;
   margin-right: -27px;
@@ -31,6 +31,16 @@
   padding: 50px;
   font: 700 25px $f_main;
   text-align: center;
+}
+.privacy-policy .about-company_ttlh3 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.privacy-policy .about-company__desc {
+  margin-bottom: 25px;
+}
+.privacy-policy .about-company__ttl {
+  font-weight: 700;
 }
 
 @media (max-width: 1500px) {
