@@ -7,56 +7,74 @@ console.log("Файл map.scss подключен");
 ======================================*/
 // Функция ymaps.ready() будет вызвана, когда
 // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
-const data = [
-{
-  title: "Ноябрьск",
-  lat: 63.189667,
-  lon: 75.461747
-},
-{
-  title: "Хьюстон",
-  lat: 29.766892,
-  lon: -95342553.0
-}];
+const x = [{
+        title: "Хьюстон",
+        lat: 29.766892,
+        lon: -95.342553
+    },
+    {
+        title: "Ноябрьск",
+        lat: 63.189667,
+        lon: 75.461747
+    },
+    {
+        title: "Москва",
+        lat: 55.661574,
+        lon: 37.573856
+    },
+];
 
 
 
-const mapInit = (data) => $(document).ready(function () {
+const mapInit = (data) => $(document).ready(function () { 
 
-  console.log(data);
-  // const mapContainer = $("#map");
+    // Проверка наличия карты на странице
+    const mapContainer = $("div").is('#map');    
 
+    if (mapContainer) {        
+        ymaps.ready(init);
 
-  const mapContainer = $("div").is('#map');
-  // console.log(mapContainer);
-  
+        function init() {
+            // Создание карты.
+            var myMap = new ymaps.Map("map", {
+                // Координаты центра карты.
+                // Порядок по умолчанию: «широта, долгота».
+                // Чтобы не определять координаты центра карты вручную,
+                // воспользуйтесь инструментом Определение координат.
+                center: [35.0, 10.0],
+                // Уровень масштабирования. Допустимые значения:
+                // от 0 (весь мир) до 19.
+                zoom: 1.5,
 
-  if (mapContainer) {
-    // console.log(" Нашел карту ");
-    ymaps.ready(init);
-    function init() {
-      // Создание карты.
-      var myMap = new ymaps.Map("map", {
-        // Координаты центра карты.
-        // Порядок по умолчанию: «широта, долгота».
-        // Чтобы не определять координаты центра карты вручную,
-        // воспользуйтесь инструментом Определение координат.
-        center: [35.0, 10.0],
-        // Уровень масштабирования. Допустимые значения:
-        // от 0 (весь мир) до 19.
-        zoom: 1.5,  
-        // mark = []
-      
-      });      
+                type: 'yandex#satellite',
+
+                controls: [],
+            });
+
+            data.forEach(element => {
+                console.log(element);
+                myMap.geoObjects.add(new ymaps.Placemark(
+                    [element.lat, element.lon], {
+                        hintContent: element.title
+                    }, {
+                        // Необходимо указать данный тип макета.
+                        iconLayout: 'default#imageWithContent',
+                        // Своё изображение иконки метки.
+                        iconImageHref: 'assets/icons/placeMark.svg',
+                        // Размеры метки.
+                        iconImageSize: [30, 30],
+                        // Смещение слоя с содержимым относительно слоя с картинкой.
+                        iconImageOffset: [-15, -15],
+                    }
+                ))
+            });
+
+        }
     }
-  }
 });
 
-mapInit(data);
+mapInit(x);
 
-const myPoints = (data) => {
-  return 
-}
 
 // myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
 //   hintContent: 'Собственный значок метки с контентом',
