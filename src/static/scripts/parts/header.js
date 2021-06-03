@@ -144,8 +144,9 @@ function ModalCallbackAjaxResponse(_status) {
       $(_modal).find('.header-callback__content').addClass('_disabled');
       $(_modal).find('.header-callback-success').removeClass('_disabled');
       var _timeout = setTimeout(function () {
-        $(_modal).find('.header-callback__content').removeClass('_disabled');
-        $(_modal).find('.header-callback-success').addClass('_disabled');
+        $('._btn-close').click();
+        // $(_modal).find('.header-callback__content').removeClass('_disabled');
+        // $(_modal).find('.header-callback-success').addClass('_disabled');
       }, 3000);
       $(_modal).find('.header-callback__btn-close').bind('click.timeout', function () {
         clearTimeout(_timeout);
