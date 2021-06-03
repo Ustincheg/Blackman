@@ -281,6 +281,56 @@
         </form>
       </div>
     </dialog>
+    <dialog class="header-callback-vacancy qs_modal" id="header-callback-vacancy" role="dialog" aria-modal="true">
+      <button class="header-callback__btn-close _btn-close" type="button" aria-label="Закрыть меню навигации">
+        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="7.23389" y="36.4287" width="42" height="1" transform="rotate(-45 7.23389 36.4287)" />
+          <rect x="8.44092" y="6.73022" width="42" height="1" transform="rotate(45 8.44092 6.73022)" />
+        </svg>
+      </button>
+      <div class="header-callback__content _content">
+        <h2 class="header-callback__ttl qs_section-ttl">Обратная связь</h2>
+        <p class="header-callback__vacancy qs_desc">(Электрогазосварщик)</p>
+        <form class="header-callback-form">
+          <label class="header-callback-form__label qs_input">
+            <input class="header-callback-form__input" type="text">
+            <span class="header-callback-form__placeholder _placeholder">Ваше имя</span>
+          </label>
+          <label class="header-callback-form__label qs_input">
+            <input class="header-callback-form__input" type="email">
+            <span class="header-callback-form__placeholder _placeholder">Ваше E-mail <mark class="_required-mark">*</mark></span>
+          </label>
+          <label class="header-callback-form__label qs_input">
+            <input class="header-callback-form__input" type="tel">
+            <span class="header-callback-form__placeholder _placeholder">Ваш телефон</span>
+          </label>
+          <label class="header-callback-form__label qs_input">
+            <textarea class="header-callback-form__textarea" rows="1"></textarea>
+            <span class="header-callback-form__placeholder _placeholder">Сообщение</span>
+          </label>
+          <button class="header-callback__load-file">Прикрепить резюме</button>
+          <button class="header-callback-form__submit qs_btn-grand--blue" type="submit">Отправить</button>
+          <div class="header-callback-form-policy">
+            <label class="header-callback-form-policy qs_input">
+              <input class="header-callback-form-policy__input _input" type="checkbox">
+              <span class="header-callback-form-policy__txt">
+                Вы даете согласие на обработку персональных данных и соглашаетесь c
+                <a class="header-callback-form-policy__link" href="#">политикой конфиденциальности</a>
+              </span>
+          </div>
+        </form>
+      </div>
+      <div class="header-callback-success _disabled">
+        <img class="header-callback-success__img" src="assets/icons/email-successfully.svg" width="0" height="0" alt="">
+        <span class="header-callback-success__ttl">Ваша заявка успешно отправлена</span>
+        <span class="header-callback-success__desc">Совсем скоро мы с вами свяжемся</span>
+      </div>
+      <div class="header-callback-fail _disabled">
+        <img class="header-callback-fail__img" src="assets/icons/email-fail.svg" width="0" height="0" alt="">
+        <span class="header-callback-fail__ttl">Заявка не отправлена</span>
+        <span class="header-callback-fail__desc">Попробуйте еще раз</span>
+      </div>
+    </dialog>
   </header>
   <aside class="aside" role="complementary">
     <div class="aside__wrapper">
