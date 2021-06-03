@@ -53,6 +53,35 @@
   font: 500 30px $f_main;
 }
 
+.header-callback__ttl.qs_section-ttl {
+  font-weight: 700;
+}
+.header-callback__vacancy.qs_desc {
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 27px;
+  color: #949fa8;
+}
+
+.header-callback__load-file {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #176abd;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 25px;
+}
+.header-callback__load-file::before {
+  content: ' ';
+  background-image: url(../assets/icons/paper_clip.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+}
+
 @media (max-height: 800px) {
   .header-callback {
     padding-top: 20px;
