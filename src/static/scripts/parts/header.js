@@ -1,15 +1,15 @@
 //=== MENU ===//
 
 $(document).ready(function () {
-  var _ModalMenu = ModalWindows($('.header-menu')[0], $('.header__btn-nav-modal'));
-  var _btnMenu = $('.header__btn-nav-modal');
-  var _menu = $('.header-menu');
+  // var _ModalMenu = ModalWindows($('.header-menu')[0], $('.header__btn-nav-modal'));
+  // var _btnMenu = $('.header__btn-nav-modal');
+  // var _menu = $('.header-menu');
 
-  $(_btnMenu).hover(function () {
-    $(_btnMenu).addClass('_hover');
-  }, function () {
-    $(_btnMenu).removeClass('_hover');
-  });
+  // $(_btnMenu).hover(function () {
+  //   $(_btnMenu).addClass('_hover');
+  // }, function () {
+  //   $(_btnMenu).removeClass('_hover');
+  // });
 })
 
 // $(document).ready(function () {
@@ -61,7 +61,7 @@ $(document).ready(function () {
 //=== CALLBACK ===//
 
 $(document).ready(function () {
-  var _ModalCallback = ModalWindows($('.header-callback')[0], $('.header__btn-callback'));
+  //var _ModalCallback = ModalWindows($('.header-callback')[0], $('.header__btn-callback'));
 
   // var _btnCallback = $('.header__btn-callback');
   // var _callback = $('.header-callback');
@@ -99,7 +99,7 @@ $(document).ready(function () {
 //=== SEARCH ===//
 
 $(document).ready(function () {
-  var _ModalSearch = ModalWindows($('.header-search')[0], $('.header__search'));
+  //var _ModalSearch = ModalWindows($('.header-search')[0], $('.header__search'));
 
   // var _btnSearch = $('.header__search');
   // var _search = $('.header-search');
