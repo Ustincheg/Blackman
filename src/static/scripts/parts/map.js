@@ -25,11 +25,13 @@ console.log("Файл map.scss подключен");
 // ];
 
 
+console.log("1211212")
 
 const mapInit = (data) => $(document).ready(function () { 
 
     // Проверка наличия карты на странице
-    const mapContainer = $("div").is('#map');    
+    const mapContainer = $("div").is('#map');
+    const isMapContacts = $("contacts").is('#mapSelf');
 
     if (mapContainer) {        
         ymaps.ready(init);
@@ -47,6 +49,50 @@ const mapInit = (data) => $(document).ready(function () {
                 zoom: 1.5,
 
                 type: 'yandex#satellite',
+
+                controls: [],
+            });
+
+            data.forEach(element => {
+                console.log(element);
+                myMap.geoObjects.add(new ymaps.Placemark(
+                    [element.lat, element.lon], {
+                        hintContent: element.title
+                    }, {
+                        // Необходимо указать данный тип макета.
+                        iconLayout: 'default#imageWithContent',
+                        // Своё изображение иконки метки.
+                        // iconImageHref: 'assets/icons/placeMark.svg',
+                        iconImageHref: '../static/assets/icons/placeMark.svg',
+
+                        // Размеры метки.
+                        iconImageSize: [30, 30],
+                        // Смещение слоя с содержимым относительно слоя с картинкой.
+                        iconImageOffset: [-15, -15],
+                    }
+                ))
+            });
+        }
+    }
+
+
+    // Карта на странице контактов
+
+
+    if (mapContainer) {        
+        ymaps.ready(init);
+
+        function init() {
+            // Создание карты.
+            var myMap = new ymaps.Map("mapSelf", {
+                // Координаты центра карты.
+                // Порядок по умолчанию: «широта, долгота».
+                // Чтобы не определять координаты центра карты вручную,
+                // воспользуйтесь инструментом Определение координат.
+                center: [63.197546, 75.511242],                
+                // Уровень масштабирования. Допустимые значения:
+                // от 0 (весь мир) до 19.
+                zoom: 15,                
 
                 controls: [],
             });
