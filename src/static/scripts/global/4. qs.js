@@ -78,6 +78,11 @@ const Modal = function (_selectorModal, _animationTime) {
     })
     $(this.inside.root).css({'opacity': '1'});
     this.action.close('force');
+    $(window).keyup(_evt => {
+      if (_evt.originalEvent.code === 'Escape') {
+        this.action.close();
+      }
+    })
     this.addBtnOpen = (_btns) => {
       if (typeof _btns === 'object' && _btns instanceof Array) {
         for (let i = 0; i < _btns.length; i++) {
