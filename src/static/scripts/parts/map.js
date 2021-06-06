@@ -97,6 +97,8 @@ const mapInit = (data) => $(document).ready(function () {
                 controls: [],
             });
 
+            
+
             data.forEach(element => {
                 console.log(element);
                 myMap.geoObjects.add(new ymaps.Placemark(
