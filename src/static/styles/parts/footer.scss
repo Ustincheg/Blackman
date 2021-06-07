@@ -8,15 +8,12 @@
 }
 
 .footer-nav-tabs {
+  display: none;
   flex-grow: 1;
   padding: 20px 0;
   padding-left: 80px;
   font: 900 30px $f_main;
   color: $c_white;
-  
-  &._disabled {
-    display: none;
-  }
 }
 
 .footer-nav-tabs__item {
@@ -28,6 +25,14 @@
 
   &._current {
     display: block;
+  }
+}
+
+.page-home .footer-nav-tabs {
+  display: block;
+
+  &._disabled {
+    display: none;
   }
 }
 
@@ -49,7 +54,7 @@
 }
 
 .footer-tip {
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-self: center;
   align-items: center;
@@ -70,6 +75,10 @@
 
 .footer-tip__desc {
   color: $c_white;
+}
+
+.page-home .footer-tip {
+  display: flex;
 }
 
 // @media (max-width: 900px) {

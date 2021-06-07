@@ -24,6 +24,8 @@
 
 .header-menu-list-navs-sublist__link {
   &._ttl {
+    display: block;
+    margin-bottom: 30px;
     font: 900 30px $f_main;
   }
 }
@@ -35,7 +37,8 @@
 }
 
 .header-menu-footer-column__ttl {
-  font-weight: 700;
+  margin-bottom: 15px;
+  font-weight: 500;
 }
 
 .header-menu-list-navs-sublist__link,

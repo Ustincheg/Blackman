@@ -40,15 +40,17 @@ $(document).ready(function () {
     var _footerTipReturn = $('.footer-tip._return');
     var _animationTime = 800;
 
+    // WARNING! For correct work, you need to set animation of footer elements less than animation of content.
+
     _footerTipReturn.removeClass('qs_hidden');
     $(_footerTipReturn).click(function () {
-      for (let i = _contentArr.length - 1; i >= 1; i--) {
+      for (let i = _contentArr.length - 1; i >= 0; i--) {
         $(_contentArr[i]).slideUp(_animationTime, function () {
           $(_contentArr[i]).removeClass('_opened _current');
-          $(_contentArr[0]).addClass('_current');
+          //$(_contentArr[0]).addClass('_current');
           $(_showCurrentSection).removeClass('_disabled');
           $(_footerInfo).addClass('_disabled');
-          $(_showCurrentSection).text($(_contentArr[1]).find('.qs_section-ttl span').text());
+          $(_showCurrentSection).text($(_contentArr[0]).find('.qs_section-ttl span').text());
         });
       }
       $(_footerTipReturn).fadeOut(100, function () {
@@ -76,16 +78,25 @@ $(document).ready(function () {
               $(_contentArr[_currentIndex + 1]).slideDown(_animationTime, function () {
                 $(_contentArr[_currentIndex]).removeClass('_current');
                 $(_contentArr[_currentIndex + 1]).removeClass('_animating');
-                if (_currentIndex + 2 <= _contentArr.length - 1) {
-                  $(_showCurrentSection).text($(_contentArr[_currentIndex + 2]).find('.qs_section-ttl span').text());
-                } else {
-                  $(_showCurrentSection).addClass('_disabled');
-                  $(_footerInfo).removeClass('_disabled');
-                  $(_footerTipScroll).fadeOut(100, function () {
-                    $(_footerTipReturn).fadeIn(100);
-                  })
-                }
+                // if (_currentIndex + 2 <= _contentArr.length - 1) {
+                //   $(_showCurrentSection).text($(_contentArr[_currentIndex + 2]).find('.qs_section-ttl span').text());
+                // } else {
+                //   $(_showCurrentSection).addClass('_disabled');
+                //   $(_footerInfo).removeClass('_disabled');
+                //   $(_footerTipScroll).fadeOut(100, function () {
+                //     $(_footerTipReturn).fadeIn(100);
+                //   })
+                // }
               });
+              if (_currentIndex + 2 <= _contentArr.length - 1) {
+                $(_showCurrentSection).text($(_contentArr[_currentIndex + 2]).find('.qs_section-ttl span').text());
+              } else {
+                $(_showCurrentSection).addClass('_disabled');
+                $(_footerInfo).removeClass('_disabled');
+                $(_footerTipScroll).fadeOut(100, function () {
+                  $(_footerTipReturn).fadeIn(100);
+                })
+              }
               $(_contentArr[_currentIndex + 1]).addClass('_opened _current');
             }
           }
@@ -106,8 +117,9 @@ $(document).ready(function () {
                 })
               }
             } else {
+              $(_contentArr[_currentIndex]).addClass('_animating');
               $(_contentArr[_currentIndex]).slideUp(_animationTime, function () {
-                $(_contentArr[_currentIndex]).removeClass('_opened _current');
+                $(_contentArr[_currentIndex]).removeClass('_opened _current _animating');
                 $(_showCurrentSection).removeClass('_disabled');
                 $(_footerInfo).addClass('_disabled');
                 $(_showCurrentSection).text($(_contentArr[0]).find('.qs_section-ttl span').text());
@@ -149,13 +161,15 @@ $(document).ready(function () {
         }
 
         if (_evt.deltaY > 0) {
-          if ($(_contentArr[_currentIndex + 1]).hasClass('_animating')) {
+          //if ($(_contentArr[_currentIndex + 1]).hasClass('_animating')) {
+          if ($(_contentArr).is('._animating')) {
             _evt.preventDefault();
           } else {
             Open(_currentIndex, 'down');
           }
         } else if (_evt.deltaY < 0) {
-          if ($(_contentArr[_currentIndex]).hasClass('_animating')) {
+          //if ($(_contentArr[_currentIndex]).hasClass('_animating') && $(_contentArr[_currentIndex + 1]).hasClass('_animating')) {
+          if ($(_contentArr).is('._animating')) {  
             _evt.preventDefault();
           } else {
             Open(_currentIndex, 'up');
