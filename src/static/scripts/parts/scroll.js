@@ -1,27 +1,23 @@
-// jQuery("main").scroll(function () {  
-//   var $sections = $("section");
-//   $sections.each(function (i, el) {
-//     var top = $(el).offset().top - 100;
-//     var bottom = top + $(el).height();
-//     var scroll = $(window).scrollTop();
-//     var id = $(el).attr("id");      
-//     if (scroll > top && scroll < bottom) {
-//       $("#scroll-to-anchor a").removeClass("_current");
-//       $('#scroll-to-anchor a[href="#' + id + '"]').addClass("_current");
-//     }
-//   });
-// });
-// $("nav#scroll-to-anchor").on("click", "a", function (event) {
-//   // исключаем стандартную реакцию браузера
-//   event.preventDefault();
+// создаем массив ссылок соответсвующих заданному селектору
+const smoothLinks = document.querySelectorAll('a[href^="#"].aside-nav-list__link');
+// проходим циклом по массиву
+for (let smoothLink of smoothLinks) {
+    // вешаем слушателя на каждую ссылку
+    smoothLink.addEventListener('click', function (e) {
+        // сбрасываем нативное поведение ссылок
+        e.preventDefault();
+        
+        const id = smoothLink.getAttribute('href');
+        
+        document.querySelector('a[href^="#"].aside-nav-list__link._current')
+            .classList.remove('_current');
 
-//   // получем идентификатор блока из атрибута href
-//   var id = $(this).attr("href"),
-//     // находим высоту, на которой расположен блок
-//     coord = $(id).offset(); 
-//     console.log(coord);
-//     top = coord.top;
-    
-//   // анимируем переход к блоку, время: 800 мс
-//   $("body,html").animate({ scrollTop: top }, 800);
-// });
+        smoothLink.classList.add('_current');
+
+        document.querySelector(id).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
+};
+
