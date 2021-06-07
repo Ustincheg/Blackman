@@ -354,32 +354,31 @@ const FormValidation = function (_selectorForm, _options) {
 // });
 
 $(document).ready(() => {
-  const _options = {
-    inputText: {
-      valueLength: 256
-    },
-    inputTel: {
-      valueLength: 256
-    },
-    inputEmail: {
-      valueCheckAlgorithm: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
-      valueLength: 256
-    }
-  }
+  // const _options = {
+  //   inputText: {
+  //     valueLength: 256
+  //   },
+  //   inputTel: {
+  //     valueLength: 256
+  //   },
+  //   inputEmail: {
+  //     valueCheckAlgorithm: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
+  //     valueLength: 256
+  //   }
+  // }
 
   if ($('.header-callback .header-callback-form').length > 0) {
     var _formHeaderCallback = new FormValidation($('.header-callback .header-callback-form')[0], {
       inputText: {
-        valueCheckAlgorithm: /[^0-9,]/,
-        valueLength: 256
+        valueLength: 254
       },
       inputTel: {
         valueCheckAlgorithm: /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
-        valueLength: 256
+        valueLength: 50
       },
       inputEmail: {
         valueCheckAlgorithm: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
-        valueLength: 256
+        valueLength: 254
       },
       acceptance: $('.header-callback .header-callback-form-policy__input')[0]
     })
@@ -388,16 +387,15 @@ $(document).ready(() => {
   if ($('.header-callback-vacancy .header-callback-form').length > 0) {
     var _formHeaderCallbackVacancy = new FormValidation($('.header-callback-vacancy .header-callback-form')[0], {
       inputText: {
-        valueCheckAlgorithm: /[^0-9,]/,
-        valueLength: 256
+        valueLength: 254
       },
       inputTel: {
         valueCheckAlgorithm: /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
-        valueLength: 256
+        valueLength: 50
       },
       inputEmail: {
         valueCheckAlgorithm: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
-        valueLength: 256
+        valueLength: 254
       },
       acceptance: $('.header-callback-vacancy .header-callback-form-policy__input')[0]
     })
