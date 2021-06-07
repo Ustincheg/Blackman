@@ -141,7 +141,7 @@ const FormValidation = function (_selectorForm, _options) {
         if (_checkboxes instanceof Array) {
           _checkboxes.forEach(_elem => {
             if (_elem.nodeName) {
-              this.inside.acceptance.push(_elem);
+              this.inside.acceptance.elems.push(_elem);
             } else {
               throw new TypeError('Second argument, element from "acceptance" array is not a DOM element. Expected: nothing, DOM element or array of DOM elements.');
             }
