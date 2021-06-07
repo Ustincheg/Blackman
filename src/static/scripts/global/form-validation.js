@@ -370,6 +370,7 @@ $(document).ready(() => {
   if ($('.header-callback .header-callback-form').length > 0) {
     var _formHeaderCallback = new FormValidation($('.header-callback .header-callback-form')[0], {
       inputText: {
+        valueCheckAlgorithm: /[^0-9,]/,
         valueLength: 256
       },
       inputTel: {
@@ -387,6 +388,7 @@ $(document).ready(() => {
   if ($('.header-callback-vacancy .header-callback-form').length > 0) {
     var _formHeaderCallbackVacancy = new FormValidation($('.header-callback-vacancy .header-callback-form')[0], {
       inputText: {
+        valueCheckAlgorithm: /[^0-9,]/,
         valueLength: 256
       },
       inputTel: {

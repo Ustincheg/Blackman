@@ -39,20 +39,26 @@ $(document).ready(function () {
     var _footerTipScroll = $('.footer-tip._scroll');
     var _footerTipReturn = $('.footer-tip._return');
     var _animationTime = 800;
+    var _main = $('main')[0];
+    var _paddingRightDefault = 80;
 
     // WARNING! For correct work, you need to set animation of footer elements less than animation of content.
 
     _footerTipReturn.removeClass('qs_hidden');
     $(_footerTipReturn).click(function () {
-      for (let i = _contentArr.length - 1; i >= 0; i--) {
-        $(_contentArr[i]).slideUp(_animationTime, function () {
-          $(_contentArr[i]).removeClass('_opened _current');
-          //$(_contentArr[0]).addClass('_current');
-          $(_showCurrentSection).removeClass('_disabled');
-          $(_footerInfo).addClass('_disabled');
-          $(_showCurrentSection).text($(_contentArr[0]).find('.qs_section-ttl span').text());
-        });
+      let _counter = _contentArr.length - 1;
+      function Step(_index) {
+        Open(_index, 'up');
+        let _timeout = setTimeout(() => {
+          if (_counter !== 0) {
+            _counter--;
+            Step(_counter);
+          } else {
+            clearTimeout(_timeout);
+          }
+        }, _animationTime);
       }
+      Step(_counter);
       $(_footerTipReturn).fadeOut(100, function () {
         $(_footerTipScroll).fadeIn(100);
       })
@@ -76,6 +82,7 @@ $(document).ready(function () {
             if (_currentIndex != _contentArr.length - 1) {
               $(_contentArr[_currentIndex + 1]).addClass('_animating');
               $(_contentArr[_currentIndex + 1]).slideDown(_animationTime, function () {
+                //ScrollFix(_currentIndex + 1);
                 $(_contentArr[_currentIndex]).removeClass('_current');
                 $(_contentArr[_currentIndex + 1]).removeClass('_animating');
                 // if (_currentIndex + 2 <= _contentArr.length - 1) {
@@ -103,8 +110,11 @@ $(document).ready(function () {
         } else if (_direction === 'up') {
           if ($(_contentArr[_currentIndex]).scrollTop() === 0) {
             if (_currentIndex != 0) {
+              //ScrollFix(_currentIndex, 'close');
               $(_contentArr[_currentIndex]).addClass('_animating');
               $(_contentArr[_currentIndex]).slideUp(_animationTime, function () {
+                //ScrollFix(_currentIndex - 1);
+                //console.log(_currentIndex);
                 $(_contentArr[_currentIndex]).removeClass('_opened _current _animating');
                 $(_contentArr[_currentIndex - 1]).addClass('_current');
                 $(_showCurrentSection).removeClass('_disabled');
@@ -118,6 +128,7 @@ $(document).ready(function () {
               }
             } else {
               $(_contentArr[_currentIndex]).addClass('_animating');
+              //ScrollFix(0, 'close');
               $(_contentArr[_currentIndex]).slideUp(_animationTime, function () {
                 $(_contentArr[_currentIndex]).removeClass('_opened _current _animating');
                 $(_showCurrentSection).removeClass('_disabled');
@@ -132,6 +143,7 @@ $(document).ready(function () {
       } else {
         $(_slogan).addClass('_disabled');
         $(_contentArr[0]).slideDown(_animationTime, function () {
+          //ScrollFix(0);
           $(_contentArr[0]).addClass('_opened _current');
           if (_contentArr.length > 1) {
             $(_showCurrentSection).text($(_contentArr[1]).find('.qs_section-ttl span').text());
@@ -161,14 +173,12 @@ $(document).ready(function () {
         }
 
         if (_evt.deltaY > 0) {
-          //if ($(_contentArr[_currentIndex + 1]).hasClass('_animating')) {
           if ($(_contentArr).is('._animating')) {
             _evt.preventDefault();
           } else {
             Open(_currentIndex, 'down');
           }
         } else if (_evt.deltaY < 0) {
-          //if ($(_contentArr[_currentIndex]).hasClass('_animating') && $(_contentArr[_currentIndex + 1]).hasClass('_animating')) {
           if ($(_contentArr).is('._animating')) {  
             _evt.preventDefault();
           } else {
@@ -178,6 +188,37 @@ $(document).ready(function () {
       }
     }, {
       passive: false
-    })
+    });
+
+    function ScrollFix(_index, _move) {
+      let _currentSection = _contentArr[_index]
+      let _isScrollable = _currentSection.scrollHeight > _currentSection.clientHeight;
+
+      if (_move === 'close') {
+        $(_currentSection).css({'padding-right': _paddingRightDefault});
+        $(_currentSection).css({'overflow-y': 'hidden'});
+        return false;
+      }
+
+      if (_isScrollable) {
+        let _paddingOffset = _main.clientWidth - _currentSection.clientWidth;
+
+        $(_currentSection).css({'overflow-y': 'scroll'});
+        $(_currentSection).css({'padding-right': (_paddingRightDefault - _paddingOffset) + 'px'});
+      } else {
+        $(_currentSection).css({'overflow-y': 'hidden'});
+        $(_currentSection).css({'padding-right': _paddingRightDefault + 'px'});
+      }
+    }
+
+    console.log(_contentArr);
+
+    // $(window).resize(() => {
+    //   $(_contentArr).each((_index, _section) => {
+    //     if ($(_section).hasClass('_current')) {
+    //       ScrollFix(_index);
+    //     }
+    //   })
+    // })
   }
 })
