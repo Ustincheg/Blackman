@@ -25,15 +25,16 @@ console.log("Файл map.scss подключен");
 // ];
 
 
-console.log("1211212")
 
 const mapInit = (data) => $(document).ready(function () { 
-
-    // Проверка наличия карты на странице
-    const mapContainer = $("div").is('#map');
-    const isMapContacts = $("contacts").is('#mapSelf');
-
-    if (mapContainer) {        
+  
+  // Проверка наличия карты на странице
+  const isMapContainer = $("div").is('#map');
+  const isMapContacts = $("div").is('#mapSelf');
+  
+  
+  if (isMapContainer) {    
+      console.log("Нашел контейнер", '#map')    
         ymaps.ready(init);
 
         function init() {
@@ -54,7 +55,7 @@ const mapInit = (data) => $(document).ready(function () {
             });
 
             data.forEach(element => {
-                console.log(element);
+                console.log(element, "element");
                 myMap.geoObjects.add(new ymaps.Placemark(
                     [element.lat, element.lon], {
                         hintContent: element.title
@@ -79,10 +80,12 @@ const mapInit = (data) => $(document).ready(function () {
     // Карта на странице контактов
 
 
-    if (mapContainer) {        
-        ymaps.ready(init);
+    if (isMapContacts) {    
+        console.log("Нашел контейнер", '#mapSelf')
+      
+        ymaps.ready(mapSelfInit);
 
-        function init() {
+        function mapSelfInit() {
             // Создание карты.
             var myMap = new ymaps.Map("mapSelf", {
                 // Координаты центра карты.
@@ -92,7 +95,7 @@ const mapInit = (data) => $(document).ready(function () {
                 center: [63.197546, 75.511242],                
                 // Уровень масштабирования. Допустимые значения:
                 // от 0 (весь мир) до 19.
-                zoom: 15,                
+                zoom: 17,                
 
                 controls: [],
             });
@@ -104,15 +107,14 @@ const mapInit = (data) => $(document).ready(function () {
                         hintContent: element.title
                     }, {
                         // Необходимо указать данный тип макета.
-                        iconLayout: 'default#imageWithContent',
+                        // iconLayout: 'default#imageWithContent',
                         // Своё изображение иконки метки.
                         // iconImageHref: 'assets/icons/placeMark.svg',
-                        iconImageHref: '../static/assets/icons/placeMark.svg',
-
+                        // iconImageHref: '../static/assets/icons/placeMark.svg',
                         // Размеры метки.
                         iconImageSize: [30, 30],
                         // Смещение слоя с содержимым относительно слоя с картинкой.
-                        iconImageOffset: [-15, -15],
+                        // iconImageOffset: [-15, -15],
                     }
                 ))
             });

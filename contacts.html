@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="public/style.min.css" rel="stylesheet">
   <script src="public/scripts-preload.min.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=3aed4cec-a29d-4eef-9d20-9434923254b0&lang=ru_RU"
+  type="text/javascript"></script>
 </head>
 
 <body>
@@ -290,7 +292,7 @@
   </aside>
   <main class="main" role="main">
     <section class="contacts">
-      <iframe class="contacts__iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d68479332.03326444!2d-1.299833802517291!3d30.83644648250646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sru!2sru!4v1622541720647!5m2!1sru!2sru" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <div id="mapSelf" style="width: 100%; height: 450px"></div>
       <ul class="contacts-info">
         <li class="contacts-info__item">
           <h3 class="contacts-info__ttl">Адрес:</h3>
