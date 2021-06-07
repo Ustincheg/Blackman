@@ -91,7 +91,7 @@ const Modal = function (_selectorModal, _animationTime) {
           } else if (typeof _btns[i] === 'undefined') {
             continue;
           } else {
-            throw new TypeError('Unexpected value of argument. Expected: DOM element or array of DOM elements');
+            throw new TypeError('Unexpected type of argument. Expected: DOM element or array of DOM elements');
           }
         }
       } else if (typeof _btns === 'object' && _btns.nodeName) {
@@ -99,10 +99,9 @@ const Modal = function (_selectorModal, _animationTime) {
       } else if (typeof _btns === 'undefined') {
         return false;
       } else {
-        throw new TypeError('Unexpected value of argument. Expected: DOM element or array of DOM elements');
+        throw new TypeError('Unexpected type of argument. Expected: DOM element or array of DOM elements');
       }
       for (let i = 0; i < this.inside.btnOpen.length; i++) {
-        console.log(this.inside.btnOpen[i])
         $(this.inside.btnOpen[i]).click(this.action.open);
       }
     }
@@ -112,18 +111,16 @@ const Modal = function (_selectorModal, _animationTime) {
 }
 
 var qsModalArr = [];
-
 $(document).ready(() => {
   $('.qs_modal').each((_index, _elem) => {
     qsModalArr.push({
-      name: _elem,
+      elem: _elem,
       index: _index,
       obj: new Modal(_elem)
     });
   });
-
   for (let i = 0; i < qsModalArr.length; i++) {
-    switch (qsModalArr[i].name) {
+    switch (qsModalArr[i].elem) {
       case $('.header-menu')[0]: 
         qsModalArr[i].obj.addBtnOpen($('.header__btn-nav-modal')[0]); 
         break;

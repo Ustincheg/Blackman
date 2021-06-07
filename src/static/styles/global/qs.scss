@@ -48,7 +48,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-  font: 900 40px $f_main;
+  font: 700 40px $f_main;
   color: $c_black;
 
   & ._link {
@@ -62,7 +62,7 @@
   }
 
   @media (max-width: 800px) {
-    font-size: 22px;
+    font-size: 25px;
   }
 }
 
@@ -80,8 +80,8 @@
   font: 700 30px $f_main;
   color: $c_black;
 
-  @media (max-width: 1200px) {
-    font-size: 24px;
+  @media (max-width: 1300px) {
+    font-size: 25px;
   }
 
   @media (max-width: 800px) {
@@ -96,6 +96,7 @@
 @mixin qs_desc() {
   font: 400 16px $f_main;
   color: $c_black;
+  line-height: 150%;
 }
 
 .qs_desc {
@@ -391,7 +392,8 @@
       }
     } 
 
-    &:invalid {
+    &:invalid,
+    &._incorrect {
       border-color: $c_red;
 
       & ~ ._placeholder {
@@ -485,6 +487,7 @@
   }
 
   & ._content {
+    display: none;
     padding: 30px;
     padding-top: 0;
     text-align: left;

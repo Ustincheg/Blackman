@@ -279,66 +279,69 @@ $(document).ready(function () {
 
 //=== ANCHOR SCROLL ===//
 
-// $(document).ready(function () {
-//   if (!$('.body').hasClass('page-home') && $('.aside').length > 0) {
-//     var _asideLinks = $('.aside-nav-list__link[href^="#"]');
-//     var _content = $('.main section[id]');
-//     var _main = $('.main');
+$(document).ready(function () {
+  const smoothLinks = document.querySelectorAll('a[href^="#"].aside-nav-list__link');
+  for (let smoothLink of smoothLinks) {
+    smoothLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      const id = smoothLink.getAttribute('href');        
+      document.querySelector('a[href^="#"].aside-nav-list__link._current')
+        .classList.remove('_current');
 
-//     function Constructor() {
-//       var _obj = {
-//         anchorArr: [],
-//         contentArr: [],
-//         scroll: undefined
-//       };
+      smoothLink.classList.add('_current');
+      document.querySelector(id).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  };
 
-//       _asideLinks.each((_index) => _obj.anchorArr.push({
-//         elem: _asideLinks[_index],
-//         value: $(_asideLinks[_index]).attr('href').replace(/#/, '') 
-//       }));
+  if (!$('.body').hasClass('page-home') && $('.aside').length > 0) {
+    var _asideLinks = $('.aside-nav-list__link[href^="#"]');
+    //var _content = $('.main section[id]');
+    var _main = $('.main');
 
-//       _content.each((_index) => _obj.contentArr.push({
-//         elem: _content[_index],
-//         value: $(_content[_index]).attr('id'),
-//         top: _content[_index].getBoundingClientRect().y - $(_main).offset().top, //+ this.scroll, //- $(_main).offset().top,
-//         bottom: $(_content[_index]).offset().top + $(_content[_index]).height()
-//       }));
+    function Constructor() {
+      var _obj = {
+        anchorArr: [],
+        //contentArr: [],
+        scroll: undefined
+      };
 
-//       _obj.currentValue = (_scroll) => {
-//         for (let i = 0; i < _obj.contentArr.length; i++) {
-//           if (_scroll >= _obj.contentArr[i].top && _scroll <= _obj.contentArr[i].bottom) {
-//             for (let j = 0; j < _obj.anchorArr.length; j++) {
-//               if (_obj.anchorArr[j].value === _obj.contentArr[i].value) {
-//                 $(_obj.anchorArr[j].elem).addClass('_current');
-//               }
-//             } 
-//           } else {
-//             for (let j = 0; j < _obj.anchorArr.length; j++) {
-//               if (_obj.anchorArr[j].value === _obj.contentArr[i].value) {
-//                 $(_obj.anchorArr[j].elem).removeClass('_current');
-//               }
-//             }
-//           }
-//         }
-//       }
+      _asideLinks.each((_index) => _obj.anchorArr.push({
+        elem: _asideLinks[_index],
+        value: $(_asideLinks[_index]).attr('href').replace(/#/, '') 
+      }));
 
-//       _main.on('scroll', (_evt) => {
-//         // Проверить показатель _evt и _scroll;
-//         _obj.currentValue(_main.scrollTop()) //+ _main.height() / 4);
-//         _obj.scroll = _main.scrollTop();
-//         console.log(_main.scrollTop()) //+ _main.height() / 4);
-//         //console.log(pageYOffset);
-//         // console.log(_main.height() / 4);
-//         // console.log(_main[0].scrollHeight);
-//         console.log(_obj.contentArr[1].top);
-//         //console.log(_obj.contentArr[5].bottom);
-//         //console.log($(_main).offset().top);
-//         // console.log(_obj.contentArr[0].top);
-//         // console.log(_obj.contentArr[0].bottom);
-//         // console.log('scroll');
-//       });
-//     }
+      // _content.each((_index) => _obj.contentArr.push({
+      //   elem: _content[_index],
+      //   value: $(_content[_index]).attr('id'),
+      //   top: _content[_index].getBoundingClientRect().y - $(_main).offset().top, //+ this.scroll, //- $(_main).offset().top,
+      //   bottom: $(_content[_index]).offset().top + $(_content[_index]).height()
+      // }));
 
-//     Constructor();
-//   }
-// })
+      _obj.currentValue = (_sectionId) => {
+        _obj.anchorArr.forEach(_elem => {
+          if (_elem.value === _sectionId) {
+            $(_elem.elem).addClass('_current');
+          } else {
+            $(_elem.elem).removeClass('_current');
+          }
+        })
+      }
+
+      _main.on('scroll', (_evt) => {
+        let _scroll = _main[0].offsetWidth - _main[0].clientWidth;
+        let _elemIntoView = document.elementFromPoint(window.screen.width - (_scroll + 1), window.screen.height / 2);
+
+        if ($(_elemIntoView).is('section[id]')) {
+          _obj.currentValue($(_elemIntoView).attr('id'));
+        } else if ($(_elemIntoView).parent('section[id]').length > 0) {
+          _obj.currentValue($(_elemIntoView).parent('section[id]').attr('id'));
+        }
+      });
+    }
+
+    Constructor();
+  }
+})
