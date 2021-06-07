@@ -191,7 +191,7 @@ $(document).ready(function () {
     });
 
     function ScrollFix(_index, _move) {
-      let _currentSection = _contentArr[_index]
+      let _currentSection = _contentArr[_index];
       let _isScrollable = _currentSection.scrollHeight > _currentSection.clientHeight;
 
       if (_move === 'close') {
@@ -220,5 +220,25 @@ $(document).ready(function () {
     //     }
     //   })
     // })
+
+    // _contentArr[0].addEventListener('resize', () => {
+    //   console.log('true');
+    // })
+
+    //$(document.querySelectorAll('.qs_section')).css({'padding-right': 'calc(80px - (' + _main.clientWidth + ' - 100%))'});
+    
+    // docaddingRight = 'calc(80px - (' + _main.clientWidth + ' - 100%))';
+    //   $(_elem).csument.querySelectorAll('.qs_section').forEach(_elem => {
+    //   //_elem.style.ps({'padding-right': 'calc(80px - (' + _main.clientWidth + ' - 100%))'});
+    // })
+    //document.querySelectorAll('.qs_section').style.paddingRight = 'calc(80px - (' + _main.clientWidth + ' - 100%))';
   }
+})
+
+var _mainSize = $('.main')[0].clientWidth;
+document.querySelectorAll('.qs_section').forEach(_elem => {
+  console.log(_elem);
+  console.log('calc(80px - (' + _mainSize + 'px - 100%))');
+  _elem.style.paddingRight = 'calc(80px - (' + _mainSize + 'px - 100%))';
+  //$(_elem).css({'padding-right': 'calc(80px - (' + _mainSize + 'px - 100%))'});
 })
