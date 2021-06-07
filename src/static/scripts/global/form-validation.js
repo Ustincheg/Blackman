@@ -141,7 +141,7 @@ const FormValidation = function (_selectorForm, _options) {
         if (_checkboxes instanceof Array) {
           _checkboxes.forEach(_elem => {
             if (_elem.nodeName) {
-              this.inside.acceptance.push(_elem);
+              this.inside.acceptance.elems.push(_elem);
             } else {
               throw new TypeError('Second argument, element from "acceptance" array is not a DOM element. Expected: nothing, DOM element or array of DOM elements.');
             }
@@ -354,31 +354,31 @@ const FormValidation = function (_selectorForm, _options) {
 // });
 
 $(document).ready(() => {
-  const _options = {
-    inputText: {
-      valueLength: 256
-    },
-    inputTel: {
-      valueLength: 256
-    },
-    inputEmail: {
-      valueCheckAlgorithm: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
-      valueLength: 256
-    }
-  }
+  // const _options = {
+  //   inputText: {
+  //     valueLength: 256
+  //   },
+  //   inputTel: {
+  //     valueLength: 256
+  //   },
+  //   inputEmail: {
+  //     valueCheckAlgorithm: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
+  //     valueLength: 256
+  //   }
+  // }
 
   if ($('.header-callback .header-callback-form').length > 0) {
     var _formHeaderCallback = new FormValidation($('.header-callback .header-callback-form')[0], {
       inputText: {
-        valueLength: 256
+        valueLength: 254
       },
       inputTel: {
         valueCheckAlgorithm: /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
-        valueLength: 256
+        valueLength: 50
       },
       inputEmail: {
         valueCheckAlgorithm: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
-        valueLength: 256
+        valueLength: 254
       },
       acceptance: $('.header-callback .header-callback-form-policy__input')[0]
     })
@@ -387,15 +387,15 @@ $(document).ready(() => {
   if ($('.header-callback-vacancy .header-callback-form').length > 0) {
     var _formHeaderCallbackVacancy = new FormValidation($('.header-callback-vacancy .header-callback-form')[0], {
       inputText: {
-        valueLength: 256
+        valueLength: 254
       },
       inputTel: {
         valueCheckAlgorithm: /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
-        valueLength: 256
+        valueLength: 50
       },
       inputEmail: {
         valueCheckAlgorithm: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
-        valueLength: 256
+        valueLength: 254
       },
       acceptance: $('.header-callback-vacancy .header-callback-form-policy__input')[0]
     })
