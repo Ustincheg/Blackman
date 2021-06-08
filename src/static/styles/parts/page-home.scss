@@ -41,6 +41,7 @@
   // justify-content: flex-end;
   height: 100%;
   max-height: 100%;
+  overflow: hidden;
 }
 
 .page-home .main section {
@@ -52,10 +53,14 @@
   height: 100%;
   max-height: 100%;
   background-color: $c_white;
-  //overflow-y: scroll !important;
+  overflow-y: auto;
 
   &:nth-of-type(2n) {
     background-color: $c_gray-light2;
+
+    // & .qs_section {
+    //   background-color: $c_gray-light2;
+    // }
   }
 
   &._opened {
@@ -66,6 +71,15 @@
   &._current {
     z-index: 20;
     display: block;
+  }
+
+  & .qs_section {
+    //height: 100%;
+    background-color: inherit;
+
+    // &:nth-of-type(2n) {
+    //   background-color: $c_gray-light2;
+    // }
   }
 }
 
