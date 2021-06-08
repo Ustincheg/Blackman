@@ -18,6 +18,7 @@
   border-right: 1px solid $c_gray-light;
 
   &._hover svg rect,
+  &:hover svg rect,
   &:focus-visible svg rect {
     &:nth-child(1) {
       transform: translateY(0);
