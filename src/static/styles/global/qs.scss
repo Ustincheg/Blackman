@@ -14,7 +14,7 @@
 }
 
 @mixin qs_section() {
-  padding: 80px;
+  padding: 80px 100px;
   overflow-x: hidden;
 
   & > * {
@@ -349,10 +349,7 @@
 
 @mixin qs_input() {
   position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
+  padding-top: 50px;
   font: 400 16px $f_main;
   color: $c_black;
 
@@ -374,7 +371,7 @@
   & input[type="tel"],
   & textarea {
     appearance: none;
-    padding: 50px 0 10px;
+    padding: 0 0 10px;
     border-bottom: 1px solid $c_gray-light;
     resize: none;
   
@@ -407,22 +404,6 @@
     }
   }
 
-  & input[type="checkbox"] {
-    appearance: none;
-    max-width: 24px;
-    min-width: 24px;
-    max-height: 24px;
-    min-height: 24px;
-    margin-top: 5px;
-    margin-right: 20px;
-    border-radius: 3px;
-    border: 1px solid #555;
-
-    &:checked {
-      background: url('../assets/icons/checkbox.svg') center/75% no-repeat $c_blue;
-    }
-  }
-
   & input[type="file"] {
     @include qs_hidden();
   }
@@ -438,7 +419,40 @@
 //    <mark class="_required-mark>*</mark>
 //  </span>
 //</label>
-// NOTE: Don't use subclass "_placeholder" for checkboxes.
+
+@mixin qs_input--checkbox() {
+  @include qs_input();
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 0;
+
+  & input {
+    appearance: none;
+    max-width: 24px;
+    min-width: 24px;
+    max-height: 24px;
+    min-height: 24px;
+    margin-top: 5px;
+    margin-right: 20px;
+    border-radius: 3px;
+    border: 1px solid #555;
+
+    &:checked {
+      background: url('../assets/icons/checkbox.svg') center/75% no-repeat $c_blue;
+    }
+  }
+}
+
+//<label class="qs_input">
+//  <input>
+//  <span></span>
+//</label>
+
+.qs_input--checkbox {
+  @include qs_input--checkbox();
+}
 
 @mixin qs_btn-dropdown() {
   width: 100%;
