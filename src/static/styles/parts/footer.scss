@@ -81,6 +81,34 @@
   display: flex;
 }
 
+.footer-logo-developer{
+  padding-right: 13.5%;
+  @media (max-width: 680px) {
+    padding-right: 20px;
+  }
+  &__link{
+    display: flex;
+    align-items: center;
+    opacity: 0.5;
+    &:hover{
+      opacity: 1;
+    }
+    @media (max-width: 680px) {
+      flex-direction: column;
+    }
+  }
+  &__desc{
+    color: #fff;
+    margin-right: 4px;
+    letter-spacing: -0.5px;
+    @media (max-width: 680px) {
+      text-align: center;
+      margin-bottom: 4px;
+    }
+  }
+}
+
+
 // @media (max-width: 900px) {
 //   .footer-info {
 //     padding-left: 40px;
