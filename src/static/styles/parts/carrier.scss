@@ -4,6 +4,10 @@
   grid-gap: 20px;
 }
 
+.carrier-list__vacancy {
+  font: 500 17px $f_main;
+}
+
 .carrier-vacancy-form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
