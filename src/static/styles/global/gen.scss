@@ -1,6 +1,6 @@
 body {
   display: grid;
-  grid-template-columns: 35% 65%;
+  grid-template-columns: 36% 64%;
   grid-template-rows: max-content 1fr minmax(100px, max-content);
   grid-template-areas:
     'header header'
