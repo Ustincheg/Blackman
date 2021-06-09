@@ -525,6 +525,16 @@
         margin-top: 15px;
       }
     }
+
+    & .qs_list,
+    & .qs_list--icon,
+    & .qs_list--ordered {
+      margin-bottom: 50px;
+    }
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
   }
 
   @media (max-width: 700px) {
