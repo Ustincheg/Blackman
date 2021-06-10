@@ -28,6 +28,8 @@ const FormValidation = function (_selectorForm, _options) {
     if (typeof _selectorForm !== 'object' && !_selectorForm.nodeName) {
       throw new TypeError('Argument is not a DOM element. Expected: DOM element.');
     }
+    let _formCorrect = new Event('form-status-correct');
+    let _formIncorrect = new Event('form-status-incorrect');
     this.inside = {};
     this.inside.form = _selectorForm;
     this.inside.ignor = [];
@@ -370,6 +372,7 @@ const FormValidation = function (_selectorForm, _options) {
             $(this.inside.form).removeClass('test_STATUS-CORRECT');
             $(this.inside.form).addClass('test_STATUS-INCORRECT');
           }
+          this.inside.form.dispatchEvent(_formIncorrect);
           break;
         }
         if (i + 1 === this._elemStatus.length) {
@@ -377,7 +380,8 @@ const FormValidation = function (_selectorForm, _options) {
             $(this.inside.form).removeClass('test_STATUS-INCORRECT');
             $(this.inside.form).addClass('test_STATUS-CORRECT');
           } else {
-            this.inside.form.submit();
+            //this.inside.form.submit();
+            this.inside.form.dispatchEvent(_formCorrect);
           }
         }
       }
@@ -426,4 +430,14 @@ $(document).ready(() => {
       ignor: $('.header-callback__vacancy')[0]
     })
   }
+
+  $('form').each((_index, _elem) => {
+    _elem.addEventListener('form-status-correct', () => {
+      console.log('correct');
+    })
+
+    _elem.addEventListener('form-status-incorrect', () => {
+      console.log('incorrect');
+    })
+  })
 });
