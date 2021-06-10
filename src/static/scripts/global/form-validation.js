@@ -430,14 +430,4 @@ $(document).ready(() => {
       ignor: $('.header-callback__vacancy')[0]
     })
   }
-
-  $('form').each((_index, _elem) => {
-    _elem.addEventListener('form-status-correct', () => {
-      console.log('correct');
-    })
-
-    _elem.addEventListener('form-status-incorrect', () => {
-      console.log('incorrect');
-    })
-  })
 });
