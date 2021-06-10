@@ -90,53 +90,46 @@ $(document).ready(function () {
   if (!$('.body').hasClass('page-home') && $('.aside').length > 0) {
     var _asideLinks = $('.aside-nav-list__link[href^="#"]');
     var _main = $('.main');
+    var _anchorArr = [];
 
-    function Constructor() {
-      var _obj = {
-        anchorArr: [],
-        scroll: undefined
-      };
+    _asideLinks.each((_index, _elem) => _anchorArr.push({
+      elem: _elem,
+      value: $(_elem).attr('href').replace(/#/, '') 
+    }));
 
-      _asideLinks.each((_index, _elem) => _obj.anchorArr.push({
-        elem: _elem,
-        value: $(_elem).attr('href').replace(/#/, '') 
-      }));
-
-      _obj.currentValue = (_id) => {
-        _obj.anchorArr.forEach(_elem => {
-          if (_elem.value === _id) {
-            $(_elem.elem).addClass('_current');
-          } else {
-            $(_elem.elem).removeClass('_current');
-          }
-        })
-      }
-
-      function Anchor() {
-        let _scroll = _main[0].offsetWidth - _main[0].clientWidth;
-        let _elemIntoView = document.elementFromPoint(window.screen.width - (_scroll + 1), window.screen.height / 2);
-
-        if ($('body').hasClass('page-projects')) {
-          _elemIntoView = document.elementFromPoint(window.screen.width - (_scroll + 101), window.screen.height / 2);
-          if ($(_elemIntoView).is('li[id]')) {
-            _obj.currentValue($(_elemIntoView).attr('id'));
-          } else if ($(_elemIntoView).parents('li[id]').length > 0) {
-            _obj.currentValue($(_elemIntoView).parents('li[id]').attr('id'));
-          }
+    function CurrentValue(_id) {
+      _anchorArr.forEach(_elem => {
+        if (_elem.value === _id) {
+          $(_elem.elem).addClass('_current');
         } else {
-          if ($(_elemIntoView).is('section[id]')) {
-            _obj.currentValue($(_elemIntoView).attr('id'));
-          } else if ($(_elemIntoView).parents('section[id]').length > 0) {
-            _obj.currentValue($(_elemIntoView).parents('section[id]').attr('id'));
-          }
+          $(_elem.elem).removeClass('_current');
         }
-      }
-
-      _main.on('scroll', Anchor);
-
-      Anchor();
+      })
     }
 
-    Constructor();
+    function Anchor() {
+      let _scroll = _main[0].offsetWidth - _main[0].clientWidth;
+      let _elemIntoView = document.elementFromPoint(window.screen.width - (_scroll + 1), window.screen.height / 2);
+
+      if ($('body').hasClass('page-projects')) {
+        _elemIntoView = document.elementFromPoint(window.screen.width - (_scroll + 101), window.screen.height / 2);
+        if ($(_elemIntoView).is('li[id]')) {
+          CurrentValue($(_elemIntoView).attr('id'));
+        } else if ($(_elemIntoView).parents('li[id]').length > 0) {
+          CurrentValue($(_elemIntoView).parents('li[id]').attr('id'));
+        }
+      } else {
+        if ($(_elemIntoView).is('section[id]')) {
+          CurrentValue($(_elemIntoView).attr('id'));
+        } else if ($(_elemIntoView).parents('section[id]').length > 0) {
+          CurrentValue($(_elemIntoView).parents('section[id]').attr('id'));
+        }
+      }
+      console.log(_elemIntoView);
+    }
+
+    _main.on('scroll', Anchor);
+
+    Anchor();
   }
 })
