@@ -112,7 +112,7 @@ $(document).ready(function () {
         })
       }
 
-      _main.on('scroll', (_evt) => {
+      function Anchor() {
         let _scroll = _main[0].offsetWidth - _main[0].clientWidth;
         let _elemIntoView = document.elementFromPoint(window.screen.width - (_scroll + 1), window.screen.height / 2);
 
@@ -130,7 +130,11 @@ $(document).ready(function () {
             _obj.currentValue($(_elemIntoView).parents('section[id]').attr('id'));
           }
         }
-      });
+      }
+
+      _main.on('scroll', Anchor);
+
+      Anchor();
     }
 
     Constructor();

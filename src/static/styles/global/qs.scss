@@ -351,6 +351,9 @@
   @include qs_modal();
 }
 
+//<dialog class="qs_modal">
+
+
 @mixin qs_input() {
   position: relative;
   padding-top: 50px;
