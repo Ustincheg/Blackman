@@ -25,215 +25,6 @@ $(document).ready(function () {
   }
 })
 
-//=== MODAL WINDOWS ===//
-
-// var _ModalObj = {
-//   modal: undefined,
-//   content: undefined,
-//   btnOpen: [],
-//   btnClose: [],
-//   animationTime: undefined,
-//   open() {
-//     let _this = this;
-//     if (_this.content) {
-//       $(_this.modal).slideDown(_this.animationTime, function () {
-//         $(_this.content).fadeIn(_this.animationTime);
-//         if (_this.btnClose.length > 0) {
-//           _this.btnClose[0].focus();
-//         }
-//         if (_this.btnClose.length > 0) {
-//           for (let i = 0; i < _this.btnClose.length; i++) {
-//             if ($(_this.btnClose[i]).hasClass('_btn-close')) {
-//               $(_this.btnClose[i]).fadeIn(_this.animationTime);
-//             }
-//           }
-//         }
-//       });
-//     } else {
-//       $(_this.modal).slideDown(_this.animationTime, function () {
-//         if (_this.btnClose.length > 0) {
-//           for (let i = 0; i < _this.btnClose.length; i++) {
-//             if ($(_this.btnClose[i]).hasClass('_btn-close')) {
-//               $(_this.btnClose[i]).fadeIn(_this.animationTime);
-//             }
-//           }
-//         }
-//       });
-//     }
-//   },
-//   close() {
-//     let _this = this;
-//     if (_this.content) {
-//       $(_this.content).fadeOut(_this.animationTime, function () {
-//         $(_this.modal).slideUp(_this.animationTime);
-//       })
-//     }
-//     if (_this.btnClose.length > 0) {
-//       for (let i = 0; i < _this.btnClose.length; i++) {
-//         if ($(_this.btnClose[i]).hasClass('_btn-close')) {
-//           $(_this.btnClose[i]).fadeOut(_this.animationTime);
-//         }
-//       }
-//     }
-//   }
-// };
-
-// function ModalWindows(_modal, _btnOpen, _btnClose, _animationTime) {
-//   // _modal | HTML element | Modal window.
-//   // _btnOpen | none / HTML element / array of HTML elements | Modal window open button (button list).
-//   // _btnClose | none / HTML element / array of HTML elements | Modal window close button (button list).
-//   // _animationTime | none / int | Animation time.
-
-//   //var _current = Object.create(_ModalObj);
-//   var _current = {
-//     modal: undefined,
-//     content: undefined,
-//     btnOpen: [],
-//     btnClose: [],
-//     animationTime: undefined,
-//     open() {
-//       let _this = this;
-//       if (_this.content) {
-//         $(_this.modal).slideDown(_this.animationTime, function () {
-//           $(_this.content).fadeIn(_this.animationTime);
-//           if (_this.btnClose.length > 0) {
-//             _this.btnClose[0].focus();
-//           }
-//           if (_this.btnClose.length > 0) {
-//             for (let i = 0; i < _this.btnClose.length; i++) {
-//               if ($(_this.btnClose[i]).hasClass('_btn-close')) {
-//                 $(_this.btnClose[i]).fadeIn(_this.animationTime);
-//               }
-//             }
-//           }
-//         });
-//       } else {
-//         $(_this.modal).slideDown(_this.animationTime, function () {
-//           if (_this.btnClose.length > 0) {
-//             for (let i = 0; i < _this.btnClose.length; i++) {
-//               if ($(_this.btnClose[i]).hasClass('_btn-close')) {
-//                 $(_this.btnClose[i]).fadeIn(_this.animationTime);
-//               }
-//             }
-//           }
-//         });
-//       }
-//     },
-//     close() {
-//       let _this = this;
-//       if (_this.content) {
-//         $(_this.content).fadeOut(_this.animationTime, function () {
-//           $(_this.modal).slideUp(_this.animationTime);
-//         })
-//       }
-//       if (_this.btnClose.length > 0) {
-//         for (let i = 0; i < _this.btnClose.length; i++) {
-//           if ($(_this.btnClose[i]).hasClass('_btn-close')) {
-//             $(_this.btnClose[i]).fadeOut(_this.animationTime);
-//           }
-//         }
-//       }
-//     }
-//   };
-
-//   $(_modal).css({'opacity': '1'});
-//   _current.modal = _modal;
-//   if (_btnOpen && typeof _btnOpen === 'object') {
-//     if (!_btnOpen.length) {
-//       _current.btnOpen.push(_btnOpen);
-//     } else if (_btnOpen.length > 0) {
-//       for (let i = 0; i < _btnOpen.length; i++) {
-//         _current.btnOpen.push(_btnOpen[i]);
-//       }
-//     }
-//   }
-//   if (_btnClose && typeof _btnOpen === 'object') {
-//     if (!_btnOpen.length) {
-//       _current.btnClose.push(_btnClose);
-//     } else if (_btnClose.length > 0) {
-//       for (let i = 0; i < _btnClose.length; i++) {
-//         _current.btnClose.push(_btnClose[i]);
-//       }
-//     }
-//   }
-//   if ($(_current.modal).find('._btn-close')) {
-//     _current.btnClose.push($(_current.modal).find('._btn-close')[0]);
-//     $($(_current.modal).find('._btn-close')[0]).fadeOut(0);
-//   }
-
-//   $(_current.modal).slideUp(0);
-//   if (_current.btnOpen.length > 0) {
-//     for (let i = 0; i < _current.btnOpen.length; i++) {
-//       $(_current.btnOpen[i]).click(function () {
-//         _current.open();
-//       })
-//     }
-//   }
-//   if (_current.btnClose.length > 0) {
-//     for (let i = 0; i < _current.btnClose.length; i++) {
-//       $(_current.btnClose[i]).click(function () {
-//         _current.close();
-//       })
-//     }
-//   }
-//   if ($(_current.modal).find('._content')) {
-//     _current.content = $(_current.modal).find('._content')[0];
-//     $(_current.content).fadeOut(0);
-//   }
-//   if (_animationTime) {
-//     _current.animationTime = _animationTime;
-//   } else {
-//     _current.animationTime = 350;
-//   }
-
-//   _current.open = function () {
-//     let _this = this;
-//     if (_this.content) {
-//       $(_this.modal).slideDown(_this.animationTime, function () {
-//         $(_this.content).fadeIn(_this.animationTime);
-//         if (_this.btnClose.length > 0) {
-//           _this.btnClose[0].focus();
-//         }
-//         if (_this.btnClose.length > 0) {
-//           for (let i = 0; i < _this.btnClose.length; i++) {
-//             if ($(_this.btnClose[i]).hasClass('_btn-close')) {
-//               $(_this.btnClose[i]).fadeIn(_this.animationTime);
-//             }
-//           }
-//         }
-//       });
-//     } else {
-//       $(_this.modal).slideDown(_this.animationTime, function () {
-//         if (_this.btnClose.length > 0) {
-//           for (let i = 0; i < _this.btnClose.length; i++) {
-//             if ($(_this.btnClose[i]).hasClass('_btn-close')) {
-//               $(_this.btnClose[i]).fadeIn(_this.animationTime);
-//             }
-//           }
-//         }
-//       });
-//     }
-//   }
-
-//   _current.close = function () {
-//     let _this = this;
-//     if (_this.content) {
-//       $(_this.content).fadeOut(_this.animationTime, function () {
-//         $(_this.modal).slideUp(_this.animationTime);
-//       })
-//     }
-//     if (_this.btnClose.length > 0) {
-//       for (let i = 0; i < _this.btnClose.length; i++) {
-//         if ($(_this.btnClose[i]).hasClass('_btn-close')) {
-//           $(_this.btnClose[i]).fadeOut(_this.animationTime);
-//         }
-//       }
-//     }
-//   }
-
-//   return _current;
-// }
-
 //=== ASIDE NAV SWIPER ===//
 
 $(document).ready(function () {
@@ -298,31 +89,22 @@ $(document).ready(function () {
 
   if (!$('.body').hasClass('page-home') && $('.aside').length > 0) {
     var _asideLinks = $('.aside-nav-list__link[href^="#"]');
-    //var _content = $('.main section[id]');
     var _main = $('.main');
 
     function Constructor() {
       var _obj = {
         anchorArr: [],
-        //contentArr: [],
         scroll: undefined
       };
 
-      _asideLinks.each((_index) => _obj.anchorArr.push({
-        elem: _asideLinks[_index],
-        value: $(_asideLinks[_index]).attr('href').replace(/#/, '') 
+      _asideLinks.each((_index, _elem) => _obj.anchorArr.push({
+        elem: _elem,
+        value: $(_elem).attr('href').replace(/#/, '') 
       }));
 
-      // _content.each((_index) => _obj.contentArr.push({
-      //   elem: _content[_index],
-      //   value: $(_content[_index]).attr('id'),
-      //   top: _content[_index].getBoundingClientRect().y - $(_main).offset().top, //+ this.scroll, //- $(_main).offset().top,
-      //   bottom: $(_content[_index]).offset().top + $(_content[_index]).height()
-      // }));
-
-      _obj.currentValue = (_sectionId) => {
+      _obj.currentValue = (_id) => {
         _obj.anchorArr.forEach(_elem => {
-          if (_elem.value === _sectionId) {
+          if (_elem.value === _id) {
             $(_elem.elem).addClass('_current');
           } else {
             $(_elem.elem).removeClass('_current');
@@ -334,10 +116,19 @@ $(document).ready(function () {
         let _scroll = _main[0].offsetWidth - _main[0].clientWidth;
         let _elemIntoView = document.elementFromPoint(window.screen.width - (_scroll + 1), window.screen.height / 2);
 
-        if ($(_elemIntoView).is('section[id]')) {
-          _obj.currentValue($(_elemIntoView).attr('id'));
-        } else if ($(_elemIntoView).parent('section[id]').length > 0) {
-          _obj.currentValue($(_elemIntoView).parent('section[id]').attr('id'));
+        if ($('body').hasClass('page-projects')) {
+          _elemIntoView = document.elementFromPoint(window.screen.width - (_scroll + 101), window.screen.height / 2);
+          if ($(_elemIntoView).is('li[id]')) {
+            _obj.currentValue($(_elemIntoView).attr('id'));
+          } else if ($(_elemIntoView).parents('li[id]').length > 0) {
+            _obj.currentValue($(_elemIntoView).parents('li[id]').attr('id'));
+          }
+        } else {
+          if ($(_elemIntoView).is('section[id]')) {
+            _obj.currentValue($(_elemIntoView).attr('id'));
+          } else if ($(_elemIntoView).parents('section[id]').length > 0) {
+            _obj.currentValue($(_elemIntoView).parents('section[id]').attr('id'));
+          }
         }
       });
     }
