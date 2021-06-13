@@ -1,6 +1,6 @@
 .search-form {
   display: grid;
-  grid-template-columns: 1fr 125px;
+  grid-template-columns: 1fr 146px;
   margin-top: 0;
 }
 
@@ -23,7 +23,7 @@
 
 .search-form__submit {
   align-self: end;
-  padding: 15px;
+  padding: 20px;
 }
 
 .search__count {
@@ -31,7 +31,7 @@
   max-width: 100%;
   min-width: 100%;
   margin-top: 15px;
-  text-align: right;
+  text-align: left;;
 }
 
 .search-result {

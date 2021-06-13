@@ -18,7 +18,7 @@
       </svg>
     </button>
     <a class="header__link-logo" href="index.html">
-      <img class="header__img-logo" src="assets/imgs/logo.svg" width="289" loading="lazy" alt="logo">
+      <img class="header__img-logo" src="assets/imgs/logo.svg" width="0" height="0" loading="lazy" alt="logo">
     </a>
     <nav class="header-nav" role="navigation">
       <ul class="header-nav-list">
@@ -191,7 +191,7 @@
             </ul>
           </li>
         </ul>
-        <footer class="header-menu-footer">
+        <div class="header-menu-footer">
           <div class="header-menu-footer-column">
             <h3 class="header-menu-footer-column__ttl">Адрес:</h3>
             <address class="header-menu-footer-column__value">629800, РФ, ЯНАО, г.Ноябрьск, Промзона, Панель 11
@@ -224,7 +224,7 @@
               </li>
             </ul>
           </div>
-        </footer>
+        </div>
       </div>
     </dialog>
     <dialog class="header-callback qs_modal" id="header-callback" role="dialog" aria-modal="true">
@@ -255,7 +255,7 @@
           </label>
           <button class="header-callback-form__submit qs_btn-grand--blue" type="submit">Отправить</button>
           <div class="header-callback-form-policy">
-            <label class="header-callback-form-policy qs_input">
+            <label class="header-callback-form-policy qs_input--checkbox">
               <input class="header-callback-form-policy__input _input" type="checkbox">
               <span class="header-callback-form-policy__txt">
                 Вы даете согласие на обработку персональных данных и соглашаетесь c
@@ -359,82 +359,84 @@
         </ul>
       </div>
     </section>
-    <section class="short-achievement qs_section">
-      <h2 class="short-achievement__ttl qs_section-ttl"><span>Клиенты</span></h2>
-      <p class="short-achievement__desc">
-        Компания занимается производством,
-        ремонто, продажей, здачей в аренду и
-        обслуживанием оборудования для компаний
-        занятых в нефтегазовой, аэрокосмической и
-        других отраслях
-      </p>
-      <ul class="short-achievement-list">
-        <li class="short-achievement-list__item">
-          <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
-            <img class="short-achievement-list__img" src="assets/imgs/short-achievement/baker-hughes.png" width="0"
-              height="0" loading="lazy" alt="">
-            <div class="short-achievement-list-txt">
-              <span class="short-achievement-list-txt__ttl">Baker Hughes</span>
-              <p class="short-achievement-list-txt__desc">
-                Одна из ведущих мировых нефтегазовых сервисных компаний
-              </p>
-            </div>
-          </a>
-        </li>
-        <li class="short-achievement-list__item">
-          <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
-            <img class="short-achievement-list__img" src="assets/imgs/short-achievement/schlumberger.png" width="0"
-              height="0" loading="lazy" alt="">
-            <div class="short-achievement-list-txt">
-              <span class="short-achievement-list-txt__ttl">Schlumberger</span>
-              <p class="short-achievement-list-txt__desc">
-                Ведущая нефтесервисная компания
-              </p>
-            </div>
-          </a>
-        </li>
-        <li class="short-achievement-list__item">
-          <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
-            <img class="short-achievement-list__img" src="assets/imgs/short-achievement/halliburton.png" width="0"
-              height="0" loading="lazy" alt="">
-            <div class="short-achievement-list-txt">
-              <span class="short-achievement-list-txt__ttl">Halliburton</span>
-              <p class="short-achievement-list-txt__desc">
-                Международная транснациональная компания
-              </p>
-            </div>
-          </a>
-        </li>
-        <li class="short-achievement-list__item">
-          <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
-            <img class="short-achievement-list__img" src="assets/imgs/short-achievement/rosneft.png" width="0"
-              height="0" loading="lazy" alt="">
-            <div class="short-achievement-list-txt">
-              <span class="short-achievement-list-txt__ttl">Роснефть</span>
-              <p class="short-achievement-list-txt__desc">
-                Российская нефтегазовая компания
-              </p>
-            </div>
-          </a>
-        </li>
-        <li class="short-achievement-list__item">
-          <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
-            <img class="short-achievement-list__img" src="assets/imgs/short-achievement/space-x.png" width="0"
-              height="0" loading="lazy" alt="">
-            <div class="short-achievement-list-txt">
-              <span class="short-achievement-list-txt__ttl">SpaceX</span>
-              <p class="short-achievement-list-txt__desc">
-                Американская компания, производитель космической техники
-              </p>
-            </div>
-          </a>
-        </li>
-        <li class="short-achievement-list__item">
-          <a class="short-achievement-list__link _contrast" href="#">
-            <span class="short-achievement-list__ttl">Смотреть проекты</span>
-          </a>
-        </li>
-      </ul>
+    <section class="short-achievement">
+      <div class="short-achievement qs_section">
+        <h2 class="short-achievement__ttl qs_section-ttl"><span>Клиенты</span></h2>
+        <p class="short-achievement__desc qs_desc">
+          Компания занимается производством,
+          ремонто, продажей, здачей в аренду и
+          обслуживанием оборудования для компаний
+          занятых в нефтегазовой, аэрокосмической и
+          других отраслях
+        </p>
+        <ul class="short-achievement-list">
+          <li class="short-achievement-list__item">
+            <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
+              <img class="short-achievement-list__img" src="assets/imgs/short-achievement/baker-hughes.png" width="0"
+                height="0" loading="lazy" alt="">
+              <div class="short-achievement-list-txt">
+                <span class="short-achievement-list-txt__ttl">Baker Hughes</span>
+                <p class="short-achievement-list-txt__desc">
+                  Одна из ведущих мировых нефтегазовых сервисных компаний
+                </p>
+              </div>
+            </a>
+          </li>
+          <li class="short-achievement-list__item">
+            <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
+              <img class="short-achievement-list__img" src="assets/imgs/short-achievement/schlumberger.png" width="0"
+                height="0" loading="lazy" alt="">
+              <div class="short-achievement-list-txt">
+                <span class="short-achievement-list-txt__ttl">Schlumberger</span>
+                <p class="short-achievement-list-txt__desc">
+                  Ведущая нефтесервисная компания
+                </p>
+              </div>
+            </a>
+          </li>
+          <li class="short-achievement-list__item">
+            <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
+              <img class="short-achievement-list__img" src="assets/imgs/short-achievement/halliburton.png" width="0"
+                height="0" loading="lazy" alt="">
+              <div class="short-achievement-list-txt">
+                <span class="short-achievement-list-txt__ttl">Halliburton</span>
+                <p class="short-achievement-list-txt__desc">
+                  Международная транснациональная компания
+                </p>
+              </div>
+            </a>
+          </li>
+          <li class="short-achievement-list__item">
+            <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
+              <img class="short-achievement-list__img" src="assets/imgs/short-achievement/rosneft.png" width="0"
+                height="0" loading="lazy" alt="">
+              <div class="short-achievement-list-txt">
+                <span class="short-achievement-list-txt__ttl">Роснефть</span>
+                <p class="short-achievement-list-txt__desc">
+                  Российская нефтегазовая компания
+                </p>
+              </div>
+            </a>
+          </li>
+          <li class="short-achievement-list__item">
+            <a class="short-achievement-list__link" href="#" aria-label="Открыть проект">
+              <img class="short-achievement-list__img" src="assets/imgs/short-achievement/space-x.png" width="0"
+                height="0" loading="lazy" alt="">
+              <div class="short-achievement-list-txt">
+                <span class="short-achievement-list-txt__ttl">SpaceX</span>
+                <p class="short-achievement-list-txt__desc">
+                  Американская компания, производитель космической техники
+                </p>
+              </div>
+            </a>
+          </li>
+          <li class="short-achievement-list__item">
+            <a class="short-achievement-list__link _contrast" href="#">
+              <span class="short-achievement-list__ttl">Смотреть проекты</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </section>
   </main>
   <footer class="footer" role="contentinfo">

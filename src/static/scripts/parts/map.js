@@ -52,10 +52,17 @@ const mapInit = (data) =>
           // Уровень масштабирования. Допустимые значения:
           // от 0 (весь мир) до 19.
           zoom: 1.5,
+          maxZoom: 1,
 
           type: "yandex#satellite",
 
           controls: [],
+        }, {
+          // Зададим ограниченную область прямоугольником,           
+          restrictMapArea: [
+              [85.000000, -179.000000],
+              [-85.000000, 179.000000]
+          ]
         });
 
         data.forEach((element) => {
@@ -66,7 +73,7 @@ const mapInit = (data) =>
               {
                 hintContent: element.title,
               },
-              {
+              {                
                 // Необходимо указать данный тип макета.
                 iconLayout: "default#imageWithContent",
                 // Своё изображение иконки метки.
@@ -89,7 +96,7 @@ const mapSelfInit = (data) =>
   $(document).ready(function () {
     // Карта на странице контактов
     const isMapContacts = $("div").is("#mapSelf");
-    
+
     if (isMapContacts) {
       console.log("Нашел контейнер", "#mapSelf");
 
@@ -106,7 +113,7 @@ const mapSelfInit = (data) =>
           // Уровень масштабирования. Допустимые значения:
           // от 0 (весь мир) до 19.
           zoom: 17,
-
+          maxZoom: 1,
           controls: [],
         });
 

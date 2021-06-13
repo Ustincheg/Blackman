@@ -194,7 +194,7 @@
             </ul>
           </li>
         </ul>
-        <footer class="header-menu-footer">
+        <div class="header-menu-footer">
           <div class="header-menu-footer-column">
             <h3 class="header-menu-footer-column__ttl">Адрес:</h3>
             <address class="header-menu-footer-column__value">629800, РФ, ЯНАО, г.Ноябрьск, Промзона, Панель 11
@@ -227,7 +227,7 @@
               </li>
             </ul>
           </div>
-        </footer>
+        </div>
       </div>
     </dialog>
     <dialog class="header-callback qs_modal" id="header-callback" role="dialog" aria-modal="true">
@@ -305,7 +305,7 @@
       aria-label="Навигация по текущему контенту">
       <ul class="aside-nav-list swiper-wrapper">
         <li class="aside-nav-list__item swiper-slide">
-          <a class="aside-nav-list__link _current" href="#about-company">История и описание</a>
+          <a class="aside-nav-list__link" href="#about-company">История и описание</a>
         </li>
         <li class="aside-nav-list__item swiper-slide">
           <a class="aside-nav-list__link" href="#about-world">Компания на мировом рынке</a>
@@ -600,7 +600,6 @@
             <div class="about-administration-slider-txt">
               <span class="about-administration-slider-txt__ttl">Манфред Фослайтнер</span>
               <span class="about-administration-slider-txt__subttl">Управляющий директор</span>
-              <hr>
               <a class="about-administration-slider-txt__tel" href="tel:+79124220017"
                 aria-label="Позвонить по телефону">+7 (912) 422-00-17</a>
               <a class="about-administration-slider-txt__email" href="mailto:manfred.foesleitner@sbdr.ru"
@@ -613,7 +612,6 @@
             <div class="about-administration-slider-txt">
               <span class="about-administration-slider-txt__ttl">Валерий Федяев</span>
               <span class="about-administration-slider-txt__subttl">Заместитель директора</span>
-              <hr>
               <a class="about-administration-slider-txt__tel" href="tel:+79124204590"
                 aria-label="Позвонить по телефону">+7 (912) 420-45-90</a>
               <a class="about-administration-slider-txt__email" href="mailto:valery.fedyaev@sbdr.ru"
@@ -626,8 +624,8 @@
             <div class="about-administration-slider-txt">
               <span class="about-administration-slider-txt__ttl">Борис Антипович</span>
               <span class="about-administration-slider-txt__subttl">Начальник цеха по изготовлению и ремонту бурового
-                оборудования</span>
-              <hr>
+                оборудования
+              </span>
               <a class="about-administration-slider-txt__tel" href="tel:+79120721634"
                 aria-label="Позвонить по телефону">+7(912) 072-16-34</a>
               <a class="about-administration-slider-txt__email" href="mailto:bantipovich@sbdr.ru"
@@ -649,7 +647,18 @@
       <a class="footer-info__policy" href="#">Политика конфиденциальности</a>
     </div>
     <div class="footer-logo-developer">
-      <p class="footer-logo-developer__desc">Создание сайта</p>        
+      <a class="footer-logo-developer__link" href="http:/garpix.com">
+        <p class="footer-logo-developer__desc">Создание сайта</p>
+        <svg width="74" height="13" viewBox="0 0 74 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18.2618 0.269897L12.939 12.7391H16.6125L17.3915 10.7796H23.0076L23.7865 12.7391H27.4601L22.1229 0.269897H18.2618ZM18.4589 8.10351L19.8485 4.49854C20.0168 4.09602 20.1322 3.66255 20.2043 3.23349C20.2765 3.66255 20.3871 4.09602 20.5602 4.49854L21.9498 8.10351H18.4589Z" fill="white"/>
+        <path d="M69.3405 6.25016L65.1573 0.269897H60.4019L64.7726 6.25016L60.1182 12.7391H64.2918L67.047 8.5591L69.7973 12.7391H73.9998L69.3405 6.25016Z" fill="white"/>
+        <path d="M47.9003 0.269897H42.5391V12.7524H46.1165V8.83335H47.8907C51.2373 8.82008 53.7953 7.84254 53.7953 4.55162C53.7905 1.26071 51.2469 0.269897 47.9003 0.269897ZM48.0734 5.97592H46.1116V3.11848H48.0686C49.1601 3.11848 50.1266 3.41926 50.1266 4.54278C50.1266 5.66186 49.1649 5.97592 48.0734 5.97592Z" fill="white"/>
+        <path d="M69.48 0.191772H73.6247V4.00463H69.48V0.191772Z" fill="#FF8800"/>
+        <path d="M8.6117 10.0895C8.31359 10.1558 8.00105 10.1824 7.68851 10.1824C6.14023 10.1824 3.67356 9.59408 3.67356 6.51549C3.67356 3.95441 5.74594 2.91052 7.92892 2.91052C9.28968 2.91052 10.6552 3.26438 11.6746 3.90133V0.782926C10.3427 0.27425 8.92424 7.89712e-06 7.47694 7.89712e-06C3.68798 -0.00441537 0 1.84893 0 6.49779C0 11.0272 3.65913 13 7.52021 13C9.06849 12.9867 10.5831 12.7125 12.016 12.164V5.88296H8.6117V10.0895Z" fill="white"/>
+        <path d="M37.4421 8.20961C38.9327 7.66112 40.0386 6.53761 40.0386 4.46309C40.0386 1.17218 37.2306 0.260986 34.4754 0.260986H28.7583V12.7302H32.3501V8.6829H33.8984L37.1344 12.7435H41.1782L37.4421 8.20961ZM34.6341 6.00239H32.3501V3.11842H34.6196C35.6438 3.11842 36.3362 3.60056 36.3362 4.56925C36.3362 5.53352 35.6582 6.00239 34.6341 6.00239Z" fill="white"/>
+        <path d="M55.4639 12.7391H59.0557V0.269897H55.4639V12.7391Z" fill="white"/>
+        </svg>
+      </a>
     </div>
   </footer>
   <script src="public/scripts.min.js"></script>
