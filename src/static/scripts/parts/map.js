@@ -57,6 +57,12 @@ const mapInit = (data) =>
           type: "yandex#satellite",
 
           controls: [],
+        }, {
+          // Зададим ограниченную область прямоугольником,           
+          restrictMapArea: [
+              [85.000000, -179.000000],
+              [-85.000000, 179.000000]
+          ]
         });
 
         data.forEach((element) => {
@@ -67,7 +73,7 @@ const mapInit = (data) =>
               {
                 hintContent: element.title,
               },
-              {
+              {                
                 // Необходимо указать данный тип макета.
                 iconLayout: "default#imageWithContent",
                 // Своё изображение иконки метки.
