@@ -5,7 +5,7 @@
 
 .header-search-form {
   display: grid;
-  grid-template-columns: minmax(0, 625px) 125px;
+  grid-template-columns: minmax(0, 754px) 146px;
   margin-top: -64px;
 }
 
@@ -23,7 +23,7 @@
 .header-search-form__input {
   align-self: end;
   width: 100%;
-  max-width: 625px;
+  max-width: 754px;
   padding-left: 30px !important;
 }
 

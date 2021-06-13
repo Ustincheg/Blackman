@@ -16,17 +16,23 @@ const FormValidation = function (_selectorForm, _options) {
   //  });
   //  - EXAMPLE end -  
   //  {{{ 1 }}} | DOM element | The form's DOM element.
-  //  {{{ 2 }}} | Object property | The type of input. Abled values: "inputText", "inputTel", "inputEmail", "textarea", "acceptance".
+  //  {{{ 2 }}} | Object property | The type of input. Abled values: "inputText", "inputTel", "inputEmail", "textarea", "acceptance", "ignor".
   //  {{{ 3 }}} | RegExp | Regular expression, you want to check with.
   //  {{{ 4 }}} | Number | Maximum size of input value. It creates "maxlength" attribute of "input" in DOM.
   //  {{{ 5 }}} | DOM element, checkbox | The acceptance's input-checkbox.
+  //
+  //  Use property "testMode" in created objects or in constructor to test your validation in front-end and not submit the form.
+  //  You can see "test_STATUS-CORRECT" or "test_STATUS-INCORRECT" in form class attribute.
 
   try {
     if (typeof _selectorForm !== 'object' && !_selectorForm.nodeName) {
       throw new TypeError('Argument is not a DOM element. Expected: DOM element.');
     }
+    let _formCorrect = new Event('form-status-correct');
+    let _formIncorrect = new Event('form-status-incorrect');
     this.inside = {};
     this.inside.form = _selectorForm;
+    this.inside.ignor = [];
     this.inside.inputText = {};
     this.inside.inputText.elems = [];
     this.inside.inputText.valueCheckAlgorithm = undefined;
@@ -47,30 +53,6 @@ const FormValidation = function (_selectorForm, _options) {
     this.inside.acceptance.elems = [];
     this.inside.submit = {};
     this.inside.submit.elems = [];  
-    $(_selectorForm).find('input[type="text"]').each((_index, _elem) => {
-      this.inside.inputText.elems.push(_elem);
-    });
-    $(_selectorForm).find('input[type="tel"]').each((_index, _elem) => {
-      this.inside.inputTel.elems.push(_elem);
-    });
-    $(_selectorForm).find('input[type="email"]').each((_index, _elem) => {
-      this.inside.inputEmail.elems.push(_elem);
-    });
-    $(_selectorForm).find('textarea').each((_index, _elem) => {
-      this.inside.textarea.elems.push(_elem);
-    });
-    $(_selectorForm).find('input[type="submit"]').each((_index, _elem) => {
-      this.inside.submit.elems.push(_elem);
-    });
-    $(_selectorForm).find('button[type="submit"]').each((_index, _elem) => {
-      this.inside.submit.elems.push(_elem);
-    });
-    this.inside.submit.elems.forEach(_elem => {
-      $(_elem).click(_evt => {
-        _evt.preventDefault();
-        this.check();
-      })
-    })
     this.options = {};
     this.options.inputText = {
       valueCheckAlgorithm: _option => {
@@ -157,6 +139,27 @@ const FormValidation = function (_selectorForm, _options) {
         throw new TypeError('Second argument, "acceptance" is not a DOM element. Expected: nothing, DOM element or array of DOM elements.');
       }
     }
+    this.options.ignor = _option => {
+      if (typeof _option === 'object') {
+        if (_option instanceof Array) {
+          _option.forEach(_elem => {
+            if (_elem.nodeName) {
+              this.inside.ignor.push(_elem);
+            } else {
+              throw new TypeError('Second argument, element from "ignor" array is not a DOM element. Expected: nothing, DOM element or array of DOM elements.');
+            }
+          });
+        } else {
+          if (_option.nodeName) {
+            this.inside.ignor.push(_option);
+          } else {
+            throw new TypeError('Second argument, "ignor" is not a DOM element. Expected: nothing, DOM element or array of DOM elements.');
+          }
+        }
+      } else {
+        throw new TypeError('Second argument, "ignor" is not a DOM element. Expected: nothing, DOM element or array of DOM elements.');
+      }
+    }
     if (typeof _options === 'object') {
       for (_property in _options) {
         switch (_property) {
@@ -207,9 +210,68 @@ const FormValidation = function (_selectorForm, _options) {
           case 'acceptance':
             this.options.acceptance(_options.acceptance);
             break;
+          case 'ignor':
+            this.options.ignor(_options.ignor);
+            break;
         }
       }
     }
+    $(_selectorForm).find('input[type="text"]').each((_index, _elem) => {
+      if (this.inside.ignor.length > 0) {
+        this.inside.ignor.forEach(_elemIgnor => {
+          if (_elemIgnor !== _elem) {
+            this.inside.inputText.elems.push(_elem);
+          }
+        })
+      } else {
+        this.inside.inputText.elems.push(_elem);
+      }
+    });
+    $(_selectorForm).find('input[type="tel"]').each((_index, _elem) => {
+      if (this.inside.ignor.length > 0) {
+        this.inside.ignor.forEach(_elemIgnor => {
+          if (_elemIgnor !== _elem) {
+            this.inside.inputTel.elems.push(_elem);
+          }
+        })
+      } else {
+        this.inside.inputTel.elems.push(_elem);
+      }
+    });
+    $(_selectorForm).find('input[type="email"]').each((_index, _elem) => {
+      if (this.inside.ignor.length > 0) {
+        this.inside.ignor.forEach(_elemIgnor => {
+          if (_elemIgnor !== _elem) {
+            this.inside.inputEmail.elems.push(_elem);
+          }
+        })
+      } else {
+        this.inside.inputEmail.elems.push(_elem);
+      }
+    });
+    $(_selectorForm).find('textarea').each((_index, _elem) => {
+      if (this.inside.ignor.length > 0) {
+        this.inside.ignor.forEach(_elemIgnor => {
+          if (_elemIgnor !== _elem) {
+            this.inside.textarea.elems.push(_elem);
+          }
+        })
+      } else {
+        this.inside.textarea.elems.push(_elem);
+      }
+    });
+    $(_selectorForm).find('input[type="submit"]').each((_index, _elem) => {
+      this.inside.submit.elems.push(_elem);
+    });
+    $(_selectorForm).find('button[type="submit"]').each((_index, _elem) => {
+      this.inside.submit.elems.push(_elem);
+    });
+    this.inside.submit.elems.forEach(_elem => {
+      $(_elem).click(_evt => {
+        _evt.preventDefault();
+        this.check();
+      })
+    })
     this._elemStatus = [];
     this.testMode = false;
     this.check = () => {
@@ -310,6 +372,7 @@ const FormValidation = function (_selectorForm, _options) {
             $(this.inside.form).removeClass('test_STATUS-CORRECT');
             $(this.inside.form).addClass('test_STATUS-INCORRECT');
           }
+          this.inside.form.dispatchEvent(_formIncorrect);
           break;
         }
         if (i + 1 === this._elemStatus.length) {
@@ -317,7 +380,8 @@ const FormValidation = function (_selectorForm, _options) {
             $(this.inside.form).removeClass('test_STATUS-INCORRECT');
             $(this.inside.form).addClass('test_STATUS-CORRECT');
           } else {
-            this.inside.form.submit();
+            //this.inside.form.submit();
+            this.inside.form.dispatchEvent(_formCorrect);
           }
         }
       }
@@ -331,42 +395,7 @@ const FormValidation = function (_selectorForm, _options) {
   }
 }
 
-// var formArr = [];
-// $(document).ready(function () {
-//   $('form').each((_index, _elem) => {
-//     formArr.push({
-//       elem: _elem,
-//       index: _index,
-//       obj: new FormValidation(_elem, {
-//         inputText: {
-//           valueLength: 256
-//         },
-//         inputTel: {
-//           valueLength: 256
-//         },
-//         inputEmail: {
-//           valueCheckAlgorithm: /test@mail\.com/,
-//           valueLength: 256
-//         }
-//       })
-//     });
-//   });
-// });
-
 $(document).ready(() => {
-  // const _options = {
-  //   inputText: {
-  //     valueLength: 256
-  //   },
-  //   inputTel: {
-  //     valueLength: 256
-  //   },
-  //   inputEmail: {
-  //     valueCheckAlgorithm: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
-  //     valueLength: 256
-  //   }
-  // }
-
   if ($('.header-callback .header-callback-form').length > 0) {
     var _formHeaderCallback = new FormValidation($('.header-callback .header-callback-form')[0], {
       inputText: {
@@ -397,7 +426,8 @@ $(document).ready(() => {
         valueCheckAlgorithm: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
         valueLength: 254
       },
-      acceptance: $('.header-callback-vacancy .header-callback-form-policy__input')[0]
+      acceptance: $('.header-callback-vacancy .header-callback-form-policy__input')[0],
+      ignor: $('.header-callback__vacancy')[0]
     })
   }
 });
