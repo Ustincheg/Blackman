@@ -352,7 +352,11 @@
 }
 
 //<dialog class="qs_modal">
-
+//  <button class="_btn-close">
+//    <svg></svg>
+//  </button>
+//  <div class="_content"></div>
+//</dialog>
 
 @mixin qs_input() {
   position: relative;
