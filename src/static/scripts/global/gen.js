@@ -122,7 +122,6 @@ $(document).ready(function () {
         let _sectionArr = $('main section:not(.short-empty)');
         let _footerTabs = $('.footer-nav-tabs');
         _elemIntoView = document.elementFromPoint(window.screen.width - (_scroll + 81), window.screen.height / 2);
-        console.log($(_elemIntoView).parents('.short-empty').length > 0);
         if ($(_elemIntoView).is('.short-empty')) {
           $(_footerTabs).text($(_sectionArr[0]).find('.qs_section-ttl span').text());
         } else {
