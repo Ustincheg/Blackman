@@ -149,7 +149,23 @@
   }
 }
 
+@media (max-height: 900px) {
+  .page-home-bg__slogan {
+    left: 40px;
+    width: calc(100% - 80px);
+    font: 900 45px $f_main;
+  }
+}
+
 @media (max-width: 600px) {
+  .page-home-bg__slogan {
+    left: 20px;
+    width: calc(100% - 40px);
+    font: 900 30px $f_main;
+  }
+}
+
+@media (max-height: 600px) {
   .page-home-bg__slogan {
     left: 20px;
     width: calc(100% - 40px);
