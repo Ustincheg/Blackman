@@ -119,6 +119,7 @@ $(document).ready(function () {
         } else if ($(_elemIntoView).parents('li[id]').length > 0) {
           CurrentValue($(_elemIntoView).parents('li[id]').attr('id'));
         }
+        console.log(_elemIntoView);
       } else if ($('body').hasClass('page-home')) {
         let _sectionArr = $('main section:not(.short-empty)');
         let _footerTabs = $('.footer-nav-tabs');
