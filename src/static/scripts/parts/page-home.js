@@ -184,3 +184,14 @@
 //   }
 // })
 
+if ($('body').hasClass('page-home')) {
+  var _slogan = $('.page-home-bg__slogan');
+
+  function SloganFix() {
+    $(_slogan).css({'bottom': $('.footer').css('height')});
+  }
+
+  $(window).resize(SloganFix);
+
+  SloganFix();
+}
