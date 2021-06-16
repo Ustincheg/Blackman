@@ -207,6 +207,8 @@ $(document).ready(() => {
     SloganFix();
     PlaceholderSize();
 
+    _footer.find('.footer-nav-tabs').text($($('main section:not(.short-empty)')[0]).find('.qs_section-ttl span').text());
+
     _main[0].addEventListener('scroll', _evt => {
       if (_main.scrollTop() > 0 && !_main.hasClass('_show') && !_main.hasClass('_animation')) {
         _main.addClass('_show _animation');

@@ -139,3 +139,9 @@ $(document).ready(() => {
     }
   }
 });
+
+//=== INPUT (FILE) ===//
+
+// $(document).ready(() => {
+//   qsInputFileArr = $('input[type="file"]');
+// })
