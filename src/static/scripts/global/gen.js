@@ -98,6 +98,8 @@ $(document).ready(function () {
       value: $(_elem).attr('href').replace(/#/, '') 
     }));
 
+    //_asideLinks[0].addClass('current');
+
     function CurrentValue(_id) {
       _anchorArr.forEach(_elem => {
         if (_elem.value === _id) {
@@ -127,12 +129,5 @@ $(document).ready(function () {
     }
 
     _contentWrapper.on('scroll', Anchor);
-    Anchor();
-
-    var _resizeObserver = new ResizeObserver(() => {
-      Anchor();
-    });
-
-    _resizeObserver.observe(_contentWrapper[0]);
   }
 })

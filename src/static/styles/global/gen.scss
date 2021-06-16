@@ -26,6 +26,10 @@ body {
   overflow: auto;
 }
 
+.main {
+  overflow-x: hidden;
+}
+
 .content-wrapper {
   grid-area: wrapper;
   display: grid;
