@@ -111,20 +111,23 @@ $(document).ready(function () {
     }
 
     function Anchor() {
-      let _scroll = _contentWrapper[0].offsetWidth - _contentWrapper[0].clientWidth;
-      let _elemIntoView = document.elementFromPoint(window.screen.width - (_scroll + 101), window.screen.height / 2);
+      let _scroll = _main[0].offsetWidth - _main[0].clientWidth;
+      let _elemIntoView = document.elementFromPoint(window.screen.width - (_scroll + 105), window.screen.height / 2);
       if ($('body').hasClass('page-projects')) {
+        console.log(_scroll);
         if ($(_elemIntoView).is('li[id]')) {
           CurrentValue($(_elemIntoView).attr('id'));
         } else if ($(_elemIntoView).parents('li[id]').length > 0) {
           CurrentValue($(_elemIntoView).parents('li[id]').attr('id'));
         }
+        console.log(_elemIntoView);
       } else {
         if ($(_elemIntoView).is('section[id]')) {
           CurrentValue($(_elemIntoView).attr('id'));
         } else if ($(_elemIntoView).parents('section[id]').length > 0) {
           CurrentValue($(_elemIntoView).parents('section[id]').attr('id'));
         }
+        console.log(_elemIntoView);
       }
     }
 
