@@ -98,7 +98,7 @@ $(document).ready(function () {
       value: $(_elem).attr('href').replace(/#/, '') 
     }));
 
-    _asideLinks[0].addClass('current');
+    //_asideLinks[0].addClass('current');
 
     function CurrentValue(_id) {
       _anchorArr.forEach(_elem => {
