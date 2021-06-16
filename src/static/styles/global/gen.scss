@@ -28,16 +28,10 @@ body {
 
 .content-wrapper {
   grid-area: wrapper;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr max-content;
   overflow: auto;
-}
-
-.main {
-  grid-area: main;
-  //position: relative;
-}
-
-.footer {
-  grid-area: footer;
 }
 
 @media (max-width: 1600px) {
