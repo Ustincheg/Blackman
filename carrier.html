@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="public/style.min.css" rel="stylesheet">
   <script src="public/scripts-preload.min.js"></script>
-</head> 
+</head>
 
 <body>
   <header class="header" role="banner">
@@ -298,7 +298,8 @@
           </label>
           <label class="header-callback-form__label qs_input">
             <input class="header-callback-form__input" type="email">
-            <span class="header-callback-form__placeholder _placeholder">Ваше E-mail <mark class="_required-mark">*</mark></span>
+            <span class="header-callback-form__placeholder _placeholder">Ваше E-mail <mark
+                class="_required-mark">*</mark></span>
           </label>
           <label class="header-callback-form__label qs_input">
             <input class="header-callback-form__input" type="tel">
@@ -309,9 +310,11 @@
             <span class="header-callback-form__placeholder _placeholder">Сообщение</span>
           </label>
           <label class="header-callback__load-file">
-            <input type="file" class="qs_hidden">
-            Прикрепить резюме
-          </label>          
+            <input type="file" onchange="showFile(this)" class="qs_hidden">
+            <span class="header-callback__load-file__desc">
+              Прикрепить резюме
+            </span>
+          </label>
           <button class="header-callback-form__submit qs_btn-grand--blue" type="submit">Отправить</button>
           <div class="header-callback-form-policy">
             <label class="header-callback-form-policy qs_input--checkbox">
@@ -344,7 +347,8 @@
       </a>
       <h1 class="aside__ttl">Карьера</h1>
     </div>
-    <nav class="aside-nav swiper-container" id="scroll-to-anchor" role="navigation" aria-label="Навигация по текущему контенту">
+    <nav class="aside-nav swiper-container" id="scroll-to-anchor" role="navigation"
+      aria-label="Навигация по текущему контенту">
       <ul class="aside-nav-list swiper-wrapper">
         <li class="aside-nav-list__item swiper-slide">
           <a class="aside-nav-list__link _current" href="">Тестовая ссылка</a>
@@ -352,127 +356,138 @@
       </ul>
     </nav>
   </aside>
-  <main class="main" role="main">
-    <section class="carrier qs_section">
-      <h2 class="carrier__ttl qs_section-ttl">Карьера с SBDR</h2>
-      <ul class="carrier-list">
-        <li class="carrier-list__item">
-          <button class="carrier-list__btn qs_btn-dropdown" type="button">
-            <header class="_header">
-              <span class="_ttl">Счастливый программист</span>
-              <span class="_desc">от 40 000 до 50 000 рублей</span>
-              <svg class="_icon" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 2.62657L15 27.6247" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M2.50095 14.8744L27.4991 14.8744" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </header>
-            <div class="_content">
-              <span class="_subttl">Требования</span>
-              <ul class="qs_list--icon">
-                <li>Образование высшее профессиональное (автоматическое управление технологических процессов и производств)</li>
-                <li>Уверенный пользователь ПК, Компас 2D, 3D</li>
-                <li>Опыт работы: от 5 лет</li>
-                <li>Знание ЕСКД, ГОСТ, ОСТ</li>
-                <li>Знание устройства и принципа автоматического регулирования работы паровых (водогрейных) котлов</li>
-              </ul>
-              <span class="_subttl">Обязанности</span>
-              <ul class="qs_list--icon">
-                <li>Разработка конструкторской документации щитов, блоков управления</li>
-                <li>Техническое сопровождение изделий при изготовлении на производстве</li>
-              </ul>
-              <span class="_subttl">Обязанности</span>
-              <ul class="qs_list--icon">
-                <li>Полная занятость</li>
-                <li>Оформление по ТК</li>
-                <li>График работы 5/2, с 8.10 до 17.00, в пт. – до 16.00</li>
-                <li>ДМС</li>
-                <li>Летний детский лагерь</li>
-              </ul>
-              <a class="carrier-list__vacancy qs_link" data-vacancy="Счастливый программист">Откликнуться на вакансию</a>
-            </div>
-          </button>
-        </li>
-        <li class="carrier-list__item">
-          <button class="carrier-list__btn qs_btn-dropdown" type="button">
-            <header class="_header">
-              <span class="_ttl">Грустный программист</span>
-              <span class="_desc">от 10 000 до 20 000 рублей</span>
-              <svg class="_icon" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 2.62657L15 27.6247" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M2.50095 14.8744L27.4991 14.8744" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </header>
-            <div class="_content">
-              <span class="_subttl">Требования</span>
-              <ul class="qs_list--icon">
-                <li>Образование высшее профессиональное (автоматическое управление технологических процессов и производств)</li>
-                <li>Уверенный пользователь ПК, Компас 2D, 3D</li>
-                <li>Опыт работы: от 5 лет</li>
-                <li>Знание ЕСКД, ГОСТ, ОСТ</li>
-                <li>Знание устройства и принципа автоматического регулирования работы паровых (водогрейных) котлов</li>
-              </ul>
-              <span class="_subttl">Обязанности</span>
-              <ul class="qs_list--icon">
-                <li>Разработка конструкторской документации щитов, блоков управления</li>
-                <li>Техническое сопровождение изделий при изготовлении на производстве</li>
-              </ul>
-              <span class="_subttl">Обязанности</span>
-              <ul class="qs_list--icon">
-                <li>Полная занятость</li>
-                <li>Оформление по ТК</li>
-                <li>График работы 5/2, с 8.10 до 17.00, в пт. – до 16.00</li>
-                <li>ДМС</li>
-                <li>Летний детский лагерь</li>
-              </ul>
-              <a class="carrier-list__vacancy qs_link" data-vacancy="Грустный программист">Откликнуться на вакансию</a>
-            </div>
-          </button>
-        </li>
-      </ul>
-    </section>
-    <section class="carrier-vacancy qs_section">
-      <h2 class="carrier-vacancy qs_section-ttl">Откликнуться на вакансию</h2>
-      <form class="carrier-vacancy-form">
-        <label class="carrier-vacancy-form__label qs_input">
-          <input class="carrier-vacancy-form__name" type="text">
-          <span class="_placeholder">Ваше имя</span>
-        </label>
-        <label class="carrier-vacancy-form__label qs_input">
-          <input class="carrier-vacancy-form__email" type="text">
-          <span class="_placeholder">Ваше E-mail <mark class="_required-mark">*</mark></span>
-        </label>
-        <label class="carrier-vacancy-form__label qs_input">
-          <input class="carrier-vacancy-form__tel" type="text">
-          <span class="_placeholder">Ваше телефон</span>
-        </label>
-        <label class="carrier-vacancy-form__label qs_input">
-          <input class="carrier-vacancy-form__profession" type="text">
-          <span class="_placeholder">Желаемая должность <mark class="_required-mark">*</mark></span>
-        </label>
-        <label class="carrier-vacancy-form__label qs_input">
-          <textarea class="carrier-vacancy-form__message"></textarea>
-          <span class="_placeholder">Сообщение</span>
-        </label>
-        <div class="carrier-vacancy-form-controls">
-          <label class="carrier-vacancy-form-controls-policy qs_input">
-            <input class="carrier-vacancy-form-policy__input" type="checkbox">
-            <span class="carrier-vacancy-form-controls-policy__txt">Вы даете согласие на обработку персональных данных и соглашаетесь с <a class="carrier-vacancy-form-controls-policy__link qs_link" href="#">политикой конфиденциальности</a></span>
+  <div class="content-wrapper">
+    <main class="main" role="main">
+      <section class="carrier qs_section">
+        <h2 class="carrier__ttl qs_section-ttl">Карьера с SBDR</h2>
+        <ul class="carrier-list">
+          <li class="carrier-list__item">
+            <button class="carrier-list__btn qs_btn-dropdown" type="button">
+              <header class="_header">
+                <span class="_ttl">Счастливый программист</span>
+                <span class="_desc">от 40 000 до 50 000 рублей</span>
+                <svg class="_icon" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 2.62657L15 27.6247" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M2.50095 14.8744L27.4991 14.8744" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </header>
+              <div class="_content">
+                <span class="_subttl">Требования</span>
+                <ul class="qs_list--icon">
+                  <li>Образование высшее профессиональное (автоматическое управление технологических процессов и
+                    производств)</li>
+                  <li>Уверенный пользователь ПК, Компас 2D, 3D</li>
+                  <li>Опыт работы: от 5 лет</li>
+                  <li>Знание ЕСКД, ГОСТ, ОСТ</li>
+                  <li>Знание устройства и принципа автоматического регулирования работы паровых (водогрейных) котлов
+                  </li>
+                </ul>
+                <span class="_subttl">Обязанности</span>
+                <ul class="qs_list--icon">
+                  <li>Разработка конструкторской документации щитов, блоков управления</li>
+                  <li>Техническое сопровождение изделий при изготовлении на производстве</li>
+                </ul>
+                <span class="_subttl">Обязанности</span>
+                <ul class="qs_list--icon">
+                  <li>Полная занятость</li>
+                  <li>Оформление по ТК</li>
+                  <li>График работы 5/2, с 8.10 до 17.00, в пт. – до 16.00</li>
+                  <li>ДМС</li>
+                  <li>Летний детский лагерь</li>
+                </ul>
+                <a class="carrier-list__vacancy qs_link" data-vacancy="Счастливый программист">Откликнуться на
+                  вакансию</a>
+              </div>
+            </button>
+          </li>
+          <li class="carrier-list__item">
+            <button class="carrier-list__btn qs_btn-dropdown" type="button">
+              <header class="_header">
+                <span class="_ttl">Грустный программист</span>
+                <span class="_desc">от 10 000 до 20 000 рублей</span>
+                <svg class="_icon" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 2.62657L15 27.6247" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M2.50095 14.8744L27.4991 14.8744" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </header>
+              <div class="_content">
+                <span class="_subttl">Требования</span>
+                <ul class="qs_list--icon">
+                  <li>Образование высшее профессиональное (автоматическое управление технологических процессов и
+                    производств)</li>
+                  <li>Уверенный пользователь ПК, Компас 2D, 3D</li>
+                  <li>Опыт работы: от 5 лет</li>
+                  <li>Знание ЕСКД, ГОСТ, ОСТ</li>
+                  <li>Знание устройства и принципа автоматического регулирования работы паровых (водогрейных) котлов
+                  </li>
+                </ul>
+                <span class="_subttl">Обязанности</span>
+                <ul class="qs_list--icon">
+                  <li>Разработка конструкторской документации щитов, блоков управления</li>
+                  <li>Техническое сопровождение изделий при изготовлении на производстве</li>
+                </ul>
+                <span class="_subttl">Обязанности</span>
+                <ul class="qs_list--icon">
+                  <li>Полная занятость</li>
+                  <li>Оформление по ТК</li>
+                  <li>График работы 5/2, с 8.10 до 17.00, в пт. – до 16.00</li>
+                  <li>ДМС</li>
+                  <li>Летний детский лагерь</li>
+                </ul>
+                <a class="carrier-list__vacancy qs_link" data-vacancy="Грустный программист">Откликнуться на
+                  вакансию</a>
+              </div>
+            </button>
+          </li>
+        </ul>
+      </section>
+      <!-- <section class="carrier-vacancy qs_section">
+        <h2 class="carrier-vacancy qs_section-ttl">Откликнуться на вакансию</h2>
+        <form class="carrier-vacancy-form">
+          <label class="carrier-vacancy-form__label qs_input">
+            <input class="carrier-vacancy-form__name" type="text">
+            <span class="_placeholder">Ваше имя</span>
           </label>
-          <label class="carrier-vacancy-form-controls-file qs_input">
-            <input class="qs_input" type="file">
-            <span class="carrier-vacancy-form-controls-file__btn qs_link">Прикрепить резюме</span>
+          <label class="carrier-vacancy-form__label qs_input">
+            <input class="carrier-vacancy-form__email" type="text">
+            <span class="_placeholder">Ваше E-mail <mark class="_required-mark">*</mark></span>
           </label>
-          <button class="carrier-vacancy-form-controls__submit qs_btn-grand--blue" type="submit">Отправить</button>
-        </div>
-      </form>
-    </section>
-  </main>
-  <footer class="footer" role="contentinfo">
-    <div class="footer-info">
-      <p class="footer-info__copyright">© Schoeller-Bleckmann Darron Russia 2013-2021</p>
-      <a class="footer-info__policy" href="#">Политика конфиденциальности</a>
-    </div>
-  </footer>
+          <label class="carrier-vacancy-form__label qs_input">
+            <input class="carrier-vacancy-form__tel" type="text">
+            <span class="_placeholder">Ваше телефон</span>
+          </label>
+          <label class="carrier-vacancy-form__label qs_input">
+            <input class="carrier-vacancy-form__profession" type="text">
+            <span class="_placeholder">Желаемая должность <mark class="_required-mark">*</mark></span>
+          </label>
+          <label class="carrier-vacancy-form__label qs_input">
+            <textarea class="carrier-vacancy-form__message"></textarea>
+            <span class="_placeholder">Сообщение</span>
+          </label>
+          <div class="carrier-vacancy-form-controls">
+            <label class="carrier-vacancy-form-controls-policy qs_input">
+              <input class="carrier-vacancy-form-policy__input" type="checkbox">
+              <span class="carrier-vacancy-form-controls-policy__txt">Вы даете согласие на обработку персональных данных
+                и соглашаетесь с <a class="carrier-vacancy-form-controls-policy__link qs_link" href="#">политикой
+                  конфиденциальности</a></span>
+            </label>
+            <label class="carrier-vacancy-form-controls-file qs_input">
+              <input class="qs_input" type="file">
+              <span class="carrier-vacancy-form-controls-file__btn qs_link">Прикрепить резюме</span>
+            </label>
+            <button class="carrier-vacancy-form-controls__submit qs_btn-grand--blue" type="submit">Отправить</button>
+          </div>
+        </form>
+      </section> -->
+    </main>
+    <footer class="footer" role="contentinfo">
+      <div class="footer-info">
+        <p class="footer-info__copyright">© Schoeller-Bleckmann Darron Russia 2013-2021</p>
+        <a class="footer-info__policy" href="#">Политика конфиденциальности</a>
+      </div>
+    </footer>
+  </div>
   <script src="public/scripts.min.js"></script>
 </body>
+
 </html>
