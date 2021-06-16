@@ -110,25 +110,14 @@ $(document).ready(function () {
 
     function Anchor() {
       let _scroll = _contentWrapper[0].offsetWidth - _contentWrapper[0].clientWidth;
-      let _elemIntoView = document.elementFromPoint(window.screen.width - (_scroll + 1), window.screen.height / 2);
-
+      let _elemIntoView = document.elementFromPoint(window.screen.width - (_scroll + 101), window.screen.height / 2);
+      console.log(_elemIntoView);
       if ($('body').hasClass('page-projects')) {
-        _elemIntoView = document.elementFromPoint(window.screen.width - (_scroll + 101), window.screen.height / 2);
         if ($(_elemIntoView).is('li[id]')) {
           CurrentValue($(_elemIntoView).attr('id'));
         } else if ($(_elemIntoView).parents('li[id]').length > 0) {
           CurrentValue($(_elemIntoView).parents('li[id]').attr('id'));
         }
-        console.log(_elemIntoView);
-      } else if ($('body').hasClass('page-home')) {
-        let _sectionArr = $('main section:not(.short-empty)');
-        let _footerTabs = $('.footer-nav-tabs');
-        _elemIntoView = document.elementFromPoint(window.screen.width - (_scroll + 81), window.screen.height / 2);
-        // if ($(_elemIntoView).is('.short-empty')) {
-        //   $(_footerTabs).text($(_sectionArr[0]).find('.qs_section-ttl span').text());
-        // } else {
-        //   $(_footerTabs).text($(_elemIntoView).parents('section').find('.qs_section-ttl span').text());
-        // }
       } else {
         if ($(_elemIntoView).is('section[id]')) {
           CurrentValue($(_elemIntoView).attr('id'));
@@ -139,7 +128,13 @@ $(document).ready(function () {
     }
 
     _contentWrapper.on('scroll', Anchor);
-
     Anchor();
+
+    var _resizeObserver = new ResizeObserver(() => {
+      console.log("resize observ")
+      Anchor();
+    });
+
+    _resizeObserver.observe(_contentWrapper[0]);
   }
 })
