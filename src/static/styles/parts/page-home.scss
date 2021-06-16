@@ -37,6 +37,7 @@
   // display: grid;
   // grid-template-columns: 1fr;
   // grid-template-rows: 1fr max-content;
+  display: block;
   position: relative;
   overflow: hidden;
 }
@@ -119,7 +120,7 @@
   background-color: transparent;
 }
 
-// .page-home .footer-info {
+// .page-home .footer-local .footer-info {
 //   display: none;
 // }
 
@@ -133,7 +134,7 @@
 //   display: none;
 // }
 
-.page-home .footer-info {
+.page-home .footer .footer-info {
   display: none;
 }
 

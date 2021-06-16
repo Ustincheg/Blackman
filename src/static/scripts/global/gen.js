@@ -111,7 +111,6 @@ $(document).ready(function () {
     function Anchor() {
       let _scroll = _contentWrapper[0].offsetWidth - _contentWrapper[0].clientWidth;
       let _elemIntoView = document.elementFromPoint(window.screen.width - (_scroll + 101), window.screen.height / 2);
-      console.log(_elemIntoView);
       if ($('body').hasClass('page-projects')) {
         if ($(_elemIntoView).is('li[id]')) {
           CurrentValue($(_elemIntoView).attr('id'));
@@ -131,7 +130,6 @@ $(document).ready(function () {
     Anchor();
 
     var _resizeObserver = new ResizeObserver(() => {
-      console.log("resize observ")
       Anchor();
     });
 
