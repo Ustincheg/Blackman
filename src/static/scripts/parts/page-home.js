@@ -190,7 +190,6 @@ $(document).ready(() => {
     var _main = $('.main');
     var _placeholderSize;
     var _slogan = $('.page-home-bg__slogan');
-    var _scrollVar = 0;
   
     function SloganFix() {
       $(_slogan).css({'bottom': $('.footer').css('height')});
@@ -208,22 +207,27 @@ $(document).ready(() => {
     SloganFix();
     PlaceholderSize();
 
-    _main[0].addEventListener('mousewheel', _evt => {
-      if (_main.scrollTop() < 100 && _evt.deltaY > 0) {
+    _main[0].addEventListener('scroll', _evt => {
+      if (_main.scrollTop() > 0 && !_main.hasClass('_show') && !_main.hasClass('_animation')) {
+        _main.addClass('_show _animation');
+        _footer.stop();
+        _footer.fadeOut(400);
         _main.animate({
           scrollTop: _placeholderSize
-        }, 600);
-        _main.addClass('_show');
-        $(_footer).stop();
-        $(_footer).fadeOut(400);
-      } else if ((_main.scrollTop() < window.screen.height / 2) && _evt.deltaY < 0) {
+        }, 600, () => {
+          _main.removeClass('_animation');
+        });
+      } else if (_main.scrollTop() < window.screen.height / 3 && _main.hasClass('_show') && !_main.hasClass('_animation')) {
+        _main.addClass('_animation');
+        _main.removeClass('_show');
+        _footer.stop();
+        _footer.fadeIn(400);
         _main.animate({
           scrollTop: 0
-        }, 600);
-        _main.removeClass('_show');
-        $(_footer).stop();
-        $(_footer).fadeIn(400);
+        }, 600, () => {
+          _main.removeClass('_animation');
+        });
       }
-    })
+    });
   }
 })

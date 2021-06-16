@@ -110,8 +110,8 @@ $(document).ready(function () {
 
     function Anchor() {
       let _scroll = _contentWrapper[0].offsetWidth - _contentWrapper[0].clientWidth;
-      let _elemIntoView = document.elementFromPoint(window.screen.width - (_scroll + 1), window.screen.height / 2);
-
+      let _elemIntoView = document.elementFromPoint(window.screen.width - (_scroll + 5), window.screen.height / 2);
+      console.log(_elemIntoView);
       if ($('body').hasClass('page-projects')) {
         _elemIntoView = document.elementFromPoint(window.screen.width - (_scroll + 101), window.screen.height / 2);
         if ($(_elemIntoView).is('li[id]')) {
