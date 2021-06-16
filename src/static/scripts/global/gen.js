@@ -131,6 +131,7 @@ $(document).ready(function () {
     Anchor();
 
     var _resizeObserver = new ResizeObserver(() => {
+      console.log("resize observ")
       Anchor();
     });
 
