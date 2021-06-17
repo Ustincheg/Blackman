@@ -26,15 +26,12 @@ body {
   overflow: auto;
 }
 
-.main {
-  overflow-x: hidden;
-}
+// .main {
+//   overflow-x: hidden;
+// }
 
 .content-wrapper {
   grid-area: wrapper;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr max-content;
   overflow: auto;
 }
 
