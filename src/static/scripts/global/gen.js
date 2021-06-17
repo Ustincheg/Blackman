@@ -93,7 +93,7 @@ $(document).ready(function () {
     }
 
     function Anchor() {
-      let _scroll = _main[0].offsetWidth - _main[0].clientWidth;
+      let _scroll = _contentWrapper[0].offsetWidth - _contentWrapper[0].clientWidth;
       let _elemIntoView = document.elementFromPoint(window.screen.width - (_scroll + parseInt($($('main section')[0]).css('padding-right')) + 10), window.screen.height / 2);
       if ($('body').hasClass('page-projects')) {
         if ($(_elemIntoView).is('li[id]')) {
@@ -110,6 +110,6 @@ $(document).ready(function () {
       }
     }
 
-    _main.on('scroll', Anchor);
+    _contentWrapper.on('scroll', Anchor);
   }
 })
