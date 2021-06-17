@@ -282,7 +282,7 @@
       </div>
     </dialog>
     <dialog class="header-callback-vacancy qs_modal" id="header-callback-vacancy" role="dialog" aria-modal="true">
-      <button class="header-callback__btn-close _btn-close" type="button" aria-label="Закрыть меню навигации">
+      <button class="header-callback__btn-close _btn-close" type="button" aria-label="Закрыть меню навигации" onclick="fileNameClear()">
         <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="7.23389" y="36.4287" width="42" height="1" transform="rotate(-45 7.23389 36.4287)" />
           <rect x="8.44092" y="6.73022" width="42" height="1" transform="rotate(45 8.44092 6.73022)" />
@@ -310,12 +310,12 @@
             <span class="header-callback-form__placeholder _placeholder">Сообщение</span>
           </label>
           <label class="header-callback__load-file">
-            <input type="file" onchange="showFile(this)" class="qs_hidden">
+            <input type="file" onchange="showFile(this)" class="header-callback__load-file__input qs_hidden">
             <span class="header-callback__load-file__desc">
               Прикрепить резюме
             </span>
           </label>
-          <button class="header-callback-form__submit qs_btn-grand--blue" type="submit">Отправить</button>
+          <button class="header-callback-form__submit qs_btn-grand--blue" type="submit" onclick="fileNameClear()">Отправить</button>
           <div class="header-callback-form-policy">
             <label class="header-callback-form-policy qs_input--checkbox">
               <input class="header-callback-form-policy__input _input" type="checkbox">
