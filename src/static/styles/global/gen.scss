@@ -32,6 +32,9 @@ body {
 
 .content-wrapper {
   grid-area: wrapper;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr max-content;
   overflow: auto;
 }
 
