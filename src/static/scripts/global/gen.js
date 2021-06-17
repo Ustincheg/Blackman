@@ -7,24 +7,6 @@ function isMobile() {
   return false;
 }
 
-//=== INPUT PLACEHOLDER ANIMATION ===//
-
-$(document).ready(function () {
-  var _qsArr = $('.qs_input');
-
-  for (let i = 0; i < _qsArr.length; i++) {
-    $(_qsArr[i]).find('input, textarea').on('focus', function () {
-      $(_qsArr[i]).find('input, textarea').addClass('_upper');
-    })
-
-    $(_qsArr[i]).find('input, textarea').on('blur', function () {
-      if ($(_qsArr[i]).find('input, textarea').val() === '') {
-        $(_qsArr[i]).find('input, textarea').removeClass('_upper');
-      }
-    })
-  }
-})
-
 //=== ASIDE NAV SWIPER ===//
 
 $(document).ready(function () {
@@ -111,8 +93,8 @@ $(document).ready(function () {
     }
 
     function Anchor() {
-      let _scroll = _contentWrapper[0].offsetWidth - _contentWrapper[0].clientWidth;
-      let _elemIntoView = document.elementFromPoint(window.screen.width - (_scroll + 101), window.screen.height / 2);
+      let _scroll = _main[0].offsetWidth - _main[0].clientWidth;
+      let _elemIntoView = document.elementFromPoint(window.screen.width - (_scroll + parseInt($($('main section')[0]).css('padding-right')) + 10), window.screen.height / 2);
       if ($('body').hasClass('page-projects')) {
         if ($(_elemIntoView).is('li[id]')) {
           CurrentValue($(_elemIntoView).attr('id'));

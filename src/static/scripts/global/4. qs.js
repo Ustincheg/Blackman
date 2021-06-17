@@ -140,8 +140,20 @@ $(document).ready(() => {
   }
 });
 
-//=== INPUT (FILE) ===//
+//=== INPUT PLACEHOLDER ANIMATION ===//
 
-// $(document).ready(() => {
-//   qsInputFileArr = $('input[type="file"]');
-// })
+$(document).ready(function () {
+  var _qsArr = $('.qs_input');
+
+  for (let i = 0; i < _qsArr.length; i++) {
+    $(_qsArr[i]).find('input, textarea').on('focus', function () {
+      $(_qsArr[i]).find('input, textarea').addClass('_upper');
+    })
+
+    $(_qsArr[i]).find('input, textarea').on('blur', function () {
+      if ($(_qsArr[i]).find('input, textarea').val() === '') {
+        $(_qsArr[i]).find('input, textarea').removeClass('_upper');
+      }
+    })
+  }
+})
