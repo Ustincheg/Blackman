@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <header class="header" role="banner">
+  <header class="header">
     <button class="header__btn-nav-modal" type="button" aria-label="Открыть меню навигации">
       <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="1" y="50%" width="100%" height="1" />
@@ -23,7 +23,7 @@
     <a class="header__link-logo" href="index.html">
       <img class="header__img-logo" src="assets/imgs/logo.svg" width="289" loading="lazy" alt="logo">
     </a>
-    <nav class="header-nav" role="navigation">
+    <nav class="header-nav">
       <ul class="header-nav-list">
         <li class="header-nav-list__item">
           <a class="header-nav-list__link" href="metalworking.html">Металлообработка</a>
@@ -259,12 +259,10 @@
           </label>
           <button class="header-callback-form__submit qs_btn-grand--blue" type="submit">Отправить</button>
           <div class="header-callback-form-policy">
-            <label class="header-callback-form-policy qs_input">
-              <input class="header-callback-form-policy__input _input" type="checkbox">
-              <span class="header-callback-form-policy__txt">
-                Вы даете согласие на обработку персональных данных и соглашаетесь c
-                <a class="header-callback-form-policy__link" href="#">политикой конфиденциальности</a>
-              </span>
+            <span class="header-callback-form-policy__txt">
+              Вы даете согласие на обработку персональных данных и соглашаетесь c
+              <a class="header-callback-form-policy__link" href="#">политикой конфиденциальности</a>
+            </span>
           </div>
         </form>
       </div>
@@ -292,7 +290,7 @@
       </div>
     </dialog>
   </header>
-  <aside class="aside" role="complementary">
+  <aside class="aside">
     <div class="aside__wrapper">
       <a class="aside__return" href="" aria-label="Вернуться на главную страницу">
         <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -333,7 +331,7 @@
     </nav>
   </aside>
   <div class="content-wrapper">
-    <main class="main" role="main">
+    <main class="main">
       <section class="about-company qs_section" id="about-company">
         <h2 class="about-company__ttl qs_section-ttl">История и описание</h2>
         <p class="about-company__desc qs_desc">
@@ -372,7 +370,7 @@
           Девиз компании:
         </p>
         <mark class="about-company__mark qs_marked">
-          <blockquote class="about-company__quote">«Качество-это ответственность каждого»</blockquote>
+          <span class="about-company__quote">«Качество-это ответственность каждого»</span>
         </mark>
       </section>
       <section class="about-world qs_section" id="about-world">
@@ -641,13 +639,13 @@
         </div>
       </section>
     </main>
-    <footer class="footer" role="contentinfo">
+    <footer class="footer">
       <div class="footer-info">
         <p class="footer-info__copyright">© Schoeller-Bleckmann Darron Russia 2013-2021</p>
         <a class="footer-info__policy" href="#">Политика конфиденциальности</a>
       </div>
       <div class="footer-logo-developer">
-        <a class="footer-logo-developer__link" href="http:/garpix.com">
+        <a class="footer-logo-developer__link" href="http://garpix.com">
           <p class="footer-logo-developer__desc">Создание сайта</p>
           <svg width="74" height="13" viewBox="0 0 74 13" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M18.2618 0.269897L12.939 12.7391H16.6125L17.3915 10.7796H23.0076L23.7865 12.7391H27.4601L22.1229 0.269897H18.2618ZM18.4589 8.10351L19.8485 4.49854C20.0168 4.09602 20.1322 3.66255 20.2043 3.23349C20.2765 3.66255 20.3871 4.09602 20.5602 4.49854L21.9498 8.10351H18.4589Z" fill="white"/>

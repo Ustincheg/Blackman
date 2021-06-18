@@ -565,7 +565,7 @@
   @include qs_btn-dropdown();
 }
 
-//<button class="qs_btn-dropdown">
+//<button class="qs_btn-dropdown" type="button"> OR <div class=".qs_btn-dropdown" tabindex="0" role="button">
 //  <header class="_header">
 //    <span class="_ttl"></span>
 //    <span class="_desc"></span>
@@ -575,7 +575,7 @@
 //    <span class="_subttl></span>
 //    <p class="_desc"></p>  
 //  </div>
-//</button>
+//</button> OR </div>
 
 @mixin qs_consultation-and-next() {
   display: grid;

@@ -408,8 +408,7 @@ $(document).ready(() => {
       inputEmail: {
         valueCheckAlgorithm: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
         valueLength: 254
-      },
-      acceptance: $('.header-callback .header-callback-form-policy__input')[0]
+      }
     })
   }
   
@@ -426,7 +425,6 @@ $(document).ready(() => {
         valueCheckAlgorithm: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
         valueLength: 254
       },
-      acceptance: $('.header-callback-vacancy .header-callback-form-policy__input')[0],
       ignor: $('.header-callback__vacancy')[0]
     })
   }

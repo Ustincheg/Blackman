@@ -10,7 +10,7 @@
 </head>
 
 <body class="page-home">
-  <header class="header" role="banner">
+  <header class="header">
     <button class="header__btn-nav-modal" type="button" aria-label="Открыть меню навигации">
       <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="1" y="50%" width="100%" height="1" />
@@ -20,7 +20,7 @@
     <a class="header__link-logo" href="index.html">
       <img class="header__img-logo" src="assets/imgs/logo.svg" width="0" height="0" loading="lazy" alt="logo">
     </a>
-    <nav class="header-nav" role="navigation">
+    <nav class="header-nav">
       <ul class="header-nav-list">
         <li class="header-nav-list__item">
           <a class="header-nav-list__link" href="metalworking.html">Металлообработка</a>
@@ -85,7 +85,7 @@
       </ul>
     </div>
     <button class="header__btn-callback qs_btn-grand--blue" type="button">Обратная связь</button>
-    <dialog class="header-menu qs_modal" id="header-menu" role="dialog" aria-modal="true">
+    <dialog class="header-menu qs_modal" id="header-menu" aria-modal="true">
       <button class="header-menu__btn-close _btn-close" type="button" aria-label="Закрыть меню навигации">
         <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="7.23389" y="36.4287" width="42" height="1" transform="rotate(-45 7.23389 36.4287)" />
@@ -256,12 +256,10 @@
           </label>
           <button class="header-callback-form__submit qs_btn-grand--blue" type="submit">Отправить</button>
           <div class="header-callback-form-policy">
-            <label class="header-callback-form-policy qs_input--checkbox">
-              <input class="header-callback-form-policy__input _input" type="checkbox">
-              <span class="header-callback-form-policy__txt">
-                Вы даете согласие на обработку персональных данных и соглашаетесь c
-                <a class="header-callback-form-policy__link" href="#">политикой конфиденциальности</a>
-              </span>
+            <span class="header-callback-form-policy__txt">
+              Вы даете согласие на обработку персональных данных и соглашаетесь c
+              <a class="header-callback-form-policy__link" href="#">политикой конфиденциальности</a>
+            </span>
           </div>
         </form>
       </div>
@@ -308,9 +306,9 @@
   <video class="page-home-bg__video" autoplay loop muted data-url-720p="assets/vids/bg-video_720p.mp4"
     data-url-360p="assets/vids/bg-video_360p.mp4"></video>
   <span class="page-home-bg__slogan">Передовые технологии для нефтегазовой отрасли</span>
-  <aside class="aside" role="complementary"></aside>
+  <aside class="aside"></aside>
   <div class="content-wrapper">
-    <main class="main" role="main">
+    <main class="main">
       <h1 class="qs_hidden">Главная страница</h1>
       <section class="short-empty"></section>
       <section class="short-orientation">
@@ -440,7 +438,7 @@
           </ul>
         </div>
       </section>
-      <footer class="footer-local" role="contentinfo">
+      <footer class="footer-local">
         <div class="footer-info">
           <p class="footer-info__copyright">© Schoeller-Bleckmann Darron Russia 2013-2021</p>
           <a class="footer-info__policy" href="#">Политика конфиденциальности</a>
@@ -460,7 +458,7 @@
         </button>
       </footer>
     </main>
-    <footer class="footer" role="contentinfo">
+    <footer class="footer">
       <span class="footer-nav-tabs"></span>
       <div class="footer-info">        
         <p class="footer-info__copyright">© Schoeller-Bleckmann Darron Russia 2013-2021</p>
