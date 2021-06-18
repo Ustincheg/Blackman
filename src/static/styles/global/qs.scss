@@ -101,6 +101,29 @@
   font: 400 16px $f_main;
   color: $c_black;
   line-height: 150%;
+  overflow-x: auto;
+
+  & table {
+    width: max-content;
+    text-align: center;
+
+    & caption {
+      @include qs_section-subttl();
+      text-align: left;
+    }
+
+    & tr:first-child {
+      font-weight: 600;
+    }
+
+    & td {
+      width: max-content;
+      max-width: 320px;
+      min-width: 160px; 
+      padding: 13px 25px;
+      border: 1px solid $c_gray;
+    }
+  }
 }
 
 .qs_desc {
