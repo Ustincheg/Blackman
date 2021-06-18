@@ -409,6 +409,14 @@
       }
     }
 
+    &:required {
+      border-color: $c_gray-light;
+
+      & ~ ._placeholder {
+        color: $c_black;
+      }
+    }
+
     &:focus {
       outline: none;
       border-color: $c_blue;
