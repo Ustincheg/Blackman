@@ -400,8 +400,7 @@
       }
     } 
 
-    &:invalid,
-    &._incorrect {
+    &:invalid {
       border-color: $c_red;
 
       & ~ ._placeholder {
@@ -414,6 +413,14 @@
 
       & ~ ._placeholder {
         color: $c_black;
+      }
+    }
+
+    &._incorrect {
+      border-color: $c_red;
+
+      & ~ ._placeholder {
+        color: $c_red;
       }
     }
 
