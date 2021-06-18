@@ -72,7 +72,20 @@ const Modal = function (_selectorModal, _animationTime) {
         });
       }
     }
-    $(this.inside.btnClose).click(this.action.close);
+    $(this.inside.btnClose).click(() => {
+      this.action.close();
+      if ($(this.inside.root).find('input').length > 0) {
+        let _inputArr = $(this.inside.root).find('input, textarea');
+        _inputArr.each((_index, _elem) => {
+          $(_elem).removeClass('_incorrect');
+          if ($(_elem).is(':not([type="radio"]):not([type="checkbox"])')) {
+            $(_elem).val('');
+            $(_elem).blur();
+          } 
+        });
+        $(this.inside.root).find('input')
+      }
+    });
     $(this.inside.btnClose).each((_index, _elem) => {
       $(_elem).click(this.action.close);
     })

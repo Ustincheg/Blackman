@@ -44,11 +44,14 @@ $(document).ready(function () {
   }
 })
 
-//=== CALL MODAL REQUEST ===//
+//=== TELEPHONE LINKS ===//
 
-// $(document).ready(function () {
-//   ModalWindows($('.header-callback')[0], $('.qs_consultation-and-next ._consultation'));
-// })
+$(document).ready(() => {
+  var _linksTel = $('a[href^="tel:"]');
+  _linksTel.each((_index, _elem) => {
+    $(_elem).attr({'href': 'tel:' + $(_elem).text().replace(/[^\+*\d]/gim, '')});
+  });
+});
 
 //=== ANCHOR SCROLL ===//
 
