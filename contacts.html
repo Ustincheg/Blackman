@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <header class="header" role="banner">
+  <header class="header">
     <button class="header__btn-nav-modal" type="button" aria-label="Открыть меню навигации">
       <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="1" y="50%" width="100%" height="1" />
@@ -22,7 +22,7 @@
     <a class="header__link-logo" href="index.html">
       <img class="header__img-logo" src="assets/imgs/logo.svg" width="289" loading="lazy" alt="logo">
     </a>
-    <nav class="header-nav" role="navigation">
+    <nav class="header-nav">
       <ul class="header-nav-list">
         <li class="header-nav-list__item">
           <a class="header-nav-list__link" href="metalworking.html">Металлообработка</a>
@@ -249,12 +249,10 @@
           </label>
           <button class="header-callback-form__submit qs_btn-grand--blue" type="submit">Отправить</button>
           <div class="header-callback-form-policy">
-            <label class="header-callback-form-policy qs_input">
-              <input class="header-callback-form-policy__input _input" type="checkbox">
-              <span class="header-callback-form-policy__txt">
-                Вы даете согласие на обработку персональных данных и соглашаетесь c 
-                <a class="header-callback-form-policy__link" href="#">политикой конфиденциальности</a>
-              </span>
+            <span class="header-callback-form-policy__txt">
+              Вы даете согласие на обработку персональных данных и соглашаетесь c 
+              <a class="header-callback-form-policy__link" href="#">политикой конфиденциальности</a>
+            </span>
           </div>
         </form>
       </div>
@@ -280,7 +278,7 @@
       </div>
     </dialog>  
   </header>
-  <aside class="aside" role="complementary">
+  <aside class="aside">
     <div class="aside__wrapper">
       <a class="aside__return" href="" aria-label="Вернуться на главную страницу">
         <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -290,93 +288,95 @@
       <h1 class="aside__ttl">Контакты</h1>
     </div>
   </aside>
-  <main class="main" role="main">
-    <section class="contacts">
-      <div id="mapSelf" style="width: 100%; height: 650px"></div>
-      <ul class="contacts-info">
-        <li class="contacts-info__item">
-          <h3 class="contacts-info__ttl">Адрес:</h3>
-          <address class="contacts-info__address">629800, РФ, ЯНАО, г.Ноябрьск, Промзона, Панель 11</address>
-        </li>
-        <li class="contacts-info__item">
-          <h3 class="contacts-info__ttl">Телефоны:</h3>
-          <ul class="contacts-info-list">
-            <li class="contacts-info-list__item">
-              <a class="contacts-info__link _tel" href="tel:+00000000000">+0 (0000) 00-00-00</a>
-            </li>
-            <li class="contacts-info-list__item">
-              <a class="contacts-info__link _tel" href="tel:+00000000000">+0 (0000) 00-00-00</a>
-            </li>
-            <li class="contacts-info-list__item">
-              <a class="contacts-info__link _tel" href="tel:+00000000000">+0 (0000) 00-00-00</a>
-            </li>
-          </ul>
-        </li>
-        <li class="contacts-info__item">
-          <h3 class="contacts-info__ttl">Факс:</h3>
-          <ul class="contacts-info-list">
-            <li class="contacts-info-list__item">
-              <a class="contacts-info__link _fax" href="fax:+00000000000">+0 (0000) 00-00-00</a>
-            </li>
-            <li class="contacts-info-list__item">
-              <a class="contacts-info__link _fax" href="fax:+00000000000">+0 (0000) 00-00-00</a>
-            </li>
-            <li class="contacts-info-list__item">
-              <a class="contacts-info__link _fax" href="fax:+00000000000">+0 (0000) 00-00-00</a>
-            </li>
-          </ul>
-        </li>
-        <li class="contacts-info__item">
-          <h3 class="contacts-info__ttl">Почта:</h3>
-          <ul class="contacts-info-list">
-            <li class="contacts-info-list__item">
-              <a class="contacts-info__link _email" href="mailto:test@test.com">test@test.com</a>
-            </li>
-            <li class="contacts-info-list__item">
-              <a class="contacts-info__link _email" href="mailto:test@test.com">test@test.com</a>
-            </li>
-            <li class="contacts-info-list__item">
-              <a class="contacts-info__link _email" href="mailto:test@test.com">test@test.com</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </section>
-    <section class="contacts-callback qs_section">
-      <h2 class="contacts-callback qs_section-ttl">Свяжитесь с нами</h2>
-      <form class="contacts-callback-form">
-        <label class="contacts-callback-form__label qs_input">
-          <input class="contacts-callback-form__name" type="text">
-          <span class="_placeholder">Ваше имя</span>
-        </label>
-        <label class="contacts-callback-form__label qs_input">
-          <input class="contacts-callback-form__email" type="text">
-          <span class="_placeholder">Ваше E-mail <mark class="_required-mark">*</mark></span>
-        </label>
-        <label class="contacts-callback-form__label qs_input">
-          <input class="contacts-callback-form__tel" type="text">
-          <span class="_placeholder">Ваше телефон</span>
-        </label>
-        <label class="contacts-callback-form__label qs_input">
-          <textarea class="contacts-callback-form__message"></textarea>
-          <span class="_placeholder">Сообщение</span>
-        </label>
-        <div class="contacts-callback-form-controls">
-          <label class="contacts-callback-form-controls-policy qs_input">
-            <input class="contacts-callback-form-policy__input" type="checkbox">
-            <span class="contacts-callback-form-controls-policy__txt">Вы даете согласие на обработку персональных данных и соглашаетесь с <a class="carrier-vacancy-form-controls-policy__link qs_link" href="#">политикой конфиденциальности</a></span>
+  <div class="content-wrapper">
+    <main class="main">
+      <section class="contacts">
+        <div id="mapSelf" style="width: 100%; height: 650px"></div>
+        <ul class="contacts-info">
+          <li class="contacts-info__item">
+            <h3 class="contacts-info__ttl">Адрес:</h3>
+            <address class="contacts-info__address">629800, РФ, ЯНАО, г.Ноябрьск, Промзона, Панель 11</address>
+          </li>
+          <li class="contacts-info__item">
+            <h3 class="contacts-info__ttl">Телефоны:</h3>
+            <ul class="contacts-info-list">
+              <li class="contacts-info-list__item">
+                <a class="contacts-info__link _tel" href="tel:+00000000000">+0 (0000) 00-00-00</a>
+              </li>
+              <li class="contacts-info-list__item">
+                <a class="contacts-info__link _tel" href="tel:+00000000000">+0 (0000) 00-00-00</a>
+              </li>
+              <li class="contacts-info-list__item">
+                <a class="contacts-info__link _tel" href="tel:+00000000000">+0 (0000) 00-00-00</a>
+              </li>
+            </ul>
+          </li>
+          <li class="contacts-info__item">
+            <h3 class="contacts-info__ttl">Факс:</h3>
+            <ul class="contacts-info-list">
+              <li class="contacts-info-list__item">
+                <a class="contacts-info__link _fax" href="fax:+00000000000">+0 (0000) 00-00-00</a>
+              </li>
+              <li class="contacts-info-list__item">
+                <a class="contacts-info__link _fax" href="fax:+00000000000">+0 (0000) 00-00-00</a>
+              </li>
+              <li class="contacts-info-list__item">
+                <a class="contacts-info__link _fax" href="fax:+00000000000">+0 (0000) 00-00-00</a>
+              </li>
+            </ul>
+          </li>
+          <li class="contacts-info__item">
+            <h3 class="contacts-info__ttl">Почта:</h3>
+            <ul class="contacts-info-list">
+              <li class="contacts-info-list__item">
+                <a class="contacts-info__link _email" href="mailto:test@test.com">test@test.com</a>
+              </li>
+              <li class="contacts-info-list__item">
+                <a class="contacts-info__link _email" href="mailto:test@test.com">test@test.com</a>
+              </li>
+              <li class="contacts-info-list__item">
+                <a class="contacts-info__link _email" href="mailto:test@test.com">test@test.com</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section class="contacts-callback qs_section">
+        <h2 class="contacts-callback qs_section-ttl">Свяжитесь с нами</h2>
+        <form class="contacts-callback-form">
+          <label class="contacts-callback-form__label qs_input">
+            <input class="contacts-callback-form__name" type="text">
+            <span class="_placeholder">Ваше имя</span>
           </label>
-          <button class="contacts-callback-form-controls__submit qs_btn-grand--blue" type="submit">Отправить</button>
-        </div>
-      </form>
-    </section>
-  </main>
-  <footer class="footer" role="contentinfo">
-    <div class="footer-info">
-      <p class="footer-info__copyright">© Schoeller-Bleckmann Darron Russia 2013-2021</p>
-      <a class="footer-info__policy" href="#">Политика конфиденциальности</a>
-    </div>
-  </footer>
+          <label class="contacts-callback-form__label qs_input">
+            <input class="contacts-callback-form__email" type="text">
+            <span class="_placeholder">Ваше E-mail <mark class="_required-mark">*</mark></span>
+          </label>
+          <label class="contacts-callback-form__label qs_input">
+            <input class="contacts-callback-form__tel" type="text">
+            <span class="_placeholder">Ваше телефон</span>
+          </label>
+          <label class="contacts-callback-form__label qs_input">
+            <textarea class="contacts-callback-form__message"></textarea>
+            <span class="_placeholder">Сообщение</span>
+          </label>
+          <div class="contacts-callback-form-controls">
+            <label class="contacts-callback-form-controls-policy qs_input">
+              <input class="contacts-callback-form-policy__input" type="checkbox">
+              <span class="contacts-callback-form-controls-policy__txt">Вы даете согласие на обработку персональных данных и соглашаетесь с <a class="carrier-vacancy-form-controls-policy__link qs_link" href="#">политикой конфиденциальности</a></span>
+            </label>
+            <button class="contacts-callback-form-controls__submit qs_btn-grand--blue" type="submit">Отправить</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-info">
+        <p class="footer-info__copyright">© Schoeller-Bleckmann Darron Russia 2013-2021</p>
+        <a class="footer-info__policy" href="#">Политика конфиденциальности</a>
+      </div>
+    </footer>
+  </div>
   <script src="public/scripts.min.js"></script>
 </body>
 
