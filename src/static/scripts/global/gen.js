@@ -57,7 +57,8 @@ $(document).ready(function () {
   for (let smoothLink of smoothLinks) {
     smoothLink.addEventListener('click', function (e) {
       e.preventDefault();
-      const id = smoothLink.getAttribute('href');        
+      const id = smoothLink.getAttribute('href');       
+      console.log(id); 
       document.querySelector('a[href^="#"].aside-nav-list__link._current')
         .classList.remove('_current');
 
