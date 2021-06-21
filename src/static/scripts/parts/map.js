@@ -146,3 +146,22 @@ const mapSelfInit = (data) =>
 // mapInit(x);
 
 // mapSelfInit(y);
+
+
+
+
+
+// =================================================================================================================================
+// =================================================================================================================================
+
+function showFile(input) {
+  let file = input.files[0];
+  $(".header-callback__load-file__desc").text(`${file.name}`);  
+}
+
+function fileNameClear() {    
+  const clear = () => $(".header-callback__load-file__desc").text(`Прикрепить резюме`);
+  const clearInput = () => $(".header-callback__load-file__input").val("");  
+  setTimeout(clear, 1000);
+  setTimeout(clearInput, 1000);
+}
