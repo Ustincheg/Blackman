@@ -75,7 +75,7 @@ const Modal = function (_selectorModal, _animationTime) {
     $(this.inside.btnClose).click(() => {
       this.action.close();
       if ($(this.inside.root).find('input').length > 0) {
-        let _inputArr = $(this.inside.root).find('input, textarea');
+        let _inputArr = $(this.inside.root).find('input:not([type="hidden"]), textarea');
         _inputArr.each((_index, _elem) => {
           $(_elem).removeClass('_incorrect');
           if ($(_elem).is(':not([type="radio"]):not([type="checkbox"])')) {
