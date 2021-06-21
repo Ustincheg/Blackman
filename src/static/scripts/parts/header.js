@@ -31,3 +31,17 @@ function ModalCallbackAjaxResponse(_modal, _status) {
       break;
   }
 }
+
+//=== HEADER ACTIVE LINK ===//
+
+$(document).ready(() => {
+  const _headerLinks = $('.header-nav-list__link');
+  const _currentURL = window.location.pathname.replace(/^[\/]/, '');
+  
+  for (let i = 0; i < _headerLinks.length; i++) {
+    if ($(_headerLinks[i]).attr('href') === _currentURL) {
+      $(_headerLinks[i]).addClass('_current');
+      break;
+    }
+  }
+})
