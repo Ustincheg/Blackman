@@ -3,11 +3,15 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1624026263629,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1624282619733,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,8 +100,31 @@\n @mixin qs_desc() {\n   font: 400 16px $f_main;\n   color: $c_black;\n   line-height: 150%;\n+  overflow-x: auto;\n+\n+  & table {\n+    width: max-content;\n+    text-align: center;\n+\n+    & caption {\n+      @include qs_section-subttl();\n+      text-align: left;\n+    }\n+\n+    & tr:first-child {\n+      font-weight: 600;\n+    }\n+\n+    & td {\n+      width: max-content;\n+      max-width: 320px;\n+      min-width: 160px; \n+      padding: 13px 25px;\n+      border: 1px solid $c_gray;\n+    }\n+  }\n }\n \n .qs_desc {\n   @include qs_desc();\n@@ -243,8 +266,9 @@\n @mixin qs_list() {\n   display: grid;\n   grid-template-columns: 1fr;\n   grid-gap: 15px;\n+  word-break: break-all;\n }\n \n .qs_list {\n   @include qs_list();\n"
                 }
             ],
             "date": 1624026263628,
