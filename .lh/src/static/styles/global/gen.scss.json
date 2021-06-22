@@ -3,11 +3,15 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1624017835529,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1624368736767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,100 @@\n+body {\n+  display: grid;\n+  grid-template-columns: 37.5% 62.5%;\n+  grid-template-rows: max-content 1fr;\n+  grid-template-areas:\n+    'header header'\n+    'aside wrapper';\n+  // max-height: 100vh;\n+  // min-height: 100vh;\n+  height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */\n+  height: calc(var(--vh, 1vh) * 100);\n+\n+  overflow: hidden;\n+\n+  &.page-home {\n+    grid-template-columns: repeat(2, 1fr);\n+    // grid-template-areas:\n+    //   'header header'\n+    //   'aside wrapper';\n+  }\n+}\n+\n+.header {\n+  grid-area: header;\n+}\n+\n+.aside {\n+  grid-area: aside;\n+  overflow: auto;\n+}\n+\n+// .main {\n+//   overflow-x: hidden;\n+// }\n+\n+.content-wrapper {\n+  grid-area: wrapper;\n+  display: grid;\n+  grid-template-columns: 100%;\n+  grid-template-rows: 1fr max-content;\n+  overflow: auto;\n+}\n+\n+@media (max-width: 1600px) {\n+  body {\n+    &.page-home {\n+      grid-template-columns: 1fr 800px;\n+    }\n+  }\n+}\n+\n+@media (max-width: 1200px) {\n+  body {\n+    &.page-home {\n+      grid-template-columns: 1fr;\n+      grid-template-areas:\n+        'header'\n+        'wrapper';\n+\n+      & .aside {\n+        display: none;\n+      }\n+    }\n+  }\n+}\n+\n+@media (max-width: 850px) {\n+  body {\n+    grid-template-columns: 1fr;\n+    grid-template-areas:\n+      'header'\n+      'aside'\n+      'wrapper';\n+\n+    grid-template-rows: repeat(2, max-content) 1fr;\n+\n+    &.page-home {\n+      grid-template-areas:\n+        'header'\n+        'wrapper';\n+      grid-template-rows: max-content 1fr max-content;\n+\n+      & .aside {\n+        display: none;\n+      }\n+    }\n+  }\n+}\n+\n+div.qs_desc p {\n+  text-align: left;\n+}\n+\n+// @media (max-width: 800px) {\n+//   body {\n+//     &.page-home {\n+//       grid-template-rows: max-content 1fr minmax(80px, max-content);\n+//     }\n+//   }\n+// }\n"
                 }
             ],
             "date": 1624017835529,
