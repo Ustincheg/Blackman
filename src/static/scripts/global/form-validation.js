@@ -269,7 +269,9 @@ const FormValidation = function (_selectorForm, _options) {
     this.inside.submit.elems.forEach(_elem => {
       $(_elem).click(_evt => {
         _evt.preventDefault();
-        this.check();
+        if ($(_elem).attr('disabled') === false) {
+          this.check();
+        }
       })
     })
     this._elemStatus = [];
@@ -402,14 +404,12 @@ $(document).ready(() => {
         valueLength: 254
       },
       inputTel: {
-        valueCheckAlgorithm: /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
         valueLength: 50
       },
       inputEmail: {
         valueCheckAlgorithm: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
         valueLength: 254
-      },
-      // acceptance: $('.header-callback .header-callback-form-policy__input')[0]
+      }
     })
   }
   
@@ -419,14 +419,12 @@ $(document).ready(() => {
         valueLength: 254
       },
       inputTel: {
-        valueCheckAlgorithm: /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
         valueLength: 50
       },
       inputEmail: {
         valueCheckAlgorithm: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
         valueLength: 254
       },
-      // acceptance: $('.header-callback-vacancy .header-callback-form-policy__input')[0],
       ignor: $('.header-callback__vacancy')[0]
     })
   }

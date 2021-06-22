@@ -29,6 +29,10 @@ function ModalCallbackAjaxResponse(_modal, _status) {
         $(_modal).find('.header-callback-fail').addClass('_disabled');
       });
       break;
+    case 'reset':
+      $(_modal).find('.header-callback__content').removeClass('_disabled');
+      $(_modal).find('.header-callback-success').addClass('_disabled');
+      $(_modal).find('.header-callback-fail').addClass('_disabled');
   }
 }
 

@@ -140,6 +140,7 @@ $(document).ready(() => {
       case $('.header-callback')[0]: 
         qsModalArr[i].obj.addBtnOpen($('.header__btn-callback')[0]); 
         qsModalArr[i].obj.addBtnOpen($('.qs_consultation-and-next ._consultation')[0]);
+        ModalCallbackAjaxResponse(qsModalArr[i].elem, 'reset');
         break;
       case $('.header-search')[0]: 
         qsModalArr[i].obj.addBtnOpen($('.header__search')[0]); 
@@ -147,6 +148,7 @@ $(document).ready(() => {
       case $('.header-callback-vacancy')[0]: 
         $('.carrier-list__vacancy').each((_index, _elem) => {
           qsModalArr[i].obj.addBtnOpen(_elem);
+          ModalCallbackAjaxResponse(qsModalArr[i].elem, 'reset');
         });
         break;
     }
