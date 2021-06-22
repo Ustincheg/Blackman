@@ -129,3 +129,34 @@ $(document).ready(() => {
 
   // Use class "js_lightgallery" for "swiper-wrapper" class block of slider.
 });
+
+//=== FILE LOAD PROGRESS ===//
+
+// $(document).ready(() => {
+//   const _inputFile = $('.js_input-file-progress')[0];
+//   console.log(_inputFile);
+//   if (_inputFile.length > 0) {
+//     let _file = new FileReader();
+//     let _proxy = new Proxy(_file, {
+
+//     });
+
+//     _inputFile.change(() => {
+//       // if (_inputFile.files.length > 0) {
+//       //   for (let i = 0; i < _inputFile.files.length; i++) {
+//       //     _file.readAsArrayBuffer(_inputFile.files[0]);
+//       //   }
+//       // } else {
+//       //   _file.readAsArrayBuffer(_inputFile.files[0]);
+//       // }
+
+//       _file.addEventListener('loadstart', () => { console.log('loadstart'); });
+//       _file.addEventListener('progress', () => { console.log('progress'); });
+//       _file.addEventListener('loadend', () => { console.log('loadend'); });
+//     });
+
+//     _file.addEventListener('loadstart', () => { console.log('loadstart'); });
+//     _file.addEventListener('progress', () => { console.log('progress'); });
+//     _file.addEventListener('loadend', () => { console.log('loadend'); });
+//   }
+// })

@@ -209,26 +209,32 @@ $(document).ready(() => {
 
     _footer.find('.footer-nav-tabs').text($($('main section:not(.short-empty)')[0]).find('.qs_section-ttl span').text());
 
+
     _main[0].addEventListener('scroll', _evt => {
       if (_main.scrollTop() > 0 && !_main.hasClass('_show') && !_main.hasClass('_animation')) {
-        _main.addClass('_show _animation');
+        _main.addClass('_show');
         _footer.stop();
         _footer.fadeOut(400);
-        _main.animate({
-          scrollTop: _placeholderSize
-        }, 600, () => {
-          _main.removeClass('_animation');
-        });
+        if (!isMobile()) {
+          _main.addClass('_animation');
+          _main.animate({
+            scrollTop: _placeholderSize
+          }, 600, () => {
+            _main.removeClass('_animation');
+          });
+        }
       } else if (_main.scrollTop() < window.screen.height / 3 && _main.hasClass('_show') && !_main.hasClass('_animation')) {
-        _main.addClass('_animation');
         _main.removeClass('_show');
         _footer.stop();
         _footer.fadeIn(400);
-        _main.animate({
-          scrollTop: 0
-        }, 600, () => {
-          _main.removeClass('_animation');
-        });
+        if (!isMobile()) {
+          _main.addClass('_animation');
+          _main.animate({
+            scrollTop: 0
+          }, 600, () => {
+            _main.removeClass('_animation');
+          });
+        }
       }
     });
   }

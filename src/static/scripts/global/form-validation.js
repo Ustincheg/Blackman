@@ -269,9 +269,7 @@ const FormValidation = function (_selectorForm, _options) {
     this.inside.submit.elems.forEach(_elem => {
       $(_elem).click(_evt => {
         _evt.preventDefault();
-        if ($(_elem).attr('disabled') === false) {
-          this.check();
-        }
+        this.check();
       })
     })
     this._elemStatus = [];
