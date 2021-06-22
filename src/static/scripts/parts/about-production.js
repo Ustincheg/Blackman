@@ -1,3 +1,5 @@
+//=== SWIPER ===//
+
 $(document).ready(function () {
   const _aboutProduction = new Swiper('.about-production-slider', {
     direction: 'horizontal',

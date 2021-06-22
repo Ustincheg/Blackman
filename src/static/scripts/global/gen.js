@@ -116,4 +116,16 @@ $(document).ready(function () {
 
     _contentWrapper.on('scroll', Anchor);
   }
-})
+});
+
+//=== LIGHTGALLERY ===//
+
+$(document).ready(() => {
+  const _lg = $('.js_lightgallery');
+
+  for (let i = 0; i < _lg.length; i++) {
+    lightGallery(_lg[i]);
+  }
+
+  // Use class "js_lightgallery" for "swiper-wrapper" class block of slider.
+});
