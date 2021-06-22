@@ -42,8 +42,8 @@ $(document).ready(function () {
   })
 })
 
-//=== LIGHTGALLERY ===//
+// //=== LIGHTGALLERY ===//
 
-$(document).ready(function () {
-  lightGallery(document.querySelector('.about-certificates-slider__inner'));
-})
+// $(document).ready(function () {
+//   lightGallery(document.querySelector('.about-certificates-slider__inner'));
+// })
