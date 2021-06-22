@@ -209,22 +209,25 @@ $(document).ready(() => {
 
     _footer.find('.footer-nav-tabs').text($($('main section:not(.short-empty)')[0]).find('.qs_section-ttl span').text());
 
-
     _main[0].addEventListener('scroll', _evt => {
-      if (_main.scrollTop() > 0 && !_main.hasClass('_show') && !_main.hasClass('_animation')) {
+      if (!isMobile() && _main.scrollTop() > 0 && !_main.hasClass('_show') && !_main.hasClass('_animation')) {
         _main.addClass('_show');
         _footer.stop();
         _footer.fadeOut(400);
-        if (!isMobile()) {
-          _main.addClass('_animation');
-          _main.animate({
-            scrollTop: _placeholderSize
-          }, 600, () => {
-            _main.removeClass('_animation');
-          });
-        }
+        _main.addClass('_animation');
+        _main.animate({
+          scrollTop: _placeholderSize
+        }, 600, () => {
+          _main.removeClass('_animation');
+        });
+      } else if (isMobile() && _main.scrollTop() > 0) {
+        _main.addClass('_show');
+        _footer.stop();
+        _footer.fadeOut(400);
       } else if (_main.scrollTop() < window.screen.height / 3 && _main.hasClass('_show') && !_main.hasClass('_animation')) {
-        _main.removeClass('_show');
+        if (!isMobile()) {
+          _main.removeClass('_show');
+        }
         _footer.stop();
         _footer.fadeIn(400);
         if (!isMobile()) {
