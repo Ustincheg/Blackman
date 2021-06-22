@@ -132,23 +132,33 @@ $(document).ready(() => {
 
 //=== FILE LOAD PROGRESS ===//
 
+// let x = {
+//   a1: 0,
+//   a2: 1
+// }
+
+// let proxied = new Proxy(x, {
+//   set() {
+    
+//   }
+// });
+
 // $(document).ready(() => {
 //   const _inputFile = $('.js_input-file-progress')[0];
 //   console.log(_inputFile);
 //   if (_inputFile.length > 0) {
 //     let _file = new FileReader();
 //     let _proxy = new Proxy(_file, {
-
+//       set(_target, _phrase) {
+//         if (_phrase in _target) {
+//           console.log(_target);
+//           console.log(_phrase);
+//         }
+//       }
 //     });
 
 //     _inputFile.change(() => {
-//       // if (_inputFile.files.length > 0) {
-//       //   for (let i = 0; i < _inputFile.files.length; i++) {
-//       //     _file.readAsArrayBuffer(_inputFile.files[0]);
-//       //   }
-//       // } else {
-//       //   _file.readAsArrayBuffer(_inputFile.files[0]);
-//       // }
+//       _file.readAsArrayBuffer(_inputFile.files[0]);
 
 //       _file.addEventListener('loadstart', () => { console.log('loadstart'); });
 //       _file.addEventListener('progress', () => { console.log('progress'); });
