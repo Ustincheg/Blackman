@@ -83,7 +83,7 @@ const Modal = function (_selectorModal, _animationTime) {
             $(_elem).blur();
           } 
         });
-        $(this.inside.root).find('input')
+        // $(this.inside.root).find('input')
       }
       if ($(this.inside.root).find('.form-tip').length > 0) {
         let _tips = $(this.inside.root).find('.form-tip');
@@ -122,7 +122,16 @@ const Modal = function (_selectorModal, _animationTime) {
         throw new TypeError('Unexpected type of argument. Expected: DOM element or array of DOM elements');
       }
       for (let i = 0; i < this.inside.btnOpen.length; i++) {
-        $(this.inside.btnOpen[i]).click(this.action.open);
+        $(this.inside.btnOpen[i]).click(() => {
+          this.action.open();
+          if ($(this.inside.root).find('input').length > 0) {
+            let _inputArr = $(this.inside.root).find('input:not([type="hidden"]):not([type="radio"]):not([type="checkbox]), textarea');
+            _inputArr.each((_index, _elem) => {
+              $(_elem).val('');
+            });
+            // $(this.inside.root).find('input')
+          }
+        });
       }
     }
   } catch (_err) {
