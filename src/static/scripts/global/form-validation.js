@@ -30,6 +30,22 @@ const FormValidation = function (_selectorForm, _options) {
     }
     let _formCorrect = new Event('form-status-correct');
     let _formIncorrect = new Event('form-status-incorrect');
+    const Tip = function (_elem) {
+      this.wrapper = $(_elem).parents('label')[0];
+      $(this.wrapper).css({'position': 'relative'});
+      $(this.wrapper).append($('<span class="form-tip"></span>'));
+      this.tip = $(this.wrapper).find('.form-tip');
+      this.desc = _desc => {
+        $(this.tip).text(_desc);
+      }
+      this.show = () => {
+        $(this.tip).css({'display': 'block'});
+      }
+      this.hide = () => {
+        $(this.tip).css({'display': 'none'});
+      }
+      return this;
+    }
     this.inside = {};
     this.inside.form = _selectorForm;
     this.inside.ignor = [];
@@ -37,20 +53,25 @@ const FormValidation = function (_selectorForm, _options) {
     this.inside.inputText.elems = [];
     this.inside.inputText.valueCheckAlgorithm = undefined;
     this.inside.inputText.valueLength = undefined;
+    this.inside.inputText.tip = [];
     this.inside.inputTel = {};
     this.inside.inputTel.elems = [];
     this.inside.inputTel.valueCheckAlgorithm = undefined;
     this.inside.inputTel.valueLength = undefined;
+    this.inside.inputTel.tip = [];
     this.inside.inputEmail = {};
     this.inside.inputEmail.elems = [];
     this.inside.inputEmail.valueCheckAlgorithm = undefined;
     this.inside.inputEmail.valueLength = undefined;
+    this.inside.inputEmail.tip = [];
     this.inside.textarea = {};
     this.inside.textarea.elems = [];
     this.inside.textarea.valueCheckAlgorithm = undefined;
     this.inside.textarea.valueLength = undefined;
+    this.inside.textarea.tip = [];
     this.inside.acceptance = {};
     this.inside.acceptance.elems = [];
+    this.inside.acceptance.tip = [];
     this.inside.submit = {};
     this.inside.submit.elems = [];  
     this.options = {};
@@ -124,6 +145,7 @@ const FormValidation = function (_selectorForm, _options) {
           _checkboxes.forEach(_elem => {
             if (_elem.nodeName) {
               this.inside.acceptance.elems.push(_elem);
+              this.inside.acceptance.tip.push(new Tip(_elem));
             } else {
               throw new TypeError('Second argument, element from "acceptance" array is not a DOM element. Expected: nothing, DOM element or array of DOM elements.');
             }
@@ -221,10 +243,13 @@ const FormValidation = function (_selectorForm, _options) {
         this.inside.ignor.forEach(_elemIgnor => {
           if (_elemIgnor !== _elem) {
             this.inside.inputText.elems.push(_elem);
+            this.inside.inputText.tip.push(new Tip(_elem));
+            console.log(_elem);
           }
         })
       } else {
         this.inside.inputText.elems.push(_elem);
+        this.inside.inputText.tip.push(new Tip(_elem));
       }
     });
     $(_selectorForm).find('input[type="tel"]').each((_index, _elem) => {
@@ -232,10 +257,12 @@ const FormValidation = function (_selectorForm, _options) {
         this.inside.ignor.forEach(_elemIgnor => {
           if (_elemIgnor !== _elem) {
             this.inside.inputTel.elems.push(_elem);
+            this.inside.inputTel.tip.push(new Tip(_elem));
           }
         })
       } else {
         this.inside.inputTel.elems.push(_elem);
+        this.inside.inputTel.tip.push(new Tip(_elem));
       }
     });
     $(_selectorForm).find('input[type="email"]').each((_index, _elem) => {
@@ -243,10 +270,12 @@ const FormValidation = function (_selectorForm, _options) {
         this.inside.ignor.forEach(_elemIgnor => {
           if (_elemIgnor !== _elem) {
             this.inside.inputEmail.elems.push(_elem);
+            this.inside.inputEmail.tip.push(new Tip(_elem));
           }
         })
       } else {
         this.inside.inputEmail.elems.push(_elem);
+        this.inside.inputEmail.tip.push(new Tip(_elem));
       }
     });
     $(_selectorForm).find('textarea').each((_index, _elem) => {
@@ -254,10 +283,12 @@ const FormValidation = function (_selectorForm, _options) {
         this.inside.ignor.forEach(_elemIgnor => {
           if (_elemIgnor !== _elem) {
             this.inside.textarea.elems.push(_elem);
+            this.inside.textarea.tip.push(new Tip(_elem));
           }
         })
       } else {
         this.inside.textarea.elems.push(_elem);
+        this.inside.textarea.tip.push(new Tip(_elem));
       }
     });
     $(_selectorForm).find('input[type="submit"]').each((_index, _elem) => {
@@ -281,12 +312,21 @@ const FormValidation = function (_selectorForm, _options) {
         if (_insideObj.elems.length > 0) {
           for (let i = 0; i < _insideObj.elems.length; i++) {
             let _elem = _insideObj.elems[i];
+            let _tip = _insideObj.tip[i];
             if ($(_elem).attr('required')) {
               if (_elem.value === '') {
                 _this._elemStatus.push({
                   elem: _elem,
                   status: 'incorrect'
                 });
+                if ($(_elem).attr('type') !== 'checkbox') {
+                  _tip.desc('Это обязательное поле');
+                  _tip.show();
+                  //console.log(_tip.desc());
+                } else {
+                  _tip.desc('Подтвердите согласие');
+                  _tip.show();
+                }
                 $(_elem).addClass('_incorrect');
                 continue;
               }
@@ -410,6 +450,8 @@ $(document).ready(() => {
       }
     })
   }
+
+  console.log(_formHeaderCallback);
   
   if ($('.header-callback-vacancy .header-callback-form').length > 0) {
     var _formHeaderCallbackVacancy = new FormValidation($('.header-callback-vacancy .header-callback-form')[0], {
