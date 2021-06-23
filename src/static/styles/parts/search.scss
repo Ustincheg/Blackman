@@ -21,6 +21,18 @@
   padding-left: 30px !important;
 }
 
+.search-form__reset {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  max-width: 24px;
+  min-width: 24px;
+  max-height: 24px;
+  min-height: 24px;
+  font-size: 0;
+  background: url('../assets/icons/cross.svg') 50% / contain no-repeat;
+}
+
 .search-form__submit {
   align-self: end;
   padding: 20px;

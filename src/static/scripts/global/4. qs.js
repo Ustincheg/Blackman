@@ -85,6 +85,13 @@ const Modal = function (_selectorModal, _animationTime) {
         });
         $(this.inside.root).find('input')
       }
+      if ($(this.inside.root).find('.form-tip').length > 0) {
+        let _tips = $(this.inside.root).find('.form-tip');
+        _tips.each((_index, _tip) => {
+          $(_tip).find('span').text('');
+          $(_tip).css({'display': 'none'});
+        })
+      }
     });
     $(this.inside.btnClose).each((_index, _elem) => {
       $(_elem).click(this.action.close);

@@ -32,11 +32,33 @@ const FormValidation = function (_selectorForm, _options) {
     let _formIncorrect = new Event('form-status-incorrect');
     const Tip = function (_elem) {
       this.wrapper = $(_elem).parents('label')[0];
+      this.input = _elem;
       $(this.wrapper).css({'position': 'relative'});
-      $(this.wrapper).append($('<span class="form-tip"></span>'));
+      $(this.wrapper).append($('<div class="form-tip"><span></span></div>'));
       this.tip = $(this.wrapper).find('.form-tip');
       this.desc = _desc => {
-        $(this.tip).text(_desc);
+        $(this.tip).find('span').text(_desc);
+      }
+      this.typical = _elem => {
+        if ($(_elem).is('input')) {
+          switch ($(_elem).attr('type')) {
+            case 'text':
+              this.desc('Неверно заполнено текстовое поле');
+              this.show();
+              break;
+            case 'tel':
+              this.desc('Неверно заполнено поле для телефона. Пример: +79998887766');
+              this.show();
+              break;
+            case 'email':
+              this.desc('Неверно заполнено поле для электронной почты. Пример: example@example.com');
+              this.show();
+              break;
+          }         
+        } else if ($(_elem).is('textarea')) {
+          this.desc('Неверно заполнено текстовое поле');
+          this.show();
+        }
       }
       this.show = () => {
         $(this.tip).css({'display': 'block'});
@@ -244,7 +266,6 @@ const FormValidation = function (_selectorForm, _options) {
           if (_elemIgnor !== _elem) {
             this.inside.inputText.elems.push(_elem);
             this.inside.inputText.tip.push(new Tip(_elem));
-            console.log(_elem);
           }
         })
       } else {
@@ -322,7 +343,6 @@ const FormValidation = function (_selectorForm, _options) {
                 if ($(_elem).attr('type') !== 'checkbox') {
                   _tip.desc('Это обязательное поле');
                   _tip.show();
-                  //console.log(_tip.desc());
                 } else {
                   _tip.desc('Подтвердите согласие');
                   _tip.show();
@@ -350,6 +370,8 @@ const FormValidation = function (_selectorForm, _options) {
                   status: 'incorrect'
                 });
                 $(_elem).addClass('_incorrect');
+                _tip.desc('Превышена допустимая длина строки');
+                _tip.show();
                 continue;
               }
             }
@@ -367,6 +389,7 @@ const FormValidation = function (_selectorForm, _options) {
                     status: 'incorrect'
                   });
                   $(_elem).addClass('_incorrect');
+                  _tip.typical(_elem);
                 }
               } else {
                 _this._elemStatus.push({
@@ -381,6 +404,7 @@ const FormValidation = function (_selectorForm, _options) {
                 status: 'incorrect'
               });
               $(_elem).addClass('_incorrect');
+              _tip.typical(_elem);
             }
           }
         } else {
@@ -420,7 +444,6 @@ const FormValidation = function (_selectorForm, _options) {
             $(this.inside.form).removeClass('test_STATUS-INCORRECT');
             $(this.inside.form).addClass('test_STATUS-CORRECT');
           } else {
-            //this.inside.form.submit();
             this.inside.form.dispatchEvent(_formCorrect);
           }
         }
@@ -430,6 +453,17 @@ const FormValidation = function (_selectorForm, _options) {
       writable: false,
       configurable: false
     });
+    let _elemArr = [];
+    let _tipArr = [];
+    _elemArr = _elemArr.concat(this.inside.inputText.elems, this.inside.inputTel.elems, this.inside.inputEmail.elems, this.inside.textarea.elems, this.inside.acceptance.elems);
+    _tipArr = _tipArr.concat(this.inside.inputText.tip, this.inside.inputTel.tip, this.inside.inputEmail.tip, this.inside.textarea.tip, this.inside.acceptance.tip)
+    _elemArr.forEach(_elem => {
+      $(_elem).focus(() => {
+        _tipArr.forEach(_tip => {
+          _tip.hide();
+        })
+      })
+    })
   } catch (_err) {
     console.log(_err);
   }
@@ -450,8 +484,6 @@ $(document).ready(() => {
       }
     })
   }
-
-  console.log(_formHeaderCallback);
   
   if ($('.header-callback-vacancy .header-callback-form').length > 0) {
     var _formHeaderCallbackVacancy = new FormValidation($('.header-callback-vacancy .header-callback-form')[0], {
