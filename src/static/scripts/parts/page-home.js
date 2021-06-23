@@ -186,7 +186,7 @@ $(document).ready(function () {
 
 $(document).ready(() => {
   if ($('body').hasClass('page-home')) {
-    var _footer = $('.footer');
+    //var _footer = $('.footer');
     var _main = $('.main');
     var _placeholderSize;
     var _slogan = $('.page-home-bg__slogan');
@@ -207,13 +207,20 @@ $(document).ready(() => {
     SloganFix();
     PlaceholderSize();
 
-    _footer.find('.footer-nav-tabs').text($($('main section:not(.short-empty)')[0]).find('.qs_section-ttl span').text());
+    //_footer.find('.footer-nav-tabs').text($($('main section:not(.short-empty)')[0]).find('.qs_section-ttl span').text());
+    
+    let _firstTitleHeight = $($('main section:not(.short-empty)')[0]).find('._ttl')[0].clientHeight;
+
+    _main[0].scrollTop = _firstTitleHeight;
 
     _main[0].addEventListener('scroll', _evt => {
+      if (_main.scrollTop() < _firstTitleHeight) {
+        _main[0].scrollTop = _firstTitleHeight;
+      }
       if (!isMobile() && _main.scrollTop() > 0 && !_main.hasClass('_show') && !_main.hasClass('_animation')) {
         _main.addClass('_show');
-        _footer.stop();
-        _footer.fadeOut(400);
+        //_footer.stop();
+        //_footer.fadeOut(400);
         _main.addClass('_animation');
         _main.animate({
           scrollTop: _placeholderSize
@@ -222,14 +229,14 @@ $(document).ready(() => {
         });
       } else if (isMobile() && _main.scrollTop() > 0) {
         _main.addClass('_show');
-        _footer.stop();
-        _footer.fadeOut(400);
+        //_footer.stop();
+        //_footer.fadeOut(400);
       } else if (_main.scrollTop() < window.screen.height / 3 && _main.hasClass('_show') && !_main.hasClass('_animation')) {
         if (!isMobile()) {
           _main.removeClass('_show');
         }
-        _footer.stop();
-        _footer.fadeIn(400);
+        //_footer.stop();
+        //_footer.fadeIn(400);
         if (!isMobile()) {
           _main.addClass('_animation');
           _main.animate({
