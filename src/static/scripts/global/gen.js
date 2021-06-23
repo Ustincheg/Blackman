@@ -170,3 +170,8 @@ $(document).ready(() => {
 //     _file.addEventListener('loadend', () => { console.log('loadend'); });
 //   }
 // })
+
+// function keyCode(_evt) {
+//   console.log(_evt);
+//   return false;
+// }
