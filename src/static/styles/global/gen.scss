@@ -91,10 +91,30 @@ div.qs_desc p {
   text-align: left;
 }
 
-// @media (max-width: 800px) {
-//   body {
-//     &.page-home {
-//       grid-template-rows: max-content 1fr minmax(80px, max-content);
-//     }
-//   }
-// }
+.form-tip {
+  position: absolute;
+  z-index: 5000;
+  bottom: -20px;
+  left: 50%;
+  display: none;
+  max-width: 300px;
+  padding: 20px;
+  transform: translate(-50%, 100%);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  font: 400 13px $f_main;
+  color: $c_red;
+  background-color: $c_white;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -10;
+    top: -20px;
+    left: 50%;
+    display: block;
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%) rotate(45deg);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+}
