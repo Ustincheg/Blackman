@@ -108,7 +108,7 @@
 
 @media (max-width: 850px) {
   .aside {
-    padding: 20px;
+    padding: 40px;
     background-color: $c_white;
     border: 1px solid $c_gray-light;
   }
@@ -163,5 +163,10 @@
     &._current {
       color: $c_black;
     }
+  }
+}
+@media (max-width: 500px) {
+  .aside {
+    padding: 20px;    
   }
 }
