@@ -61,30 +61,14 @@
 }
 
 .page-home .main section {
-  //position: absolute;
-  //bottom: 0;
-  //left: 0;
-  //display: none;
   width: 100%;
   min-height: calc(100vh - 91px);
-  // height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
-  // height: calc(var(--vh, 1vh) * 100);
   padding: 0;
-  //background-color: $c_white;
-  //overflow-y: auto;
 
   &:first-of-type {
     height: 100%;
     background-color: transparent;
   }
-
-  // &:nth-of-type(2n) {
-  //   background-color: $c_gray-light2;
-
-  //   // & .qs_section {
-  //   //   background-color: $c_gray-light2;
-  //   // }
-  // }
 
   &._opened {
     z-index: 10;
@@ -97,7 +81,6 @@
   }
 
   & .qs_section {
-    //height: 100%;
     padding: 80px;
     background-color: $c_white;
     min-height: inherit;
@@ -107,6 +90,13 @@
     & .qs_section {
       background-color: $c_gray-light2;
     }
+  }
+
+  & ._ttl {
+    padding: 30px 80px;
+    font: 900 30px $f_main;
+    color: $c_white;
+    background-color: $c_blue-dark;
   }
 
   & .qs_desc {
