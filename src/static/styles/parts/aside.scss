@@ -108,7 +108,7 @@
 
 @media (max-width: 850px) {
   .aside {
-    padding-right: 0;
+    padding: 20px;
     background-color: $c_white;
     border: 1px solid $c_gray-light;
   }
@@ -134,8 +134,7 @@
     }
   }
 
-  .aside__ttl {
-    margin-left: 20px;
+  .aside__ttl {    
     color: $c_black;
   }
 
