@@ -51,7 +51,6 @@ const FormValidation = function (_selectorForm, _options) {
               this.show();
               break;
             case 'email':
-              console.log('yes');
               this.desc('Неверно заполнено поле для электронной почты. Пример: example@example.com');
               this.show();
               break;
@@ -267,7 +266,6 @@ const FormValidation = function (_selectorForm, _options) {
           if (_elemIgnor !== _elem) {
             this.inside.inputText.elems.push(_elem);
             this.inside.inputText.tip.push(new Tip(_elem));
-            console.log(_elem);
           }
         })
       } else {
@@ -446,7 +444,6 @@ const FormValidation = function (_selectorForm, _options) {
             $(this.inside.form).removeClass('test_STATUS-INCORRECT');
             $(this.inside.form).addClass('test_STATUS-CORRECT');
           } else {
-            //this.inside.form.submit();
             this.inside.form.dispatchEvent(_formCorrect);
           }
         }
@@ -487,8 +484,6 @@ $(document).ready(() => {
       }
     })
   }
-
-  console.log(_formHeaderCallback);
   
   if ($('.header-callback-vacancy .header-callback-form').length > 0) {
     var _formHeaderCallbackVacancy = new FormValidation($('.header-callback-vacancy .header-callback-form')[0], {
