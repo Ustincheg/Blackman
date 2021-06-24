@@ -206,7 +206,7 @@ $(document).ready(() => {
     SloganFix();
     PlaceholderSize();
 
-    if (isMobile()) {
+    if (isMobile() || window.screen.width <= 1100) {
       function FooterFix() {
         _main[0].scrollTop = $($('main section:not(.short-empty)')[0]).find('._ttl')[0].clientHeight;
       }
