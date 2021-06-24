@@ -444,6 +444,7 @@ const FormValidation = function (_selectorForm, _options) {
                   elem: _elem,
                   status: 'correct'
                 });
+                _tip.hide();
                 $(_elem).removeClass('_incorrect');
               } else {
                 _this._elemStatus.push({
@@ -451,7 +452,7 @@ const FormValidation = function (_selectorForm, _options) {
                   status: 'incorrect'
                 });
                 $(_elem).addClass('_incorrect');
-                _tip.desc('Превышен размер загружаемого файла');
+                _tip.desc('Превышен размер загружаемого файла. Максимальный размер 50 Мб');
                 _tip.show();
               }
             }
@@ -503,6 +504,11 @@ const FormValidation = function (_selectorForm, _options) {
       writable: false,
       configurable: false
     });
+    if (this.inside.inputFile.elems.length > 0) {
+      $(this.inside.inputFile.elems[0]).click(() => {
+        $(this.inside.inputFile.elems[0]).val(null);
+      })
+    }
     let _elemArr = [];
     let _tipArr = [];
     _elemArr = _elemArr.concat(this.inside.inputText.elems, this.inside.inputTel.elems, this.inside.inputEmail.elems, this.inside.textarea.elems, this.inside.acceptance.elems);
