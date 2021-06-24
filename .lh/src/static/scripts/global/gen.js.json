@@ -3,11 +3,19 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1624002731379,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1624529733767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -114,9 +114,8 @@\n       }\n     }\n \n     _contentWrapper.on('scroll', Anchor);\n-    //NEW VERSION\n   }\n });\n \n //=== LIGHTGALLERY ===//\n@@ -174,21 +173,5 @@\n \n // function keyCode(_evt) {\n //   console.log(_evt);\n //   return false;\n-// }\n-\n-//=== TEXTAREA AUTO SIZE ===//\n-\n-$(document).ready(() => {\n-  const _textareaArr = $('textarea');\n-\n-  _textareaArr.each((_index, _elem) => {\n-    _elem.addEventListener('input', () => {\n-      if (/Firefox/.test(navigator.userAgent)) {\n-        $(_elem).css({'height': _elem.scrollHeight + 'px'});\n-      } else {\n-        $(_elem).css({'height': _elem.scrollHeight + 'px'});\n-      }\n-    });\n-  })\n-})\n\\ No newline at end of file\n+// }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1624529752298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -114,9 +114,8 @@\n       }\n     }\n \n     _contentWrapper.on('scroll', Anchor);\n-    //NEW VERSION\n   }\n });\n \n //=== LIGHTGALLERY ===//\n@@ -174,21 +173,5 @@\n \n // function keyCode(_evt) {\n //   console.log(_evt);\n //   return false;\n-// }\n-\n-//=== TEXTAREA AUTO SIZE ===//\n-\n-$(document).ready(() => {\n-  const _textareaArr = $('textarea');\n-\n-  _textareaArr.each((_index, _elem) => {\n-    _elem.addEventListener('input', () => {\n-      if (/Firefox/.test(navigator.userAgent)) {\n-        $(_elem).css({'height': _elem.scrollHeight + 'px'});\n-      } else {\n-        $(_elem).css({'height': _elem.scrollHeight + 'px'});\n-      }\n-    });\n-  })\n-})\n\\ No newline at end of file\n+// }\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1624002731379,

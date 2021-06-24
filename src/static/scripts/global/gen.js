@@ -115,7 +115,6 @@ $(document).ready(function () {
     }
 
     _contentWrapper.on('scroll', Anchor);
-    //NEW VERSION
   }
 });
 
@@ -176,19 +175,3 @@ $(document).ready(() => {
 //   console.log(_evt);
 //   return false;
 // }
-
-//=== TEXTAREA AUTO SIZE ===//
-
-$(document).ready(() => {
-  const _textareaArr = $('textarea');
-
-  _textareaArr.each((_index, _elem) => {
-    _elem.addEventListener('input', () => {
-      if (/Firefox/.test(navigator.userAgent)) {
-        $(_elem).css({'height': _elem.scrollHeight + 'px'});
-      } else {
-        $(_elem).css({'height': _elem.scrollHeight + 'px'});
-      }
-    });
-  })
-})
