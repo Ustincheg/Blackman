@@ -97,6 +97,13 @@
     font: 900 30px $f_main;
     color: $c_white;
     background-color: $c_blue-dark;
+    @media (max-width: 1200px) {
+      padding: 30px 40px;      
+    }
+    @media (max-width: 600px) {
+      padding: 30px 20px;
+      font-size: 25px;
+    }
   }
 
   & .qs_desc {
