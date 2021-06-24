@@ -13,6 +13,7 @@ const FormValidation = function (_selectorForm, _options) {
   //    ]
   //    - OR -
   //    acceptance: {{{ 5 }}}
+  //    inputFile: {{{ 6 }}} 
   //  });
   //  - EXAMPLE end -  
   //  {{{ 1 }}} | DOM element | The form's DOM element.
@@ -20,6 +21,7 @@ const FormValidation = function (_selectorForm, _options) {
   //  {{{ 3 }}} | RegExp | Regular expression, you want to check with.
   //  {{{ 4 }}} | Number | Maximum size of input value. It creates "maxlength" attribute of "input" in DOM.
   //  {{{ 5 }}} | DOM element, checkbox | The acceptance's input-checkbox.
+  //  {{{ 6 }}} | Number | Maximum size of upload file in bites.
   //
   //  Use property "testMode" in created objects or in constructor to test your validation in front-end and not submit the form.
   //  You can see "test_STATUS-CORRECT" or "test_STATUS-INCORRECT" in form class attribute.
@@ -91,6 +93,10 @@ const FormValidation = function (_selectorForm, _options) {
     this.inside.textarea.valueCheckAlgorithm = undefined;
     this.inside.textarea.valueLength = undefined;
     this.inside.textarea.tip = [];
+    this.inside.inputFile = {};
+    this.inside.inputFile.elems = [];
+    this.inside.inputFile.maxSize = undefined;
+    this.inside.inputFile.tip = [];
     this.inside.acceptance = {};
     this.inside.acceptance.elems = [];
     this.inside.acceptance.tip = [];
@@ -161,6 +167,13 @@ const FormValidation = function (_selectorForm, _options) {
         }
       }
     };
+    this.options.inputFile = _size => {
+      if (typeof _size === 'number') {
+        this.inside.inputFile.maxSize = _size;
+      } else {
+        throw new TypeError('Second argument, "inputFile" is not a number. Expected: nothing or number')
+      }
+    }
     this.options.acceptance = _checkboxes => {
       if (typeof _checkboxes === 'object') {
         if (_checkboxes instanceof Array) {
@@ -251,6 +264,9 @@ const FormValidation = function (_selectorForm, _options) {
               })
             }
             break;
+          case 'inputFile':
+            this.options.inputFile(_options.inputFile);
+            break;
           case 'acceptance':
             this.options.acceptance(_options.acceptance);
             break;
@@ -312,6 +328,14 @@ const FormValidation = function (_selectorForm, _options) {
         this.inside.textarea.tip.push(new Tip(_elem));
       }
     });
+    $(_selectorForm).find('input[type="file"]').each((_index, _elem) => {
+      if (this.inside.inputFile.maxSize) {
+        this.inside.inputFile.elems.push(_elem);
+        this.inside.inputFile.tip.push(new Tip(_elem));
+      } else {
+        this.inside.ignor.push(_elem);
+      }      
+    });
     $(_selectorForm).find('input[type="submit"]').each((_index, _elem) => {
       this.inside.submit.elems.push(_elem);
     });
@@ -340,11 +364,14 @@ const FormValidation = function (_selectorForm, _options) {
                   elem: _elem,
                   status: 'incorrect'
                 });
-                if ($(_elem).attr('type') !== 'checkbox') {
-                  _tip.desc('Это обязательное поле');
+                if ($(_elem).attr('type') === 'checkbox') {
+                  _tip.desc('Подтвердите согласие');
+                  _tip.show();
+                } else if ($(_elem).attr('type') === 'file') {
+                  _tip.desc('Загрузите необходимый файл');
                   _tip.show();
                 } else {
-                  _tip.desc('Подтвердите согласие');
+                  _tip.desc('Это обязательное поле');
                   _tip.show();
                 }
                 $(_elem).addClass('_incorrect');
@@ -358,53 +385,75 @@ const FormValidation = function (_selectorForm, _options) {
               $(_elem).removeClass('_incorrect');
               continue;
             }
-            if (_insideObj.valueLength != undefined) {
-              if (_elem.value.length <= _insideObj.valueLength) {
-                _this._elemStatus.push({
-                  elem: _elem,
-                  status: 'correct'
-                });
-              } else {
-                _this._elemStatus.push({
-                  elem: _elem,
-                  status: 'incorrect'
-                });
-                $(_elem).addClass('_incorrect');
-                _tip.desc('Превышена допустимая длина строки');
-                _tip.show();
-                continue;
-              }
-            }
-            if (_elem.checkValidity()) {
-              if (_insideObj.valueCheckAlgorithm) {
-                if (_insideObj.valueCheckAlgorithm.test(_elem.value)) {
+            if ($(_elem).attr('type') !== 'file') {
+              if (_insideObj.valueLength != undefined) {
+                if (_elem.value.length <= _insideObj.valueLength) {
                   _this._elemStatus.push({
                     elem: _elem,
                     status: 'correct'
                   });
-                  $(_elem).removeClass('_incorrect');
                 } else {
                   _this._elemStatus.push({
                     elem: _elem,
                     status: 'incorrect'
                   });
                   $(_elem).addClass('_incorrect');
-                  _tip.typical(_elem);
+                  _tip.desc('Превышена допустимая длина строки');
+                  _tip.show();
+                  continue;
+                }
+              }
+              if (_elem.checkValidity()) {
+                if (_insideObj.valueCheckAlgorithm) {
+                  if (_insideObj.valueCheckAlgorithm.test(_elem.value)) {
+                    _this._elemStatus.push({
+                      elem: _elem,
+                      status: 'correct'
+                    });
+                    $(_elem).removeClass('_incorrect');
+                  } else {
+                    _this._elemStatus.push({
+                      elem: _elem,
+                      status: 'incorrect'
+                    });
+                    $(_elem).addClass('_incorrect');
+                    _tip.typical(_elem);
+                  }
+                } else {
+                  _this._elemStatus.push({
+                    elem: _elem,
+                    status: 'correct'
+                  });
+                  $(_elem).removeClass('_incorrect');
                 }
               } else {
+                _this._elemStatus.push({
+                  elem: _elem,
+                  status: 'incorrect'
+                });
+                $(_elem).addClass('_incorrect');
+                _tip.typical(_elem);
+              }
+            } else if ($(_elem).attr('type') === 'file') {
+              let _fileSizeSum = 0;
+              for (let j = 0; j < _elem.files.length; j++) {
+                _fileSizeSum += _elem.files[j].size;
+              }
+              if (_fileSizeSum <= _this.inside.inputFile.maxSize) {
                 _this._elemStatus.push({
                   elem: _elem,
                   status: 'correct'
                 });
                 $(_elem).removeClass('_incorrect');
+              } else {
+                _this._elemStatus.push({
+                  elem: _elem,
+                  status: 'incorrect'
+                });
+                $(_elem).addClass('_incorrect');
+                _tip.desc('Превышен размер загружаемого файла');
+                _tip.show();
               }
-            } else {
-              _this._elemStatus.push({
-                elem: _elem,
-                status: 'incorrect'
-              });
-              $(_elem).addClass('_incorrect');
-              _tip.typical(_elem);
             }
           }
         } else {
@@ -415,6 +464,7 @@ const FormValidation = function (_selectorForm, _options) {
       CheckTemplate1(this.inside.inputTel);
       CheckTemplate1(this.inside.inputEmail);
       CheckTemplate1(this.inside.textarea);
+      CheckTemplate1(this.inside.inputFile);
       if (this.inside.acceptance.elems.length > 0) {
         this.inside.acceptance.elems.forEach(_elem => {
           if ($(_elem).is(':checked')) {
@@ -471,7 +521,7 @@ const FormValidation = function (_selectorForm, _options) {
 
 $(document).ready(() => {
   if ($('.header-callback .header-callback-form').length > 0) {
-    var _formHeaderCallback = new FormValidation($('.header-callback .header-callback-form')[0], {
+    const _formHeaderCallback = new FormValidation($('.header-callback .header-callback-form')[0], {
       inputText: {
         valueLength: 254
       },
@@ -486,7 +536,7 @@ $(document).ready(() => {
   }
   
   if ($('.header-callback-vacancy .header-callback-form').length > 0) {
-    var _formHeaderCallbackVacancy = new FormValidation($('.header-callback-vacancy .header-callback-form')[0], {
+    const _formHeaderCallbackVacancy = new FormValidation($('.header-callback-vacancy .header-callback-form')[0], {
       inputText: {
         valueLength: 254
       },
@@ -497,6 +547,7 @@ $(document).ready(() => {
         valueCheckAlgorithm: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
         valueLength: 254
       },
+      inputFile: 52428800,
       ignor: $('.header-callback__vacancy')[0]
     })
   }
