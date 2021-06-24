@@ -244,16 +244,66 @@ $(document).ready(() => {
 
 //=== TEXTAREA AUTO SIZE ===//
 
-$(document).ready(() => {
-  const _textareaArr = $('textarea');
+// $(document).ready(() => {
+//   const _textareaArr = $('textarea');
+//   let _firefoxFlag = false;
+//   let _value = 0;
 
-  _textareaArr.each((_index, _elem) => {
-    _elem.addEventListener('input', () => {
-      if (/Firefox/.test(navigator.userAgent)) {
-        $(_elem).css({'height': _elem.scrollHeight + 'px'});
-      } else {
-        $(_elem).css({'height': _elem.scrollHeight + 'px'});
-      }
-    });
-  })
-})
+//   _textareaArr.each((_index, _elem) => {
+//     _elem.addEventListener('input', () => {
+//       console.log(_firefoxFlag);
+//       if (/Firefox/.test(navigator.userAgent)) {
+//         if (_value.length < _elem.value.length) {
+//           if (_elem.scrollHeight <= 30) {
+//             $(_elem).css({'height': '30px'});
+//             _firefoxFlag = false;
+//           } else if (_firefoxFlag === false) {
+//             $(_elem).css({'height': (_elem.scrollHeight + 10) + 'px'});
+//             _firefoxFlag = true;
+//           } else if (_firefoxFlag === true) {
+//             if (parseInt($(_elem).css('height')) - _elem.scrollHeight < 0) {
+//               $(_elem).css({'height': (_elem.scrollHeight + 10) + 'px'});
+//             }
+//           }
+//         } else if (_value.length > _elem.value.length) {
+          
+//         }
+//         _value = _elem.value;
+//       }
+//       // } else {
+//       //   if (parseInt($(_elem).css('height')) - _elem.scrollHeight !== 1 || parseInt($(_elem).css('height')) - _elem.scrollHeight !== -1) {
+//       //     $(_elem).css({'height': _elem.scrollHeight + 'px'});
+//       //   }
+//       // }
+//     });
+//   })
+// })
+
+// $(document).ready(function() {
+//   if ($.browser.mozilla) {
+//        $('textarea[rows]').each(function(i, el) {
+//            if (!$(el).data('ffRowsFixed')) {
+//                var rows = parseInt($(el).attr('rows'));
+//                if (rows > 1) {
+//                    $(el).attr('rows', (rows - 1));
+//                }
+//                $(el).data('ffRowsFixed', true);
+//            }
+//        });
+//   }
+// });
+
+// $(document).ready(() => {
+//   console.log($('textarea')[0].value.split('\n').length);
+
+//   const _textareaArr = $('textarea');
+//   let _firefoxFlag = false;
+//   let _value = 0;
+
+//   _textareaArr.each((_index, _elem) => {
+//     _elem.addEventListener('input', () => {
+//       console.log(_elem.value.split('\s\n').length);
+//       //_elem.value.split('\n').length;
+//     })
+//   })
+// })
