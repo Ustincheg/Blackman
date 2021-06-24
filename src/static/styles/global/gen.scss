@@ -37,7 +37,7 @@ body {
   grid-area: wrapper;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 1fr max-content;
+  grid-template-rows: minmax(max-content, 1fr) max-content;
   overflow: auto;
 }
 
