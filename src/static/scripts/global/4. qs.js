@@ -125,11 +125,13 @@ const Modal = function (_selectorModal, _animationTime) {
         $(this.inside.btnOpen[i]).click(() => {
           this.action.open();
           if ($(this.inside.root).find('input').length > 0) {
-            let _inputArr = $(this.inside.root).find('input:not([type="hidden"]):not([type="radio"]):not([type="checkbox]), textarea');
+            console.log($(this.inside.root).find('input:not([type="hidden]), textarea'));
+            let _inputArr = $(this.inside.root).find('input, textarea');
             _inputArr.each((_index, _elem) => {
-              $(_elem).val('');
+              if (!$(_elem).is('input[type="hidden"], input[type="checkbox"], input[type="radio"]')) {
+                _elem.value = '';
+              }
             });
-            // $(this.inside.root).find('input')
           }
         });
       }

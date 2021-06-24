@@ -408,6 +408,7 @@
     padding: 0 0 10px;
     border-bottom: 1px solid $c_gray-light;
     resize: none;
+    overflow: hidden;
   
     & ~ ._placeholder {
       transform: translateY(50px);
