@@ -307,3 +307,39 @@ $(document).ready(() => {
 //     })
 //   })
 // })
+
+$(document).ready(() => {
+  const _body = $('body');
+  const _textareaArr = $('textarea');
+  const _textareaObj = [];
+
+  function Size(_index) {
+    if (_index) {
+      $(_textareaObj[_index].pseudo).css({'width': $(_textareaArr[_index]).css('width')});
+    } else {
+      _textareaObj.forEach((_obj, _index) => {
+        $(_obj.pseudo).css({'width': $(_textareaArr[_index]).css('width')});
+      })
+    }
+  }
+
+  _textareaArr.each((_index, _elem) => {
+    _body.append($('<div class="textarea-fix qs_hidden"></div>'));
+    _textareaObj.push({
+      elem: _elem,
+      pseudo: $('.textarea-fix')[_index]
+    }) 
+    $(_textareaObj[_index].pseudo).addClass('qs_hidden');
+    $(_textareaObj[_index].pseudo).css({'min-height': '30px'});
+    $(_textareaObj[_index].pseudo).css({'height': 'auto'});
+    $(_textareaObj[_index].pseudo).css({'padding-bottom': '10px'});
+
+    _elem.addEventListener('input', () => {
+      $(_textareaObj[_index].pseudo).text(_elem.value);
+      Size(_index);
+      $(_elem).css({'height': _textareaObj[_index].pseudo.clientHeight});
+    })
+  })
+
+  $(document).resize(Size);
+})

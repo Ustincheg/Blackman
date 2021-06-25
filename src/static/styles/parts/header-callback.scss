@@ -73,6 +73,7 @@
   align-items: center;
   margin-top: 25px;
 }
+
 .header-callback__load-file::before {
   content: ' ';
   background-image: url(../assets/icons/paper_clip.svg);
@@ -81,6 +82,17 @@
   height: 20px;
   width: 20px;
   margin-right: 10px;
+}
+
+.header-callback__load-file-preloader {
+  display: none;
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
+
+  &._show {
+    display: block;
+  }
 }
 
 @media (max-height: 800px) {
