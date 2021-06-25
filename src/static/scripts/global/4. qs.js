@@ -125,13 +125,18 @@ const Modal = function (_selectorModal, _animationTime) {
         $(this.inside.btnOpen[i]).click(() => {
           this.action.open();
           if ($(this.inside.root).find('input').length > 0) {
-            console.log($(this.inside.root).find('input:not([type="hidden]), textarea'));
             let _inputArr = $(this.inside.root).find('input, textarea');
             _inputArr.each((_index, _elem) => {
               if (!$(_elem).is('input[type="hidden"], input[type="checkbox"], input[type="radio"]')) {
                 _elem.value = '';
               }
             });
+          }
+          if ($('.textarea-fix').length > 0 && $(this.inside.root).find('textarea').length > 0) {
+            $('.textarea-fix').text('');
+          }
+          if ($(this.inside.root).find('form ._preloader').length > 0) {
+            $(this.inside.root).find('form ._preloader').removeClass('_show');
           }
         });
       }

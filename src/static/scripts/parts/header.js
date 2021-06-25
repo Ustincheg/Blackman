@@ -5,6 +5,9 @@ function ModalCallbackAjaxResponse(_modal, _status) {
     case 'success':
       $(_modal).find('.header-callback__content').addClass('_disabled');
       $(_modal).find('.header-callback-success').removeClass('_disabled');
+      if ($(_modal).find('form ._preloader').length > 0) {
+        $(_modal).find('form ._preloader').removeClass('_show');
+      }
       var _timeout = setTimeout(function () {
         $(_modal).find('._btn-close').click();
         // $(_modal).find('.header-callback__content').removeClass('_disabled');
@@ -19,6 +22,9 @@ function ModalCallbackAjaxResponse(_modal, _status) {
     case 'fail':
       $(_modal).find('.header-callback__content').addClass('_disabled');
       $(_modal).find('.header-callback-fail').removeClass('_disabled');
+      if ($(_modal).find('form ._preloader').length > 0) {
+        $(_modal).find('form ._preloader').removeClass('_show');
+      }
       var _timeout = setTimeout(function () {
         $(_modal).find('.header-callback__content').removeClass('_disabled');
         $(_modal).find('.header-callback-fail').addClass('_disabled');
@@ -33,6 +39,7 @@ function ModalCallbackAjaxResponse(_modal, _status) {
       $(_modal).find('.header-callback__content').removeClass('_disabled');
       $(_modal).find('.header-callback-success').addClass('_disabled');
       $(_modal).find('.header-callback-fail').addClass('_disabled');
+      break;
   }
 }
 

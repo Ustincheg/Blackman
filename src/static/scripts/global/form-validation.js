@@ -496,6 +496,9 @@ const FormValidation = function (_selectorForm, _options) {
             $(this.inside.form).addClass('test_STATUS-CORRECT');
           } else {
             this.inside.form.dispatchEvent(_formCorrect);
+            if (this.inside.inputFile.elems.length > 0 && $(this.inside.inputFile.elems[0]).parents('label').find('._preloader').length > 0) {
+              $(this.inside.inputFile.elems[0]).parents('label').find('._preloader').addClass('_show');
+            }
           }
         }
       }

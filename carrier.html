@@ -305,12 +305,13 @@
             <span class="header-callback-form__placeholder _placeholder">Сообщение</span>
           </label>
           <label class="header-callback__load-file">
-            <input class="js_input-file-progress qs_hidden" type="file" onchange="showFile(this)" class="header-callback__load-file__input qs_hidden">
+            <input class="header-callback__load-file__input qs_hidden js_input-file-progress" type="file" onchange="showFile(this)">
             <span class="header-callback__load-file__desc">
               Прикрепить резюме
             </span>
+            <img class="header-callback__load-file-preloader _preloader" src="assets/icons/mini-preloader.gif" width="0" height="0" alt="">
           </label>
-          <button class="header-callback-form__submit qs_btn-grand--blue" type="submit" onclick="fileNameClear()">Отправить</button>
+          <button class="header-callback-form__submit qs_btn-grand--blue" type="submit">Отправить</button>
           <div class="header-callback-form-policy">
             <span class="header-callback-form-policy__txt">
               Вы даете согласие на обработку персональных данных и соглашаетесь c
