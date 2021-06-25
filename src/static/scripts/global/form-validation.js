@@ -510,6 +510,7 @@ const FormValidation = function (_selectorForm, _options) {
     if (this.inside.inputFile.elems.length > 0) {
       $(this.inside.inputFile.elems[0]).click(() => {
         $(this.inside.inputFile.elems[0]).val(null);
+        $(this.inside.inputFile.tip[0]).hide();
       })
     }
     let _elemArr = [];
@@ -556,7 +557,8 @@ $(document).ready(() => {
         valueCheckAlgorithm: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
         valueLength: 254
       },
-      inputFile: 52428800,
+      //inputFile: 52428800,
+      inputFile: 25000,
       ignor: $('.header-callback__vacancy')[0]
     })
   }
