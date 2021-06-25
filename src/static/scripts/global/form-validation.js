@@ -510,6 +510,7 @@ const FormValidation = function (_selectorForm, _options) {
     if (this.inside.inputFile.elems.length > 0) {
       $(this.inside.inputFile.elems[0]).click(() => {
         $(this.inside.inputFile.elems[0]).val(null);
+        $(this.inside.inputFile.tip[0]).hide();
       })
     }
     let _elemArr = [];

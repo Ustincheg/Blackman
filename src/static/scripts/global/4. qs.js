@@ -133,6 +133,7 @@ const Modal = function (_selectorModal, _animationTime) {
             });
           }
           if ($('.textarea-fix').length > 0 && $(this.inside.root).find('textarea').length > 0) {
+            $(this.inside.root).find('textarea').css({'height': '30px'});
             $('.textarea-fix').text('');
           }
           if ($(this.inside.root).find('form ._preloader').length > 0) {
