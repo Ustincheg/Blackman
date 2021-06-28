@@ -30,6 +30,7 @@ const Modal = function (_selectorModal, _animationTime) {
     this.inside = {};
     this.inside.root = _selectorModal;
     this.inside.content = $(_selectorModal).find('._content')[0];
+    this.inside.upside = $(_selectorModal).find('._upside')[0] || undefined;
     this.inside.btnOpen = [];
     if ($(_selectorModal).find('._btn-close')[0]) {
       this.inside.btnClose = [$(_selectorModal).find('._btn-close')[0]];
@@ -49,7 +50,9 @@ const Modal = function (_selectorModal, _animationTime) {
           if (this.inside.content) {
             $(this.inside.content).fadeIn(this.settings.animationTime);
           }
-          if (this.inside.btnClose[0]) {
+          if (this.inside.upside) {
+            $(this.inside.upside).fadeIn(this.settings.animationTime);
+          } else if (this.inside.btnClose[0]) {
             $(this.inside.btnClose[0]).fadeIn(this.settings.animationTime);
             this.inside.btnClose[0].focus();
           }
@@ -63,7 +66,9 @@ const Modal = function (_selectorModal, _animationTime) {
       } else {
         _setAnimationTime = this.settings.animationTime;
       }
-      if (this.inside.btnClose[0]) {
+      if (this.inside.upside) {
+        $(this.inside.upside).fadeOut(_setAnimationTime);
+      } else if (this.inside.btnClose[0]) {
         $(this.inside.btnClose[0]).fadeOut(_setAnimationTime);
       }
       if (this.inside.content) {
@@ -167,7 +172,8 @@ $(document).ready(() => {
         ModalCallbackAjaxResponse(qsModalArr[i].elem, 'reset');
         break;
       case $('.header-search')[0]: 
-        qsModalArr[i].obj.addBtnOpen($('.header__search')[0]); 
+        qsModalArr[i].obj.addBtnOpen($('.header__search')[0]);
+        qsModalArr[i].obj.addBtnOpen($('.header-menu-upside-left__search')[0]); 
         break;
       case $('.header-callback-vacancy')[0]: 
         $('.carrier-list__vacancy').each((_index, _elem) => {

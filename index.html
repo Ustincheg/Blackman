@@ -86,12 +86,29 @@
     </div>
     <button class="header__btn-callback qs_btn-grand--blue" type="button">Обратная связь</button>
     <dialog class="header-menu qs_modal" id="header-menu" aria-modal="true">
-      <button class="header-menu__btn-close _btn-close" type="button" aria-label="Закрыть меню навигации">
-        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="7.23389" y="36.4287" width="42" height="1" transform="rotate(-45 7.23389 36.4287)" />
-          <rect x="8.44092" y="6.73022" width="42" height="1" transform="rotate(45 8.44092 6.73022)" />
-        </svg>
-      </button>
+      <div class="header-menu-upside _upside">
+        <div class="header-menu-upside-left">
+          <ul class="header-menu-upside-left-list-lang">
+            <li class="header-menu-upside-left-list-lang__item">
+              <a class="header-menu-upside-left-list-lang__link" href="#">EN</a>
+            </li>
+          </ul>
+          <button class="header-menu-upside-left__search" type="button">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M10.5 19C14.6421 19 18 15.6421 18 11.5C18 7.35786 14.6421 4 10.5 4C6.35786 4 3 7.35786 3 11.5C3 15.6421 6.35786 19 10.5 19Z"
+                stroke-linejoin="round" />
+              <path d="M16.0752 17.0754L19.872 20.8721" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>  
+        </div>
+        <button class="header-menu-upside__btn-close _btn-close" type="button" aria-label="Закрыть меню навигации">
+          <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="7.23389" y="36.4287" width="42" height="1" transform="rotate(-45 7.23389 36.4287)" />
+            <rect x="8.44092" y="6.73022" width="42" height="1" transform="rotate(45 8.44092 6.73022)" />
+          </svg>
+        </button>
+      </div>
       <div class="header-menu__content _content">
         <h2 class="qs_hidden">Меню навигации</h2>
         <ul class="header-menu-list-navs">
