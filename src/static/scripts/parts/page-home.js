@@ -194,7 +194,11 @@ $(document).ready(() => {
     let _placeholderSize;
 
     function SloganFix() {
-      $(_slogan).css({'bottom': $('.footer').css('height')});
+      // if (isMobile() || window.screen.width <= 1100) {
+        $(_slogan).css({'bottom': $(_sectionTitlesMobile[0]).css('height')});
+      // } else {
+      //   $(_slogan).css({'bottom': $('.footer').css('height')});
+      // }
     }
     function PlaceholderSize() {
       _placeholderSize = $('.short-empty').height();

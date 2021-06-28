@@ -111,7 +111,7 @@
   }
 
   & ._ttl {
-    padding: 30px 80px;
+    padding: 20px 80px;
     font: 900 30px $f_main;
     color: $c_white;
     background-color: $c_blue-dark;
@@ -178,7 +178,7 @@
 
   .page-home .main section .qs_section,
   .page-home .main section ._ttl {
-    padding: 40px;
+    padding: 20px 40px;
   }
 }
 
@@ -190,15 +190,17 @@
   }
 }
 
+@media (max-width: 800px) {
+  .page-home .main section ._ttl {
+    font-size: 22px;
+  }
+}
+
 @media (max-width: 600px) {
   .page-home-bg__slogan {
     left: 20px;
     width: calc(100% - 40px);
     font: 900 30px $f_main;
-  }
-
-  .page-home .main section ._ttl {
-    font-size: 25px;
   }
 }
 
