@@ -3,7 +3,10 @@
 ======================================*/
 
 if (!sessionStorage.isShow) {
-  loader();  
+  loader();
+  $(".preloader").css({
+    'opacity': '1'
+  });  
 } else {  
   $(".preloader").toggle();
 }
@@ -15,6 +18,7 @@ function loader(_success) {
     desc = $(".preloader-container"),
     inner = $(".preloader-counter");
   var w = 0,
+
 
   t = setInterval(function () {
     w = w + 1;

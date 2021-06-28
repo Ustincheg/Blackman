@@ -194,7 +194,7 @@ $(document).ready(() => {
     let _placeholderSize;
 
     function SloganFix() {
-      $(_slogan).css({'bottom': $('.footer').css('height')});
+      $(_slogan).css({'bottom': $(_sectionTitlesMobile[0]).css('height')});
     }
     function PlaceholderSize() {
       _placeholderSize = $('.short-empty').height();
