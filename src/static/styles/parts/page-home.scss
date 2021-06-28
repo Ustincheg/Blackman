@@ -70,6 +70,24 @@
     background-color: transparent;
   }
 
+  &:nth-of-type(2) {
+    & ._ttl {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 32px;
+        height: 32px;
+        margin-left: 30px;
+        background: url('../assets/icons/index-finger.svg') 100% / contain no-repeat;
+      }
+    }
+  }
+
   &._opened {
     z-index: 10;
     display: block;
@@ -93,17 +111,10 @@
   }
 
   & ._ttl {
-    padding: 30px 0px;
+    padding: 30px 80px;
     font: 900 30px $f_main;
     color: $c_white;
     background-color: $c_blue-dark;
-    @media (max-width: 1200px) {
-      padding: 30px 0px;      
-    }
-    @media (max-width: 600px) {
-      padding: 30px 0px;
-      font-size: 25px;
-    }
   }
 
   & .qs_desc {
@@ -111,21 +122,21 @@
   }
 }
 
-.short-orientation__ttl-wrapper {
-  background-color: $c_blue-dark;
-  justify-content: space-between;
-  align-items: center;
-  padding: 80px;
-  display: none;
-  @media (max-width: 1200px) {
-    display: flex;
-    padding: 0px 40px;      
-  }
-  @media (max-width: 600px) {
-    padding: 0px 20px;
-    font-size: 25px;
-  }
-}
+// .short-orientation__ttl-wrapper {
+//   background-color: $c_blue-dark;
+//   justify-content: space-between;
+//   align-items: center;
+//   padding: 80px;
+//   display: none;
+//   @media (max-width: 1200px) {
+//     display: flex;
+//     padding: 0px 40px;      
+//   }
+//   @media (max-width: 600px) {
+//     padding: 0px 20px;
+//     font-size: 25px;
+//   }
+// }
 
 .page-home section .qs_section-ttl {
   font: 900 30px $f_main;
@@ -165,7 +176,8 @@
     font: 900 45px $f_main;
   }
 
-  .page-home .main section .qs_section {
+  .page-home .main section .qs_section,
+  .page-home .main section ._ttl {
     padding: 40px;
   }
 }
@@ -184,6 +196,10 @@
     width: calc(100% - 40px);
     font: 900 30px $f_main;
   }
+
+  .page-home .main section ._ttl {
+    font-size: 25px;
+  }
 }
 
 @media (max-height: 600px) {
@@ -195,7 +211,8 @@
 }
 
 @media (max-width: 500px) {
-  .page-home .main section .qs_section {
+  .page-home .main section .qs_section,
+  .page-home .main section ._ttl {
     padding: 20px;
   }
 }
