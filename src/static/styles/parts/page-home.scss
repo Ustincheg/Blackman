@@ -113,11 +113,12 @@
 
 .short-orientation__ttl-wrapper {
   background-color: $c_blue-dark;
-  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 80px;
+  display: block;
   @media (max-width: 1200px) {
+    display: flex;
     padding: 0px 40px;      
   }
   @media (max-width: 600px) {
