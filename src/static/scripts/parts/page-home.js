@@ -117,10 +117,12 @@ let screenHeight = window.screen.height;
 let jqScreenHeight = $(window).height();
 let browserOutHeight = window.outerHeight;
 let browserInHeight = window.innerHeight;
+let browserAvailHeight = window.screen.availHeight;
 let bodyHeight = $('body').height();
 
-console.log(screenHeight);
-console.log(jqScreenHeight);
-console.log(browserOutHeight);
-console.log(browserInHeight);
-console.log(bodyHeight);
+console.log('Высота экрана ' + screenHeight);
+console.log('Высота экрана JQ ' + jqScreenHeight);
+console.log('Внешняя высота ' + browserOutHeight);
+console.log('Внутреняя высота ' + browserInHeight);
+console.log('Высота доступного контента ' + browserAvailHeight);
+console.log('Высота боди ' + bodyHeight);
