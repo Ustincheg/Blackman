@@ -1,22 +1,19 @@
-// loader();
+/*====================================
+*     LOADER
+======================================*/
 
 if (!sessionStorage.isShow) {
-  loader();  
+  showCookie();  
 } else {  
   $(".preloader").toggle();
 }
 
-
-/*====================================
-*     LOADER
-======================================*/
-function loader(_success) {
+function showCookie(_success) {
   sessionStorage.setItem("isShow", true);
 
   var obj = $(".preloader"),
     desc = $(".preloader-container"),
-    inner = $(".preloader-counter"),
-    cookie = $(".js_cookie");
+    inner = $(".preloader-counter"),   
   var w = 0,
 
     t = setInterval(function () {
@@ -26,8 +23,7 @@ function loader(_success) {
         // obj.fadeOut();
         desc.fadeOut();
         slideUpInterval = setInterval(function () {
-          obj.slideUp(400);
-          cookie.fadeIn();
+          obj.slideUp(400);          
           clearInterval(slideUpInterval);
         }, 400);
         clearInterval(t);
@@ -39,6 +35,22 @@ function loader(_success) {
     }, 10);
 }
 
+/*====================================
+*     Cookie message
+======================================*/
+
+if (!sessionStorage.isShowCookie) {
+  showCookie();  
+} else {  
+  $(".js_cookie").toggle();
+}
+
+function showCookie(_success) {
+  var cookie = $(".js_cookie");  
+  cookie.fadeIn();
+}
+
 function cookieToggle() {
+  sessionStorage.setItem("isShowCookie", true);
   $(".js_cookie").fadeOut();  
 }
