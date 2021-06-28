@@ -13,8 +13,7 @@
 }
 .about-history__desc {
   line-height: 150%;
-  letter-spacing: 0.9px;
-  text-align: justify;
+  letter-spacing: 0.9px; 
 }
 .qs_list.about-history__list {
   grid-gap: 90px;
@@ -30,6 +29,9 @@
   display: block;
   margin-top: -108px;
   margin-right: -27px;
+  @media (max-width: 600px)  {
+    margin-right: -10px;
+  }
 }
 
 .about-history__quote {
