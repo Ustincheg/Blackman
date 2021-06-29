@@ -165,9 +165,3 @@ $(document).ready(() => {
 
   $(document).resize(Size);
 })
-
-//=== FIX MODAL HEADER MENU FOR LOCALIZATION ===//
-
-$(document).ready(() => {
-  qsModalArr[0].obj.action.open('force');
-});
