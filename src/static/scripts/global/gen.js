@@ -61,7 +61,6 @@ $(document).ready(function () {
     smoothLink.addEventListener('click', function (e) {
       e.preventDefault();
       const id = smoothLink.getAttribute('href');       
-      console.log(id); 
       document.querySelector('a[href^="#"].aside-nav-list__link._current')
         .classList.remove('_current');
 
@@ -165,3 +164,36 @@ $(document).ready(() => {
 
   $(document).resize(Size);
 })
+
+//=== FIX MODAL HEADER MENU FOR LOCALIZATION ===//
+
+
+
+const isChangeLang = () => {
+  sessionStorage.setItem("isChangeLang", true)
+};
+
+
+if(sessionStorage.getItem('isChangeLang') === 'true') {
+  $(document).ready(() => {
+    qsModalArr[0].obj.action.open('force');
+    sessionStorage.setItem("isChangeLang", false)
+  });
+};
+
+
+  
+// =================================================================================================================================
+// ===========================Имя файла в форме=====================================================================================
+
+  function showFile(input) {
+    let file = input.files[0];
+    $(".header-callback__load-file__desc").text(`${file.name}`);  
+  }
+
+  function fileNameClear() {    
+    const clear = () => $(".header-callback__load-file__desc").text(`Прикрепить резюме`);
+    const clearInput = () => $(".header-callback__load-file__input").val("");  
+    setTimeout(clear, 1000);
+    setTimeout(clearInput, 1000);
+  }

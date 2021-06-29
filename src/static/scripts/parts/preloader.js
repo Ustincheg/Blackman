@@ -44,20 +44,15 @@ function loader(_success) {
 ======================================*/
 
 
-if (!sessionStorage.isShowCookie) {
-  console.log("Запускаю шоукуки")
+if (!sessionStorage.isShowCookie) {  
   showCookie();
-} else {  
-  // $(".preloader").toggle();
-}
+} 
 
 function showCookie() {
-  console.log("js-cookie fadein");
   $(".js_cookie").fadeIn();
 }
 
 function cookieToggle() {
-  sessionStorage.setItem("isShowCookie", true);
-  console.log(`IsShowCookie: ${sessionStorage.isShowCookie}`);
+  sessionStorage.setItem("isShowCookie", true);  
   $(".js_cookie").fadeOut();  
 }

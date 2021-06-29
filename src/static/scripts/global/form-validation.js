@@ -557,8 +557,7 @@ $(document).ready(() => {
         valueCheckAlgorithm: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
         valueLength: 254
       },
-      //inputFile: 52428800,
-      inputFile: 25000,
+      inputFile: 52428800,      
       ignor: $('.header-callback__vacancy')[0]
     })
   }
