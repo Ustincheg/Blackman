@@ -53,25 +53,17 @@ var Modal = function Modal(_selectorModal, _animationTime) {
 
     this.action = {};
 
-    this.action.open = function (_force) {
-      var _setAnimationTime;
-
-      if (_force === 'force') {
-        _setAnimationTime = 0;
-      } else {
-        _setAnimationTime = _this.settings.animationTime;
-      }
-
+    this.action.open = function () {
       if (_this.inside.content) {
-        $(_this.inside.root).slideDown(_setAnimationTime, function () {
+        $(_this.inside.root).slideDown(_this.settings.animationTime, function () {
           if (_this.inside.content) {
-            $(_this.inside.content).fadeIn(_setAnimationTime);
+            $(_this.inside.content).fadeIn(_this.settings.animationTime);
           }
 
           if (_this.inside.upside) {
-            $(_this.inside.upside).fadeIn(_setAnimationTime);
+            $(_this.inside.upside).fadeIn(_this.settings.animationTime);
           } else if (_this.inside.btnClose[0]) {
-            $(_this.inside.btnClose[0]).fadeIn(_setAnimationTime);
+            $(_this.inside.btnClose[0]).fadeIn(_this.settings.animationTime);
 
             _this.inside.btnClose[0].focus();
           }

@@ -44,22 +44,16 @@ const Modal = function (_selectorModal, _animationTime) {
       this.settings.animationTime = 400;
     }
     this.action = {};
-    this.action.open = (_force) => {
-      let _setAnimationTime;
-      if (_force === 'force') {
-        _setAnimationTime = 0;
-      } else {
-        _setAnimationTime = this.settings.animationTime;
-      }
+    this.action.open = () => {
       if (this.inside.content) {
-        $(this.inside.root).slideDown(_setAnimationTime, () => {
+        $(this.inside.root).slideDown(this.settings.animationTime, () => {
           if (this.inside.content) {
-            $(this.inside.content).fadeIn(_setAnimationTime);
+            $(this.inside.content).fadeIn(this.settings.animationTime);
           }
           if (this.inside.upside) {
-            $(this.inside.upside).fadeIn(_setAnimationTime);
+            $(this.inside.upside).fadeIn(this.settings.animationTime);
           } else if (this.inside.btnClose[0]) {
-            $(this.inside.btnClose[0]).fadeIn(_setAnimationTime);
+            $(this.inside.btnClose[0]).fadeIn(this.settings.animationTime);
             this.inside.btnClose[0].focus();
           }
         });
