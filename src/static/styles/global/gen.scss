@@ -39,6 +39,7 @@ body {
   grid-template-columns: 100%;
   grid-template-rows: minmax(max-content, 1fr) max-content;
   overflow: auto;
+  overflow-x: hidden;
 }
 
 @media (max-width: 1600px) {
