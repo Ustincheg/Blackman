@@ -1,11 +1,6 @@
-// console.log("Файл map.scss подключен");
-
-// document.querySelector('.btn').onclick = loader;
-
 /*====================================
 *     Yandex Map
 ======================================*/
-
 
 const mapInit = (data) =>
   $(document).ready(function () {
@@ -14,7 +9,6 @@ const mapInit = (data) =>
     
 
     if (isMapContainer) {
-      console.log("Нашел контейнер", "#map");
       ymaps.ready(init);
 
       function init() {
@@ -42,7 +36,6 @@ const mapInit = (data) =>
         });
 
         data.forEach((element) => {
-          console.log(element, "element");
           myMap.geoObjects.add(
             new ymaps.Placemark(
               [element.lat, element.lon],
@@ -74,7 +67,6 @@ const mapSelfInit = (data) =>
     const isMapContacts = $("div").is("#mapSelf");
 
     if (isMapContacts) {
-      console.log("Нашел контейнер", "#mapSelf");
 
       ymaps.ready(mapSelfInit);
 
@@ -94,7 +86,6 @@ const mapSelfInit = (data) =>
         });
 
         data.forEach((element) => {
-          console.log(element);
           myMap.geoObjects.add(
             new ymaps.Placemark(
               [element.lat, element.lon],
@@ -119,25 +110,3 @@ const mapSelfInit = (data) =>
     }
   });
 
-// mapInit(x);
-
-// mapSelfInit(y);
-
-
-
-
-
-// =================================================================================================================================
-// =================================================================================================================================
-
-function showFile(input) {
-  let file = input.files[0];
-  $(".header-callback__load-file__desc").text(`${file.name}`);  
-}
-
-function fileNameClear() {    
-  const clear = () => $(".header-callback__load-file__desc").text(`Прикрепить резюме`);
-  const clearInput = () => $(".header-callback__load-file__input").val("");  
-  setTimeout(clear, 1000);
-  setTimeout(clearInput, 1000);
-}

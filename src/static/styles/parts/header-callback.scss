@@ -37,6 +37,10 @@
   }
 }
 
+.header-callback__load-file__desc{
+  word-break: break-all;
+}
+
 .header-callback-success__img,
 .header-callback-fail__img {
   object-fit: contain;
