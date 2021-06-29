@@ -21,7 +21,7 @@ const FormValidation = function (_selectorForm, _options) {
   //  {{{ 3 }}} | RegExp | Regular expression, you want to check with.
   //  {{{ 4 }}} | Number | Maximum size of input value. It creates "maxlength" attribute of "input" in DOM.
   //  {{{ 5 }}} | DOM element, checkbox | The acceptance's input-checkbox.
-  //  {{{ 6 }}} | Number | Maximum size of upload file in bites.
+  //  {{{ 6 }}} | Number | Maximum size of upload file in bites. There is limit for "file" type inputs for only 1 element.
   //
   //  Use property "testMode" in created objects or in constructor to test your validation in front-end and not submit the form.
   //  You can see "test_STATUS-CORRECT" or "test_STATUS-INCORRECT" in form class attribute.
@@ -510,7 +510,7 @@ const FormValidation = function (_selectorForm, _options) {
     if (this.inside.inputFile.elems.length > 0) {
       $(this.inside.inputFile.elems[0]).click(() => {
         $(this.inside.inputFile.elems[0]).val(null);
-        $(this.inside.inputFile.tip[0]).hide();
+        this.inside.inputFile.tip[0].hide();
       })
     }
     let _elemArr = [];
@@ -557,7 +557,8 @@ $(document).ready(() => {
         valueCheckAlgorithm: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
         valueLength: 254
       },
-      inputFile: 52428800,
+      //inputFile: 52428800,
+      inputFile: 25000,
       ignor: $('.header-callback__vacancy')[0]
     })
   }
