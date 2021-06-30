@@ -97,7 +97,7 @@ $(document).ready(function () {
 
     function Anchor() {
       let _scroll = _contentWrapper[0].offsetWidth - _contentWrapper[0].clientWidth;
-      let _elemIntoView = document.elementFromPoint(window.screen.width - (_scroll + parseInt($($('main section')[0]).css('padding-right')) + 10), 200);
+      let _elemIntoView = document.elementFromPoint(window.screen.width - (_scroll + parseInt($($('main section')[0]).css('padding-right')) + 10) - ($('body').width() / 3), 200);
       if ($('body').hasClass('page-projects')) {
         if ($(_elemIntoView).is('li[id]')) {
           CurrentValue($(_elemIntoView).attr('id'));
