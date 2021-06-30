@@ -38,7 +38,9 @@ body {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: minmax(max-content, 1fr) max-content;
-  overflow: auto;
+  overflow: auto;    
+}
+body div.content-wrapper {
   overflow-x: hidden;
 }
 
@@ -129,7 +131,7 @@ div.qs_desc p {
   max-width: 300px;
   transform: translate(-50%, 100%);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  font: 400 13px $f_main;
+  font: 400 13px $f_main; 
   color: $c_red;
   text-align: center;
 
