@@ -40,6 +40,7 @@ body {
   grid-template-rows: minmax(max-content, 1fr) max-content;
   overflow: auto;    
 }
+
 body div.content-wrapper {
   overflow-x: hidden;
 }
@@ -155,4 +156,12 @@ div.qs_desc p {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     background-color: $c_white;
   }
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: #C8CDD1;
+}
+::-webkit-scrollbar-thumb {
+    background: #176ABD;
 }

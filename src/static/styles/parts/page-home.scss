@@ -93,7 +93,11 @@
     padding: 80px;
     background-color: $c_white;
     min-height: inherit;
+    &.short-orientation__wrapper {
+      min-height: calc(100vh - 165px);
+    }
   }
+
 
   &:nth-of-type(2n + 1) {
     & .qs_section {
