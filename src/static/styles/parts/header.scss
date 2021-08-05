@@ -5,6 +5,7 @@
   background-color: $c_white;
   border-bottom: 1px solid $c_gray-light;
   position: relative;
+  z-index: 1;
 }
 
 .header__btn-nav-modal {

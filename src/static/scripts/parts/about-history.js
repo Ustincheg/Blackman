@@ -11,6 +11,7 @@ $(document).ready(function () {
       slidesPerView: 1,
       spaceBetween: 100,
       allowTouchMove: false,
+      autoHeight: true,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
