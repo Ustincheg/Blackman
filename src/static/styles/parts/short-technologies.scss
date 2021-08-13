@@ -22,3 +22,6 @@
     background-color: $c_blue;
   }
 }
+section.qs_section > .swiper-container {
+  z-index: 0;
+}
