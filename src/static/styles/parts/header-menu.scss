@@ -59,8 +59,13 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 100px;
+  @media (max-width: 1749px) {
+    li.header-menu-list-navs__item:first-child{      
+      grid-row-start: 1;
+      grid-row-end: 4;
+    }
+  }  
 }
-
 .header-menu-list-navs-sublist__link {
   &._ttl {
     display: block;
