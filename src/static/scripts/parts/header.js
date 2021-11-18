@@ -176,44 +176,61 @@ function updateNav() {
 
   var headerWidhth = $('.header').width();
   var availableSpace = $nav.width();
+  const arrayLinks = $('.header-nav-list').get.reverse();
 
+  
+
+  
   console.log(availableSpace);
   console.log($vlinks.width());
   console.log(headerWidhth);
   console.log(displayWidth);
-  console.log($vlinks.children().last());
-  console.log($vlinks.children())
-
-if (headerWidhth < displayWidth) {
   
-  // $vlinks.children().each(function (index, element) {
-  //   // index (число) - текущий индекс итерации (цикла)
-  //     // данное значение является числом
-  //     // начинается отсчёт с 0 и заканчивается количеству элементов в текущем наборе минус 1
-  //   // element - содержит DOM-ссылку на текущий элемент
-  //   // if (headerWidhth <= displayWidth) {
-  //   //   break;
-  //   // }
-  //   // console.log('Индекс элемента div: ' + index + '; id элемента = ' + $(element).html()); 
-  //   if (!$(element).hasClass('qs_hidden')) {
+  console.log(typeof($vlinks.children()))
+
+  if (headerWidhth < displayWidth) {
+
+    // $vlinks.children().each(function (index, element) {
+    //   // index (число) - текущий индекс итерации (цикла)
+    //     // данное значение является числом
+    //     // начинается отсчёт с 0 и заканчивается количеству элементов в текущем наборе минус 1
+    //   // element - содержит DOM-ссылку на текущий элемент
+    //   // if (headerWidhth <= displayWidth) {
+    //   //   break;
+    //   // }
+    //   // console.log('Индекс элемента div: ' + index + '; id элемента = ' + $(element).html()); 
+    //   if (!$(element).hasClass('qs_hidden')) {
+
+    //     $(element).addClass('qs_hidden');
+
+    //   }
+    //   console.log($(element));
+
+    // });
+
+    let iRevert = $vlinks.children().length - 1;
+    console.log(iRevert, 'iRevert');
+
+
+    for (var i = 0; i <= $vlinks.children().length - 1; i++) {
+      let item = $($vlinks.children()[i]);
+      if (!item.hasClass('qs_hidden')) {
+
+        $(item).addClass('qs_hidden');
+        console.log(item);
+      }
       
-  //     $(element).addClass('qs_hidden');
-      
-  //   }
-  //   console.log($(element));
-    
-  // });
-  
-
-  for (var i = 0; i <= $vlinks.children().length-1; i++) {
-    console.log($vlinks.children()[i], "здесь цикл фор"); //выведет 1, 2, 3, 4, 5
-  }
+      if ($('.header').width() >= document.documentElement.scrollWidth) {
+        console.log('брейк тру')
+        break;
+      }
+    }
 
 
-//     //если размер хедера больше размера 
-//     $vlinks.children().forEach(element => {
-//       console.log(element);
-//     });
+    //     //если размер хедера больше размера 
+    //     $vlinks.children().forEach(element => {
+    //       console.log(element);
+    //     });
   }
 }
 
