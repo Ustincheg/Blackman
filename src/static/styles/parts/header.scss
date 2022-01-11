@@ -67,7 +67,7 @@
   justify-self: center;
   width: max-content;
   height: 100%;
-  max-width: 980px;
+  max-width: 990px;
   overflow: hidden;
 }
 
@@ -83,7 +83,7 @@
 .header-nav-list__item {
   position: relative;
   height: 100%;
-  margin: 0 13px;
+  margin: 0 10px;
 }
 
 .header-nav-list__link {
@@ -227,7 +227,7 @@
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1640px) {
   .header {
     grid-template-columns: 60px 1fr 24px max-content 150px;
     grid-template-rows: minmax(50px, 1fr);
