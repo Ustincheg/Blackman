@@ -66,6 +66,9 @@
   min-height: 39px;
   color: #fff;
   display: none;
+  &__text-policy{
+    text-decoration: underline;
+  }
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
