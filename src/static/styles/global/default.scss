@@ -50,6 +50,9 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+  @-moz-document url-prefix() {
+    margin-left: 1px;
+  }
 }
 
 *,

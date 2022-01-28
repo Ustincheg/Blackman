@@ -64,13 +64,23 @@
       grid-row-start: 1;
       grid-row-end: 4;
     }
-  }  
+  }
+  @media (max-width: 800px) {
+    grid-gap: 40px;
+    li {
+      text-align: left;
+
+    }
+  }   
 }
 .header-menu-list-navs-sublist__link {
   &._ttl {
     display: block;
     margin-bottom: 30px;
     font: 900 30px $f_main;
+    @media (max-width: 800px) {
+      margin-bottom: 15px;
+    }
   }
 }
 
@@ -132,6 +142,6 @@
   .header-menu-footer {
     grid-template-columns: auto;
     justify-content: center;
-    text-align: center;
+    text-align: left;
   }
 }

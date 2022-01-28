@@ -539,7 +539,7 @@ $(document).ready(() => {
         valueLength: 50
       },
       inputEmail: {
-        valueCheckAlgorithm: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
+        valueCheckAlgorithm: /^([A-Za-z0-9_-]+\.)*[A-Za-z0-9_-]+@[A-Za-z0-9_-]+(\.[A-Za-z0-9_-]+)*\.[A-Za-z]{2,6}$/,        
         valueLength: 254
       }
     })
@@ -554,11 +554,28 @@ $(document).ready(() => {
         valueLength: 50
       },
       inputEmail: {
-        valueCheckAlgorithm: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
+        valueCheckAlgorithm: /^([A-Za-z0-9_-]+\.)*[A-Za-z0-9_-]+@[A-Za-z0-9_-]+(\.[A-Za-z0-9_-]+)*\.[A-Za-z]{2,6}$/,        
         valueLength: 254
       },
       inputFile: 52428800,      
       ignor: $('.header-callback__vacancy')[0]
     })
   }
+});
+$(document).ready(() => {
+  const $searchInput = $('.header-search-form__input');
+  const $resetSearchInput = $('.header-search-form__reset');
+
+  $resetSearchInput.hide();
+
+  const toggleResetInput = () => {
+    if ($searchInput[0].value) {
+      $resetSearchInput.show();      
+    } else {
+      $resetSearchInput.hide();      
+    }      
+  }
+
+  $searchInput.on('input', ()=>{console.log('сработало'),toggleResetInput()});
+  $resetSearchInput.on('click', ()=>{$resetSearchInput.hide()});
 });
